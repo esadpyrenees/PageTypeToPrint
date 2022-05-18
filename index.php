@@ -13,7 +13,7 @@
       "template" => "default"
     ],
     [
-      "title" => "L’album, vecteur de stéréotypes de genre ?",
+      "title" => "L’album, vecteur de stéréotypes de genre&nbsp;?",
       "file" => "text/3.vecteur.md",
       "template" => "default"
     ],

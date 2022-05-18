@@ -1,52 +1,30 @@
 if(paged !== true){
   window.addEventListener('DOMContentLoaded', () => {
 
+    // footnotes
+    initializeFootnotes();
+
+    // nav clone
+    var sections = document.querySelectorAll('section[id]');
     var nav = document.querySelector("#nav ul");
     var main = document.querySelector('#main');
     var index = nav.cloneNode(true);
     index.id = "index";
     main.prepend(index);
-    
-    var sections = document.querySelectorAll('section');
-    var notes_index = 1;
-    var ndt_index = ["III", "II", "I"];
-    sections.forEach( (section) => {
-      var fns = section.querySelectorAll('.fn, .ndt');
-      if(fns.length){
-        var fns_container = document.createElement('div');
-        fns_container.className = "fns_container";
-        section.appendChild(fns_container);
-        fns.forEach( (fn) => {
-          var fn_call = document.createElement('a');
-          fn_call.className = "fn_call";
-          if(fn.classList.contains('ndt')){
-            var ndtindex = ndt_index.pop();
-            fn_call.textContent = "NdT " + ndtindex;
-            var id = "ndt-" + ndtindex;
-          } else {
-            fn_call.textContent =  notes_index;
-            var id = "fn-" + notes_index;
-            notes_index ++;
-          }
-          fn_call.href = "#" + id;
-          fn.parentElement.insertBefore(fn_call, fn);
-          var fn_ref = document.createElement('div');
-          fn_ref.className = "fn_ref";
-          fn_ref.id = id;
-          fn_ref.innerHTML = `<span class='fn_ref_number'>${fn_call.textContent}</span>` + fn.innerHTML;
-          fns_container.appendChild(fn_ref)
-        })
-      }
-      
+
+    var togglemenu = document.createElement('button');
+    togglemenu.textContent = "☰";
+    togglemenu.addEventListener('click', function(e){
+      e.stopPropagation();
+      index.classList.toggle('visible');
     })
+    index.prepend(togglemenu);
 
-
-
-    initializeFootnotes();
-  
-
-  
-
+    index.addEventListener('click', function(){
+      index.classList.remove('visible');
+    })
+    
+    // highlight nav item on scroll
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const id = entry.target.getAttribute('id');      
@@ -62,9 +40,6 @@ if(paged !== true){
     sections.forEach((section) => {
       observer.observe(section);
     });
-
-    
-   
 
   });
 

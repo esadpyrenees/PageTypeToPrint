@@ -14,6 +14,7 @@
   use Kaoken\MarkdownIt\Plugins\MarkdownItSup;
   use Kaoken\MarkdownIt\Plugins\MarkdownItDeflist;
   use Kaoken\MarkdownIt\Plugins\MarkdownItContainer;
+  use Kaoken\MarkdownIt\Plugins\YoutubeIt;
   
   
   include_once 'Specials/Tags.php';
@@ -54,6 +55,7 @@
     $mdit->plugin(new MarkdownItFootnote());
     $mdit->plugin(new MarkdownItSup());
     $mdit->plugin(new MarkdownItDeflist());
+    $mdit->plugin(new YoutubeIt());
     $mdit->plugin(new MarkdownItContainer(), "columns");
     $mdit->plugin(new MarkdownItContainer(), "glossary", ["marker" => "¶"]);
     $mdit->plugin(new MarkdownItContainer(), "term");

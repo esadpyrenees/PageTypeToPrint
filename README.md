@@ -44,7 +44,7 @@ Les différents *templates* sont:
 
 ## Version imprimable / pdf
 
-La version imprimable est accessible depuis l’URL du document associée à la requête `?print`. Par exemple, `http://localhost:5500/?print`.  
+La version imprimable ~~est~~ sera accessible depuis l’URL du document associée à la requête `?print`. Par exemple, `http://localhost:5500/?print`.  
 
 Le PDF résultant doit être généré depuis un navigateur compatible (Chromium ou Chrome, pour le moment).
 
@@ -58,10 +58,32 @@ Le sommaire est généré automatiquement depuis les éléments contenus dans le
 Il est cloné via javascript, afin d’apparaître à la fois en introduction du document et au fil de la lecture (à l’intérieur de l’élément `<main>`).
 
 ### Images
-Des images légendées peuvent être insérées grâce à un code spécifique :
+Des images (légendées) peuvent être insérées grâce à un code spécifique : 
+
+Les images peuvent être intégrées au fil du texte sous forme de note de côté :
+```
+(imagenote: url/de_limage.jpg caption: La légende de l’image)
+```
+Mais également sous forme de blocs :
 ```
 (figure: url/de_limage.jpg caption: La légende de l’image)
+````
+On peut ajouter des `class` aux images :
 ```
+(figure: url/de_limage.jpg class: maclass)
+````
+Pour distinguer les images à l’arrière-plan blanc de celui de la page, une `class` dédiée (`.notwhite`) est disponible :
+```
+(figure: url/de_limage.jpg class: notwhite)
+````
+
+### Vidéos (Youtube)
+
+Pour intégrer une vidéo Youtube :
+```
+![Texte alternatif](IDENTIFIANTDELAVIDEO "Titre de la vidéo")
+```
+L’identifiant peut être extrait de l’URL de la page Youtube : https://www.youtube.com/watch?v=IDENTIFIANTDELAVIDEO
 
 ### Entretiens
 
@@ -94,7 +116,16 @@ terme 2
 
 ¶¶¶
 ```
+### Colonnes
 
+Le contenu peut être réparti en colonnes en utilisant la notation :
+```md
+::: columns
+
+Contenu
+
+:::
+```
 ### Micro-typographie
 
 La majeure partie des problématiques de micro-typographie est corrigée automatiquement (points de suspension, espaces avant et après ! ? « » “ ”, unités). Cela ne dispense pas du soin à apporter à la composition du texte !
