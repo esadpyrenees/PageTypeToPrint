@@ -1,4 +1,5 @@
 <?php
+  use Kaoken\MarkdownIt\MarkdownIt;
   function special($string){
     
     $type  = null;
@@ -47,9 +48,9 @@
       $html .= "<img src='$value'>";
       if($caption){
         $html .= "<span class='figcaption'>";
-        $Parsedown = new ParsedownExtra();
-        $caption = $Parsedown->text( $caption );
-        $caption = strip_tags($caption, '[a,br,strong,em,b,i]');
+        $mdit = new MarkdownIt();
+        $caption = $mdit->renderInline( $caption );
+        // $caption = strip_tags($caption, ["a","br","strong","em","b","i"]);
         $html .= $caption;
         $html .= "</span>";  
       }

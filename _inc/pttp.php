@@ -1,11 +1,21 @@
 <?php 
   
-  use JoliTypo\Fixer;
-  spl_autoload_register(function($c){@include preg_replace('#\\\|_(?!.+\\\)#','/',$c).'.php';});
+  
+  spl_autoload_register(function ($class) {
+    $file = preg_replace('#\\\|_(?!.+\\\)#','/', $class) . '.php';
+    if (stream_resolve_include_path($file)){
+      require $file;
+    }
+  });
 
-  // require_once "JoliTypo/Fixer.php";
-  include_once 'Parsedown/Parsedown.php';
-  include_once 'Parsedown/ParsedownExtra.php';
+  use JoliTypo\Fixer;
+  use Kaoken\MarkdownIt\MarkdownIt;
+  use Kaoken\MarkdownIt\Plugins\MarkdownItFootnote;
+  use Kaoken\MarkdownIt\Plugins\MarkdownItSup;
+  use Kaoken\MarkdownIt\Plugins\MarkdownItDeflist;
+  use Kaoken\MarkdownIt\Plugins\MarkdownItContainer;
+  
+  
   include_once 'Specials/Tags.php';
   
   // Util: slugify string
@@ -32,9 +42,23 @@
     }
     // Parse special tags (figure, image, video)
     $md = specials($md);
+    $mdit = new MarkdownIt([
+       "html"=> true,
+       "typographer"=> true,
+       "linkify"=> true,
+       "typographer" =>  false
+    ]);
+    $mdit->plugin(new MarkdownItFootnote());
+    $mdit->plugin(new MarkdownItSup());
+    $mdit->plugin(new MarkdownItDeflist());
+    $mdit->plugin(new MarkdownItContainer(), "columns");
+    $mdit->plugin(new MarkdownItContainer(), "glossary", ["marker" => "¶"]);
+    $mdit->plugin(new MarkdownItContainer(), "term");
+
+    $html = $mdit->render($md);
     // Parse resulting markdown
-    $Parsedown = new ParsedownExtra();
-    $html = $Parsedown->text( $md );
+    // $Parsedown = new ParsedownExtra();
+    // $html = $Parsedown->text( $md );
     // Fix typography
     $fixer = new Fixer(array('Ellipsis', 'Dash', 'SmartQuotes', 'CurlyQuote', 'FrenchNoBreakSpace'));
     $fixer->setLocale('fr_FR');
