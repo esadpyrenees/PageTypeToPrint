@@ -40,7 +40,7 @@
     [
       "title" => "Glossaire",
       "file" => "text/8.glossaire.md",
-      "template" => "default"
+      "template" => "references"
     ],
     [
       "title" => "Références",
@@ -54,8 +54,8 @@
     ]
   ];
 
-  // chargement des utilitaires
-  include_once '_inc/Utils.php';  
+  // chargement de l’application de gestion du contenu
+  include_once '_inc/pttp.php';  
   
 ?>
 <!DOCTYPE html>
@@ -69,11 +69,13 @@
     <link rel="stylesheet" href="js/paged/pagedjs.css">
     <link rel="stylesheet" href="css/print.css" media="print">
     <script>paged = true</script>
+    <script src="js/notes.js"></script>
     <script src="js/script.js"></script>
     <script src="js/paged/paged.polyfill.js"></script>
     <script src="js/paged/handlers.js"></script> 
   <?php else :?>
     <script>paged = false;</script>
+    <script src="js/notes.js"></script>
     <script src="js/script.js"></script>
   <?php endif ?>
 </head>
@@ -107,6 +109,7 @@
 
   <!-- la navigation (= le sommaire) -->
   <nav id="nav">
+    <h2>Sommaire</h2>
     <ul>
     <?php foreach($parts as $part): 
       $title = $part["title"];
