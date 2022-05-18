@@ -1,0 +1,192 @@
+/* ------------------------------------------------------------------------ Fonts */
+@font-face {
+  font-family: 'Ecole';
+  src: url('fonts/Ecole-Italic.woff2') format('woff2'),
+      url('fonts/Ecole-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ecole';
+  src: url('fonts/Ecole-Regular.woff2') format('woff2'),
+      url('fonts/Ecole-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ecole';
+  src: url('fonts/Ecole-Bold.woff2') format('woff2'),
+      url('fonts/Ecole-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ------------------------------------------------------------------------ Variables */
+:root {
+  --bigsize: clamp(2rem, 0.5000rem + 6.6667vw, 4rem);
+  --basesize: 1.25rem;
+  --color: rgba(0,0,0,.85);
+  --spacer: 2rem;
+}
+
+/* ------------------------------------------------------------------------ Common */
+html { /* body won't work ¯\_(ツ)_/¯ */
+  /* scroll-snap-type: y mandatory; */
+}
+body{
+  font-family: 'Ecole';
+  color: var(--color);
+  font-size: var(--basesize);
+  line-height: 1.45;
+  margin:0;
+  counter-reset: listitem;
+}
+p:first-child {
+  margin-top: 0;
+}
+a { color: currentColor;}
+
+img { max-width: 100%;}
+
+
+
+/* ------------------------------------------------------------------------ Cover */
+#header {
+  min-height: 100vh;  
+  padding: var(--spacer);
+  scroll-snap-align: start;
+}
+#header h1 {
+  margin: 0;
+  line-height: 1.2;
+  max-width: calc(var(--bigsize) * 20);
+  font-size: calc(var(--bigsize) * 1.5);
+}
+#header h2 {
+  margin: 0;
+  line-height: 1.2;
+  max-width: calc(var(--bigsize) * 20);
+  font-size: var(--bigsize);
+}
+.meta {
+  display: grid;
+  grid-gap: var(--spacer);
+  grid-template-columns: 15vw  minmax(250px,1fr) minmax(250px,1fr);
+  margin-top: 2rem;
+}
+.meta-data {
+  /* justify-self: end; */
+}
+
+/* ------------------------------------------------------------------------ nav */
+#nav {
+  min-height: 100vh;  
+  scroll-snap-align: start;
+  display: grid;
+  grid-template-columns: 15vw 1fr;
+  grid-gap: var(--spacer);
+}
+#nav ul {
+  grid-column: 2;
+}
+#nav ul, #index ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#index {
+  position: sticky;
+  top: var(--spacer);
+  font-size: .75em;
+}
+#index a { text-decoration: none;}
+#index .active { text-decoration: underline; }
+
+/* ------------------------------------------------------------------------ Notes */
+hr {
+  background: none;
+  border: none;
+  border: 1px dashed;
+}
+sup[id^=fnref]{
+  vertical-align: top;
+  display: inline-block;
+  margin: 0 .05em;
+  padding: 0;
+  font-size:.65em;
+}
+sup[id^=fnref] a { text-decoration: none;}
+
+
+.footnotes ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: .75em;
+}
+.footnotes li {
+  counter-increment: listitem;
+  display: block;
+  padding-left: 3em;
+}
+.footnotes li::before{
+  content: counter(listitem) ". ";
+  position: absolute;
+  margin-left: -3em;
+}
+
+
+/* ------------------------------------------------------------------------ Content */
+main {
+  display: grid;
+  grid-template-columns: 15vw 1fr;
+  grid-gap: var(--spacer);
+  align-self: start;
+  scroll-snap-align: start;
+  padding: var(--spacer);
+}
+main > *:not(#index){
+  grid-column: 2;
+}
+main p, main ul, main blockquote, main ol {
+  max-width: 45em;
+}
+
+/* ------------------------------------------------------------------------ Inline images */
+/* footnotes */
+.figure {
+  float: right;
+  width: 250px;
+  font-size: .75em;
+  margin-right: calc(-250px - var(--spacer));
+}
+
+
+/* responsive youtube embed */
+.video { padding-bottom:56.35%; height:0; position:relative; }
+.video iframe { position:absolute; top:0; left:0; width:100%; height:100%; }
+
+/* monochrome trick , just for fun*/
+.video { background:var(--color); margin: 2em 0;}
+.video::before,
+.video::after {
+  pointer-events: none;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.video::before {
+  background: #000;
+  z-index: 1;
+  mix-blend-mode: saturation;
+}
+.video::after {
+  background-color:var(--color);
+  mix-blend-mode: color;
+  z-index: 2;
+}

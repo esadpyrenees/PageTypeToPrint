@@ -1,0 +1,98 @@
+@media print {
+
+  @page {
+      size: 210mm 297mm;
+      margin-top: 2cm;
+      margin-right: 2cm;
+      margin-bottom: 2cm;
+      margin-left: 4cm;
+      @bottom-left{
+        padding-left: 2em;
+        content: counter(page);
+      }
+      @footnote {
+        float: bottom;
+      }
+  }  
+  section, #blockquote, header { margin-bottom: 0; break-before: always; }
+  #blockquote,
+  section {
+    max-width: none;
+  }
+  h1 {
+    width: 1em;
+    font-size: 2em;
+  }
+  img { max-width: 100% }
+  #nav{
+    display: none;
+  }
+  #blockquote,
+  .text {
+    max-width: none;
+    font-size: 1em;
+    padding-left: 2em;
+  }
+  img {
+    mix-blend-mode: normal;
+  }
+  
+  figure{
+    background: none;
+    display: none;
+  }
+  figure::before{
+    margin-left: 0;
+  }
+  
+  figcaption { 
+    color: var(--lightgreen);
+  }
+
+  h2 .enum {
+    display: inline-block;
+    text-indent: 0;
+  }
+  .fns_container .fn_ref{
+    max-width: none;
+  } 
+
+  .fn {
+    float: footnote;
+    counter-increment: footnote;
+  }
+
+  .ndt {
+    float: footnote;
+  }
+  a.ndt {
+    counter-increment: ndt;
+  }
+  
+  body{
+    counter-reset: ndt;
+  }
+  
+  ::footnote-call {
+    content: counter(footnote, loweralpha);  
+  }
+  
+  .ndt::footnote-call {
+    content: "NdT " counter( ndt, upper-roman);  
+  }
+  /* .ndt[data-footnote-call]::after{
+    content: "NdT " counter(ndt, upper-roman);  
+  } */
+  ::footnote-marker {
+    content: counter(footnote, loweralpha) "— ";  
+  }
+  
+  .pagedjs_footnote_content{
+    padding-left: 2em;
+    margin-top: 1em;
+  }
+  .pagedjs_margin-content,
+  .pagedjs_footnote_inner_content {
+    font-size: .65em;
+  }
+}  
