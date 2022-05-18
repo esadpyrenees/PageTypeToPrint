@@ -41,6 +41,10 @@ if(paged !== true){
     })
 
 
+
+    initializeFootnotes();
+  
+
   
 
     const observer = new IntersectionObserver(entries => {
