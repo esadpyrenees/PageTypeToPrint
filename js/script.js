@@ -1,7 +1,7 @@
 if(paged !== true){
   window.addEventListener('DOMContentLoaded', () => {
 
-    var nav = document.querySelector("#nav");
+    var nav = document.querySelector("#nav ul");
     var main = document.querySelector('#main');
     var index = nav.cloneNode(true);
     index.id = "index";

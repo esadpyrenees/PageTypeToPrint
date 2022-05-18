@@ -41,20 +41,35 @@
     $value = array_shift($attributes);
     
 
-    if($type == "figure"){
+    if($type == "imagenote"){
       $class = $attributes["class"] ?? "";
       $caption = $attributes["caption"] ?? "";
-      $html = "<span class='figure $class'>";
+      $html = "<span class='imagenote $class'>";
       $html .= "<img src='$value'>";
       if($caption){
-        $html .= "<span class='figcaption'>";
+        $html .= "<span class='caption'>";
         $mdit = new MarkdownIt();
         $caption = $mdit->renderInline( $caption );
-        // $caption = strip_tags($caption, ["a","br","strong","em","b","i"]);
         $html .= $caption;
         $html .= "</span>";  
       }
       $html .= "</span>";
+      return $html;
+    }
+
+    if($type == "figure"){
+      $class = $attributes["class"] ?? "";
+      $caption = $attributes["caption"] ?? "";
+      $html = "<figure class='figure $class'>";
+      $html .= "<img src='$value'>";
+      if($caption){
+        $html .= "<figcaption class='figcaption'>";
+        $mdit = new MarkdownIt();
+        $caption = $mdit->renderInline( $caption );
+        $html .= $caption;
+        $html .= "</figcaption>";  
+      }
+      $html .= "</figure>";
       return $html;
     }
     

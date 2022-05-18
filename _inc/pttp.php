@@ -38,6 +38,9 @@
       $slug = slugify( $part["title"] );
       $content = file_get_contents( $part["file"] );
       $template = $part["template"] ;
+      if($template == "appendices"){
+        $content = "<h2>" . $part["title"] . "</h2><div class='content' markdown=1>\n\n$content\n\n</div>";
+      }
       $md .= "<section id='$slug' class='$template' markdown=1>\n\n$content\n\n</section>\n\n";
     }
     // Parse special tags (figure, image, video)
