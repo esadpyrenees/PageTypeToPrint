@@ -63,15 +63,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= $title ?></title>
+  <title>Album jeunesse et stéréotypes de genre, une (r)évolution&nbsp;? — Aurore Tajan</title>
   <link rel="stylesheet" href="css/style.css">
   <?php if(isset($_GET["print"])): ?>
     <link rel="stylesheet" href="js/paged/pagedjs.css">
     <link rel="stylesheet" href="css/print.css" media="print">
     <script>paged = true</script>
-    <script src="js/notes.js"></script>
-    <script src="js/script.js"></script>
     <script src="js/paged/paged.polyfill.js"></script>
+    <!-- Notes de marge -->
+    <script src="js/paged/marginNotes.js" type="text/javascript"></script>
+    <!-- Sommaire paginé -->
+    <script src="js/paged/createToc.js"></script> 
+    <!-- Reload in place -->
+    <script src="js/paged/reloadInPlace.js"></script> 
+    <!-- Autres -->
     <script src="js/paged/handlers.js"></script> 
   <?php else :?>
     <script>paged = false;</script>
@@ -86,6 +91,20 @@
     <h1>Album jeunesse et stéréotypes de genre, une (r)évolution ?</h1>
     <!-- Le sous-titre éventuel (si pas de sous-titre, supprimer le h2) -->
     <h2></h2>
+
+    <!-- le titre courant (version print) -->
+    <div class="runningtitle">
+      <div>Aurore Tajan</div>
+      <div>Album jeunesse et stéréotypes de genre, une (r)évolution ?</div>
+    </div>
+
+    <!-- le folio courant (version print) -->
+    <div class="runningfolio" style>
+      <span class="folio"></span>
+      <img src="css/logo.png" alt="">
+      <!-- Votre diplôme -->
+      <span class="diploma">DNA Design</span>
+    </div>
     
     <div class="meta">
       <!-- l’année YYYY – YYYY  -->
@@ -105,12 +124,17 @@
         </p>
       </div>
     </div>
+    <nav>
+      <a href="#nav">Lire en ligne</a>
+      <a href="?print" title="Web to print: Chrome ou Chromium">Imprimer</a>
+      <a href="url_du_document.pdf">Télécharger</a>
+    </nav>
   </header>
 
   <!-- la navigation (= le sommaire) -->
   <nav id="nav">
     <h2>Sommaire</h2>
-    <ul>
+    <ul class="nav-ul">
     <?php foreach($parts as $part): 
       $title = $part["title"];
       $template = $part["template"];

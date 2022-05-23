@@ -44,13 +44,15 @@ Sommaire :
 /* ------------------------------------------------------------------------ Variables */
 :root {
   --bigsize: clamp(2rem, 0.5rem + 6.6667vw, 4rem);
-  --basesize: 1.25rem;
+  --basesize: 1.15rem;
   --color: rgba(0, 0, 0, 0.85);
   --spacer: 2rem;
   /* notes */
   --sn-width: 15rem;
   /* couleur d’accentuation */
   --accentcolor: #ff6347;
+  /* maximum width for texts */
+  --maxwidth: 40em;
 }
 
 @media (max-width:30rem) {
@@ -100,10 +102,22 @@ img { max-width: 100%; }
   grid-template-columns: 15vw minmax(250px, 1fr) minmax(250px, 1fr);
   margin-top: 2rem;
 }
-
+#header nav {
+  position: absolute;
+  bottom: var(--spacer);
+}
+#header nav a {
+  display: inline-block;
+  margin-right: 1em;
+}
+/* le titre courant n’est affiché qu’en contexte print */
+.runningtitle {
+  display: none;
+}
 @media (max-width:45rem) {
   .meta { display: block;}
   .meta > * { margin-bottom: 1em;}
+  #header nav a { display: block; }
 }
 /* ------------------------------------------------------------------------ Nav */
 #nav {
@@ -154,7 +168,7 @@ img { max-width: 100%; }
   text-decoration: underline;
 }
 
-@media (max-width:95rem) {
+@media (max-width:80rem) {
   #nav {
     display: block;
     min-height: 0;
@@ -195,21 +209,18 @@ main {
   align-self: start;
   padding: var(--spacer);
 }
-
+/* les sections */
 main > *:not(#index) {
   grid-column: 2;
   margin-bottom: calc(var(--spacer) * 2);
-}
-
-@media (max-width:95rem) {
-  main { display: block; }
+  scroll-margin-top: 1.5em;
 }
 
 main p,
 main ul,
 main blockquote,
 main ol {
-  max-width: 45em;
+  max-width: var(--maxwidth);
 }
 main h1:first-child,
 main h2:first-child,
@@ -231,14 +242,17 @@ main h3 {
 }
 
 main figure {
-  max-width: 45em;
+  max-width: var(--maxwidth);
+}
+
+@media (max-width:80rem) {
+  main { display: block; }
 }
 
 /* ------------------------------------------------------------------------ Entretiens (template = interview) */
 .interview p {
   --indent: 8em;
   padding-left: var(--indent);
-  max-width: calc(45em - var(--indent));
 }
 @media (max-width:40rem) {
   .interview p { --indent: 0 }
@@ -303,6 +317,10 @@ main figure {
   margin-bottom: 1rem;
 }
 .imagenote img {
+  display: block;
+}
+.imagenote .caption {
+  padding: 0.5em 0;
   display: block;
 }
 .imagenote .caption::before {
@@ -457,8 +475,7 @@ hr.footnotes-sep {
 .notwhite .caption,
 .notwhite figcaption {
   background: white;
-  padding: 0.5em 0;
-  display: block;
+  
 }
 figcaption {
   font-size: 0.85rem;
@@ -485,7 +502,7 @@ figcaption::before {
 
 /* ------------------------------------------------------------------------ Videos */
 .video {
-  max-width: 45em;
+  max-width: var(--maxwidth);
   aspect-ratio: 16/9;
   position: relative;
   margin: 1em 0;

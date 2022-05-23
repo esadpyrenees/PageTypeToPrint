@@ -1,98 +1,269 @@
 @media print {
 
   @page {
-      size: 210mm 297mm;
-      margin-top: 2cm;
-      margin-right: 2cm;
-      margin-bottom: 2cm;
-      margin-left: 4cm;
-      @bottom-left{
-        padding-left: 2em;
-        content: counter(page);
-      }
-      @footnote {
-        float: bottom;
-      }
+    size: 210mm 297mm;
+    margin: 3.2cm 1cm 1.2cm 7.5cm;
+    @top-left-corner {
+      content: element(folioRunning);
+      text-align: left;
+      padding-left: 1.2cm;
+    }
+    @top-right{
+      content: element(titleRunning);
+      text-align: left;
+    }
+    @footnote {
+      float: bottom;
+    }
   }  
-  section, #blockquote, header { margin-bottom: 0; break-before: always; }
-  #blockquote,
-  section {
-    max-width: none;
+  @page cover {
+    margin: 1cm 1cm 1.2cm 1cm;
+    @top-left-corner {
+      display: none;
+    }
+    @top-right{
+      display: none;
+    }
   }
-  h1 {
-    width: 1em;
-    font-size: 2em;
-  }
-  img { max-width: 100% }
-  #nav{
-    display: none;
-  }
-  #blockquote,
-  .text {
-    max-width: none;
-    font-size: 1em;
-    padding-left: 2em;
-  }
-  img {
-    mix-blend-mode: normal;
-  }
-  
-  figure{
-    background: none;
-    display: none;
-  }
-  figure::before{
-    margin-left: 0;
-  }
-  
-  figcaption { 
-    color: var(--lightgreen);
+  @page sommaire {
+       
   }
 
-  h2 .enum {
-    display: inline-block;
-    text-indent: 0;
+  @page appendices {
+    margin: 3.2cm 1cm 1.2cm 7.5cm;
   }
-  .fns_container .fn_ref{
-    max-width: none;
-  } 
 
-  .fn {
+  @page references {
+    margin: 3.2cm 1cm 1.2cm 7.5cm;
+  }
+
+  @page interview {
+    margin: 3.2cm 1cm 1.2cm 7.5cm;
+  }
+
+  
+
+  /* ------------------------------------------------------------------------ Variables */
+  :root {
+    --bigsize: 30px;
+    --basesize: 12px;
+    --color: rgba(0, 0, 0, 0.85);
+    --spacer: .5cm;
+    /* notes */
+    --sn-width: 15rem;
+    /* couleur d’accentuation */
+    --accentcolor: #ff6347;
+    /* maximum width for texts */
+    --maxwidth: 40em;
+    /* columns */
+    --columnwidth: calc((186mm - var(--spacer) * 11) / 12);
+    --maxwidth:100%;
+  }
+
+
+  /* ------------------------------------------------------------------------ Cover */
+  #header {
+    padding: 0;
+  }
+  
+  #header {
+    page: cover;
+  }
+  #index { display: none; } 
+
+  .meta {
+    display: grid;
+    grid-gap: var(--spacer);
+    grid-template-columns: 4fr 4fr 4fr;
+    margin-top: 2rem;
+  }
+
+  /* header nav */
+  #header nav { display: none; } 
+
+  /* ------------------------------------------------------------------------ Cover */
+  #nav {
+    break-before: always; 
+    break-after: always;
+    page: sommaire;
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+  #nav h2, #nav ul { grid-column: 1; }
+
+  /* ------------------------------------------------------------------------ Running titles */
+  /* running title */
+  .runningtitle {
+    display: none;
+    position: running(titleRunning);
+    gap:var(--spacer);
+  }
+  .runningtitle > * {
+    flex: 1;
+    text-align: left;
+  }
+  .runningtitle :nth-child(2){
+    font-weight: bold;
+  }
+  /* running folio */
+  .runningfolio {
+    display: none;
+    position: running(folioRunning);
+    gap:var(--spacer);
+  }
+  .runningfolio img {
+    width: 1cm;
+    transform: translateY(-.3cm);
+    margin: 0 1em;
+  }
+  .folio::before{
+    content: counter(page) ;
+    font-weight: bold;
+  }
+  .runningtitle, 
+  .runningfolio {
+    padding: .5cm 0;
+  }
+  .pagedjs_pages .pagedjs_margin-left .pagedjs_margin-content::after, .pagedjs_pages .pagedjs_margin-top .pagedjs_margin-content::after, .pagedjs_pages .pagedjs_margin-right .pagedjs_margin-content::after, .pagedjs_pages .pagedjs_margin-bottom .pagedjs_margin-content::after,
+  .pagedjs_page .pagedjs_margin-top-left-corner > .pagedjs_margin-content > *,
+  .pagedjs_page .pagedjs_margin-top-right > .pagedjs_margin-content > * {
+    display: flex !important;
+    align-items: start;
+  }
+
+  /* ------------------------------------------------------------------------ Content */
+  /* contenu */
+  main { 
+    display: block;
+    padding: 0;
+  }
+
+  #nav, section { 
+    margin-bottom: 0; 
+  }
+  .imagenote_wrapper {
+    display: block;
+    width: calc(var(--columnwidth)  * 3 + var(--spacer) * 2);
+    padding: 0 var(--spacer) 0 1cm;    
+    position: absolute;
+    text-align-last: initial;
+  }
+  .imagenote_wrapper.printright {
+    padding-left: calc(1cm + 1.625cm);
+  }
+  .imagenote_wrapper.printright .note-marker_imagenote{
+    position: absolute;
+    left: 1cm;
+    text-align: right;
+    width: 1.25cm;
+  }
+  .imagenote_wrapper.printleft {
+    padding-right: calc(var(--spacer) + 1.625cm);
+  }
+  .imagenote_wrapper.printleft .note-marker_imagenote{
+    position: absolute;
+    right: .5cm;
+    width: 1.25cm;
+  }
+  .imagenote {
+    width: 100%;
+    float: none;
+    display: block;
+    margin-right: 0;
+    font-size: 9px;
+  }
+  .imagenote > * {
+    display: block;
+  }
+  .note-marker_imagenote,
+  .note-call_imagenote {
+    letter-spacing: 0.05em;
+    font-weight: bold;
+  }
+  .note-call_imagenote { padding-left: 0.25em;}
+  .pagedjs_footnote_inner_content {
+    column-width: 232px !important;
+    column-count: 2 !important;
+  }
+  .footnote {
     float: footnote;
     counter-increment: footnote;
   }
+  .footnote > * { 
+    display: inline;
+  }
+  
+  .footnotes-sep,
+  section.footnotes { display: none;}
 
-  .ndt {
-    float: footnote;
+  ::footnote-call {
+    content: counter(footnote, loweralpha);  
   }
-  a.ndt {
-    counter-increment: ndt;
-  }
-  
-  body{
-    counter-reset: ndt;
-  }
-  
+
   ::footnote-call {
     content: counter(footnote, loweralpha);  
   }
   
-  .ndt::footnote-call {
-    content: "NdT " counter( ndt, upper-roman);  
-  }
-  /* .ndt[data-footnote-call]::after{
-    content: "NdT " counter(ndt, upper-roman);  
-  } */
   ::footnote-marker {
     content: counter(footnote, loweralpha) "— ";  
   }
   
   .pagedjs_footnote_content{
-    padding-left: 2em;
+    /* padding-left: 2em; */
     margin-top: 1em;
   }
-  .pagedjs_margin-content,
-  .pagedjs_footnote_inner_content {
-    font-size: .65em;
+
+  /* ------------------------------------------------------------------------ Annexes */
+  .appendices {
+    page-break-before: always;
+    page: appendices
+  }
+  section.appendices {
+    margin-left: -6.5cm;
+  }
+  /* ------------------------------------------------------------------------ Annexes */
+  .references {
+    page-break-before: always;
+    page: references
+  }
+  section.references {
+    margin-left: -6.5cm;
+  }
+  /* ------------------------------------------------------------------------ Annexes */
+  .interview {
+    page-break-before: always;
+    page: interview
   }
 }  
+
+
+@media print {
+  
+  #list-toc-generated {
+    list-style: none;
+    padding: 0;
+  }
+
+  #list-toc-generated .toc-element a::before {
+    content: target-counter(attr(href), page);
+    position: absolute;
+    left: 0;
+    margin-left: calc(-4em - 20px);
+    text-align: right;
+    width: 4em;
+  }
+
+  #list-toc-generated .toc-element-level-1 {
+    font-weight: bold;
+    margin-top: 1em;
+  }
+
+  #list-toc-generated .toc-element-level-2 {
+    margin-left: 20px;
+  }
+  #list-toc-generated .toc-element-level-2 a::before {
+    margin-left: calc(-4em - 40px);
+  }
+
+
+}
