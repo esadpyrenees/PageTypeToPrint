@@ -99,7 +99,7 @@
     </div>
 
     <!-- le folio courant (version print) -->
-    <div class="runningfolio" style>
+    <div class="runningfolio">
       <span class="folio"></span>
       <img src="css/logo.png" alt="">
       <!-- Votre diplôme -->
