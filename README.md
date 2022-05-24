@@ -200,7 +200,7 @@ Pour créer un paragraphe, laisser une ligne blanche entre deux lignes de texte 
 > `Un premier paragraphe.` <br> <br> `Un deuxième paragraphe.`
 
 Pour forcer un saut de ligne, saisir deux espaces en fin de ligne :
-> `Un premier vers.  ` <br> `Un deuxième vers.`
+> `Un premier vers.  ` <br> `Un deuxième vers.`
 
 ### Styles de texte
 Vous pouvez utiliser `_` ou `*` autour d'un mot pour le mettre en italique (deux pour le mettre en gras).
