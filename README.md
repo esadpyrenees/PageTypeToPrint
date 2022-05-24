@@ -4,12 +4,14 @@ PageTypeToPrint est un gabarit destiné à la mise en forme normalisée d’un d
 
 ## Installation
 
-Téléchargez le code [en cliquant ici](https://github.com/esadpyrenees/PageTypeToPrint/zipball/master/), et décompressez-le. Le dossier doit être situé dans un environnement de serveur web local avec une version de PHP supérieure à 8.0.
+Téléchargez le code [en cliquant ici](https://github.com/esadpyrenees/PageTypeToPrint/zipball/master/). Le dossier _PageTypeToPrint_ doit être décompressé dans un environnement de serveur web local avec une version de PHP supérieure à 8.0.
 
-Sur Windows ou sur OSX, on peut utiliser [MAMP](https://www.mamp.info/en/downloads/), ou pour OSX / linux, dans un terminal :
+Sur Windows ou sur OSX, on peut utiliser [MAMP](https://www.mamp.info/en/downloads/) et placer le dossier _PageTypeToPrint_ dans `htdocs`.
+
+Alternativement, si PHP est installé, dans un terminal :
 
 ```sh
-cd votre/dossier/de/travail
+cd votre/dossier/de/travail/PageTypeToPrint
 php -S localhost:8888  
 # cette commande permet d’accéder à la page web sur http://localhost:8888
 ```
@@ -25,7 +27,7 @@ En cas de difficultés, après avoir lu cette introduction et examiné l’exemp
 Un contenu de démonstration (merci Aurore) est fourni, accessible dans le dossier `text`. Les images de démo (à décompresser dans le dossier `images`) peuvent être [téléchargées ici](https://ateliers.esad-pyrenees.fr/pagetypetoprint/images.zip).
 
 Le contenu du document est organisé sous la forme de documents texte au format markdown, qui permet de le structurer afin de le transformer automatiquement en HTML.
-Voir plus bas [la documentation](#md) de la syntaxe markdown (titres, italiques, citations, etc.). 
+Voir plus bas [la documentation](#markdown) de la syntaxe markdown (titres, italiques, citations, etc.). 
 
 Les différentes parties du document sont déclarées sous la forme d’un tableau associatif dans le fichier `config.php` :
 ```php
@@ -171,7 +173,7 @@ Pour créer une note, insérer `[^identifiant_de_la_note]` au fil du texte, puis
 `[^identifiant_de_la_note] : Contenu de la note mise en forme.`
 
 
-## Markdown {#md}
+## Markdown 
 
 | Élement | Syntaxe Markdown |
 | ----------- | ----------- |
