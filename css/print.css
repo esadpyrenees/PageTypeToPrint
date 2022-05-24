@@ -18,6 +18,7 @@
   }  
   @page cover {
     margin: 1cm 1cm 1.2cm 1cm;
+    
     @top-left-corner {
       display: none;
     }
@@ -45,7 +46,7 @@
 
   /* ------------------------------------------------------------------------ Variables */
   :root {
-    --bigsize: 30px;
+    --bigsize: 60px;
     --basesize: 12px;
     --smallsize: 10px;
     --color: rgba(0, 0, 0, 0.85);
@@ -63,6 +64,9 @@
   /* ------------------------------------------------------------------------ Cover */
   #header {
     padding: 0;
+    background: url(logo.svg) no-repeat 0 100%;
+    background-size: 100% auto;
+    height: 275mm;
   }
   
   #header {

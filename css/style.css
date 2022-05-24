@@ -43,7 +43,6 @@ Sommaire :
 
 /* ------------------------------------------------------------------------ Variables */
 :root {
-  --bigsize: clamp(2rem, 0.5rem + 6.6667vw, 4rem);
   --bigsize: clamp(2.50rem, calc(1.83rem + 3.33vw), 6.00rem);
   --basesize: 1.15rem;
   --color: rgba(0, 0, 0, 0.85);
