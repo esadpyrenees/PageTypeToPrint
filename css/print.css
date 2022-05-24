@@ -67,6 +67,7 @@
     background: url(logo.svg) no-repeat 0 100%;
     background-size: 100% auto;
     height: 275mm;
+    min-height: 0;
   }
   
   #header {
@@ -86,11 +87,15 @@
 
   /* ------------------------------------------------------------------------ Cover */
   #nav {
+    display: flex;
+    align-items: center;
     break-before: always; 
     break-after: always;
     page: sommaire;
     grid-template-columns: 1fr;
     padding: 0;
+    height: 275mm;
+    min-height: 0;
   }
   #nav h2, #nav ul { grid-column: 1; }
 
