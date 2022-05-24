@@ -1,6 +1,8 @@
 <?php
   use Kaoken\MarkdownIt\MarkdownIt;
   function special($string){
+
+    $ostring = $string;
     
     $type  = null;
     $value = null;
@@ -57,6 +59,23 @@
       return $html;
     }
 
+    if($type == "video"){
+      $class = $attributes["class"] ?? "";
+      $caption = $attributes["caption"] ?? "";
+      $html = "<figure class='videofigure $class'>";
+      $video = "<div class='video'>" .video($value) . '</div>';
+      $html .= $video;
+      if($caption){
+        $html .= "<figcaption class='figcaption'>";
+        $mdit = new MarkdownIt();
+        $caption = $mdit->renderInline( $caption );
+        $html .= $caption;
+        $html .= "</figcaption>";  
+      }
+      $html .= "</figure>";
+      return $html;
+    }
+
     if($type == "figure"){
       $class = $attributes["class"] ?? "";
       $caption = $attributes["caption"] ?? "";
@@ -73,7 +92,7 @@
       return $html;
     }
     
-    return "<b>$type= $string</b>";
+    return "$ostring";
   }
 
 
@@ -93,4 +112,98 @@
         return $match[0];
       }
     }, $md ?? '');
+  }
+
+
+  function video($url){
+    if (mb_strpos($url, 'youtu') !== false) {
+      return youtube($url);
+    }
+    if (mb_strpos($url, 'vimeo') !== false) {
+      return vimeo($url);
+    }
+  }
+
+  function youtube(string $url) {
+    if (preg_match('!youtu!i', $url) !== 1) {
+      return null;
+    }
+
+    $uri    = parse_url($url);
+    $path   = $uri["path"];
+    $q  = $uri["query"] ?? null;
+    if($q){
+      parse_str($q, $query);
+    }
+    $parts  = explode("/", $path);
+    $first = $parts[1];
+    $second = $parts[2] ?? null;
+    $host   = 'https://' . $uri["host"] . '/embed';
+    $src    = null;
+
+    $isYoutubeId = function (?string $id = null): bool {
+      if (empty($id) === true) {
+          return false;
+      }
+      return preg_match('!^[a-zA-Z0-9_-]+$!', $id);
+    };
+
+    switch ($first) {
+      case "watch":
+        if ($isYoutubeId($query["v"]) === true) {
+          $src = $host . '/' . $query["v"];
+        }
+        break;
+      default:
+        // short URLs
+        if (mb_strpos($host, 'youtu.be') !== false && $isYoutubeId($first) === true) {
+          $src = 'https://www.youtube.com/embed/' . $first;
+        // embedded video URLs
+        } elseif ($first === 'embed' && $isYoutubeId($second) === true) {
+            $src = $host . '/' . $second;
+        }
+      break;
+    }
+
+    if (empty($src) === true) {
+      return null;
+    }
+
+    $youtube = "<iframe allowtransparency='true' scrolling='no' width='640' height='360' src='$src?rel=0' frameborder='0' allowfullscreen allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'></iframe>";
+    return $youtube;
+        
+  }
+
+  function vimeo(string $url) {  
+    $uri    = parse_url($url);
+    $path   = $uri["path"];
+    $q  = $uri["query"] ?? null;
+    if($q){
+      parse_str($q, $query);
+    }
+    $parts  = explode("/", $path);
+    $first = $parts[1];
+    $second = $parts[2] ?? null;
+    $host   = 'https://' . $uri["host"] . '/embed';
+    $src    = null;
+
+    switch ($uri["host"]) {
+      case 'vimeo.com':
+      case 'www.vimeo.com':
+        $id = $first;
+        break;
+      case 'player.vimeo.com':
+        $id = $second;
+        break;
+    }
+
+    if (empty($id) === true || preg_match('!^[0-9]*$!', $id) !== 1) {
+      return null;
+    }
+
+    // build the full video src URL
+    $src = 'https://player.vimeo.com/video/' . $id;
+
+    $vimeo = "<iframe src='$src' width='640' height='360' frameborder='0' allow='autoplay; fullscreen; picture-in-picture' allowfullscreen></iframe>";      
+    return $vimeo;
   }

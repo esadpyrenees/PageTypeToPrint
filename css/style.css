@@ -44,6 +44,7 @@ Sommaire :
 /* ------------------------------------------------------------------------ Variables */
 :root {
   --bigsize: clamp(2rem, 0.5rem + 6.6667vw, 4rem);
+  --bigsize: clamp(2.50rem, calc(1.83rem + 3.33vw), 6.00rem);
   --basesize: 1.15rem;
   --color: rgba(0, 0, 0, 0.85);
   --spacer: 2rem;
@@ -86,15 +87,22 @@ img { max-width: 100%; }
 #header h1 {
   margin: 0;
   line-height: 1.1;
-  max-width: calc(var(--bigsize) * 20);
+  max-width: calc(var(--bigsize) * 16);
   font-size: calc(var(--bigsize) * 1.5);
+  font-size: calc(var(--bigsize) * 1);
   color: var(--accentcolor);
 }
 #header h2 {
   margin: 0;
   line-height: 1.2;
-  max-width: calc(var(--bigsize) * 20);
-  font-size: var(--bigsize);
+  max-width: calc(var(--bigsize) * 16);
+  font-size: calc(var(--bigsize) * 1.5);
+  font-size: calc(var(--bigsize) * 1);
+  color: var(--accentcolor);
+}
+#header h2::before{
+  content: "—";
+  display: block;
 }
 .meta {
   display: grid;
@@ -331,11 +339,9 @@ main figure {
 
 @media (max-width: 80rem) {
   .imagenote {
-    margin:1em 1em 0 0;
-    float: left;
+    margin: .5em 0 .5em 1em;
     display: block;
-    width: 50%;
-    clear: both;
+    width: 40%;
   }
 }
 
