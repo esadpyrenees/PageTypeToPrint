@@ -94,7 +94,7 @@
     page: sommaire;
     grid-template-columns: 1fr;
     padding: 0;
-    height: 275mm;
+    height: calc(var(--pagedjs-pagebox-height) - var(--pagedjs-margin-bottom) - var(--pagedjs-margin-top));
     min-height: 0;
   }
   #nav h2, #nav ul { grid-column: 1; }
