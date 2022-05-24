@@ -104,6 +104,7 @@ img { max-width: 100%; }
   content: "—";
   display: block;
 }
+#header h2:empty { display: none;}
 .meta {
   display: grid;
   grid-gap: var(--spacer);

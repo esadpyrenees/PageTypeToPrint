@@ -3,7 +3,7 @@
 // Le titre du document
 $title = "Album jeunesse et stéréotypes de genre, une (r)évolution&nbsp;?";
 // Le sous-titre éventuel du document
-$subtitle = "Ça envoie du lourd";
+$subtitle = "";
 // Votre nom
 $name = "Aurore Tajan";
 // L’année, par ex. : 2021 – 2022"
