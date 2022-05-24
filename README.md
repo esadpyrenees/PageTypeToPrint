@@ -73,7 +73,7 @@ La version imprimable est accessible depuis l’URL du document associée à la 
 Le PDF résultant doit être généré (Fichier > Imprimer > Format PDF) depuis un navigateur compatible (Chromium ou Chrome).
 
 
-## Trucs et astuces
+## Composition 
 
 ### Sommaire
 
