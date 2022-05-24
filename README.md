@@ -10,7 +10,6 @@ cd votre/dossier/de/travail
 php -S localhost:8888  
 # cette commande permet d’accéder à la page web sur http://localhost:8888
 ```
-
 Le fichier `config.php` doit être édité afin d’y référencer les différentes parties du document, saisir son titre, votre année, nom et diplôme.
 
 ## Le contenu
@@ -58,7 +57,7 @@ Les logiques de _templates_ peuvent être étendues pour prendre en charge d’a
 
 La version imprimable est accessible depuis l’URL du document associée à la requête `?print`. Par exemple, `http://localhost:8888/pagetypetoprint/?print`.  
 
-Le PDF résultant doit être généré depuis un navigateur compatible (Chromium ou Chrome).
+Le PDF résultant doit être généré (Fichier > Imprimer > Format PDF) depuis un navigateur compatible (Chromium ou Chrome).
 
 
 ## Trucs et astuces
