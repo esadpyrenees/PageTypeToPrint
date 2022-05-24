@@ -34,7 +34,7 @@ $parts = [
     "template" => "default"
   ],
   [
-    "title" => "Une réelle (r)évolution ?",
+    "title" => "Une réelle (r)évolution&nbsp;?",
     "file" => "text/4.revolution.md",
     "template" => "default"
   ],
@@ -66,6 +66,6 @@ $parts = [
   [
     "title" => "Remerciements",
     "file" => "text/10.remerciements.md",
-    "template" => "default"
+    "template" => "thanks"
   ]
 ];

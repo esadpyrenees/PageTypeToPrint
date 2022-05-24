@@ -1,8 +1,7 @@
 <?php 
   // Le contenu et sa structure sont modifiables depuis le fichier config.php
-
   // Chargement de l’application de gestion du contenu
-  require_once '_inc/pttp.php';    
+  require_once '_inc/pagetypetoprint.php';    
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -78,7 +77,7 @@
     </div>
     <nav>
       <a href="#nav">Lire en ligne</a>
-      <a href="?print" title="Web to print: Chrome ou Chromium">Imprimer</a>
+      <a href="?print" title="Web to print">Imprimer</a>
       <!-- Modifier l’URL -->
       <a href="<?= $pdf ?>">Télécharger</a>
     </nav>
