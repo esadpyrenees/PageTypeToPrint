@@ -242,6 +242,7 @@ main h3 {
 }
 
 main figure {
+  margin: 1em 0;
   max-width: var(--maxwidth);
 }
 
@@ -261,7 +262,7 @@ main figure {
 .interview p:nth-child(2) strong:first-child {
   text-align: left;
 }
-.interview strong:first-child {
+.interview :not([data-split-from]) strong:first-child {
   margin-left: calc(var(--indent) * -1);
   min-width: calc(var(--indent) - 1em);
   float: left;
@@ -322,6 +323,7 @@ main figure {
 .imagenote .caption {
   padding: 0.5em 0;
   display: block;
+  text-indent: 0;
 }
 .imagenote .caption::before {
   content: "↑ ";
@@ -514,4 +516,7 @@ figcaption::before {
   width: 100%;
   height: 100%;
   border: none;
+}
+.video + figcaption {
+  margin-top: -1em;
 }

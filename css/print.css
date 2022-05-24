@@ -30,7 +30,7 @@
   }
 
   @page appendices {
-    margin: 3.2cm 1cm 1.2cm 7.5cm;
+    margin: 2.2cm 1cm .8cm 7.5cm;
   }
 
   @page references {
@@ -47,10 +47,9 @@
   :root {
     --bigsize: 30px;
     --basesize: 12px;
+    --smallsize: 10px;
     --color: rgba(0, 0, 0, 0.85);
     --spacer: .5cm;
-    /* notes */
-    --sn-width: 15rem;
     /* couleur d’accentuation */
     --accentcolor: #ff6347;
     /* maximum width for texts */
@@ -78,7 +77,7 @@
     margin-top: 2rem;
   }
 
-  /* header nav */
+  /* header nav = Lire / imprimer / télécharger */
   #header nav { display: none; } 
 
   /* ------------------------------------------------------------------------ Cover */
@@ -122,7 +121,7 @@
   }
   .runningtitle, 
   .runningfolio {
-    padding: .5cm 0;
+    padding: 1cm 0 .5cm;
   }
   .pagedjs_pages .pagedjs_margin-left .pagedjs_margin-content::after, .pagedjs_pages .pagedjs_margin-top .pagedjs_margin-content::after, .pagedjs_pages .pagedjs_margin-right .pagedjs_margin-content::after, .pagedjs_pages .pagedjs_margin-bottom .pagedjs_margin-content::after,
   .pagedjs_page .pagedjs_margin-top-left-corner > .pagedjs_margin-content > *,
@@ -131,16 +130,39 @@
     align-items: start;
   }
 
+  .pagedjs_pagebox .pagedjs_margin-top-left-corner, .pagedjs_pagebox .pagedjs_margin-top-right-corner, .pagedjs_pagebox .pagedjs_margin-bottom-left-corner, .pagedjs_pagebox .pagedjs_margin-bottom-right-corner, .pagedjs_pagebox .pagedjs_margin-top-left, .pagedjs_pagebox .pagedjs_margin-top-right, .pagedjs_pagebox .pagedjs_margin-bottom-left, .pagedjs_pagebox .pagedjs_margin-bottom-right, .pagedjs_pagebox .pagedjs_margin-top-center, .pagedjs_pagebox .pagedjs_margin-bottom-center, .pagedjs_pagebox .pagedjs_margin-top-center, .pagedjs_pagebox .pagedjs_margin-bottom-center, .pagedjs_margin-right-middle, .pagedjs_margin-left-middle {
+    display: flex;
+    align-items: start;
+  }
   /* ------------------------------------------------------------------------ Content */
   /* contenu */
   main { 
     display: block;
     padding: 0;
   }
+  .default p {
+    /* minimume deux lignes présentes sur la page, au début ou à la fin d’un paragraphe */
+    orphans: 2;
+    widows: 2;
+    margin: 0;
+  }
+  .default p + p { text-indent: 2em;}
 
   #nav, section { 
     margin-bottom: 0; 
   }
+  figure {
+    break-inside: avoid;
+  }
+  figcaption {
+    font-size: var(--smallsize);
+  }
+  /* ------------------------------------------------------------------------ Break */
+  .breakpage {
+    height: 0;
+    page-break-before: always;
+  }
+  /* ------------------------------------------------------------------------ Side notes */
   .imagenote_wrapper {
     display: block;
     width: calc(var(--columnwidth)  * 3 + var(--spacer) * 2);
@@ -170,7 +192,7 @@
     float: none;
     display: block;
     margin-right: 0;
-    font-size: 9px;
+    font-size: var(--smallsize);
   }
   .imagenote > * {
     display: block;
@@ -181,36 +203,40 @@
     font-weight: bold;
   }
   .note-call_imagenote { padding-left: 0.25em;}
-  .pagedjs_footnote_inner_content {
-    column-width: 232px !important;
-    column-count: 2 !important;
-  }
+
+  /* ------------------------------------------------------------------------ Footnotes */
   .footnote {
     float: footnote;
     counter-increment: footnote;
-  }
-  .footnote > * { 
-    display: inline;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
   }
   
   .footnotes-sep,
   section.footnotes { display: none;}
 
   ::footnote-call {
-    content: counter(footnote, loweralpha);  
+    font-weight: bold; 
+    content: "[" counter(footnote) "] ";
+    font-variant-position:normal;
+    vertical-align: baseline;
+    font-size: 100%;
+    padding-left: 0.25em;
   }
 
-  ::footnote-call {
-    content: counter(footnote, loweralpha);  
-  }
-  
   ::footnote-marker {
-    content: counter(footnote, loweralpha) "— ";  
+    content: "[" counter(footnote-marker) "] ";
+    font-weight: bold;
   }
   
-  .pagedjs_footnote_content{
-    /* padding-left: 2em; */
+  .pagedjs_footnote_inner_content {
+    font-size: var(--smallsize);
     margin-top: 1em;
+    /* not working : */
+    column-width: 200px !important;
+    column-count: 2 !important;
+    column-gap: 20px !important;
+    height: auto !important;
   }
 
   /* ------------------------------------------------------------------------ Annexes */
@@ -221,6 +247,9 @@
   section.appendices {
     margin-left: -6.5cm;
   }
+  .appendices > h2 {
+    display: none;
+  }
   /* ------------------------------------------------------------------------ Annexes */
   .references {
     page-break-before: always;
@@ -229,15 +258,19 @@
   section.references {
     margin-left: -6.5cm;
   }
+  .references > h2 {
+    display: none;
+  }
   /* ------------------------------------------------------------------------ Annexes */
   .interview {
     page-break-before: always;
     page: interview
   }
-}  
+  .interview > h2 {
+    display: none;
+  }
 
-
-@media print {
+  /* ------------------------------------------------------------------------ Table des matières */
   
   #list-toc-generated {
     list-style: none;

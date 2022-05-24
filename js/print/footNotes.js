@@ -16,7 +16,7 @@ class MyHandler extends Paged.Handler {
             // reate inline note
             const inline_note = document.createElement('span');
             inline_note.className = "footnote";
-            inline_note.innerHTML = note.innerHTML;
+            inline_note.innerHTML = note.querySelector("p").innerHTML;
             call.after(inline_note);
             call.parentElement.removeChild(call);
             
