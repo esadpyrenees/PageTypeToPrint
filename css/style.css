@@ -122,7 +122,7 @@ img { max-width: 100%; }
 .runningtitle, .runningfolio {
   display: none;
 }
-@media (max-width:45rem) {
+@media screen and screen and screen and (max-width:45rem) {
   .meta { display: block;}
   .meta > * { margin-bottom: 1em;}
   #header nav a { display: block; }
@@ -176,7 +176,7 @@ img { max-width: 100%; }
   text-decoration: underline;
 }
 
-@media (max-width:80rem) {
+@media screen and screen and (max-width:80rem) {
   #nav {
     display: block;
     min-height: 0;
@@ -254,7 +254,7 @@ main figure {
   max-width: var(--maxwidth);
 }
 
-@media (max-width:80rem) {
+@media screen and (max-width:80rem) {
   main { display: block; }
 }
 
@@ -263,7 +263,7 @@ main figure {
   --indent: 8em;
   padding-left: var(--indent);
 }
-@media (max-width:40rem) {
+@media screen and (max-width:40rem) {
   .interview p { --indent: 0 }
 }
 .interview p:nth-child(1) strong:first-child,
@@ -299,7 +299,7 @@ main figure {
   margin-bottom: 1em;
   margin-left: 0;
 }
-@media (max-width:30rem) {
+@media screen and (max-width:30rem) {
   .glossary { columns: 1;}
 }
 /* ------------------------------------------------------------------------ Colonnes */
@@ -312,7 +312,7 @@ main figure {
   break-inside: avoid;
   max-width: 28em;
 }
-@media (max-width:30rem) {
+@media screen and (max-width:30rem) {
   .columns { columns: 1;}
 }
 /* ------------------------------------------------------------------------ Images de notes */
@@ -337,7 +337,7 @@ main figure {
   content: "↑ ";
 }
 
-@media (max-width: 80rem) {
+@media screen and (max-width: 80rem) {
   .imagenote {
     margin: .5em 0 .5em 1em;
     display: block;
@@ -408,7 +408,7 @@ sup a.footnote-ref {
   content: "↑ ";
 }
 
-@media (max-width: 80rem) {
+@media screen and (max-width: 80rem) {
   .sn-note {
     display: none;
   }
@@ -461,7 +461,7 @@ hr.footnotes-sep {
   margin: 0;
   padding: 0;
 }
-@media (max-width:40rem) {
+@media screen and (max-width:40rem) {
   .figure { 
     grid-column: 1 / -1 !important;
     display: flex;
