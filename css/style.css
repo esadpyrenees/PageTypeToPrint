@@ -77,7 +77,17 @@ body {
 p:first-child { margin-top: 0; }
 a { color: currentColor; }
 img { max-width: 100%; }
-
+mark { background: var(--accentcolor); padding: 0 .15em;}
+sub, sup { line-height: 1;}
+hr{ 
+  height: 0;
+  border: none;
+  background: none;
+  border-top: 2px solid #000;
+  width: 4em;
+  margin: 1em 0;
+  text-indent: 0;
+}
 /* ------------------------------------------------------------------------ Cover */
 #header {
   min-height: 100vh;
@@ -122,7 +132,7 @@ img { max-width: 100%; }
 .runningtitle, .runningfolio {
   display: none;
 }
-@media screen and screen and screen and (max-width:45rem) {
+@media screen and  (max-width:45rem) {
   .meta { display: block;}
   .meta > * { margin-bottom: 1em;}
   #header nav a { display: block; }
@@ -176,7 +186,7 @@ img { max-width: 100%; }
   text-decoration: underline;
 }
 
-@media screen and screen and (max-width:80rem) {
+@media screen  and (max-width:80rem) {
   #nav {
     display: block;
     min-height: 0;
@@ -339,9 +349,15 @@ main figure {
 
 @media screen and (max-width: 80rem) {
   .imagenote {
-    margin: .5em 0 .5em 1em;
+    margin: .5em 1em .5em calc(var(--spacer ) * -1);
     display: block;
+    float: left;
+    clear: left;
     width: 40%;
+  }
+  .imagenote .caption {
+    padding: 0.5em 0 0 1rem;
+    font-size: .85em;
   }
 }
 
