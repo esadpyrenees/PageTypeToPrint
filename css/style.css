@@ -356,7 +356,7 @@ main figure {
     width: 40%;
   }
   .imagenote .caption {
-    padding: 0.5em 0 0 1rem;
+    padding: 0.5em 0 0 var(--spacer );
     font-size: .85em;
   }
 }
