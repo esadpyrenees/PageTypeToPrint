@@ -52,7 +52,7 @@ Sommaire :
   /* couleur d’accentuation */
   --accentcolor: #ff6347;
   /* maximum width for texts */
-  --maxwidth: 40em;
+  --maxwidth: 46rem;
 }
 
 @media (max-width:30rem) {
@@ -67,6 +67,7 @@ Sommaire :
 *, *::after, *::before { box-sizing: border-box; }
 body {
   font-family: "Ecole";
+  font-feature-settings: "calt" on, "liga" on, "clig" on, "case" on; 
   color: var(--color);
   font-size: var(--basesize);
   line-height: 1.45;
@@ -226,6 +227,7 @@ main {
   grid-gap: var(--spacer);
   align-self: start;
   padding: var(--spacer);
+  
 }
 /* les sections */
 main > *:not(#index) {
@@ -265,7 +267,11 @@ main figure {
 }
 
 @media screen and (max-width:80rem) {
-  main { display: block; }
+  main { 
+    display: block; 
+    max-width: var(--maxwidth);
+    margin: 0 auto;
+  }
 }
 
 /* ------------------------------------------------------------------------ Entretiens (template = interview) */
@@ -349,18 +355,30 @@ main figure {
 
 @media screen and (max-width: 80rem) {
   .imagenote {
-    margin: .5em 1em .5em calc(var(--spacer ) * -1);
-    display: block;
+    /* margin: .5em 1em .5em calc(var(--spacer ) * -1);
     float: left;
-    clear: left;
+    clear: left; */
+    margin: .5em calc(-1 * ((100vw - var(--maxwidth)) / 2) - var(--spacer)) .5em var(--spacer);
+    display: block;
     width: 40%;
   }
   .imagenote .caption {
-    padding: 0.5em 0 0 var(--spacer );
+    padding: 0.5em var(--spacer ) 0 0;
     font-size: .85em;
   }
 }
 
+/* --maxwidth = 46rem */
+@media screen and (max-width: 46rem) {
+  .imagenote {
+    margin: .5em 1em .5em calc(var(--spacer ) * -1);
+    float: left;
+    clear: left;
+  }
+  .imagenote .caption {
+    padding: 0.5em 0 0 var(--spacer );
+  }
+}
 /* ------------------------------------------------------------------------ Notes */
 
 .sn-toggle {

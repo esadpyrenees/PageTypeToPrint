@@ -155,7 +155,7 @@
     widows: 2;
     margin: 0;
   }
-  .default p + p { text-indent: 2em;}
+  .default p + p:not([data-split-from]) { text-indent: 2em;}
 
   #nav, section { 
     margin-bottom: 0; 
