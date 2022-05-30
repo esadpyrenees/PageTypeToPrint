@@ -269,7 +269,7 @@ class LinkifyIt
      * - __url__ - link, generated from matched text
      *
      * @param string $text
-     * @return Match[]|null
+     * @return LinkMatch[]|null
      */
     public function match(string $text): ?array
     {
@@ -278,7 +278,7 @@ class LinkifyIt
 
         // Try to take previous element from cache, if .test() called before
         if ($this->__index__ >= 0 && $this->__text_cache__ === $text) {
-            $result[] = new Match($this, $shift);
+            $result[] = new LinkMatch($this, $shift);
             $shift = $this->__last_index__;
         }
 
@@ -287,7 +287,7 @@ class LinkifyIt
 
         // Scan string until end reached
         while ($this->test($tail)) {
-            $result[] = new Match($this, $shift);
+            $result[] = new LinkMatch($this, $shift);
 
             $tail = substr($tail, $this->__last_index__);
             $shift += $this->__last_index__;
@@ -301,15 +301,15 @@ class LinkifyIt
     }
 
     /**
-     * LinkifyIt#matchAtStart(text) -> Match|null
+     * LinkifyIt#matchAtStart(text) -> LinkMatch|null
      *
      * Returns fully-formed (not fuzzy) link if it starts at the beginning
      * of the string, and null otherwise.
      *
      * @param string $text
-     * @return Match|null
+     * @return LinkMatch|null
      */
-    public function matchAtStart(string $text): ?Match
+    public function matchAtStart(string $text): ?LinkMatch
     {
         // Reset scan cache
         $this->__text_cache__ = $text;
@@ -327,7 +327,7 @@ class LinkifyIt
         $this->__index__      = $m[2][1] + strlen($m[1][0]);
         $this->__last_index__ = $m[2][1] + strlen($m[0][0]) + $len;
 
-        return new Match($this, 0);
+        return new LinkMatch($this, 0);
     }
     /**
      * Load (or merge) new tlds list. Those are user for fuzzy links (without prefix)
@@ -406,7 +406,7 @@ class LinkifyIt
     public function getSchema() { return $this->__schema__; }
     /**
      * @param string $schema
-     * @param Match $match
+     * @param LinkMatch $match
      * @return array
      */
     public function normalizeFromCompiled($schema, $match)

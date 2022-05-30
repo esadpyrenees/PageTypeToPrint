@@ -12,9 +12,9 @@ use Kaoken\MarkdownIt\RulesCore\Linkify;
 /**
  * class Match
  *
- * Match result. Single element of array, returned by [[LinkifyIt#match]]
+ * Match result. Single element of array, returned by [[LinkifyIt#linkmatch]]
  **/
-class Match
+class LinkMatch
 {
     /**
      * Prefix (protocol) for matched string.
