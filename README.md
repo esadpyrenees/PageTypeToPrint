@@ -16,6 +16,8 @@ php -S localhost:8888
 # cette commande permet d’accéder à la page web sur http://localhost:8888
 ```
 
+En savoir plus : [comment installer et démarrer un serveur de développement](https://github.com/esadpyrenees/PageTypeToPrint/wiki/Questions-de-serveur)
+
 ## Utilisation
 
 Le fichier `config.php` doit être édité afin d’y référencer les différentes parties du document, saisir son titre, votre année, nom et diplôme.
