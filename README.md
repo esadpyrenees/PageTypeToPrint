@@ -8,7 +8,7 @@ Téléchargez le code [en cliquant ici](https://github.com/esadpyrenees/PageType
 
 Sur Windows ou sur OSX, on peut utiliser [MAMP](https://www.mamp.info/en/downloads/) et placer le dossier _PageTypeToPrint_ dans `htdocs`.
 
-En savoir plus : [comment installer et démarrer un serveur de développement](https://github.com/esadpyrenees/PageTypeToPrint/wiki/Questions-de-serveur)
+En savoir plus : [comment installer et démarrer un serveur de développement](https://github.com/esadpyrenees/PageTypeToPrint/wiki/Questions-de-serveur).
 
 ## Utilisation
 
