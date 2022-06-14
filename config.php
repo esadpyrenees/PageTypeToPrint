@@ -1,7 +1,7 @@
 <?php
 
 // Le titre du document
-$title = "Printing in Relation to Graphic Art";
+$title = "Printing in Relation to Graphic&nbsp;Art"; // &nbsp; = espace insécable
 // Le sous-titre éventuel du document
 $subtitle = "An essay from 1903";
 // Votre nom
