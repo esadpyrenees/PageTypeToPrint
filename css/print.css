@@ -166,6 +166,11 @@
   figcaption {
     font-size: var(--smallsize);
   }
+  figure.videofigure::after{
+    display: block;
+    content: "→ " attr(data-src);
+    font-size: var(--smallsize);
+  }
   /* ------------------------------------------------------------------------ Break */
   .breakpage {
     height: 0;
