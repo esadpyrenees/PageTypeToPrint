@@ -2,6 +2,10 @@
 
 PageTypeToPrint est un gabarit destiné à la mise en forme normalisée d’un document écrit de DNA ou d’un mémoire de DNSEP. Il est conçu avec comme hypothèse principale la simplicité de l’édition (contenu textuel au format *markdown*), mais peut être adapté, augmenté et personnalisé.
 
+## Démo
+
+Une démo est accessible en ligne sur [ateliers.esad-pyrenees.fr/pagetypetoprint](https://ateliers.esad-pyrenees.fr/pagetypetoprint/) avec sa version [_print_](https://ateliers.esad-pyrenees.fr/pagetypetoprint/?print). 
+
 ## Installation
 
 Téléchargez le code [en cliquant ici](https://github.com/esadpyrenees/PageTypeToPrint/zipball/master/). Le dossier _PageTypeToPrint_ doit être décompressé dans un environnement de serveur web local avec une version de PHP supérieure à 8.0.
@@ -18,7 +22,7 @@ En cas de difficultés, après avoir lu cette introduction et examiné l’exemp
 
 ## Le contenu
 
-Un contenu de démonstration (merci Aurore) est fourni, accessible dans le dossier `text`. Les images de démo (à décompresser dans le dossier `images`) peuvent être [téléchargées ici](https://ateliers.esad-pyrenees.fr/pagetypetoprint/images.zip).
+Un contenu de démonstration (texte et images) peut être [téléchargé ici](https://ateliers.esad-pyrenees.fr/pagetypetoprint/demo-base.zip). Un autre, basé sur le document écrit d’Aurore (merci ;) peut être [téléchargé là](https://ateliers.esad-pyrenees.fr/pagetypetoprint/demo-aurore.zip)
 
 Le contenu du document est organisé sous la forme de documents texte au format markdown, qui permet de le structurer afin de le transformer automatiquement en HTML.
 Voir plus bas [la documentation](#markdown) de la syntaxe markdown (titres, italiques, citations, etc.). 
@@ -98,6 +102,21 @@ Pour aligner les images de note à gauche ou à droite (en contexte d’impressi
 ```
 (imagenote: url/de_limage.jpg class: printleft)
 ````
+Pour les annexes, organisées sur une grille de 12 colonnes (_template_ `appendices`), quelques autres `class` sont prédéfinies :
+
+* `offset2` décale l’image en colonne 3
+* `offset4` décale l’image en colonne 5
+* `offset6` décale l’image en colonne 7
+* `offset8` décale l’image en colonne 9
+* `half` dimensionne l’image sur 6 colonnes (la moitié de la largeur)
+* `full` dimensionne l’image sur 12 colonnes (toute la largeur)
+* `third` dimensionne l’image sur 4 colonnes (un tiers de la largeur)
+* `twothird` dimensionne l’image sur 8 colonnes (deux tiers de la largeur)
+
+Par exemple :
+```
+(figure: url/de_limage.jpg class: notwhite offset6 half)
+```
 
 ### Vidéos
 
@@ -106,6 +125,7 @@ Pour intégrer une vidéo Youtube ou Vimeo, utiliser le _shortcode_ `video` et l
 (video: https://www.youtube.com/watch?v=yfskVxCn_qo class: maclass caption: La légende de la vidéo)
 (video: https://vimeo.com/708803521 class: maclass caption: La légende de la vidéo)
 ```
+En version print, l’URL de la vidéo est affichée sous sa légende.
 
 ### Entretiens
 
@@ -127,20 +147,20 @@ Le glossaire obéit à une logique de structuration singulière. Il est englobé
 ¶¶¶ glossary
 
 ::: term
-Terme
-:    Définition
+Premier terme
+:    Définition du premier terme
 :::
 
 ::: term
-Terme 2
-:    Définition 2
+Second terme 
+:    Définition du second terme
 :::
 
 ¶¶¶
 ```
 ### Colonnes
 
-Le contenu peut être réparti en colonnes en utilisant la notation :
+Le contenu peut être réparti en trois colonnes en utilisant la notation :
 ```md
 ::: columns
 
