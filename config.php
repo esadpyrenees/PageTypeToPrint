@@ -1,15 +1,15 @@
 <?php
 
 // Le titre du document
-$title = "Album jeunesse et stéréotypes de genre, une (r)évolution&nbsp;?";
+$title = "Printing in Relation to Graphic Art";
 // Le sous-titre éventuel du document
-$subtitle = "";
+$subtitle = "An essay from 1903";
 // Votre nom
-$name = "Aurore Tajan";
+$name = "George French";
 // L’année, par ex. : 2021 – 2022"
 $year = "2021 – 2022" ;
 // Votre diplôme, par ex. : DNA Design
-$diploma = "DNA Design";
+$diploma = "DNSEP Design";
 // Le mention du siplôme, par ex. : Mention Design graphique Multimédia
 $mention = "Mention Design graphique Multimédia";
 // Votre pôle éventuel, par ex. : Pôle Nouveaux médias
@@ -19,27 +19,32 @@ $pdf = "url_du_document.pdf";
 
 $parts = [
   [
+    "title" => "Prefatory Note",
+    "file" => "text/0.prefatorynote.md",
+    "template" => "default"
+  ],
+  [
     "title" => "Introduction",
     "file" => "text/1.intro.md",
     "template" => "default"
   ],
   [
-    "title" => "L’album comme média spécifique",
-    "file" => "text/2.album.md",
+    "title" => "Art in Printing",
+    "file" => "text/2.artinprinting.md",
     "template" => "default"
   ],
   [
-    "title" => "L’album, vecteur de stéréotypes de genre&nbsp;?",
-    "file" => "text/3.vecteur.md",
+    "title" => "Pictorial Composition",
+    "file" => "text/3.pictorial.md",
     "template" => "default"
   ],
   [
-    "title" => "Une réelle (r)évolution&nbsp;?",
-    "file" => "text/4.revolution.md",
+    "title" => "Type Composition",
+    "file" => "text/4.type.md",
     "template" => "default"
   ],
   [
-    "title" => "En conclusion",
+    "title" => "Conclusion",
     "file" => "text/5.conclusion.md",
     "template" => "default"
   ],
