@@ -74,7 +74,7 @@
     if($type == "video"){
       $class = $attributes["class"] ?? "";
       $caption = $attributes["caption"] ?? "";
-      $html = "<figure class='videofigure $class'>";
+      $html = "<figure class='videofigure $class' data-src='$value'>";
       $video = "<div class='video'>" .video($value) . '</div>';
       $html .= $video;
       if($caption){
