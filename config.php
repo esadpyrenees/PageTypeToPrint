@@ -3,7 +3,7 @@
 // Le titre du document
 $title = "Printing in Relation to Graphic&nbsp;Art"; // &nbsp; = espace insécable
 // Le sous-titre éventuel du document
-$subtitle = "An essay from 1903";
+$subtitle = "";
 // Votre nom
 $name = "George French";
 // L’année, par ex. : 2021 – 2022"
