@@ -98,7 +98,6 @@ hr{
   margin: 0;
   line-height: 1.1;
   max-width: calc(var(--bigsize) * 16);
-  font-size: calc(var(--bigsize) * 1.5);
   font-size: calc(var(--bigsize) * 1);
   color: var(--accentcolor);
 }
@@ -106,13 +105,13 @@ hr{
   margin: 0;
   line-height: 1.2;
   max-width: calc(var(--bigsize) * 16);
-  font-size: calc(var(--bigsize) * 1.5);
-  font-size: calc(var(--bigsize) * 1);
+  font-size: calc(var(--bigsize) * .75);
   color: var(--accentcolor);
 }
 #header h2::before{
   content: "—";
   display: block;
+  font-size: calc(var(--bigsize) * .75);
 }
 #header h2:empty { display: none;}
 .meta {
