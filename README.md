@@ -2,6 +2,8 @@
 
 PageTypeToPrint est un gabarit destiné à la mise en forme normalisée d’un document écrit de DNA ou d’un mémoire de DNSEP. Il est conçu avec comme hypothèse principale la simplicité de l’édition (contenu textuel au format *markdown*), mais peut être adapté, augmenté et personnalisé.
 
+Il produit un contenu lisible en ligne sous la forme d’une page web et permet de générer un document PDF imprimable.
+
 ## Démo
 
 Une démo est accessible en ligne sur [ateliers.esad-pyrenees.fr/pagetypetoprint](https://ateliers.esad-pyrenees.fr/pagetypetoprint/) avec sa version [_print_](https://ateliers.esad-pyrenees.fr/pagetypetoprint/?print). 
@@ -13,6 +15,10 @@ Téléchargez le code [en cliquant ici](https://github.com/esadpyrenees/PageType
 Sur Windows ou sur OSX, on peut utiliser [MAMP](https://www.mamp.info/en/downloads/) et placer le dossier _PageTypeToPrint_ dans `htdocs`.
 
 En savoir plus : [comment installer et démarrer un serveur de développement](https://github.com/esadpyrenees/PageTypeToPrint/wiki/Questions-de-serveur).
+
+### Mise en ligne
+
+Alternativement (ou une fois terminé le processus d’édition), le document peut être mis en ligne sur un serveur (le serveur de l’ÉSAD Pyrénées) ou via un compte étudiant sur Alwaysdata. Il faut alors s’assurer que le serveur est bien capable de servir le site via une version de PHP supérieure à 8.
 
 ## Utilisation
 
