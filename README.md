@@ -8,6 +8,10 @@ Il produit un contenu lisible en ligne sous la forme d’une page web et permet 
 
 Une démo est accessible en ligne sur [ateliers.esad-pyrenees.fr/pagetypetoprint](https://ateliers.esad-pyrenees.fr/pagetypetoprint/) avec sa version [_print_](https://ateliers.esad-pyrenees.fr/pagetypetoprint/?print). 
 
+## RTFM
+
+Il est souhaitable de lire attentivement cette page de documentation avant de démarrer.
+
 ## Installation
 
 Téléchargez le code [en cliquant ici](https://github.com/esadpyrenees/PageTypeToPrint/zipball/master/). Le dossier _PageTypeToPrint_ doit être décompressé dans un environnement de serveur web local avec une version de PHP supérieure à 8.0.
@@ -18,7 +22,7 @@ En savoir plus : [comment installer et démarrer un serveur de développement](h
 
 ### Mise en ligne
 
-Alternativement (ou une fois terminé le processus d’édition), le document peut être mis en ligne sur un serveur (le serveur de l’ÉSAD Pyrénées ou sur un compte étudiant hébergé par Alwaysdata – [me demander](mailto:julien.bidoret@esad-pyrenees.fr)). Il faut alors s’assurer que le serveur est bien capable de servir le site via une version de PHP supérieure à 8.0 (sur Alwaysdata, [voir ici](https://admin.alwaysdata.com/environment/)).
+Alternativement (ou bien plus tard, une fois terminé le processus d’édition), le document peut être mis en ligne sur un serveur (le serveur de l’ÉSAD Pyrénées ou sur un compte étudiant hébergé par Alwaysdata – [me demander](mailto:julien.bidoret@esad-pyrenees.fr)). Il faut alors s’assurer que le serveur est bien capable de servir le site via une version de PHP supérieure à 8.0 (sur Alwaysdata, [voir ici](https://admin.alwaysdata.com/environment/)).
 
 ## Utilisation
 
