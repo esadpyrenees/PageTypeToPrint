@@ -28,7 +28,7 @@ En cas de difficultés, après avoir lu cette introduction et examiné l’exemp
 
 ## Le contenu
 
-Un contenu de démonstration (texte et images) peut être [téléchargé ici](https://ateliers.esad-pyrenees.fr/pagetypetoprint/demo-base.zip). Un autre, basé sur le document écrit d’Aurore (merci ;) peut être [téléchargé là](https://ateliers.esad-pyrenees.fr/pagetypetoprint/demo-aurore.zip)
+Un contenu de démonstration (texte et images) peut être [téléchargé ici](https://ateliers.esad-pyrenees.fr/pagetypetoprint/demo-base.zip). Un autre, basé sur le document écrit d’Aurore Tajan (merci ;) peut être [téléchargé là](https://ateliers.esad-pyrenees.fr/pagetypetoprint/demo-aurore.zip)
 
 Le contenu du document est organisé sous la forme de documents texte au format markdown, qui permet de le structurer afin de le transformer automatiquement en HTML.
 Voir plus bas [la documentation](#markdown) de la syntaxe markdown (titres, italiques, citations, etc.). 
