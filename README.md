@@ -8,6 +8,10 @@ Il produit un contenu lisible en ligne sous la forme d’une page web et permet 
 
 Une démo est accessible en ligne sur [ateliers.esad-pyrenees.fr/pagetypetoprint](https://ateliers.esad-pyrenees.fr/pagetypetoprint/) avec sa version [_print_](https://ateliers.esad-pyrenees.fr/pagetypetoprint/?print). 
 
+## RTFM
+
+Il est souhaitable de lire attentivement cette page de documentation avant de démarrer.
+
 ## Installation
 
 Téléchargez le code [en cliquant ici](https://github.com/esadpyrenees/PageTypeToPrint/zipball/master/). Le dossier _PageTypeToPrint_ doit être décompressé dans un environnement de serveur web local avec une version de PHP supérieure à 8.0.
@@ -18,7 +22,7 @@ En savoir plus : [comment installer et démarrer un serveur de développement](h
 
 ### Mise en ligne
 
-Alternativement (ou une fois terminé le processus d’édition), le document peut être mis en ligne sur un serveur (le serveur de l’ÉSAD Pyrénées) ou via un compte étudiant sur Alwaysdata. Il faut alors s’assurer que le serveur est bien capable de servir le site via une version de PHP supérieure à 8.0 (sur Alwaysdata, [voir ici](https://admin.alwaysdata.com/environment/)).
+Alternativement (ou bien plus tard, une fois terminé le processus d’édition), le document peut être mis en ligne sur un serveur (le serveur de l’ÉSAD Pyrénées ou sur un compte étudiant hébergé par Alwaysdata – [me demander](mailto:julien.bidoret@esad-pyrenees.fr)). Il faut alors s’assurer que le serveur est bien capable de servir le site via une version de PHP supérieure à 8.0 (sur Alwaysdata, [voir ici](https://admin.alwaysdata.com/environment/)).
 
 ## Utilisation
 
@@ -28,7 +32,7 @@ En cas de difficultés, après avoir lu cette introduction et examiné l’exemp
 
 ## Le contenu
 
-Un contenu de démonstration (texte et images) peut être [téléchargé ici](https://ateliers.esad-pyrenees.fr/pagetypetoprint/demo-base.zip). Un autre, basé sur le document écrit d’Aurore (merci ;) peut être [téléchargé là](https://ateliers.esad-pyrenees.fr/pagetypetoprint/demo-aurore.zip)
+Un contenu de démonstration (texte et images) peut être [téléchargé ici](https://ateliers.esad-pyrenees.fr/pagetypetoprint/demo-base.zip). Un autre, basé sur le document écrit d’Aurore Tajan (merci ;) peut être [téléchargé là](https://ateliers.esad-pyrenees.fr/pagetypetoprint/demo-aurore.zip)
 
 Le contenu du document est organisé sous la forme de documents texte au format markdown, qui permet de le structurer afin de le transformer automatiquement en HTML.
 Voir plus bas [la documentation](#markdown) de la syntaxe markdown (titres, italiques, citations, etc.). 
@@ -72,9 +76,13 @@ Les logiques de _templates_ peuvent être étendues pour prendre en charge d’a
 
 ## Version imprimable / pdf
 
-La version imprimable est accessible depuis l’URL du document associée à la requête `?print`. Par exemple, `http://localhost:8888/pagetypetoprint/?print`.  
+La version imprimable est accessible depuis l’URL du document associée à la requête `?print`. Par exemple, `http://localhost:8888/pagetypetoprint/?print`.
 
-Le PDF résultant doit être généré (Fichier > Imprimer > Format PDF) depuis un navigateur compatible (Chromium ou Chrome).
+Le PDF résultant doit être généré (Fichier > Imprimer > Format PDF) depuis un navigateur compatible (Chromium ou Chrome). 
+
+Quelques réglages de paramètres d’impression sont souvent nécessaires : désactiver les entêtes et pieds de pages du navigateur, contrôler la mise à l’échelle, vérifier le format, et cocher l’option permettant d’imprimer les arrière-plans.
+
+Suite à l’exportation du fichier, il doit être stocké dans le dossier de travail, et nommé en fonction de l’option configurable dans le fichier `config.php`.
 
 
 ## Composition 
@@ -275,8 +283,8 @@ Lire la documentation sur [markdownguide.org](https://www.markdownguide.org/) et
 
 ## Crédits
 
-PageTypeToPrint est développé par [Julien Bidoret](https://ateliers.esad-pyrenees.fr/web) pour la mise en page normalisée des mémoires et documents écrits de l’option Design graphique multimédia de l’[ÉSAD Pyrénées](https://esad-pyrenees.fr). L’outil s’appuie sur plusieurs librairies : 
+PageTypeToPrint est développé par [Julien Bidoret](https://ateliers.esad-pyrenees.fr/web) pour la mise en page normalisée des mémoires et documents écrits de l’option Design graphique multimédia de l’[ÉSAD Pyrénées](https://esad-pyrenees.fr).  La maquette originale a été développée par [Perrine Saint Martin](https://typomorpho.fr/). L’outil s’appuie sur plusieurs librairies : 
 * [MarkdownIt](https://opencollective.com/markdown-it) et [MarkdownIt-php](https://github.com/kaoken/markdown-it-php), pour la transformation du contenu markdown en HTML. © Vitaly Puzrin, Alex Kocharin.
 * [JoliTypo](https://github.com/jolicode/JoliTypo/) pour la correction microtypographique, © [Damien Alexandre](http://jolicode.com).
-* [Paged.js](https://pagedjs.org/) pour l’impression et la génération de PDF © Adam Hyde, Julie Blanc, Fred Chasen & Julien Taquet.
+* [Paged.js](https://pagedjs.org/) pour l’impression et la génération de PDF © Adam Hyde, Julie Blanc, Fred Chasen & Julien Taquet + [Nicolas Taffin](https://gitlab.com/nicolastaf/pagedjs-reload-in-place) !
 
