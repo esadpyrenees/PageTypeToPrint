@@ -132,6 +132,11 @@ hr{
 .runningtitle, .runningfolio {
   display: none;
 }
+.runningtitle + h1,
+.runningtitle + h2,
+.runningtitle + h3 {
+  margin-top: 0;
+}
 @media screen and  (max-width:45rem) {
   .meta { display: block;}
   .meta > * { margin-bottom: 1em;}
