@@ -6,8 +6,6 @@ PageTypeToPrint est un gabarit destiné à la mise en forme normalisée d’un d
 
 Il produit un contenu lisible en ligne sous la forme d’une page web et permet de générer un document PDF téléchargeable et imprimable.
 
-## RTFM
-
 👏 Il 👏 est 👏 souhaitable 👏 de 👏 lire 👏 attentivement 👏 la 👏 documentation 👏 avant 👏 de 👏 démarrer. 👏
 
 [**↪ Accèder à la documentation**](https://esadpyrenees.github.io/PageTypeToPrint/)
