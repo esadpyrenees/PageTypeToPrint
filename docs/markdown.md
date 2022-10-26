@@ -1,25 +1,26 @@
+[↩ Retour à la documentation](index.md)
 
 ## Markdown 
 
 | Élement | Syntaxe Markdown |
 | ----------- | ----------- |
 | Titres | `# H1`<br>`## H2`<br>`### H3` |
-| Gras | `**bold text**` |
-| Italique | `*italicized text*` |
+| Gras | `**texte en gras**` |
+| Italique | `*texte en italique*` |
 | Citation | `> blockquote` |
-| Liste ordonnée | `1. First item`<br>`2. Second item`<br>`3. Third item` |
-| Liste non-ordonnée | `- First item`<br>`- Second item`<br> `- Third item` |
+| Liste ordonnée | `1. Premier item`<br>`2. Deuxième item`<br>`3. Troisième item` |
+| Liste non-ordonnée | `- Premier item`<br>`- Deuxième item`<br> `- Troisième item` |
 | Code | \``code`\` |
 | Filet horizontal | `---` |
-| Lien | `[title](https://www.example.com)` |
-| Image | `![alt text](image.jpg)` |
-| Note de bas de page 	|  `Here's a sentence with a footnote. [^1]`<br>`[^1]: This is the footnote.` | 
-| ID de titre  | `### My Great Heading {#custom-id}` |
-| Liste de définition |	`term`<br>`: definition`
-| Barré |	`~~The world is flat.~~` |
+| Lien | `[titre](https://www.example.com)` |
+| Image | `![alternative textuelle](image.jpg)` |
+| Note de bas de page 	|  `Cici est une phrase avec une note de bas de page. [^1]`<br>`[^1]: Ceci est la note.` | 
+| ID de titre  | `### Mon titre avec id {#custom-id}` |
+| Liste de définition |	`terme`<br>`: définition`
+| Barré |	`~~La terre est plate.~~` |
 | Indice | `H~2~O` |
 | Exposant | `X^2^ ` |
-| Surligné |	`I need to highlight these ==very important words==` |
+| Surligné |	`Je veux souligner ces ==mots très importants==` |
 
 ### Paragraphes et sauts de ligne
 Pour créer un paragraphe, laisser une ligne blanche entre deux lignes de texte :
@@ -34,6 +35,7 @@ Vous pouvez utiliser `_` ou `*` autour d'un mot pour le mettre en italique (deux
 > `**gras**` s'affiche ainsi : **gras**  
 > `**_gras-italique_**` s'affiche ainsi : **_gras-italique_**  
 > `~~barré~~` s'affiche ainsi : ~~barré~~  
+> `==surligné==` s'affiche ainsi : ==surligné==
 
 ### Liens
 On peut créer un lien en mettant le texte cliquable entre crochets et l’URL associée entre parenthèses : 
@@ -77,3 +79,5 @@ Ou
 
 Lire la documentation sur [markdownguide.org](https://www.markdownguide.org/) et [MarkdownIt](https://markdown-it.github.io/) (cette librairie ajoute des éléments utiles : abbréviations, notes de bas de page, listes de définition, tableaux, attributs `class` et `id` pour les éléments…). 
 
+
+[↪ Version imprimable / pdf](print.md)

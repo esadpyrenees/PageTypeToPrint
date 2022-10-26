@@ -9,8 +9,9 @@ Une démo est accessible en ligne sur [ateliers.esad-pyrenees.fr/pagetypetoprint
 ## Documentation
 
 * [Installation](installation.md)
-* [Contenu](contenu.md)
+* [Configuration et contenu](contenu.md)
 * [Gabarits](gabarits.md)
+* [Contenu au format markdown](markdown.md)
 * [Version imprimable / pdf](print.md)
 * [Composition : sommaire](sommaire.md)
 * [Composition : images et vidéos](images.md)

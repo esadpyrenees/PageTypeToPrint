@@ -34,3 +34,6 @@ Le `title` sert à déterminer l’`id` de la section et à générer le sommair
 Les fichiers markdown (à l’extension `.md`) sont numérotés pour une meilleure organisation ; ils sont placés dans le dossier “text”.
 
 À chaque partie peut être affecté un gabarit (*template*), qui permet de définir sa mise en forme (à la fois écran et print).
+
+
+[↪ Gabarits de mise en page](gabarits.md)
