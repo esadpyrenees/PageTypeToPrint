@@ -1,16 +1,14 @@
+PageTypeToPrint est un gabarit destiné à la mise en forme normalisée d’un document écrit de DNA ou d’un mémoire de DNSEP. Il est conçu avec comme hypothèse principale la simplicité de l’édition (contenu textuel au format *markdown*), mais peut être adapté, augmenté et personnalisé.
+
+Il produit un contenu lisible en ligne sous la forme d’une page web et permet de générer un document PDF téléchargeable et imprimable.
 
 ## Démo
 
 Une démo est accessible en ligne sur [ateliers.esad-pyrenees.fr/pagetypetoprint](https://ateliers.esad-pyrenees.fr/pagetypetoprint/) avec sa version [_print_](https://ateliers.esad-pyrenees.fr/pagetypetoprint/?print) et le [document pdf](https://ateliers.esad-pyrenees.fr/pagetypetoprint/) généré. 
 
 
-## Installation
+* [installation](installation.md)
 
-Téléchargez le code [en cliquant ici](https://github.com/esadpyrenees/PageTypeToPrint/zipball/master/). Le dossier _PageTypeToPrint_ doit être décompressé dans un environnement de serveur web local avec une version de PHP supérieure à 8.0.
-
-Sur Windows ou sur OSX, on peut utiliser [MAMP](https://www.mamp.info/en/downloads/) et placer le dossier _PageTypeToPrint_ dans `htdocs`.
-
-En savoir plus : [comment installer et démarrer un serveur de développement](https://github.com/esadpyrenees/PageTypeToPrint/wiki/Questions-de-serveur).
 
 ### Mise en ligne
 
@@ -20,11 +18,9 @@ Alternativement (ou bien plus tard, une fois terminé le processus d’édition)
 
 Le fichier `config.php` doit être édité afin d’y référencer les différentes parties du document, saisir son titre, votre année, nom et diplôme.
 
-En cas de difficultés, après avoir lu cette introduction et examiné l’exemple, vous pouvez demander de l’aide en [formulant une _issue_](https://github.com/esadpyrenees/PageTypeToPrint/issues) ; si vous souhaitez apporter une solution aux problèmes fréquemment rencontrés, rendez-vous dans le [wiki](https://github.com/esadpyrenees/PageTypeToPrint/wiki).
-
 ## Le contenu
 
-Un contenu de démonstration (texte et images) peut être [téléchargé ici](https://ateliers.esad-pyrenees.fr/pagetypetoprint/demo-base.zip). Un autre, basé sur le document écrit d’Aurore Tajan (merci ;) peut être [téléchargé là](https://ateliers.esad-pyrenees.fr/pagetypetoprint/demo-aurore.zip)
+Un contenu de démonstration (texte et images) peut être [téléchargé ici](https://ateliers.esad-pyrenees.fr/pagetypetoprint/demo-base.zip). 
 
 Le contenu du document est organisé sous la forme de documents texte au format markdown, qui permet de le structurer afin de le transformer automatiquement en HTML.
 Voir plus bas [la documentation](#markdown) de la syntaxe markdown (titres, italiques, citations, etc.). 
