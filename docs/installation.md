@@ -1,3 +1,5 @@
+[↩ Retour à la documentation](index.md)
+
 ## Installation
 
 Le projet PageTypeToPrint utilise le langage PHP pour transformer le texte saisi au format markdown en HTML, afin de pouvoir l’afficher dans un navigateur web, et en générer un PDF imprimable, via Paged.js et les fonctionnalités internes des navigateurs (Chrome ou Chromium, pour le moment).
@@ -8,9 +10,7 @@ Le dossier _PageTypeToPrint_ doit être décompressé dans un environnement de s
 Une fois décompressé, le dossier _PageTypeToPrint_ doit être placé dans le dossier `htdocs`.
 
 
-
 ### En détails
-
 
 Sur un ordinateur “domestique“, on peut installer un esnemble de logiciels qui intègre les différents fonctionnalités d’un serveur web. On parle alors de serveur local ou de serveur de développement.
 
