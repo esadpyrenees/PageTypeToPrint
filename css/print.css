@@ -266,7 +266,7 @@
   .appendices > h2 {
     display: none;
   }
-  /* ------------------------------------------------------------------------ Annexes */
+  /* ------------------------------------------------------------------------ References */
   .references {
     page-break-before: always;
     page: references
