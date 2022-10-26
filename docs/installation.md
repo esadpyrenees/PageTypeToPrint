@@ -10,6 +10,9 @@ Le dossier _PageTypeToPrint_ doit être décompressé dans un environnement de s
 Une fois décompressé, le dossier _PageTypeToPrint_ doit être placé dans le dossier `htdocs`.
 
 
+[↪ Configuration et contenu](contenu.md)
+
+
 ## En détails
 
 Sur un ordinateur “domestique“, on peut installer un esnemble de logiciels qui intègre les différents fonctionnalités d’un serveur web. On parle alors de serveur local ou de serveur de développement.

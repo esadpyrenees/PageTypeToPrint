@@ -13,3 +13,6 @@ Plusieurs solutions :
 
 - Utiliser une grande `(figure: nomdufichier.jpg caption: La légende de l’image)` au fil du texte pour développer la pagination différemment.
 - Déporter certaines images de notes en annexes.
+
+
+[↪ Mise en ligne](online.md)
