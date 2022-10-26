@@ -1,3 +1,5 @@
+![PageTypeToPrint](pttp.png)
+
 # PageTypeToPrint
 
 PageTypeToPrint est un gabarit destiné à la mise en forme normalisée d’un document écrit de DNA ou d’un mémoire de DNSEP. Il est conçu avec comme hypothèse principale la simplicité de l’édition (contenu textuel au format *markdown*), mais peut être adapté, augmenté et personnalisé.
@@ -8,7 +10,8 @@ Il produit un contenu lisible en ligne sous la forme d’une page web et permet 
 
 👏 Il 👏 est 👏 souhaitable 👏 de 👏 lire 👏 attentivement 👏 la 👏 documentation 👏 avant 👏 de 👏 démarrer. 👏
 
-[Accèder à la documentation](docs)
+[**↪ Accèder à la documentation**](https://esadpyrenees.github.io/PageTypeToPrint/)
+
 
 
 ## Crédits
