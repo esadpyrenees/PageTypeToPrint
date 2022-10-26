@@ -20,8 +20,3 @@ Une démo est accessible en ligne sur [ateliers.esad-pyrenees.fr/pagetypetoprint
 * [Composition : micro-typographie](microtypo.md)
 * [Composition : notes](notes.md)
 * [Mise en ligne](online.md)
-
-### Mise en ligne
-
-Alternativement (ou bien plus tard, une fois terminé le processus d’édition), le document peut être mis en ligne sur un serveur (le serveur de l’ÉSAD Pyrénées ou sur un compte étudiant hébergé par Alwaysdata – [me demander](mailto:julien.bidoret@esad-pyrenees.fr)). Il faut alors s’assurer que le serveur est bien capable de servir le site via une version de PHP supérieure à 8.0 (sur Alwaysdata, [voir ici](https://admin.alwaysdata.com/environment/)).
-
