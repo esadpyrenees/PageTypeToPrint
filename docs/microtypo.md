@@ -8,11 +8,11 @@ La majeure partie des problématiques de micro-typographie est corrigée automat
 * Pour une espace fine insécable, utiliser `&#8239;`
 * Pour un exposant, utiliser `XX^e^ siècle`, afin d’afficher XX<sup>e</sup> siècle
 
-Les apostrophes sont composés grâce au signe ’ et pas '.
+Les apostrophes sont composées grâce au signe ’ et pas '.
 
 Les « guillemets droits », simples ou doubles (" et ') devraient être proscrits.
 
-Les guillemets français («») devraient être utilisés dans l’immense majorité des cas. Les guillements anglais (“”) étant réservés à la mise entre guillemets de texte présents au sein-même d’un texte déjà entre guillemets français.
+Les guillemets français («») devraient être utilisés dans l’immense majorité des cas. Les guillemets anglais (“”) étant réservés à la mise entre guillemets de texte présents au sein-même d’un texte déjà entre guillemets français.
 
 
 À l’impression, on peut forcer un saut de page en intégrant le code :
