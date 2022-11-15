@@ -34,6 +34,10 @@ Plusieurs solutions :
 
 - Utiliser une grande `(figure: nomdufichier.jpg caption: La légende de l’image)` au fil du texte pour développer la pagination différemment.
 - Déporter certaines images de notes en annexes.
+- Forcer un saut de page en intégrant le code :
+  ```html
+  <br class="breakpage">
+  ```
 
 
 
