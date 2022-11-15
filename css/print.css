@@ -176,6 +176,10 @@
     height: 0;
     page-break-before: always;
   }
+  .breakcolumn{
+    break-before:column;
+    break-after:column;
+  }
   /* ------------------------------------------------------------------------ Side notes */
   .imagenote_wrapper {
     display: block;
@@ -226,6 +230,11 @@
     counter-increment: footnote;
     break-inside: avoid;
     -webkit-column-break-inside: avoid;
+  }
+  
+  .footnote:has(.breakcolumn) {
+    break-inside: auto;
+    -webkit-column-break-inside: auto;
   }
   
   .footnotes-sep,
