@@ -28,6 +28,10 @@
     <script src="js/print/reloadInPlace.js"></script> 
     <!-- Notes de bas de page -->
     <script src="js/print/footNotes.js"></script> 
+    <!-- URLs trop longues -->
+    <script src="js/print/breakUrls.js"></script> 
+    <!-- On print -->
+    <script src="js/print/onPrint.js"></script>
   <?php else :?>    
     <!-- Notes de marge -->
     <script src="js/screen/notes.js"></script>
