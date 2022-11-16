@@ -1,3 +1,7 @@
+// Generates a table of content
+// Author: Julie Blanc
+// https://gitlab.coko.foundation/pagedjs/pagedjs-plugins/table-of-content/
+
 function createToc(config){
   const content = config.content;
   const tocElement = config.tocElement;

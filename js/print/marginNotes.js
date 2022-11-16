@@ -1,3 +1,8 @@
+// Script that renders inline notes in margins
+// Author: Julie Blanc
+// https://gitlab.coko.foundation/pagedjs/pagedjs-plugins/margin-notes
+
+
 let classNotes = "imagenote"; // ← Change the CLASS of the notes here
 let classWrapper = classNotes + "_wrapper"
 let notesFloat = "left"; // ← Change the POSITION of the notes here
@@ -91,7 +96,7 @@ class marginNotes extends Paged.Handler {
         counter-reset: callNote_' + toCamelClassNote(classNotes) + ' markerNote_' + toCamelClassNote(classNotes) + ';\
       }\
       \
-      .imagenote_wrapper {\
+      .' + classNotes + '_wrapper {\
           position: absolute;\
           text-align-last: initial;\
           box-sizing: border-box;\
@@ -102,7 +107,7 @@ class marginNotes extends Paged.Handler {
       }\
       \
       .note-call_' + classNotes + '::after {\
-        content: "[" counter(callNote_' + toCamelClassNote(classNotes) + ', lower-alpha) "]";\
+        content: "[" counter(callNote_' + toCamelClassNote(classNotes) + ', lower-alpha) "]"; font-style: normal;\
       }\
       \
       .note-marker_' + classNotes + ' {\

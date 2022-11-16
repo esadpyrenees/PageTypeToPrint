@@ -1,3 +1,7 @@
+// Generate sidenotes using footnotes from Multimarkdown generated content
+// Author: 0gust1 
+// https://gist.github.com/0gust1/260638bd34a434e7f3dd
+
 
 var processFootNotesToSideNotes = function processFootNotesToSideNotes(opts) {
   'use strict';

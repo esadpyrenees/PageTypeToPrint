@@ -1,6 +1,7 @@
 // Clean links to avoid impossible line breaking of long urls in a justified text
 // Author: Julien Taquet (Paged.js core team)
 // see https://github.com/spyrales/gouvdown/issues/37
+
 Paged.registerHandlers(class extends Paged.Handler {
   constructor(chunker, polisher, caller) {
     super(chunker, polisher, caller);
