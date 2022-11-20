@@ -20,4 +20,9 @@ Une démo est accessible en ligne sur [ateliers.esad-pyrenees.fr/pagetypetoprint
 * [Composition : références et bibliographie](references.md)
 * [Composition : micro-typographie](microtypo.md)
 * [Composition : notes](notes.md)
+* [Bibliographie et références](biblio.md)
 * [Mise en ligne](online.md)
+
+## Aller plus loin
+
+* [Étendre et détourner l’outil](extend.md)
