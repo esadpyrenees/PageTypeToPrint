@@ -2,6 +2,8 @@
 
 ## Markdown 
 
+Le contenu textuel du document est saisi dans le langage de balisage léger _markdown_. Pour en savoir plus, voir ci-dessous une brève documentation, sinon poursuivre vers la [version imprimable / pdf](print.md).
+
 | Élement | Syntaxe Markdown |
 | ----------- | ----------- |
 | Titres | `# H1`<br>`## H2`<br>`### H3` |
@@ -13,8 +15,8 @@
 | Code | \``code`\` |
 | Filet horizontal | `---` |
 | Lien | `[titre](https://www.example.com)` |
-| Image | `![alternative textuelle](image.jpg)` |
-| Note de bas de page 	|  `Cici est une phrase avec une note de bas de page. [^1]`<br>`[^1]: Ceci est la note.` | 
+| Image | `![alternative textuelle](image.jpg)` ⚠️ [cf. Images](images.md) |
+| Note de bas de page 	|  `Cici est une phrase avec une note de bas de page. [^1]`<br>`[^1]: Ceci est la note.` ⚠️ [cf. Notes](notes.md) | 
 | ID de titre  | `### Mon titre avec id {#custom-id}` |
 | Liste de définition |	`terme`<br>`: définition`
 | Barré |	`~~La terre est plate.~~` |
@@ -47,7 +49,7 @@ On peut créer un lien en mettant le texte cliquable entre crochets et l’URL a
 Pour insérer une image, on peut utiliser la syntaxe Markdow native :
 > `![Texte alternatif](url/de_limage.jpg)`
 
-La syntaxe spécifique (non markdown) `(figure: fichier.jpg)` est plus appropriée à la structuration des documents et mémoires (notamment du fait de la possibilité de légendes).
+⚠️ La syntaxe spécifique (non markdown) `(figure: fichier.jpg)` est plus appropriée à la structuration des documents et mémoires (notamment du fait de la possibilité de légendes). Voir [Composition : images et vidéos](images.md).
 
 ### Citations
 Des citations peuvent être créées grâce au signe `>` :

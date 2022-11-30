@@ -3,14 +3,13 @@
 ## Notes
 
 Pour créer une note, insérer `[^identifiant_de_la_note]` au fil du texte, puis créer un paragraphe contentant :   
-`[^identifiant_de_la_note] : Contenu de la note mise en forme.`
+
+`[^identifiant_de_la_note]: Contenu de la note mise en forme.`
 
 ### Appels de notes et citations
 
-Dans le texte, un appel de note précède toujours le signe de ponctuation. Il se placera donc toujours avant le point final d’une phrase. En fin de citation, il se place avant le guillemet fermant.
-
-Dans PageTypeToPrint, on le saisit sans le faire précéder d’une espace :
-```md
+Dans le texte, un appel de note précède toujours le signe de ponctuation. Il se placera donc toujours avant le point final d’une phrase. En fin de citation, il se place avant le guillemet fermant. On le saisit sans le faire précéder d’une espace :
+```html
 C’est ainsi que Paul Watzlawick formule son axiome d’impossibilité[^axiome].
 <!-- ici, avant le point -->
 
@@ -28,7 +27,7 @@ Les illustrations de Gustave Doré(imagenote: images/gustave.jpg) sont gravées 
 
 ### Problèmes de notes
 
-Si trop d'images de note sont présentes sur une seule page, l’outil ne peut pas gérer automatiquement le “reflux” de la note sur la page suivante. Une `alert` est alors affichée.
+En con,texte d’impression, si trop d'images de note sont présentes sur une seule page, l’outil ne peut pas gérer automatiquement le “reflux” de la note sur la page suivante. Une `alert` est alors affichée.
 
 Plusieurs solutions : 
 
@@ -39,6 +38,8 @@ Plusieurs solutions :
   <br class="breakpage">
   ```
 
+### Modifier l’affichage des notes
 
+Pour étendre ou modifier l’affichage des notes, il importe de comprendre comment elles sont générées et mises en page. Une documentation dédiée est accessible ici : [Pour aller plus loin avec les notes](advanced-notes.md).
 
 [↪ Mise en ligne](online.md)
