@@ -10,7 +10,7 @@ Les choix par défaut faits dans le contexte du gabarit standard peuvent être m
 
 Cet exemple se propose de transformer le gabarit d’une simple page A4 (recto seul) vers une double page A5 (recto-verso).
 
-Le code correspondant à cet exemple est accessible sur la branche `booklet` du dépôt. 
+Le code correspondant à cet exemple est accessible sur la branche `booklet` du dépôt. Il peut être téléchargé sur [ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip](https://ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip).
 
 - `js/print/pagedjs.css`
   - desactivation de la feuille de style interface/recto-verso.css
