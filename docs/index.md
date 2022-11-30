@@ -15,6 +15,7 @@ Une démo est accessible en ligne sur [ateliers.esad-pyrenees.fr/pagetypetoprint
 * [Version imprimable / pdf](print.md)
 * [Composition : sommaire](sommaire.md)
 * [Composition : images et vidéos](images.md)
+* [Composition : annexes](appendices.md)
 * [Composition : glossaire](glossaire.md)
 * [Composition : entretiens](entretiens.md)
 * [Composition : références et bibliographie](references.md)

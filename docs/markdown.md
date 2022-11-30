@@ -4,6 +4,8 @@
 
 Le contenu textuel du document est saisi dans le langage de balisage léger _markdown_. Pour en savoir plus, voir ci-dessous une brève documentation, sinon poursuivre vers la [version imprimable / pdf](print.md).
 
+### Syntaxe
+
 | Élement | Syntaxe Markdown |
 | ----------- | ----------- |
 | Titres | `# H1`<br>`## H2`<br>`### H3` |
@@ -37,7 +39,7 @@ Vous pouvez utiliser `_` ou `*` autour d'un mot pour le mettre en italique (deux
 > `**gras**` s'affiche ainsi : **gras**  
 > `**_gras-italique_**` s'affiche ainsi : **_gras-italique_**  
 > `~~barré~~` s'affiche ainsi : ~~barré~~  
-> `==surligné==` s'affiche ainsi : ==surligné==
+> `==surligné==` s'affiche ainsi : <mark>surligné</mark>
 
 ### Liens
 On peut créer un lien en mettant le texte cliquable entre crochets et l’URL associée entre parenthèses : 
