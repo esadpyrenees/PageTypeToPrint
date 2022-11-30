@@ -1,0 +1,36 @@
+
+/* layout images mode */
+[data-mode="layout"] .figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0, .15);
+  pointer-events: none;
+}
+.figure {
+  position: relative;
+}
+.figure nav { 
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.figure nav,
+.figure nav select,
+.figure nav option { font-size: 14px; font-family: sans-serif; }
+.figure nav.copied::after {
+  content: "Code copié !";
+  font-weight: bold;
+  color: white;
+  background: green;
+  padding: 0 .5em;
+  animation: copied 100ms infinite alternate;
+}
+@keyframes copied {
+  0% { transform: rotate(2deg);}
+  100% { transform: rotate(-2deg);}
+}

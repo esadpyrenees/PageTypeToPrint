@@ -38,6 +38,12 @@
     <!-- Scripts communs -->
     <script src="js/screen/script.js"></script>
   <?php endif ?>
+  <!-- Aide pour la mise en page des images -->
+  <?php if(isset($_GET["layout"])): ?>
+    <script src="js/layout/turndown.js"></script>
+    <script src="js/layout/layout.js"></script>    
+    <link rel="stylesheet" href="js/layout/layout.css" media="screen">
+  <?php endif ?>
 </head>
 <body>
     
