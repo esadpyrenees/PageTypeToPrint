@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="css/print.css" media="print">    
     <!-- Paged.js -->
     <script src="js/print/paged.polyfill.js"></script>
-    <!-- Notes de marge -->
-    <script src="js/print/marginNotes.js"></script>
+    <!-- Notes iconographiques -->
+    <script src="js/print/imageNotes.js"></script>
     <!-- Sommaire paginé -->
     <script src="js/print/createToc.js"></script> 
     <!-- Reload in place -->
@@ -34,7 +34,7 @@
     <script src="js/print/onPrint.js"></script>
   <?php else :?>    
     <!-- Notes de marge -->
-    <script src="js/screen/notes.js"></script>
+    <script src="js/screen/sideNotes.js"></script>
     <!-- Scripts communs -->
     <script src="js/screen/script.js"></script>
   <?php endif ?>
