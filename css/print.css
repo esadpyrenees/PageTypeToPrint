@@ -180,6 +180,9 @@
     break-before:column;
     break-after:column;
   }
+  /* ------------------------------------------------------------------------ Spacing */
+  [style^="--ls"] { letter-spacing: calc(var(--ls, 0) * -0.001em); }
+
   /* ------------------------------------------------------------------------ Side notes */
   .imagenote_wrapper {
     display: block;

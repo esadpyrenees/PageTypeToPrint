@@ -29,8 +29,6 @@ Les caractères dans le tableau ci-dessous peuvent être composés directement (
 | <strong>« » </strong> | &<span>laquo;</span> &<span>raquo;</span> | Guillemet français ouvrant et fermant |
 | <strong>“ ”</strong> | &<span>ldquo;</span> &<span>rdquo;</span>  | Guillemet anglais ouvrant et fermant |
 
-
-
 ### Exposants
 
 Pour un exposant, utiliser `XX^e^ siècle`, afin d’afficher XX<sup>e</sup> siècle. Les abbréviations premier, deuxième, etc. se composent également en exposants : « `la 1^re^ vague et la 2^e^ vague` » pour afficher « la 1<sup>re</sup> vague et la 2<sup>e</sup> vague ». 
@@ -45,10 +43,38 @@ Les points de suspension doivent être composés grâce au caractère dédié :
 ```html
 <br class="breakpage">
 ```
+Dans la CSS doit être présent :
+
+```css
+.breakpage { page-break-before: always; }
+```
 
 Pour forcer un saut dans des colonnes (notes de bas de page, notamment), utiliser :
 ```html
 <br class="breakcolumn">
 ```
+Dans la CSS doit être présent :
+
+```css
+.breakcolumn { break-before:column; break-after:column; }
+```
+ 
+  
+
+
+### Spacing
+
+Pour réduire une ligne de texte et empêcher un saut malencontreux (veuves ou orphelines), on peut introduire au sein du texte markdown des balises `span` qui vont permettre de régler finement le _spacing_ d’une phrase ou d’une ligne:
+
+```html
+Lorem <span style="--ls:4">ipsum dolor sit amet, consectetur adipiscing elit.</span> Sed non risus […] 
+```
+Dans la CSS doit être présent :
+```css
+[style^="--ls"] { letter-spacing: calc(var(--ls, 0) * -0.001em); }
+```
+La valeur attribuée à la propriété `--ls` permettra d’étendre le _spacing_ (si elle est négative) ou de le resserrer si elle est positive. L’inspecteur web permet de modifier la valeur à la volée afin de l’ajuster précisément.
+
+⚠️ Attention, ne procéder à ces ajustements qu’en toute fin de mise en forme, quand tout le reste a été fait !
 
 [↪ Composition des notes de marge et des images de note](notes.md)
