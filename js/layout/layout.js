@@ -282,13 +282,24 @@ function layoutHelperLog(f){
 
   let input = document.createElement('input');        
   input.value = code;
-  input.select();    
-  document.execCommand('copy');    
   if (navigator.clipboard) {
-    navigator.clipboard.writeText(input.value);
+    // navigator.clipboard.writeText(input.value);
+    copyCode(code)
+    
+  } else {
+    input.select();    
+    document.execCommand('copy');    
+  }
+}
+
+async function copyCode(code) {
+  try {
+    await navigator.clipboard.writeText(code);
     f.querySelector("nav").classList.add("copied");
     setTimeout(() => {
       f.querySelector("nav").classList.remove("copied");      
-    }, 1000);
+    }, 1000); 
+  } catch (err) {
+    console.error('Failed to copy: ', err);
   }
 }
