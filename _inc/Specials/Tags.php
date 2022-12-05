@@ -26,7 +26,7 @@
 
     $type = trim(substr($tag, 0, strpos($tag, ':')));
     $type = strtolower($type);
-    $attr = ['class', 'caption'];
+    $attr = ['class', 'caption', 'print'];
 
     array_unshift($attr, $type);
 
@@ -90,9 +90,16 @@
 
     if($type == "figure"){
       $class = $attributes["class"] ?? "";
+      $print = $attributes["print"] ?? "";
+      $printarray = explode(" ", $print);
+      $printarray = substr_replace($printarray, 'print-', 0, 0);
+      $printclasses = $print != "" ? implode(" ", $printarray)  : "";
       $caption = $attributes["caption"] ?? "";
+      
       $id = slugify($value);
-      $html = "<figure class='figure $class' id='$id' data-src='$value'>";
+      $html = "<figure class='figure $class $printclasses' id='$id' data-src='$value'>";
+      // $html .= $printclasses;
+      
       $html .= "<img src='$value'>";
       if($caption){
         $html .= "<figcaption class='figcaption'>";
