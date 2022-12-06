@@ -120,19 +120,27 @@
 <p>Les choix par défaut faits dans le contexte du gabarit standard peuvent être modifiées. </p>
 <h3 id="exemple-dun-changement-de-format">Exemple d’un changement de format</h3>
 <p>Cet exemple se propose de transformer le gabarit d’une simple page A4 (recto seul) vers une double page A5 (recto-verso).</p>
-<p>Le code correspondant à cet exemple est accessible sur la branche <code>booklet</code> du dépôt. Il peut être téléchargé sur <a href="https://ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip">ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip</a>.</p>
+<p>Le code correspondant à cet exemple est accessible sur la branche <code>booklet</code> du dépôt. 
+Il peut être téléchargé sur <a href="https://ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip">ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip</a>.
+Une démo est visible sur <a href="http://ateliers.esad-pyrenees.fr/pagetypetoprint-booklet/?print">ateliers.esad-pyrenees.fr/pagetypetoprint-booklet</a></p>
 <ul>
-<li><code>js/print/pagedjs.css</code></li>
+<li><code>js/print/pagedjs.css</code><ul>
 <li>desactivation de la feuille de style interface/recto-verso.css</li>
-<li><code>index.php</code></li>
+</ul>
+</li>
+<li><code>index.php</code><ul>
 <li>courants et folio: suppression du logo ESAD et du diplôme</li>
 <li>courants et folio: réorganisation pour positionnement en bas de page uniquement</li>
-<li>notes de ~~marge ~~ bas de page, suppression des scripts <code>js/screen/notes.js</code> et <code>js/print/marginNotes.js</code> </li>
-<li><code>css/print.css</code></li>
+<li>notes de <del>marge</del> bas de page, suppression des scripts <code>js/screen/notes.js</code> et <code>js/print/marginNotes.js</code> </li>
+</ul>
+</li>
+<li><code>css/print.css</code><ul>
 <li>format et marges  </li>
 <li>gestion des titres courants </li>
 <li>notes de marge </li>
 <li>mise en page du sommaire </li>
+</ul>
+</li>
 </ul>
 <h3 id="details-css-print">Détails CSS print</h3>
 <p>Format et marges</p>

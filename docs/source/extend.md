@@ -10,19 +10,21 @@ Les choix par défaut faits dans le contexte du gabarit standard peuvent être m
 
 Cet exemple se propose de transformer le gabarit d’une simple page A4 (recto seul) vers une double page A5 (recto-verso).
 
-Le code correspondant à cet exemple est accessible sur la branche `booklet` du dépôt. Il peut être téléchargé sur [ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip](https://ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip).
+Le code correspondant à cet exemple est accessible sur la branche `booklet` du dépôt. 
+Il peut être téléchargé sur [ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip](https://ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip).
+Une démo est visible sur [ateliers.esad-pyrenees.fr/pagetypetoprint-booklet](http://ateliers.esad-pyrenees.fr/pagetypetoprint-booklet/?print)
 
-- `js/print/pagedjs.css`
-  - desactivation de la feuille de style interface/recto-verso.css
-- `index.php`
-  - courants et folio: suppression du logo ESAD et du diplôme
-  - courants et folio: réorganisation pour positionnement en bas de page uniquement
-  - notes de ~~marge ~~ bas de page, suppression des scripts `js/screen/notes.js` et `js/print/marginNotes.js` 
-- `css/print.css`
-  - format et marges  
-  - gestion des titres courants 
-  - notes de marge 
-  - mise en page du sommaire 
+* `js/print/pagedjs.css`
+    * desactivation de la feuille de style interface/recto-verso.css
+* `index.php`
+    * courants et folio: suppression du logo ESAD et du diplôme
+    * courants et folio: réorganisation pour positionnement en bas de page uniquement
+    * notes de <del>marge</del> bas de page, suppression des scripts `js/screen/notes.js` et `js/print/marginNotes.js` 
+* `css/print.css`
+    * format et marges  
+    * gestion des titres courants 
+    * notes de marge 
+    * mise en page du sommaire 
 
 ### Détails CSS print
 
