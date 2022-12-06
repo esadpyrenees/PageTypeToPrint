@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Installation - PageTypeToPrint</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../style/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Installation";
+        var mkdocs_page_input_path = "installation.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> PageTypeToPrint
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Installation</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../contenu/">Configuration et contenu</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../gabarits/">Gabarits</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../markdown/">Contenu au format markdown</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../print/">Version imprimable / pdf</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Composition</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../sommaire/">Sommaire</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../images/">Images et vidéos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../appendices/">Annexes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../glossaire/">Glossaire</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../entretiens/">Entretiens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../references/">Références et bibliographie</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../microtypo/">Micro-typographie</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../notes/">Notes</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../online/">Mise en ligne</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">PageTypeToPrint</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Installation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="installation">Installation</h2>
+<p>Le projet PageTypeToPrint utilise le langage PHP pour transformer le texte saisi au format markdown en HTML, afin de pouvoir l’afficher dans un navigateur web, et en générer un PDF imprimable, via Paged.js et les fonctionnalités internes des navigateurs (Chrome ou Chromium, pour le moment).</p>
+<p>Téléchargez le code du projet <a href="https://github.com/esadpyrenees/PageTypeToPrint/zipball/main/">en cliquant ici</a>. </p>
+<p>Le dossier <em>PageTypeToPrint</em> doit être décompressé dans un environnement de serveur web local bénéficiant d’une version de PHP supérieure à 8.0 (voir <a href="#php">ci-dessous</a>).
+Une fois décompressé, le dossier <em>PageTypeToPrint</em> doit être placé dans le dossier <code>htdocs</code>.</p>
+<p>Si vous pouvez démarrer un serveur web local avec PHP 8, passez à <a href="../contenu/">Configuration et contenu</a>. </p>
+<p>Sinon, poursuivez ci-dessous…</p>
+<h2 id="en-details">En détails</h2>
+<p>Sur un ordinateur “domestique“, on peut installer un esnemble de logiciels qui intègre les différents fonctionnalités d’un serveur web. On parle alors de serveur local ou de serveur de développement.</p>
+<p>Les outils les plus simples à utiliser sont : <a href="https://www.mamp.info/en/downloads/">MAMP</a>, <a href="https://www.wampserver.com/">WAMP</a> et <a href="https://www.apachefriends.org/fr/index.html">Xampp</a>.</p>
+<p>Alternativement, si PHP est installé, dans un terminal :</p>
+<pre><code class="language-sh">cd votre/dossier/de/travail/PageTypeToPrint
+php -S localhost:8888  
+# cette commande permet d’accéder à la page web sur http://localhost:8888
+</code></pre>
+<h3 id="amp">AMP ?</h3>
+<p>L’accronyme AMP signifie Apache + MySQL + PHP.</p>
+<ul>
+<li>Apache est un <em>serveur web</em> : le serveur HTTP répond aux requêtes et transmet les pages Web.</li>
+<li>MySQL (ou Maria DB) et un <em>Serveur de base de données</em>.</li>
+<li>PHP est un langage de script : il va permettre d’effectuer des opérations sur le seveur et fabriquer des pages HTML.</li>
+</ul>
+<h3 id="m-w-x-amp">M / W / X + AMP</h3>
+<ul>
+<li><a href="https://www.mamp.info/en/downloads/">M(AMP)</a> est utilisable sur Mac (originellement) et sur Windows</li>
+<li><a href="https://www.wampserver.com/">W(AMP)</a> Server est dédié à Windows</li>
+<li><a href="https://www.apachefriends.org/fr/index.html">X(AMP)p</a> est multiplateforme (à utiliser si les deux autres ne fonctionnent pas sur votre ordinateur) </li>
+</ul>
+<h3 id="mamp-ou-xampp">MAMP ou Xampp?</h3>
+<p><a href="https://www.mamp.info/en/downloads/">MAMP</a> est l’outil le plus simple. Il s’installe comme une application habituelle (double-clicker sur l’installeur puis suivre les étapes), avec comme spécificité sur Windows de préférer être installé à la racine du disque dur, dans un dossier <code>C:\\MAMP</code> ou <code>C:\\Xampp</code>. Xampp n’est guère plus compliqué à installer mais offre une interface moins simple.</p>
+<p>Attention à ne pas installer MAMP Pro (inutile dans ce contexte, et payant).</p>
+<p>L’installation génère un sous-dossier nommé <code>htdocs</code> qui est destiné à stocker vos sites web locaux. Sur OSX et MAMP, ce dossier est situé dans <code>Applications/MAMP/htdocs</code>, sur Windows dans <code>C:\\MAMP\htdocs</code> ou <code>C:\\Xampp\htdocs</code>. Cet emplacement est configurable dans les préférences de MAMP ou Xampp.</p>
+<p>C’est dans ce dossier qu’il convient de décompresser le code de PageTypeToPrint, afin de pouvoir le visualiser dans un navigateur web.</p>
+<h3 id="demarrer">Démarrer</h3>
+<p>Une fois l’application de serveur installée, il faut la démarrer : “Démarrer les serveurs” avec MAMP ou “Apache &gt; Start” avec Xampp.</p>
+<p>Le site devient alors accessible à l’adresse <code>http://localhost/PageTypeToPrint</code> ou <code>http://localhost:8888/PageTypeToPrint</code> si le <strong>port</strong> d’Apache est configuré sur 8888 (c’est parfois le cas par défaut).</p>
+<h3 id="version-de-php">Version de PHP</h3>
+<p>Si rien ne s’affiche (ou seulement le sommaire du document), la version de PHP est vraisemblablement inférieure à 8.0. MAMP et XAMPP permettent de configurer cette version dans leur paramètres.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Accueil"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../contenu/" class="btn btn-neutral float-right" title="Configuration et contenu">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../contenu/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

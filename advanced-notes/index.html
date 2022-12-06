@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Notes avancées - PageTypeToPrint</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../style/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Notes avanc\u00e9es";
+        var mkdocs_page_input_path = "advanced-notes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> PageTypeToPrint
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../contenu/">Configuration et contenu</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../gabarits/">Gabarits</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../markdown/">Contenu au format markdown</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../print/">Version imprimable / pdf</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Composition</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../sommaire/">Sommaire</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../images/">Images et vidéos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../appendices/">Annexes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../glossaire/">Glossaire</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../entretiens/">Entretiens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../references/">Références et bibliographie</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../microtypo/">Micro-typographie</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../notes/">Notes</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../online/">Mise en ligne</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">PageTypeToPrint</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Notes avancées</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="notes-avancees">Notes avancées</h2>
+<p>PageTypeToPrint gère nativement deux types de notes : des notes « textuelles » et des notes « iconographiques ».</p>
+<h3 id="notes-textuelles">Notes textuelles</h3>
+<p>Elles sont générées grâce à l’extension <code>MarkdownItFootnote</code> et suivent le format d’appel et de création de notes markdown le plus commun :    </p>
+<pre><code class="language-html">Insérer un appel de note[^appel], puis créer un paragraphe contentant :   
+
+[^appel]: Contenu de la note.
+</code></pre>
+<p>Les appels de notes sont insérés au fil du texte :</p>
+<pre><code class="language-html">&lt;p&gt;Insérer un appel de note&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;, puis créer un paragraphe contentant : &lt;/p&gt;
+</code></pre>
+<p>L’ensemble des notes se retrouve à la fin du document, dans une liste. Un lien de retour vers l’appel de note est inséré à la fin de son contenu :</p>
+<pre><code class="language-html">&lt;hr class=&quot;footnotes-sep&quot;&gt;
+&lt;section class=&quot;footnotes&quot;&gt;
+  &lt;ol class=&quot;footnotes-list&quot;&gt;
+    &lt;li id=&quot;fn1&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;Contenu de la note &lt;a href=&quot;#fnref1&quot; class=&quot;footnote-backref&quot;&gt;&amp;#8617;&amp;#65038;&lt;/a&gt;&lt;p&gt;&lt;/li&gt;
+    […]
+  &lt;/ol&gt;
+&lt;/section&gt;
+</code></pre>
+<h4 id="affichage-ecran-notes-textuelles-en-marge">Affichage écran : notes textuelles en marge</h4>
+<p>Pour l’affichage à l’écran, le script <code>js/screen/sideNotes.js</code> parcourt les appels de note, récupère leur contenu cible et l’insère au fil du texte, à la place de l’appel de note initial, dans une structure HTML constituée de trois éléments :</p>
+<pre><code class="language-html">&lt;label class=&quot;sn-toggle-label&quot; for=&quot;sn-note-fn1&quot;&gt;[1]&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;sn-note-fn1&quot; class=&quot;sn-toggle&quot;&gt;
+&lt;aside class=&quot;sn-note&quot; data-ref=&quot;2&quot;&gt;&lt;p&gt;Contenu de la note&lt;/p&gt;&lt;/aside&gt;
+</code></pre>
+<p>Ces éléments permettent un affichage <em>responsive</em> des notes : soit sur le côté du texte si le viewport est suffisamment grand, soit au sein du texte après un clic sur le <code>label</code> en affichage mobile (voir la section “Notes” du fichier <code>css/styles.css</code>).</p>
+<h4 id="impression-notes-textuelles-en-bas-de-page">Impression : notes textuelles en bas de page</h4>
+<p>En contexte d’impression, la structure HTML des notes textuelles est soumise à une modification similaire grâce au script <code>js/screen/footNotes.js</code> afin de suivre le balisage recommandé dans la spécification HTML du W3C. Les notes textuelles seront ainsi intégrées au bas de chaque page par la librairie <code>paged.js</code>.</p>
+<p>Si l’on souhaite déplacer les notes de bas de page en marge, ce script devra être désactivé et une opération similaire à celle à laquelles sont soumises les notes iconographiques devra être opérée.</p>
+<h3 id="notes-iconographiques">Notes iconographiques</h3>
+<p>Les notes iconographiques ( ou <em>images de note</em>) sont générées grâce au <em>shortcode</em> <code>(imagenote: fichier.jpg)</code> inséré après le mot qu’elles précisent :</p>
+<pre><code class="language-md">Les illustrations de Gustave Doré(imagenote: images/gustave.jpg caption: Gustave Doré) sont gravées dans les mémoires.
+</code></pre>
+<p>Elles peuvent bénéficier de l’ensemble des attributs liés aux figures (<code>class</code> et <code>caption</code>) et sont insérées au fil du texte grâce au parsing des <em>shortcodes</em> de la librairie <code>_inc/Specials/Tags.php</code>.</p>
+<p>En contexte d’impression, elles mises en marge grâce au script <code>js/print/imageNotes.js</code>.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
