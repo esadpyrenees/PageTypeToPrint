@@ -2,4 +2,3 @@ images/*
 images.zip
 !images/README.md
 .DS_Store
-docs/site
