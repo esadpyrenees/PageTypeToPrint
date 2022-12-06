@@ -19,5 +19,6 @@ nav:
       - Micro-typographie: microtypo.md
       - Notes: notes.md
     - Mise en ligne: online.md
+    - Crédits: credits.md
 theme:
   name: readthedocs
