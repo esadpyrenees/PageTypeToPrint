@@ -16,7 +16,7 @@ jobs:
         uses: mhausenblas/mkdocs-deploy-gh-pages@nomaterial
         # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PERSONAL_TOKEN: Tout su tout blanc corps nu blanc un mètre jambes collées comme cousues.
           CONFIG_FILE: docs/mkdocs.yml
           EXTRA_PACKAGES: build-base
           # GITHUB_DOMAIN: github.myenterprise.com
