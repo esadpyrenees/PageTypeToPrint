@@ -6,7 +6,7 @@ Le projet PageTypeToPrint utilise le langage PHP pour transformer le texte saisi
 
 Téléchargez le code du projet [en cliquant ici](https://github.com/esadpyrenees/PageTypeToPrint/zipball/main/). 
 
-Le dossier _PageTypeToPrint_ doit être décompressé dans un environnement de serveur web local bénéficiant d’une version de PHP supérieure à 8.0 (voir [ci-dessous](#php)).
+Le dossier _PageTypeToPrint_ doit être décompressé dans un environnement de serveur web local bénéficiant d’une version de PHP supérieure à 8.0 (voir [ci-dessous](#version-de-php)).
 Une fois décompressé, le dossier _PageTypeToPrint_ doit être placé dans le dossier `htdocs`.
 
 Si vous pouvez démarrer un serveur web local avec PHP 8, passez à [Configuration et contenu](contenu.md). 
