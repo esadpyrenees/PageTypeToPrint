@@ -1,0 +1,139 @@
+
+
+/* ------------------------------------------------------------------------ Fonts */
+@font-face {
+  font-family: "Ecole";
+  src: url("Ecole-Italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Ecole";
+  src: url("Ecole-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ecole";
+  src: url("Ecole-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ------------------------------------------------------------------------ Variables */
+body,
+.btn,
+input[type="color"], input[type="date"], input[type="datetime-local"], input[type="datetime"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"],
+.rst-content .toctree-wrapper > p.caption, h1, h2, h3, h4, h5, h6, legend {
+  font-family: "Ecole"
+}
+
+.document a { text-decoration: underline;}
+
+.rst-content .wy-alert-neutral.admonition-todo a,
+.rst-content .wy-alert-neutral.admonition a,
+.rst-content .wy-alert-neutral.attention a,
+.rst-content .wy-alert-neutral.caution a,
+.rst-content .wy-alert-neutral.danger a,
+.rst-content .wy-alert-neutral.error a,
+.rst-content .wy-alert-neutral.hint a,
+.rst-content .wy-alert-neutral.important a,
+.rst-content .wy-alert-neutral.note a,
+.rst-content .wy-alert-neutral.seealso a,
+.rst-content .wy-alert-neutral.tip a,
+.rst-content .wy-alert-neutral.warning a,
+.wy-alert.wy-alert-neutral a {
+ color:tomato
+}
+.wy-tray-container li.wy-tray-item-info {
+ background:tomato
+}
+.btn-info {
+ background-color:tomato!important
+}
+.btn-info:hover {
+ background-color:#2e8ece!important
+}
+.btn-link {
+ color:tomato;
+}
+.btn-link:active,
+.btn-link:hover {
+ background-color:transparent!important;
+ color:rgb(247, 124, 102)!important;
+ box-shadow:none
+}
+.btn-link:visited {
+ /* color:rgb(208, 51, 23) */
+}
+.wy-dropdown-menu>dd>a:hover {
+ background:tomato;
+}
+.wy-dropdown.wy-dropdown-bubble .wy-dropdown-menu a:hover {
+ background:tomato;
+}
+.wy-inline-validate.wy-inline-validate-info .wy-input-context {
+ color:tomato
+}
+a {
+ color:tomato;
+ text-decoration:none;
+ cursor:pointer
+}
+a:hover {
+ color:rgb(208, 51, 23)
+}
+a:visited {
+ /* color: unset */
+}
+.wy-text-info {
+ color:tomato!important
+}
+a.wy-text-info:hover {
+ color:tomato!important
+}
+.wy-menu-vertical a:active {
+ background-color:tomato;
+}
+.wy-side-nav-search {
+ background-color:tomato;
+}
+.wy-side-nav-search input[type=text] {
+ border-color:rgb(235, 81, 54)
+}
+.wy-side-nav-search img {
+ background-color:tomato;
+}
+.wy-nav .wy-menu-vertical header {
+ color:tomato
+}
+.wy-menu-vertical header, .wy-menu-vertical p.caption {
+  color: tomato;
+}
+.wy-nav .wy-menu-vertical a:hover {
+ background-color:tomato;
+}
+.wy-nav-top {
+ background:tomato;
+}
+.wy-nav-top img {
+ background-color:tomato;
+}
+.rst-versions a {
+ color:tomato;
+}
+.rst-content a code,
+.rst-content a tt {
+ color:tomato
+}
+html.writer-html4 .rst-content dl:not(.docutils)>dt,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)>dt {
+ color:tomato;
+ border-top:3px solid rgb(240, 122, 101);;
+}
+html.writer-html4 .rst-content dl:not(.docutils)>dt:before,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)>dt:before {
+ color:rgb(240, 122, 101);
+}

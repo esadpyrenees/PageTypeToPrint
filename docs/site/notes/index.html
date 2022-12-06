@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Notes - PageTypeToPrint</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../style/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Notes";
+        var mkdocs_page_input_path = "notes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> PageTypeToPrint
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../contenu/">Configuration et contenu</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../gabarits/">Gabarits</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../markdown/">Contenu au format markdown</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../print/">Version imprimable / pdf</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Composition</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../sommaire/">Sommaire</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../images/">Images et vidéos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../appendices/">Annexes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../glossaire/">Glossaire</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../entretiens/">Entretiens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../references/">Références et bibliographie</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../microtypo/">Micro-typographie</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Notes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#appels-de-notes-et-citations">Appels de notes et citations</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#problemes-de-notes">Problèmes de notes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modifier-laffichage-des-notes">Modifier l’affichage des notes</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../online/">Mise en ligne</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">PageTypeToPrint</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Composition &raquo;</li>
+      <li>Notes</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/esadpyrenees/PageTypeToPrint/edit/master/docs/notes.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="notes">Notes</h2>
+<p>Pour créer une note, insérer <code>[^identifiant_de_la_note]</code> au fil du texte, puis créer un paragraphe contentant :   </p>
+<p><code>[^identifiant_de_la_note]: Contenu de la note mise en forme.</code></p>
+<h3 id="appels-de-notes-et-citations">Appels de notes et citations</h3>
+<p>Dans le texte, un appel de note précède toujours le signe de ponctuation. Il se placera donc toujours avant le point final d’une phrase. En fin de citation, il se place avant le guillemet fermant. On le saisit sans le faire précéder d’une espace :</p>
+<pre><code class="language-html">C’est ainsi que Paul Watzlawick formule son axiome d’impossibilité[^axiome].
+&lt;!-- ici, avant le point --&gt;
+
+L’axiome d’impossibilité, «&amp;#8239;On ne peut pas ne pas communiquer[^axiome].&amp;#8239;», est formulé […]
+&lt;!-- ici, avant le point concluant la citation, avant le guillemet qui l’encadre (précédé d’une espace fine insécable) --&gt;
+
+Paul Watzlawick affirme «&amp;#8239;On ne peut pas ne pas communiquer[^axiome].&amp;#8239;». Ainsi […]
+&lt;!-- ici, un point final conclut la phrase comportant une citation --&gt;
+</code></pre>
+<p>De la même manière, les images de note doivent être saisies <em>immédiatement</em> (sans espace) après le mot qu’elles précisent :</p>
+<pre><code class="language-md">Les illustrations de Gustave Doré(imagenote: images/gustave.jpg) sont gravées dans les mémoires.
+</code></pre>
+<h3 id="problemes-de-notes">Problèmes de notes</h3>
+<p>En con,texte d’impression, si trop d'images de note sont présentes sur une seule page, l’outil ne peut pas gérer automatiquement le “reflux” de la note sur la page suivante. Une <code>alert</code> est alors affichée.</p>
+<p>Plusieurs solutions : </p>
+<ul>
+<li>Utiliser une grande <code>(figure: nomdufichier.jpg caption: La légende de l’image)</code> au fil du texte pour développer la pagination différemment.</li>
+<li>Déporter certaines images de notes en annexes.</li>
+<li>Forcer un saut de page en intégrant le code :
+  <code>html
+  &lt;br class="breakpage"&gt;</code></li>
+</ul>
+<h3 id="modifier-laffichage-des-notes">Modifier l’affichage des notes</h3>
+<p>Pour étendre ou modifier l’affichage des notes, il importe de comprendre comment elles sont générées et mises en page. Une documentation dédiée est accessible ici : <a href="../advanced-notes/">Pour aller plus loin avec les notes</a>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../microtypo/" class="btn btn-neutral float-left" title="Micro-typographie"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../online/" class="btn btn-neutral float-right" title="Mise en ligne">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/esadpyrenees/PageTypeToPrint/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../microtypo/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../online/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

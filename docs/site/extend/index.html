@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Extend - PageTypeToPrint</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../style/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Extend";
+        var mkdocs_page_input_path = "extend.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> PageTypeToPrint
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../contenu/">Configuration et contenu</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../gabarits/">Gabarits</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../markdown/">Contenu au format markdown</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../print/">Version imprimable / pdf</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Composition</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../sommaire/">Sommaire</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../images/">Images et vidéos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../appendices/">Annexes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../glossaire/">Glossaire</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../entretiens/">Entretiens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../references/">Références et bibliographie</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../microtypo/">Micro-typographie</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../notes/">Notes</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../online/">Mise en ligne</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">PageTypeToPrint</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Extend</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/esadpyrenees/PageTypeToPrint/edit/master/docs/extend.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="extension">Extension</h2>
+<p>PageTypeToPrint est conçu pour simplifier l’éditions des documents écrits et mémoires. L’outil peut cependant être étendu, augmenté et détourné.</p>
+<p>Les choix par défaut faits dans le contexte du gabarit standard peuvent être modifiées. </p>
+<h3 id="exemple-dun-changement-de-format">Exemple d’un changement de format</h3>
+<p>Cet exemple se propose de transformer le gabarit d’une simple page A4 (recto seul) vers une double page A5 (recto-verso).</p>
+<p>Le code correspondant à cet exemple est accessible sur la branche <code>booklet</code> du dépôt. Il peut être téléchargé sur <a href="https://ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip">ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip</a>.</p>
+<ul>
+<li><code>js/print/pagedjs.css</code></li>
+<li>desactivation de la feuille de style interface/recto-verso.css</li>
+<li><code>index.php</code></li>
+<li>courants et folio: suppression du logo ESAD et du diplôme</li>
+<li>courants et folio: réorganisation pour positionnement en bas de page uniquement</li>
+<li>notes de ~~marge ~~ bas de page, suppression des scripts <code>js/screen/notes.js</code> et <code>js/print/marginNotes.js</code> </li>
+<li><code>css/print.css</code></li>
+<li>format et marges  </li>
+<li>gestion des titres courants </li>
+<li>notes de marge </li>
+<li>mise en page du sommaire </li>
+</ul>
+<h3 id="details-css-print">Détails CSS print</h3>
+<p>Format et marges</p>
+<pre><code class="language-css">@page {
+  size: 148mm 210mm;
+
+  @bottom-left-corner {
+    content: element(folioRunning);
+    text-align: left;
+  }
+  @bottom-left{
+    content: element(titleRunning);
+    text-align: left;
+  }
+  @footnote {
+    float: bottom;
+  }
+}  
+@page:right{
+  margin: 1cm 2cm 2.5cm 1cm;
+}
+@page:left{
+  margin: 1cm 1cm 2.5cm 2cm;
+}
+@page cover {
+  margin: 1cm 1cm 2.5cm 1cm;    
+  @bottom-left-corner {
+    display: none;
+  }
+  @bottom-left{
+    display: none;
+  }
+}
+@page:blank{
+  @bottom-left-corner {
+    display: none;
+  }
+  @bottom-left{
+    display: none;
+  }
+}
+</code></pre>
+<p>Couverture, réorganisation :</p>
+<pre><code class="language-css">  .meta-year{ grid-column: 3; grid-row: 1;}
+  .meta-data { grid-column: 1; grid-row: 1}
+</code></pre>
+<p>Modifications des titres courants : </p>
+<pre><code class="language-css">  /* running title */
+  .runningtitle {
+    display: none;
+    position: running(titleRunning);
+  }
+  .folio{
+    font-weight: bold;
+    text-align: right;
+  }
+  .folio::before{
+    content: counter(page);
+    font-weight: bold;
+  }
+  .pagedjs_margin .runningtitle {
+    gap:var(--spacer);
+    padding: 1cm 0 .5cm;
+    display: flex !important;
+    justify-content: space-between;
+  }
+  .pagedjs_left_page .runningtitle {
+    flex-direction: row-reverse;
+  }
+  .pagedjs_right_page .runningtitle {
+    flex-direction: row;
+  }
+  .pagedjs_left_page .runningtitle .title,
+  .pagedjs_right_page .runningtitle .name { display: none; }
+</code></pre>
+<p>Modification des images de note :</p>
+<pre><code class="language-css">  .imagenote {
+    width: 33%;
+    display: block;
+    margin: var(--spacer) 0 0 var(--spacer);
+    font-size: var(--smallsize);    
+  }
+  .imagenote.printleft {
+    float: left;
+    margin: var(--spacer) var(--spacer) 0 0;
+  }
+  .imagenote.printright {
+    float: right;
+    margin: var(--spacer) 0 0 var(--spacer);
+  }
+</code></pre>
+<p>Annexes : suppression des marges spécifiques, affichage du titre et suppresion du retrait dans les interviews :</p>
+<pre><code class="language-css">section.appendices { /* margin-left: -6.5cm; */ }
+.appendices &gt; h2 { /* display: none; */ }
+section.references { /* margin-left: -6.5cm; */ }
+.references &gt; h2 { /* display: none; */ }
+.interview &gt; h2 { /* display: none; */ }
+.interview p {
+  --indent: 0px;
+}
+Glossaire et références bibliographiques sur deux colonnes uniquement :
+```css
+.glossary,
+.columns {
+  font-size: 0.85em;
+  columns: 2;
+  column-gap: var(--spacer);
+}
+</code></pre>
+<p>Saut de page avant le sommaire :</p>
+<pre><code class="language-css">  #nav {
+    page-break-before: right;
+    page-break-after: right;
+    counter-reset: page 1;
+    height: auto;
+  }
+</code></pre>
+<p>Mise en page du sommaire :</p>
+<pre><code class="language-css">#list-toc-generated .toc-element a::before {
+  /* position: absolute; */
+  /* margin-left: calc(-4em - 20px); */
+  display: inline-block;
+  text-align: left;
+}
+#list-toc-generated .toc-element-level-2 a::before {
+  /* margin-left: calc(-4em - 40px); */
+}
+</code></pre>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/esadpyrenees/PageTypeToPrint/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
