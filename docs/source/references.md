@@ -25,11 +25,7 @@ Les normes recommandées ci-dessous sont issues de la spécification [ISO-690:20
 
 ### Pour citer un livre
 
-Le titre du livre doit être en italique.
-
-En cas de d’ouvrage collectif, indiquer « . Prénom NOM des auteurs principaux, dir. » après le titre de l’ouvrage. 
-
-Si vous citez un chapitre, ajouter « Numéro et titre du chapitre. Pages. ».
+Le titre du livre doit être en italique. En cas de d’ouvrage collectif, indiquer « . Prénom NOM des auteurs principaux, dir. » après le titre de l’ouvrage.  Si vous citez un chapitre, ajouter « Numéro et titre du chapitre. Pages. ».
 
 > NOM, Prénom des auteur⋅ices. _Titre du livre_. Édition. Ville d’édition&#8239;: Nom de l’éditeur, Année de publication. Collection.
 
