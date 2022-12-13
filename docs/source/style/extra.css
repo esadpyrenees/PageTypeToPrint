@@ -30,6 +30,12 @@ input[type="color"], input[type="date"], input[type="datetime-local"], input[typ
   font-family: "Ecole"
 }
 
+.rst-content blockquote {
+  border-left: 3px solid tomato;
+  margin-left: 0;
+  padding-left: 1em;
+}
+
 .document a { text-decoration: underline;}
 
 .rst-content .wy-alert-neutral.admonition-todo a,
