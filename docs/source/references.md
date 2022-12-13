@@ -57,10 +57,10 @@ ERTZCHEID, Olivier. _Une question de génération. Vers un capitalisme sémiotiq
 
 Le titre de la vidéo doit être en italique.
 
-NB: les vidéos YouTube ont une URL courte (accessible via la commande “Partager”) préférable pour une mise en page plus condensée.
-
 > NOM, Prénom des auteur⋅ices. _Titre de la vidéo_. Date si disponible. Disponible sur URL [Vidéo consultée le …].
 
 ```md
-PRADIER, Manon. _Avec Vincent_. 2016. Disponible sur URL https://youtu.be/3DNsGRUHF7s [Vidéo consultée le 13 octobre 2022].
+PRADIER, Manon. _Avec Vincent_. 2016. Disponible sur https://youtu.be/3DNsGRUHF7s [Vidéo consultée le 13 octobre 2022].
 ```
+
+NB: les vidéos YouTube ont une URL courte (accessible via la commande “Partager”) préférable pour une mise en page plus condensée.
