@@ -20,7 +20,7 @@ Dans la bibliographie, les références sont ordonnées par ordre alphabétique 
 
 Toutes les sources citées dans le texte doivent aussi être citées dans la bibliographie.
 
-Les normes recommandées ci-dessous sont issues de la spécification ISO-690:2010.  
+Les normes recommandées ci-dessous sont issues de la spécification [ISO-690:2010](https://fr.wikipedia.org/wiki/ISO_690).  
 
 
 ### Pour citer un livre
