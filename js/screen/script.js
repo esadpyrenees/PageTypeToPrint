@@ -41,6 +41,13 @@ window.addEventListener('DOMContentLoaded', () => {
     observer.observe(section);
   });
 
+  var downloadlink = document.querySelector('nav a:last-child');
+  downloadlink.onclick = () => {
+    if(downloadlink.getAttribute('href') == ""){
+      alert("Un fichier PDF doit être généré et téléversé dans le dossier. Le nom du fichier doit être configuré dans config.php. Documentation: https://esadpyrenees.github.io/PageTypeToPrint/print/.")
+    }
+  }
+
 });
 
 
