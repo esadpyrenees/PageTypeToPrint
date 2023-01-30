@@ -14,7 +14,7 @@ Une démo est accessible en ligne sur [ateliers.esad-pyrenees.fr/pagetypetoprint
 * [Configuration et contenu](contenu.md)
 * [Gabarits](gabarits.md)
 * [Contenu au format markdown](markdown.md)
-* [Version imprimable / pdf](print.md)
+* [Version imprimable / téléchargeable](print.md)
 * Composition    
     * [Sommaire](sommaire.md)
     * [Images et vidéos](images.md)

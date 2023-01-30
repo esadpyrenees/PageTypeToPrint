@@ -50,7 +50,7 @@ Le titre de la page doit être en italique.
 > NOM, Prénom des auteur⋅ices. _Titre de la page_. Date de publication (ou de mise à jour) si disponible. Site Internet. URL [Consulté le …].
 
 ```md
-ERTZCHEID, Olivier. _Une question de génération. Vers un capitalisme sémiotique_. 12 octobre 2022. Affordance.info. https://affordance.framasoft.org/2022/10/question-generation-capitalisme-semiotique/ [Consulté le 13 octobre 2022].
+ERTZSCHEID, Olivier. _Une question de génération. Vers un capitalisme sémiotique_. 12 octobre 2022. Affordance.info. https://affordance.framasoft.org/2022/10/question-generation-capitalisme-semiotique/ [Consulté le 13 octobre 2022].
 ```
 
 ### Pour citer une vidéo en ligne

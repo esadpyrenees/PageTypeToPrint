@@ -14,8 +14,8 @@ $diploma = "DNSEP Design";
 $mention = "Mention Design graphique Multimédia";
 // Votre pôle éventuel, par ex. : Pôle Nouveaux médias
 $pole = "Pôle Nouveaux médias";
-// Le nom du fichier pdf généré, par ex. : url_du_document.pdf
-$pdf = "document.pdf";
+// Le nom du fichier pdf généré, par ex. : titre-du-document--prenom-nom.pdf
+$pdf = "";
 
 $parts = [
   [
