@@ -171,6 +171,11 @@
     content: "→ " attr(data-src);
     font-size: var(--smallsize);
   }
+  .video[style]{
+    background: var(--poster);
+    background-size: cover;
+  }
+  .video[style] iframe {visibility: hidden;}
   /* ------------------------------------------------------------------------ Break */
   .breakpage {
     height: 0;
