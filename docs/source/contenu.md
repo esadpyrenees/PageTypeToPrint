@@ -8,10 +8,7 @@ Le fichier `config.php` doit être édité afin d’y référencer les différen
 
 Un contenu de démonstration (texte et images) peut être [téléchargé ici](https://ateliers.esad-pyrenees.fr/pagetypetoprint/demo-base.zip). 
 
-Le contenu du document est organisé sous la forme de documents texte au format markdown, qui permet de le structurer afin de le transformer automatiquement en HTML.
-Voir plus bas [la documentation](#markdown) de la syntaxe markdown (titres, italiques, citations, etc.). 
-
-Les différentes parties du document sont déclarées sous la forme d’un tableau associatif dans le fichier `config.php` :
+Le contenu du document est organisé sous la forme d’une série de documents au format [markdown](#markdown), correspondant à chacun des chapitres. Ces différentes sections sont déclarées dans le fichier `config.php` :
 
 ```php
 $parts = [

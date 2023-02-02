@@ -2,7 +2,11 @@
 
 ## Installation
 
-Le projet PageTypeToPrint utilise le langage PHP pour transformer le texte saisi au format markdown en HTML, afin de pouvoir l’afficher dans un navigateur web, et en générer un PDF imprimable, via Paged.js et les fonctionnalités internes des navigateurs (Chrome ou Chromium, pour le moment).
+Le projet PageTypeToPrint :
+— utilise le langage PHP 
+— pour transformer le texte saisi au format markdown en HTML, 
+— afin de pouvoir l’afficher dans un navigateur web, 
+— et en générer un PDF imprimable, via Paged.js et les fonctionnalités internes des navigateurs (Chrome ou Chromium, pour le moment).
 
 Téléchargez le code du projet [en cliquant ici](https://github.com/esadpyrenees/PageTypeToPrint/zipball/main/). 
 
