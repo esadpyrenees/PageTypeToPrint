@@ -41,4 +41,9 @@ Pour intégrer une vidéo Youtube ou Vimeo, utiliser le _shortcode_ `video` et l
 (video: https://vimeo.com/708803521 class: maclass caption: La légende de la vidéo)
 ```
 
+Pour la version imprimable, il est souhaitable de déterminer quelle image sera imprimée, grâce à l’attribut `poster`:
+```
+(video: https://www.youtube.com/watch?v=yfskVxCn_qo poster: images/videocover.jpg)
+```
+
 En version print, l’URL de la vidéo est affichée sous sa légende.
