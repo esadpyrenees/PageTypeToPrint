@@ -45,23 +45,16 @@ Les points de suspension doivent être composés grâce au caractère dédié :
 ```html
 <br class="breakpage">
 ```
-Dans la CSS doit être présent :
-
-```css
-.breakpage { page-break-before: always; }
-```
-
 Pour forcer un saut dans des colonnes (notes de bas de page, notamment), utiliser :
 ```html
 <br class="breakcolumn">
 ```
-Dans la CSS doit être présent :
+Des sauts conditionnels (écran _ou_ impression) peuvent être générés grâce aux balises :
 
-```css
-.breakcolumn { break-before:column; break-after:column; }
-```
- 
-  
+```html
+<br class="breakscreen"><!-- uniquement à l’écran -->
+<br class="breakprint"><!-- uniquement à l’impression -->
+```  
 
 
 ### Spacing
