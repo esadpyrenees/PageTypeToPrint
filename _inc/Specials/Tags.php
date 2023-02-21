@@ -76,7 +76,7 @@
       $poster = $attributes["poster"] ?? "";
       $caption = $attributes["caption"] ?? "";
       $html = "<figure class='videofigure $class' data-src='$value'>";
-      $video = "<div class='video' style='--poster:url($poster)'>" .video($value) . '</div>';
+      $video = "<div class='video'" . ($poster != "" ? "style='--poster:url($poster)'>" : "") . video($value) . '</div>';
       $html .= $video;
       if($caption){
         $html .= "<figcaption class='figcaption'>";
