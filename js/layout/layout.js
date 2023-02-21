@@ -284,7 +284,7 @@ function layoutHelperLog(f){
   input.value = code;
   if (navigator.clipboard) {
     // navigator.clipboard.writeText(input.value);
-    copyCode(code)
+    copyCode(f, code)
     
   } else {
     input.select();    
@@ -292,7 +292,7 @@ function layoutHelperLog(f){
   }
 }
 
-async function copyCode(code) {
+async function copyCode(f, code) {
   try {
     await navigator.clipboard.writeText(code);
     f.querySelector("nav").classList.add("copied");
