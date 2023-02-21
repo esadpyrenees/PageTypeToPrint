@@ -1,7 +1,7 @@
 <?php
 
 // Le titre du document
-$title = "Printing in Relation to Graphic&nbsp;Art"; // &nbsp; = espace insécable
+$title = "Printing in Relation <br class='breakprint'>to Graphic&nbsp;Art"; // &nbsp; = espace insécable, <br class="breakprint"> produit un saut uniquement en version print
 // Le sous-titre éventuel du document
 $subtitle = "";
 // Votre nom
@@ -10,9 +10,10 @@ $name = "George French";
 $year = "2021 – 2022" ;
 // Votre diplôme, par ex. : DNA Design
 $diploma = "DNSEP Design";
-// Le mention du siplôme, par ex. : Mention Design graphique Multimédia
-$mention = "Mention Design graphique Multimédia";
+// Le mention du diplôme, par ex. : Mention Design graphique Multimédia
+$mention = "Mention Design <br class='breakprint'>graphique Multimédia"; // <br class="breakprint"> produit un saut uniquement en version print
 // Votre pôle éventuel, par ex. : Pôle Nouveaux médias
+// Pôle Image, édition &amp;<br class="breakprint"> dessin de caractères
 $pole = "Pôle Nouveaux médias";
 // Le nom du fichier pdf généré, par ex. : titre-du-document--prenom-nom.pdf
 $pdf = "";
