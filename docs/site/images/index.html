@@ -119,7 +119,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h2 id="images">Images</h2>
-<p>Des images légendées peuvent être insérées grâce à un <em>shortcode</em> spécifique.</p>
+<p>Des images légendées peuvent être insérées grâce à un « <em>shortcode</em> » spécifique.</p>
 <p>Les images peuvent être intégrées au fil du texte sous forme de note de côté :</p>
 <pre><code class="language-md">(imagenote: url/de_limage.jpg caption: La légende de l’image)
 </code></pre>
@@ -129,16 +129,22 @@
 <p>On peut ajouter des <code>class</code> aux images :</p>
 <pre><code class="language-md">(figure: url/de_limage.jpg class: maclass monautreclass)
 </code></pre>
-<p>Pour distinguer les images à l’arrière-plan blanc de celui de la page, une <code>class</code> dédiée (<code>.notwhite</code>) est disponible :</p>
+<p>Pour distinguer les images à l’arrière-plan blanc de celui de la page, une <code>class</code> dédiée (<code>notwhite</code>) est disponible :</p>
 <pre><code class="language-md">(figure: url/de_limage.jpg class: notwhite)
 </code></pre>
-<p>Pour aligner les images de note à gauche ou à droite (en contexte d’impression) utiliser les <code>class</code> suivantes : <code>printleft</code> <code>printright</code>:</p>
+<p>Pour aligner les images de note à gauche ou à droite (en contexte d’impression) utiliser les <code>class</code> suivantes : <code>printleft</code> <code>printright</code> :</p>
 <pre><code class="language-md">(imagenote: url/de_limage.jpg class: printleft)
+</code></pre>
+<p>Pour des images sous forme de blocs qui demandent une grande largeur d’affichage, on peut utiliser la <code>class: full</code> :</p>
+<pre><code class="language-md">(imagenote: url/de_limage.jpg class: full)
 </code></pre>
 <h2 id="videos">Vidéos</h2>
 <p>Pour intégrer une vidéo Youtube ou Vimeo, utiliser le <em>shortcode</em> <code>video</code> et l’URL de la page :</p>
 <pre><code>(video: https://www.youtube.com/watch?v=yfskVxCn_qo class: maclass caption: La légende de la vidéo)
 (video: https://vimeo.com/708803521 class: maclass caption: La légende de la vidéo)
+</code></pre>
+<p>Pour la version imprimable, il est souhaitable de déterminer quelle image sera imprimée, grâce à l’attribut <code>poster</code>:</p>
+<pre><code>(video: https://www.youtube.com/watch?v=yfskVxCn_qo poster: images/videocover.jpg)
 </code></pre>
 <p>En version print, l’URL de la vidéo est affichée sous sa légende.</p>
               

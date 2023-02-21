@@ -181,14 +181,12 @@
 <p>À l’impression, on peut forcer un saut de page en intégrant le code :</p>
 <pre><code class="language-html">&lt;br class=&quot;breakpage&quot;&gt;
 </code></pre>
-<p>Dans la CSS doit être présent :</p>
-<pre><code class="language-css">.breakpage { page-break-before: always; }
-</code></pre>
 <p>Pour forcer un saut dans des colonnes (notes de bas de page, notamment), utiliser :</p>
 <pre><code class="language-html">&lt;br class=&quot;breakcolumn&quot;&gt;
 </code></pre>
-<p>Dans la CSS doit être présent :</p>
-<pre><code class="language-css">.breakcolumn { break-before:column; break-after:column; }
+<p>Des sauts conditionnels (écran <em>ou</em> impression) peuvent être générés grâce aux balises :</p>
+<pre><code class="language-html">&lt;br class=&quot;breakscreen&quot;&gt;&lt;!-- uniquement à l’écran --&gt;
+&lt;br class=&quot;breakprint&quot;&gt;&lt;!-- uniquement à l’impression --&gt;
 </code></pre>
 <h3 id="spacing">Spacing</h3>
 <p>Pour réduire une ligne de texte et empêcher un saut malencontreux (veuves ou orphelines), on peut introduire au sein du texte markdown des balises <code>span</code> qui vont permettre de régler finement le <em>spacing</em> d’une phrase ou d’une ligne:</p>
