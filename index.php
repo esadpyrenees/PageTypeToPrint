@@ -8,6 +8,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- dummy favicon -->
+  <link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEhEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP7/AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon" />
+
   <!-- Le titre du mémoire / doc écrit – votre nom -->
   <title><?= $title ?> — <?= $name ?></title>
   
@@ -79,7 +83,7 @@
           <?= $mention ?> 
         </p>
         <p>
-          École supérieure d’art &amp; de design des&nbsp;Pyrénées<br> 
+          École supérieure <br class="breakprint">d’art &amp; de design <br class="breakprint">des&nbsp;Pyrénées<br>  <br class="breakprint">
           <!-- Votre pôle éventuel -->
           <?= $pole ?>
         </p>
