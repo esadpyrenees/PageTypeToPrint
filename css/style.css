@@ -289,6 +289,13 @@ main blockquote {
   }
 }
 
+/* ------------------------------------------------------------------------ Break */
+.breakpage, 
+.breakcolumn,
+.breakprint {
+  display: none;
+}
+
 /* ------------------------------------------------------------------------ Entretiens (template = interview) */
 .interview p {
   --indent: 8em;
@@ -503,22 +510,12 @@ hr.footnotes-sep {
   grid-gap: var(--spacer);
   align-content: start;
 }
-.figure {
+.appendices .figure {
   grid-column: span 3;
   align-self: start;
   justify-self: start;
   margin: 0;
   padding: 0;
-}
-@media screen and (max-width:40rem) {
-  .figure { 
-    grid-column: 1 / -1 !important;
-    display: flex;
-    flex-direction: column-reverse;
-  }
-  figcaption::before {
-    content: "↓ " !important;
-  }
 }
 .figure img {
   display: block;
@@ -537,7 +534,7 @@ hr.footnotes-sep {
 figcaption {
   font-size: 0.85rem;
   background: white;
-  padding: 0.5em 0;
+  padding: 0.5em 0 0;
 }
 figcaption::before {
   content: "↑ ";
@@ -569,6 +566,18 @@ figcaption::before {
 .figure.center { align-self: center;}
 .figure.bottom { align-self: end;}
 
+@media screen and (max-width:40rem) {
+  .appendices .figure { 
+    grid-column: 1 / -1 !important;
+  }
+  .figure { 
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  figcaption::before {
+    content: "↓ " !important;
+  }
+}
 
 /* ------------------------------------------------------------------------ Videos */
 .video {
