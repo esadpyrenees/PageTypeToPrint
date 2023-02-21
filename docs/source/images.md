@@ -2,7 +2,7 @@
 
 ## Images
 
-Des images légendées peuvent être insérées grâce à un _shortcode_ spécifique.
+Des images légendées peuvent être insérées grâce à un « _shortcode_ » spécifique.
 
 Les images peuvent être intégrées au fil du texte sous forme de note de côté :
 ```md
@@ -21,16 +21,22 @@ On peut ajouter des `class` aux images :
 (figure: url/de_limage.jpg class: maclass monautreclass)
 ```
 
-Pour distinguer les images à l’arrière-plan blanc de celui de la page, une `class` dédiée (`.notwhite`) est disponible :
+Pour distinguer les images à l’arrière-plan blanc de celui de la page, une `class` dédiée (`notwhite`) est disponible :
 
 ```md
 (figure: url/de_limage.jpg class: notwhite)
 ```
 
-Pour aligner les images de note à gauche ou à droite (en contexte d’impression) utiliser les `class` suivantes : `printleft` `printright`:
+Pour aligner les images de note à gauche ou à droite (en contexte d’impression) utiliser les `class` suivantes : `printleft` `printright` :
 
 ```md
 (imagenote: url/de_limage.jpg class: printleft)
+```
+
+Pour des images sous forme de blocs qui demandent une grande largeur d’affichage, on peut utiliser la `class: full` :
+
+```md
+(imagenote: url/de_limage.jpg class: full)
 ```
 
 ## Vidéos
