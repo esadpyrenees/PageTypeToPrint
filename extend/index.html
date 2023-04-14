@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Extend - PageTypeToPrint</title>
+    <title>Extensions - PageTypeToPrint</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Extend";
+        var mkdocs_page_name = "Extensions";
         var mkdocs_page_input_path = "extend.md";
         var mkdocs_page_url = null;
       </script>
@@ -88,9 +88,16 @@
                 <li class="toctree-l1"><a class="reference internal" href="../online/">Mise en ligne</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../credits/">Crédits</a>
-                </li>
+              <p class="caption"><span class="caption-text">Aller plus loin</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Extensions</a>
+    <ul class="current">
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../booklet/">Livret</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../pads/">Collaboration</a>
+                  </li>
               </ul>
       </div>
     </div>
@@ -106,7 +113,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>Extend</li>
+          <li>Aller plus loin &raquo;</li>
+      <li>Extensions</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -118,160 +126,15 @@
                 <h2 id="extension">Extension</h2>
 <p>PageTypeToPrint est conçu pour simplifier l’éditions des documents écrits et mémoires. L’outil peut cependant être étendu, augmenté et détourné.</p>
 <p>Les choix par défaut faits dans le contexte du gabarit standard peuvent être modifiées. </p>
-<h3 id="exemple-dun-changement-de-format">Exemple d’un changement de format</h3>
-<p>Cet exemple se propose de transformer le gabarit d’une simple page A4 (recto seul) vers une double page A5 (recto-verso).</p>
-<p>Le code correspondant à cet exemple est accessible sur la branche <code>booklet</code> du dépôt. 
-Il peut être téléchargé sur <a href="https://ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip">ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip</a>.
-Une démo est visible sur <a href="http://ateliers.esad-pyrenees.fr/pagetypetoprint-booklet/?print">ateliers.esad-pyrenees.fr/pagetypetoprint-booklet</a></p>
-<ul>
-<li><code>js/print/pagedjs.css</code><ul>
-<li>desactivation de la feuille de style interface/recto-verso.css</li>
-</ul>
-</li>
-<li><code>index.php</code><ul>
-<li>courants et folio: suppression du logo ESAD et du diplôme</li>
-<li>courants et folio: réorganisation pour positionnement en bas de page uniquement</li>
-<li>notes de <del>marge</del> bas de page, suppression des scripts <code>js/screen/notes.js</code> et <code>js/print/marginNotes.js</code> </li>
-</ul>
-</li>
-<li><code>css/print.css</code><ul>
-<li>format et marges  </li>
-<li>gestion des titres courants </li>
-<li>notes de marge </li>
-<li>mise en page du sommaire </li>
-</ul>
-</li>
-</ul>
-<h3 id="details-css-print">Détails CSS print</h3>
-<p>Format et marges</p>
-<pre><code class="language-css">@page {
-  size: 148mm 210mm;
-
-  @bottom-left-corner {
-    content: element(folioRunning);
-    text-align: left;
-  }
-  @bottom-left{
-    content: element(titleRunning);
-    text-align: left;
-  }
-  @footnote {
-    float: bottom;
-  }
-}  
-@page:right{
-  margin: 1cm 2cm 2.5cm 1cm;
-}
-@page:left{
-  margin: 1cm 1cm 2.5cm 2cm;
-}
-@page cover {
-  margin: 1cm 1cm 2.5cm 1cm;    
-  @bottom-left-corner {
-    display: none;
-  }
-  @bottom-left{
-    display: none;
-  }
-}
-@page:blank{
-  @bottom-left-corner {
-    display: none;
-  }
-  @bottom-left{
-    display: none;
-  }
-}
-</code></pre>
-<p>Couverture, réorganisation :</p>
-<pre><code class="language-css">  .meta-year{ grid-column: 3; grid-row: 1;}
-  .meta-data { grid-column: 1; grid-row: 1}
-</code></pre>
-<p>Modifications des titres courants : </p>
-<pre><code class="language-css">  /* running title */
-  .runningtitle {
-    display: none;
-    position: running(titleRunning);
-  }
-  .folio{
-    font-weight: bold;
-    text-align: right;
-  }
-  .folio::before{
-    content: counter(page);
-    font-weight: bold;
-  }
-  .pagedjs_margin .runningtitle {
-    gap:var(--spacer);
-    padding: 1cm 0 .5cm;
-    display: flex !important;
-    justify-content: space-between;
-  }
-  .pagedjs_left_page .runningtitle {
-    flex-direction: row-reverse;
-  }
-  .pagedjs_right_page .runningtitle {
-    flex-direction: row;
-  }
-  .pagedjs_left_page .runningtitle .title,
-  .pagedjs_right_page .runningtitle .name { display: none; }
-</code></pre>
-<p>Modification des images de note :</p>
-<pre><code class="language-css">  .imagenote {
-    width: 33%;
-    display: block;
-    margin: var(--spacer) 0 0 var(--spacer);
-    font-size: var(--smallsize);    
-  }
-  .imagenote.printleft {
-    float: left;
-    margin: var(--spacer) var(--spacer) 0 0;
-  }
-  .imagenote.printright {
-    float: right;
-    margin: var(--spacer) 0 0 var(--spacer);
-  }
-</code></pre>
-<p>Annexes : suppression des marges spécifiques, affichage du titre et suppresion du retrait dans les interviews :</p>
-<pre><code class="language-css">section.appendices { /* margin-left: -6.5cm; */ }
-.appendices &gt; h2 { /* display: none; */ }
-section.references { /* margin-left: -6.5cm; */ }
-.references &gt; h2 { /* display: none; */ }
-.interview &gt; h2 { /* display: none; */ }
-.interview p {
-  --indent: 0px;
-}
-Glossaire et références bibliographiques sur deux colonnes uniquement :
-```css
-.glossary,
-.columns {
-  font-size: 0.85em;
-  columns: 2;
-  column-gap: var(--spacer);
-}
-</code></pre>
-<p>Saut de page avant le sommaire :</p>
-<pre><code class="language-css">  #nav {
-    page-break-before: right;
-    page-break-after: right;
-    counter-reset: page 1;
-    height: auto;
-  }
-</code></pre>
-<p>Mise en page du sommaire :</p>
-<pre><code class="language-css">#list-toc-generated .toc-element a::before {
-  /* position: absolute; */
-  /* margin-left: calc(-4em - 20px); */
-  display: inline-block;
-  text-align: left;
-}
-#list-toc-generated .toc-element-level-2 a::before {
-  /* margin-left: calc(-4em - 40px); */
-}
-</code></pre>
+<p><a href="../booklet/">Voir en détails l’exemple d’un changement de format</a></p>
+<p><a href="../pads/">Voir en détails la mise en place d’un document collaboratif</a></p>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../online/" class="btn btn-neutral float-left" title="Mise en ligne"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../booklet/" class="btn btn-neutral float-right" title="Livret">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -293,6 +156,10 @@ Glossaire et références bibliographiques sur deux colonnes uniquement :
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../online/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../booklet/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
