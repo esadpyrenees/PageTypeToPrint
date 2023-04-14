@@ -29,3 +29,5 @@ Une démo est accessible en ligne sur [ateliers.esad-pyrenees.fr/pagetypetoprint
 ## Aller plus loin
 
 * [Étendre et détourner l’outil](extend.md)
+* [Livret A5](booklet.md)
+* [Édition collaborative](pads.md)

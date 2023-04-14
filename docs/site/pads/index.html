@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Mise en ligne - PageTypeToPrint</title>
+    <title>Collaboration - PageTypeToPrint</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Mise en ligne";
-        var mkdocs_page_input_path = "online.md";
+        var mkdocs_page_name = "Collaboration";
+        var mkdocs_page_input_path = "pads.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -84,19 +84,19 @@
                   <li class="toctree-l1"><a class="reference internal" href="../notes/">Notes</a>
                   </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">Mise en ligne</a>
-    <ul class="current">
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../online/">Mise en ligne</a>
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Aller plus loin</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../extend/">Extensions</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../booklet/">Livret</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../pads/">Collaboration</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Collaboration</a>
+    <ul class="current">
+    </ul>
                   </li>
               </ul>
       </div>
@@ -113,7 +113,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>Mise en ligne</li>
+          <li>Aller plus loin &raquo;</li>
+      <li>Collaboration</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -122,20 +123,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p>Bravo ! Vous êtes arrivé⋅e à la dernière page de cette documentation.</p>
-<h2 id="mise-en-ligne-et-publication">Mise en ligne et publication</h2>
-<p>Une fois terminé le processus d’édition sur un serveur local, le document peut être mis en ligne sur un serveur web de production (le serveur de l’ÉSAD Pyrénées ou un compte étudiant hébergé par Alwaysdata – <a href="mailto:julien.bidoret@esad-pyrenees.fr">me demander</a>). Il faut alors s’assurer que le serveur est bien capable de servir le site via une version de PHP supérieure à 8.0 (sur Alwaysdata, <a href="https://admin.alwaysdata.com/environment/">voir ici</a>).</p>
-<p>Le lien « Imprimer », présent dans le fichier <code>index.php</code> peut être supprimé pour ne conserver que le seul « Télécharger ».</p>
-<h2 id="aller-plus-loin">Aller plus loin</h2>
-<ul>
-<li><a href="../extend/">Étendre et détourner l’outil</a></li>
-</ul>
+                <h2 id="edition-collaborative">Édition collaborative</h2>
+<p>Sur le principe largement répandu de « pad-to-print » (<a href="https://gitlab.com/Luuse/pad2print">pad2print</a> de Luuse, <a href="http://osp.kitchen/tools/ethertoff/">Ethertoff</a> ou <a href="http://osp.kitchen/tools/ether2html/">Ether2html</a> d’Open Source Publishing, <a href="https://gitlab.com/quentinjuhel/collabprint">Collabprint</a> de Quentin Juhel, <a href="https://git.vvvvvvaria.org/varia/octomode">Octomode</a> de Varia), l’outil permet de déterminer des <em>pads</em> comme source de contenus. </p>
+<p>La structure de contenu du document (une série de documents au format <a href="#markdown">markdown</a>) est déclarée dans le fichier <code>config.php</code>, mais plutôt que l’usage standard, dédié à des documents stockés dans un sous-dossier, on déclare alors l’url de pads publics :</p>
+<pre><code class="language-php">$parts = [
+  [
+    // le titre de la section, tel qu’il apparaitra dans le sommaire
+    &quot;title&quot; =&gt; &quot;Introduction collective&quot;, 
+    // la déclaration &quot;file&quot; reste vide (ou est supprimée)
+    &quot;file&quot; =&gt; &quot;&quot;, 
+    // on déclare l’URL du pad public
+    &quot;pad&quot; =&gt; &quot;https://annuel2.framapad.org/p/pagetypetoprint?lang=fr&quot;, 
+    // le gabarit de mise en page
+    &quot;template&quot; =&gt; &quot;default&quot; 
+  ],
+  …
+]
+</code></pre>
+<p>Il est attendu que le contenu du pad soit nativement rédigé en markdown ; le format d’exportation utilisé étant la version texte brut.</p>
+<p>NB: contrairement aux fichiers markdown locaux, il n’est pas possible d’écrire de HTML au sein des pads, mis à part pour l’usage de <code>&lt;br&gt;</code>. Les éventuelles class sont autorisées : <code>&lt;br class="breakprint"&gt;</code>, <code>&lt;br class="breakpage"&gt;</code>, <code>&lt;br class="breakcolumn"&gt;</code> ou <code>&lt;br class="breakscreen"&gt;</code>.</p>
+<p>Les entités HTML (<code>$nbsp;</code>, <code>&amp;#8239;</code>, etc.) sont préservées.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../notes/" class="btn btn-neutral float-left" title="Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../extend/" class="btn btn-neutral float-right" title="Extensions">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../booklet/" class="btn btn-neutral float-left" title="Livret"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -158,10 +170,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../notes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../booklet/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../extend/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
