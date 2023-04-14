@@ -98,7 +98,17 @@
     // Concatenate parts
     foreach($parts as $part){
 
-      $content = file_get_contents( $part["file"] );
+      $file = $part["file"];
+      $pad = $part["pad"];
+
+      if (empty($file) && !empty($pad) ) {
+        // we have a pad URL…
+        $content = pad_get_contents( $pad );
+      } else {
+        // local file
+        $content = file_get_contents( $file );
+      }
+      
       $part_title = $part["title"];
       $template = $part["template"] ;
       // each section is assigned an `id` generated from the section title
