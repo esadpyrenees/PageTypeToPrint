@@ -74,6 +74,7 @@
   
   // Loading utilities
   include_once 'Specials/Tags.php';
+  include_once 'Specials/Pad.php';
   
   
   // Util: format markdown text from files
