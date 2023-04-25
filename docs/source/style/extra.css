@@ -21,7 +21,13 @@
   font-weight: bold;
   font-style: normal;
 }
-
+@font-face {
+  font-family: 'Fira Code VF';
+  src: url('FiraCode-VF.woff2') format('woff2-variations');
+  /* font-weight requires a range: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide#Using_a_variable_font_font-face_changes */
+  font-weight: 300 700;
+  font-style: normal;
+}
 /* ------------------------------------------------------------------------ Variables */
 body,
 .btn,
@@ -29,13 +35,25 @@ input[type="color"], input[type="date"], input[type="datetime-local"], input[typ
 .rst-content .toctree-wrapper > p.caption, h1, h2, h3, h4, h5, h6, legend {
   font-family: "Ecole"
 }
-
+p {
+  line-height: 24px;
+  font-size: 16px;
+  margin: 0 0 12px;
+}
 .rst-content blockquote {
   border-left: 3px solid tomato;
   margin-left: 0;
   padding-left: 1em;
 }
-
+.rst-content pre code { 
+  line-height: 1.6;}
+.rst-content code, .rst-content tt {
+  font-family: "Fira Code VF";
+  font-size-adjust: .6;
+}
+.rst-content h1, .rst-content h2, .rst-content h3, .rst-content h4, .rst-content h5, .rst-content h6 {
+margin-block: 24px 12px;
+}
 .document a { text-decoration: underline;}
 
 .rst-content .wy-alert-neutral.admonition-todo a,
