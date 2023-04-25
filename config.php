@@ -20,6 +20,11 @@ $pdf = "";
 
 $parts = [
   [
+    "title" => "Images",
+    "folder" => "images",
+    "template" => "autofolder"
+  ],
+  [
     "title" => "Prefatory Note",
     "file" => "text/0.prefatorynote.md",
     "template" => "default"

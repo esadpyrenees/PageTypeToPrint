@@ -283,6 +283,14 @@
     height: auto !important;
   }
 
+
+
+  /* ------------------------------------------------------------------------ Autofolder */
+  .autofolder {
+    margin-left: -6.5cm;
+    page-break-after: always;
+  }
+
   /* ------------------------------------------------------------------------ Annexes */
   .appendices {
     page-break-before: always;
