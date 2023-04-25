@@ -27,16 +27,16 @@ Les illustrations de Gustave Doré(imagenote: images/gustave.jpg) sont gravées 
 
 ### Problèmes de notes
 
-En con,texte d’impression, si trop d'images de note sont présentes sur une seule page, l’outil ne peut pas gérer automatiquement le “reflux” de la note sur la page suivante. Une `alert` est alors affichée.
+En contexte d’impression, si trop d'images de note sont présentes sur une seule page, l’outil ne peut pas gérer automatiquement le “reflux” de la note sur la page suivante. Une `alert` est alors affichée.
 
 Plusieurs solutions : 
 
 - Utiliser une grande `(figure: nomdufichier.jpg caption: La légende de l’image)` au fil du texte pour développer la pagination différemment.
 - Déporter certaines images de notes en annexes.
 - Forcer un saut de page en intégrant le code :
-  ```html
-  <br class="breakpage">
-  ```
+```html
+<br class="breakpage">
+```
 
 ### Modifier l’affichage des notes
 

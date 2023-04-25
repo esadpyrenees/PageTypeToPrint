@@ -20,7 +20,7 @@ Une démo est visible sur [ateliers.esad-pyrenees.fr/pagetypetoprint-booklet](ht
 
 ### Détails CSS print
 
-Format et marges
+Format et marges:
 ```css
 @page {
   size: 148mm 210mm;
@@ -29,7 +29,7 @@ Format et marges
     content: element(folioRunning);
     text-align: left;
   }
-  @bottom-left{
+  @bottom-left {
     content: element(titleRunning);
     text-align: left;
   }
@@ -37,10 +37,10 @@ Format et marges
     float: bottom;
   }
 }  
-@page:right{
+@page:right {
   margin: 1cm 2cm 2.5cm 1cm;
 }
-@page:left{
+@page:left {
   margin: 1cm 1cm 2.5cm 2cm;
 }
 @page cover {
@@ -48,15 +48,15 @@ Format et marges
   @bottom-left-corner {
     display: none;
   }
-  @bottom-left{
+  @bottom-left {
     display: none;
   }
 }
-@page:blank{
+@page:blank {
   @bottom-left-corner {
     display: none;
   }
-  @bottom-left{
+  @bottom-left {
     display: none;
   }
 }
@@ -64,8 +64,8 @@ Format et marges
 
 Couverture, réorganisation :
 ```css
-  .meta-year{ grid-column: 3; grid-row: 1;}
-  .meta-data { grid-column: 1; grid-row: 1}
+  .meta-year { grid-column: 3; grid-row: 1; }
+  .meta-data { grid-column: 1; grid-row: 1; }
 ```
 Modifications des titres courants : 
 ```css
@@ -116,7 +116,7 @@ Modification des images de note :
   }
 ```
 
-Annexes : suppression des marges spécifiques, affichage du titre et suppresion du retrait dans les interviews :
+Pour les annexes, suppression des marges spécifiques, affichage du titre et suppresion du retrait dans les interviews :
 ```css
 section.appendices { /* margin-left: -6.5cm; */ }
 .appendices > h2 { /* display: none; */ }

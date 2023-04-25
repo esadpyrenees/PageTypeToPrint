@@ -33,5 +33,9 @@ Le code source du projet est accessible sur [github.com/esadpyrenees/PageTypeToP
 ## Aller plus loin
 
 * [Étendre et détourner l’outil](extend.md)
+* [Premiers pas](extendcss.md)
 * [Livret A5](booklet.md)
 * [Édition collaborative](pads.md)
+* [Dossier d’images](autofolder.md)
+* [Notes avancées](advanced-notes.md)
+

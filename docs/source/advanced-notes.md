@@ -21,7 +21,7 @@ Insérer un appel de note[^appel], puis créer un paragraphe contentant :
 
 Les appels de notes sont insérés au fil du texte :
 ```html
-<p>Insérer un appel de note<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>, puis créer un paragraphe contentant : </p>
+<p>Insérer un appel de note<sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup>, puis créer un paragraphe contentant : </p>
 ```
 
 L’ensemble des notes se retrouve à la fin du document, dans une liste. Un lien de retour vers l’appel de note est inséré à la fin de son contenu :
@@ -39,7 +39,7 @@ L’ensemble des notes se retrouve à la fin du document, dans une liste. Un lie
 
 Pour l’affichage à l’écran, le script `js/screen/sideNotes.js` parcourt les appels de note, récupère leur contenu cible et l’insère au fil du texte, à la place de l’appel de note initial, dans une structure HTML constituée de trois éléments :
 ```html
-<label class="sn-toggle-label" for="sn-note-fn1">[1]</label>
+<label class="sn-toggle-label" for="sn-note-fn1">1</label>
 <input type="checkbox" id="sn-note-fn1" class="sn-toggle">
 <aside class="sn-note" data-ref="2"><p>Contenu de la note</p></aside>
 ```

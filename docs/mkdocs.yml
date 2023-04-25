@@ -21,7 +21,11 @@ nav:
     - Mise en ligne: online.md
     - Aller plus loin: 
       - Extensions: extend.md
+      - Premiers pas: extendcss.md
       - Livret: booklet.md
       - Collaboration: pads.md
+      - Dossier d’images: autofolder.md
+      - Notes avancées: advanced-notes.md
 theme:
   name: readthedocs
+  hljs_style: stackoverflow-light

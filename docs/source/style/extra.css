@@ -22,6 +22,12 @@
   font-style: normal;
 }
 @font-face {
+  font-family: "Ecole";
+  src: url("Ecole-BoldItalic.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
   font-family: 'Fira Code VF';
   src: url('FiraCode-VF.woff2') format('woff2-variations');
   /* font-weight requires a range: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide#Using_a_variable_font_font-face_changes */

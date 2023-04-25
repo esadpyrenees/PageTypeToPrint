@@ -22,6 +22,13 @@ Toutes les sources citées dans le texte doivent aussi être citées dans la bib
 
 Les normes recommandées ci-dessous sont issues de la spécification [ISO-690:2010](https://fr.wikipedia.org/wiki/ISO_690).  
 
+### Abbréviations utiles
+
+**_Ibid._** s’utilise lorsque la note porte sur le même ouvrage que la note précédente. 
+
+_**Op. cit.**_ s’utilise lorsqu’un ouvrage a déjà été cité précédemment, mais que d’autres ouvrages ont été cités depuis. Avec _op. cit._, on mentionne quelques mots du titre, mais on fait l’économie de la répétition de la source complète.
+
+Ces deux abbréviations se composent en italique.
 
 ### Pour citer un livre
 
