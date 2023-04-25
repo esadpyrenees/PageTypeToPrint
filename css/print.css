@@ -96,6 +96,7 @@
     padding: 0;
     height: calc(var(--pagedjs-pagebox-height) - var(--pagedjs-margin-bottom) - var(--pagedjs-margin-top));
     min-height: 0;
+    counter-reset: page 1;  
   }
   #nav h2, #nav ul { grid-column: 1; }
 
