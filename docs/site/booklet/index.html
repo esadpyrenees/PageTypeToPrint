@@ -8,7 +8,7 @@
     <title>Livret - PageTypeToPrint</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/stackoverflow-light.min.css" />
         <link href="../style/extra.css" rel="stylesheet" />
     
       <script>
@@ -92,6 +92,8 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../extend/">Extensions</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../extendcss/">Premiers pas</a>
+                  </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Livret</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#details-css-print">Détails CSS print</a>
@@ -99,6 +101,10 @@
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../pads/">Collaboration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../autofolder/">Dossier d’images</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../advanced-notes/">Notes avancées</a>
                   </li>
               </ul>
       </div>
@@ -150,7 +156,7 @@ Une démo est visible sur <a href="http://ateliers.esad-pyrenees.fr/pagetypetopr
 </li>
 </ul>
 <h3 id="details-css-print">Détails CSS print</h3>
-<p>Format et marges</p>
+<p>Format et marges:</p>
 <pre><code class="language-css">@page {
   size: 148mm 210mm;
 
@@ -158,7 +164,7 @@ Une démo est visible sur <a href="http://ateliers.esad-pyrenees.fr/pagetypetopr
     content: element(folioRunning);
     text-align: left;
   }
-  @bottom-left{
+  @bottom-left {
     content: element(titleRunning);
     text-align: left;
   }
@@ -166,10 +172,10 @@ Une démo est visible sur <a href="http://ateliers.esad-pyrenees.fr/pagetypetopr
     float: bottom;
   }
 }  
-@page:right{
+@page:right {
   margin: 1cm 2cm 2.5cm 1cm;
 }
-@page:left{
+@page:left {
   margin: 1cm 1cm 2.5cm 2cm;
 }
 @page cover {
@@ -177,22 +183,22 @@ Une démo est visible sur <a href="http://ateliers.esad-pyrenees.fr/pagetypetopr
   @bottom-left-corner {
     display: none;
   }
-  @bottom-left{
+  @bottom-left {
     display: none;
   }
 }
-@page:blank{
+@page:blank {
   @bottom-left-corner {
     display: none;
   }
-  @bottom-left{
+  @bottom-left {
     display: none;
   }
 }
 </code></pre>
 <p>Couverture, réorganisation :</p>
-<pre><code class="language-css">  .meta-year{ grid-column: 3; grid-row: 1;}
-  .meta-data { grid-column: 1; grid-row: 1}
+<pre><code class="language-css">  .meta-year { grid-column: 3; grid-row: 1; }
+  .meta-data { grid-column: 1; grid-row: 1; }
 </code></pre>
 <p>Modifications des titres courants : </p>
 <pre><code class="language-css">  /* running title */
@@ -239,7 +245,7 @@ Une démo est visible sur <a href="http://ateliers.esad-pyrenees.fr/pagetypetopr
     margin: var(--spacer) 0 0 var(--spacer);
   }
 </code></pre>
-<p>Annexes : suppression des marges spécifiques, affichage du titre et suppresion du retrait dans les interviews :</p>
+<p>Pour les annexes, suppression des marges spécifiques, affichage du titre et suppresion du retrait dans les interviews :</p>
 <pre><code class="language-css">section.appendices { /* margin-left: -6.5cm; */ }
 .appendices &gt; h2 { /* display: none; */ }
 section.references { /* margin-left: -6.5cm; */ }
@@ -280,7 +286,7 @@ Glossaire et références bibliographiques sur deux colonnes uniquement :
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../extend/" class="btn btn-neutral float-left" title="Extensions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../extendcss/" class="btn btn-neutral float-left" title="Premiers pas"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../pads/" class="btn btn-neutral float-right" title="Collaboration">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -304,7 +310,7 @@ Glossaire et références bibliographiques sur deux colonnes uniquement :
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../extend/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../extendcss/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../pads/" style="color: #fcfcfc">Next &raquo;</a></span>
