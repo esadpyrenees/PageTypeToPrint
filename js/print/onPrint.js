@@ -1,5 +1,5 @@
 // Script to slugify document title in print/paged.js context
-// so that PDF documents names can be directly uploaded
+// so that PDF documents names can be directly uploaded without any special chars in URL
 
 // https://gist.github.com/mathewbyrne/1280286
 function slugify(text, separator) {
