@@ -26,7 +26,7 @@ Par exemple :
 Pour aider à la mise en page “visuelle” des images, on peut activer un utilitaire visuel.
 
 En contexte écran, ajouter `?layout` à l’URL.   
-En contexte de prévisualisation print, ajouter `?print&layout` à l’URL.   
+En contexte de prévisualisation print : `print.php?layout`.   
 
 ![image layout helper](images/layout-helper.png)
 

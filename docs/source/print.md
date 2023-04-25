@@ -2,7 +2,7 @@
 
 ## Version imprimable
 
-On peut accéder à la prévisualisation de la version A4 depuis l’URL du document associée à la requête `?print`. Par exemple, `http://localhost:8888/pagetypetoprint/?print`.
+On peut accéder à la prévisualisation de la version A4 depuis l’URL `/print.php`. Par exemple, `http://localhost:8888/pagetypetoprint/print.php`.
 
 Un fichier PDF devra être produit en utilisant la fonction « d’impression vers PDF » d’un navigateur compatible (Chromium ou Chrome) : Fichier > Imprimer > Format PDF . 
 
