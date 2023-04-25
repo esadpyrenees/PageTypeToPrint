@@ -73,8 +73,10 @@
   use Kaoken\MarkdownIt\Plugins\MarkdownItAbbr;
   
   // Loading utilities
-  include_once 'Specials/Tags.php';
-  include_once 'Specials/Pad.php';
+  include_once 'PageTypeToPrint/Tags.php';
+  include_once 'PageTypeToPrint/Pad.php';
+  include_once 'PageTypeToPrint/BreakAnchors.php';
+  include_once 'PageTypeToPrint/AutoFolder.php';
   
   
   // Util: format markdown text from files
@@ -95,21 +97,38 @@
   // Util: format markdown text from files
   // build html
   $html = function() use($parts, $name){
+    
+    // Setup an empty mardown string
     $md = "";
+
     // Concatenate parts
     foreach($parts as $part){
 
-      $file = $part["file"];
-      $pad = $part["pad"];
+      // switch between sources modes :
+      // - $file: a markdown file
+      // - $pad: a public etherpad url
+      // - $folder: a folder to autoload images
+
+      $file = array_key_exists("file", $part) ? $part["file"] : null; 
+      $pad = array_key_exists("pad", $part) ? $part["pad"] : null;
+      $folder = array_key_exists("folder", $part) ? $part["folder"] : null;
 
       if (empty($file) && !empty($pad) ) {
         // we have a pad URL…
         $content = pad_get_contents( $pad );
-      } else {
+      } else if (empty($file) && !empty($folder) ) {
+        // we have a folder of images…
+        $content = folder_get_contents( $folder );
+      } else if(!empty($file)) {
         // local file
         $content = file_get_contents( $file );
+      } else {
+        // we got nothing…
+        $dump = var_export($part, true);
+        $content = "No content source found within this part:<br><pre>$dump</pre>";
       }
-      
+
+      // base data for each part
       $part_title = $part["title"];
       $template = $part["template"] ;
       // each section is assigned an `id` generated from the section title
@@ -119,11 +138,15 @@
       if($template != "default"){
         $content = "<div class='runningtitle'><div>$name</div><div>$part_title</div></div>\n\n$content";
       }
-      if($template == "appendices"){
+      if($template == "appendices" || $template == "autofolder"){
         $content = "<h2>$part_title</h2><div class='content' markdown=1>\n\n$content\n\n</div>";
       }
+
+      // add content to markdown string 
       $md .= "<section id='$slug' class='$template' markdown=1>\n\n$content\n\n</section>\n\n";
+      
     }
+
     // Parse special tags (figure, image, video)
     $md = specials($md);
 
@@ -133,8 +156,9 @@
       "html"=> true, // Enable HTML tags in source
       "typographer"=> false, // Enable some language-neutral replacement + quotes beautification
       "linkify"=> true // Autoconvert URL-like text to links
-   ]);
-   // MarkdownIt standard plugins
+    ]);
+
+    // MarkdownIt standard plugins
     $mdit->plugin(new MarkdownItFootnote());
     $mdit->plugin(new MarkdownItSup());
     $mdit->plugin(new MarkdownItDeflist());
@@ -156,26 +180,9 @@
     $html = $fixer->fix($html);
     
     // break long anchor texts
-    $html = breakAnchorTexts($html);
+    $html = breakAnchors($html);
+
     // Return HTML
     return $html;
     
   };
-
-  function breakAnchorTexts($doc){
-    function insertWbr($anchortext){
-      return "a" . $anchortext;
-    };
-    return preg_replace_callback('/<a(.+?)>(.+?)<\/a>/i', function($matches){
-      // var_dump($matches[1]);
-      $html = "<a" . $matches[1] . ">";
-      $anchortext = $matches[2];
-      $anchortext = preg_replace("/\/\//",  '//<wbr>', $anchortext );
-      $anchortext = preg_replace("/,/",  ',<wbr>', $anchortext );
-      $anchortext = preg_replace("/(\/|\~|\-|\.|\,|\_|\?|\#|\%)/",  "<wbr>$1", $anchortext );
-      $anchortext = preg_replace("/,/",  ',<wbr>&#8209;', $anchortext );
-      $html .= $anchortext;
-      $html .= "</a>";
-      return $html;
-    }, $doc);
-  }
