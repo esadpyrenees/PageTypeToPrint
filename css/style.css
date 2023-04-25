@@ -62,7 +62,7 @@ Sommaire :
   :root{
     --spacer:1rem;
     --basesize:1rem;
-    --bigsize: clamp(1rem, -1.2500rem + 10.0000vw, 4rem);
+    --bigsize: clamp(1.5rem, -1.2500rem + 10.0000vw, 4rem);
   }
 }
 
