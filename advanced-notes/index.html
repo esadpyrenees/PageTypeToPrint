@@ -8,7 +8,7 @@
     <title>Notes avancées - PageTypeToPrint</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/stackoverflow-light.min.css" />
         <link href="../style/extra.css" rel="stylesheet" />
     
       <script>
@@ -89,12 +89,30 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Aller plus loin</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../extend/">Extensions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../extendcss/">Premiers pas</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../booklet/">Livret</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../pads/">Collaboration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../autofolder/">Dossier d’images</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Notes avancées</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#notes-textuelles">Notes textuelles</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#affichage-ecran-notes-textuelles-en-marge">Affichage écran : notes textuelles en marge</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#impression-notes-textuelles-en-bas-de-page">Impression : notes textuelles en bas de page</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#notes-iconographiques">Notes iconographiques</a>
+    </li>
+    </ul>
                   </li>
               </ul>
       </div>
@@ -111,6 +129,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Aller plus loin &raquo;</li>
       <li>Notes avancées</li>
     <li class="wy-breadcrumbs-aside">
     </li>
@@ -129,7 +148,7 @@
 [^appel]: Contenu de la note.
 </code></pre>
 <p>Les appels de notes sont insérés au fil du texte :</p>
-<pre><code class="language-html">&lt;p&gt;Insérer un appel de note&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;, puis créer un paragraphe contentant : &lt;/p&gt;
+<pre><code class="language-html">&lt;p&gt;Insérer un appel de note&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, puis créer un paragraphe contentant : &lt;/p&gt;
 </code></pre>
 <p>L’ensemble des notes se retrouve à la fin du document, dans une liste. Un lien de retour vers l’appel de note est inséré à la fin de son contenu :</p>
 <pre><code class="language-html">&lt;hr class=&quot;footnotes-sep&quot;&gt;
@@ -142,7 +161,7 @@
 </code></pre>
 <h4 id="affichage-ecran-notes-textuelles-en-marge">Affichage écran : notes textuelles en marge</h4>
 <p>Pour l’affichage à l’écran, le script <code>js/screen/sideNotes.js</code> parcourt les appels de note, récupère leur contenu cible et l’insère au fil du texte, à la place de l’appel de note initial, dans une structure HTML constituée de trois éléments :</p>
-<pre><code class="language-html">&lt;label class=&quot;sn-toggle-label&quot; for=&quot;sn-note-fn1&quot;&gt;[1]&lt;/label&gt;
+<pre><code class="language-html">&lt;label class=&quot;sn-toggle-label&quot; for=&quot;sn-note-fn1&quot;&gt;1&lt;/label&gt;
 &lt;input type=&quot;checkbox&quot; id=&quot;sn-note-fn1&quot; class=&quot;sn-toggle&quot;&gt;
 &lt;aside class=&quot;sn-note&quot; data-ref=&quot;2&quot;&gt;&lt;p&gt;Contenu de la note&lt;/p&gt;&lt;/aside&gt;
 </code></pre>
@@ -159,6 +178,9 @@
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../autofolder/" class="btn btn-neutral float-left" title="Dossier d’images"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
 
   <hr/>
 
@@ -179,6 +201,8 @@
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
+    
+      <span><a href="../autofolder/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>

@@ -8,7 +8,7 @@
     <title>Notes - PageTypeToPrint</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/stackoverflow-light.min.css" />
         <link href="../style/extra.css" rel="stylesheet" />
     
       <script>
@@ -100,9 +100,15 @@
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../extend/">Extensions</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../extendcss/">Premiers pas</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../booklet/">Livret</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../pads/">Collaboration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../autofolder/">Dossier d’images</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../advanced-notes/">Notes avancées</a>
                   </li>
               </ul>
       </div>
@@ -147,15 +153,15 @@ Paul Watzlawick affirme «&amp;#8239;On ne peut pas ne pas communiquer[^axiome].
 <pre><code class="language-md">Les illustrations de Gustave Doré(imagenote: images/gustave.jpg) sont gravées dans les mémoires.
 </code></pre>
 <h3 id="problemes-de-notes">Problèmes de notes</h3>
-<p>En con,texte d’impression, si trop d'images de note sont présentes sur une seule page, l’outil ne peut pas gérer automatiquement le “reflux” de la note sur la page suivante. Une <code>alert</code> est alors affichée.</p>
+<p>En contexte d’impression, si trop d'images de note sont présentes sur une seule page, l’outil ne peut pas gérer automatiquement le “reflux” de la note sur la page suivante. Une <code>alert</code> est alors affichée.</p>
 <p>Plusieurs solutions : </p>
 <ul>
 <li>Utiliser une grande <code>(figure: nomdufichier.jpg caption: La légende de l’image)</code> au fil du texte pour développer la pagination différemment.</li>
 <li>Déporter certaines images de notes en annexes.</li>
-<li>Forcer un saut de page en intégrant le code :
-  <code>html
-  &lt;br class="breakpage"&gt;</code></li>
+<li>Forcer un saut de page en intégrant le code :</li>
 </ul>
+<pre><code class="language-html">&lt;br class=&quot;breakpage&quot;&gt;
+</code></pre>
 <h3 id="modifier-laffichage-des-notes">Modifier l’affichage des notes</h3>
 <p>Pour étendre ou modifier l’affichage des notes, il importe de comprendre comment elles sont générées et mises en page. Une documentation dédiée est accessible ici : <a href="../advanced-notes/">Pour aller plus loin avec les notes</a>.</p>
               
