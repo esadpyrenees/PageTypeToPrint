@@ -144,7 +144,7 @@ hr{
 .runningtitle + h3 {
   margin-top: 0;
 }
-@media screen and  (max-width:45rem) {
+@media screen and (max-width:45rem) {
   .meta { display: block;}
   .meta > * { margin-bottom: 1em;}
   #header nav a { display: block; }
@@ -164,6 +164,8 @@ hr{
   margin: 0;
   font-size: 1em;
 }
+.nav-default + .nav-appendices { margin-top: 1em;}
+
 #nav ul,
 #index ul {
   list-style-type: none;
@@ -233,8 +235,9 @@ hr{
   #index li { display: none; }
   #index.visible { transform: translate(0); }
   #index.visible li { display: block; }
-  #index.visible button { display: block; transform: translateX(0); }
+  #index.visible button { transform: translateX(0); }
   #index.visible > * { margin-bottom: .5em; }
+  #index-quicklinks { display: none;}
 }
 
 
@@ -516,7 +519,35 @@ hr.footnotes-sep {
   width: 4em;
 }
 
-/* ------------------------------------------------------------------------ Images annees (template = appendices) */
+
+/* ------------------------------------------------------------------------ Auto folder (template = autofolder) */
+.autofolder .content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: var(--spacer);
+  align-content: start;
+  grid-auto-flow: dense;
+}
+.autofolder .figure {
+  grid-column: span 3;
+  align-self: start;
+  justify-self: start;
+  margin: 0;
+  padding: 0;
+}
+.autofolder .portrait {
+  /* grid-row: span 2; */
+}
+.autofolder .landscape {
+  grid-column: span 6;
+}
+@media screen and (max-width:40rem) {
+  .autofolder .figure { 
+    grid-column: 1 / -1 !important;
+  }
+}
+
+/* ------------------------------------------------------------------------ Images annexes (template = appendices) */
 .appendices .content {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
