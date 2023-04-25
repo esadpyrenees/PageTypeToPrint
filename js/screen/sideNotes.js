@@ -103,3 +103,10 @@ var initializeFootnotes = function initializeFootnotes(options) {
   renderSideNotes(notes);
 
 };
+
+window.addEventListener('DOMContentLoaded', () => {
+  // footnotes
+  initializeFootnotes();
+});
+
+

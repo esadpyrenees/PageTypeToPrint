@@ -1,17 +1,25 @@
 
 window.addEventListener('DOMContentLoaded', () => {
 
-  // footnotes
-  initializeFootnotes();
-
-  // nav clone
+  // menu clone
   var sections = document.querySelectorAll('section[id]');
-  var nav = document.querySelector("#nav ul");
+  var menu = document.querySelector("#nav ul").cloneNode(true);
   var main = document.querySelector('#main');
-  var index = nav.cloneNode(true);
+  var index = document.createElement('nav');
+  index.appendChild(menu);
   index.id = "index";
   main.prepend(index);
 
+  // injecte les liens rapides
+  var quicklinks = document.querySelector("#quicklinks").cloneNode(true);
+  quicklinks.id = "index-quicklinks";
+  index.appendChild(quicklinks);
+  // mise à jour dupremier lien (vers la première section, et non plus vers le sommaire)
+  quicklinks.querySelector('a').textContent = "↑";
+  quicklinks.querySelector('a').href = "#" + index.nextElementSibling.id;
+
+
+  // menu mobile: insère un bouton pour afficher/masquer le menu
   var togglemenu = document.createElement('button');
   togglemenu.textContent = "☰";
   togglemenu.addEventListener('click', function(e){
@@ -24,7 +32,7 @@ window.addEventListener('DOMContentLoaded', () => {
     index.classList.remove('visible');
   })
   
-  // highlight nav item on scroll
+  // surligne le chapître courant au scroll
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       const id = entry.target.getAttribute('id');      
@@ -36,12 +44,12 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Track all sections that have an `id` applied
+  // observe chaque section
   sections.forEach((section) => {
     observer.observe(section);
   });
 
-  var downloadlink = document.querySelector('nav a:last-child');
+  var downloadlink = quicklinks.querySelector('a:last-child');
   downloadlink.onclick = () => {
     if(downloadlink.getAttribute('href') == ""){
       alert("Un fichier PDF doit être généré et téléversé dans le dossier. Le nom du fichier doit être configuré dans config.php. Documentation: https://esadpyrenees.github.io/PageTypeToPrint/print/.")
