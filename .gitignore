@@ -1,4 +1,4 @@
-images/*
-images.zip
-!images/README.md
+# images/*
+# images.zip
+# !images/README.md
 .DS_Store
