@@ -2,10 +2,10 @@
 
 function folder_get_contents( $folder ){
   
-  $lookup = dirname(__DIR__) . "/../" . $folder.'/*.{jpg,JPG,jpeg,JPEG,png,PNG,gif,GIF,webp,WEBP}';
+  $lookup = dirname(__DIR__) . "/../" . $folder.'/*.{jpg,JPG,jpeg,JPEG,png,PNG,gif,GIF,webp,WEBP,svg,SVG}';
   $files = glob($lookup,GLOB_BRACE);
   sort($files);
-  
+
   // fallback
   if(empty($files)){
     return "The provided folder ($folder) seems to be empty or unreachable. <pre>¯\\\_(ツ)_/¯</pre>";
