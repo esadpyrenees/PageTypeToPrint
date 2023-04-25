@@ -130,7 +130,7 @@ class MarkdownItFootnote
                 $n .= ':' . $tokens[$idx]->meta->subId;
             }
 
-            return '[' . $n . ']';
+            return $n;
         };
         /**
          * @param Token[] $tokens

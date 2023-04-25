@@ -436,6 +436,10 @@ sup a.footnote-ref {
   border: none;
   font-weight: bold;
 }
+/* appels de note */
+.sn-toggle-label::before {content: "["}
+.sn-toggle-label::after {content: "]"}
+/* rappel */
 .sn-note::before {
   float: left;
   padding-right: 0.5em;
