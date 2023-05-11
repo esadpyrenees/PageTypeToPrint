@@ -6,7 +6,7 @@ PageTypeToPrint est conçu pour simplifier l’éditions des documents écrits e
 
 Les choix par défaut faits dans le contexte du gabarit standard peuvent être modifiées. 
 
-- Premiers pas dans l’extension de [PageTypeToPrint](extendcss.md)
+- Premiers pas dans [l’extension de PageTypeToPrint](extendcss.md)
 - Faire un [livret A5 recto-verso](booklet.md)
 - Utiliser un pad public pour engager une [écriture collaborative](pads.md)
 - Automatiser l’importation d’un [dossier d’images](autofolder.md)
