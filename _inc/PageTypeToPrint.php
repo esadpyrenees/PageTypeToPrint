@@ -77,8 +77,10 @@
   include_once 'PageTypeToPrint/Pad.php';
   include_once 'PageTypeToPrint/BreakAnchors.php';
   include_once 'PageTypeToPrint/AutoFolder.php';
-  
-  
+
+  // theme URL
+  $theme_url = "theme/" . ( isset($theme) ? $theme : "default" );
+   
   // Util: format markdown text from files
   // build nav
   $nav = function() use($parts){
@@ -120,7 +122,7 @@
         // we have a folder of images…
         $content = folder_get_contents( $folder );
       } else if(!empty($file)) {
-        // local file
+        // we have a local file
         $content = file_get_contents( $file );
       } else {
         // we got nothing…

@@ -2,7 +2,7 @@
 
 ### Changer le caractère typographique
 
-Modifier le fichier `css/style.css` pour déclarer le (ou les) nouveau(x) catactère(s), et modifier la valeur de `--fontfamily` dans les propriétés personnalisées.
+Modifier le fichier `css/style.css` du thème pour déclarer le (ou les) nouveau(x) catactère(s), et modifier la valeur de `--fontfamily` dans les propriétés personnalisées.
 
 ```css
 @font-face {

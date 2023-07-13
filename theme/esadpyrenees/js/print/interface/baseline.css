@@ -1,0 +1,83 @@
+
+
+@media screen {
+
+    /* baseline grid */
+    /* .pagedjs_pagebox {
+        --pagedjs-baseline: 22px;
+        --pagedjs-baseline-position: 5px;
+        --pagedjs-baseline-color: cyan;
+        background: linear-gradient(transparent 0%, transparent calc(var(--pagedjs-baseline) - 1px), var(--pagedjs-baseline-color) calc(var(--pagedjs-baseline) - 1px), var(--pagedjs-baseline-color) var(--pagedjs-baseline)), transparent;
+        background-size: 100% var(--pagedjs-baseline);
+        background-repeat: repeat-y;
+        background-position-y: var(--pagedjs-baseline-position);
+    }  */
+
+    /* column grid  */
+    /* .pagedjs_area {
+        --pagedjs-column: calc(100% / 12);
+        --pagedjs-column-position: 0;
+        --pagedjs-column-color: cyan;
+        background: linear-gradient(to right, var(--pagedjs-column-color) 0%, transparent 2px, transparent calc(var(--pagedjs-column) - 2px)), transparent var(--pagedjs-column);
+        background-size: var(--pagedjs-column) 100% ;
+        background-repeat: repeat-x;
+        background-position-x: var(--pagedjs-column-position);
+    }  */
+    /* Settings */
+    :root {
+        --offset: 0;
+        --max_width: 72rem;
+        --columns: 12;
+        --gutter: var(--spacer);
+        --baseline: 3rem;
+        --baseline-shift: 2rem;
+        --gridcolor: hsla(204, 80%, 72%, 0.25);
+        --gridcolor-text: hsla(204, 80%, 72%, 1);
+        --media-query: 'base';
+    }
+
+    
+    /* Helper variables */
+    :root {
+        --repeating-width: calc(100% / var(--columns));
+        --column-width: calc((100% / var(--columns)) - var(--gutter));
+        --background-width: calc(100% + var(--gutter));
+        --background-columns: repeating-linear-gradient(
+        to right,
+        var(--gridcolor),
+        var(--gridcolor) var(--column-width),
+        transparent var(--column-width),
+        transparent var(--repeating-width)
+        );
+        --background-baseline: repeating-linear-gradient(
+        to bottom,
+        var(--gridcolor),
+        var(--gridcolor) 1px,
+        transparent 1px,
+        transparent var(--baseline)
+        );
+    }
+    
+    .pagedjs_area {
+        position: relative;
+    }
+    
+    .pagedjs_area::before {
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        margin-right: auto;
+        margin-left: auto;
+        width: calc(100% - (2 * var(--offset)));
+        max-width: var(--max_width);
+        min-height: 100vh;
+        content: '';
+        background-image: var(--background-columns), var(--background-baseline);  
+        background-size: var(--background-width) 100%;
+        background-position: 0 var(--baseline-shift);
+        z-index: 1000;
+        pointer-events: none;
+    }
+    
+  
+
+}

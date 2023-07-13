@@ -8,7 +8,7 @@
     <title>Sommaire - PageTypeToPrint</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/stackoverflow-light.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
         <link href="../style/extra.css" rel="stylesheet" />
     
       <script>
@@ -51,6 +51,10 @@
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../contenu/">Configuration et contenu</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../theme/">Thème</a>
                 </li>
               </ul>
               <ul>
@@ -131,7 +135,8 @@
               
                 <h2 id="sommaire">Sommaire</h2>
 <h2 id="ecran">Écran</h2>
-<p>À l’écran, le sommaire est généré automatiquement depuis les éléments contenus dans le tableau associatif <code>$parts</code>. Il est cloné via javascript, afin d’apparaître à la fois en introduction du document et au fil de la lecture.</p>
+<p>À l’écran, le sommaire est généré automatiquement depuis les éléments contenus dans la liste définie dans le fichier <code>config.php</code>. </p>
+<p>L’élément <code>&lt;nav&gt;</code> qui le contient est cloné via javascript, afin d’apparaître à la fois en introduction du document et au fil de la lecture.</p>
 <h2 id="impression">Impression</h2>
 <p>En contexte d’impression, il est généré à partir des balises <code>&lt;h2&gt;</code> et <code>&lt;h3&gt;</code> (à l’intérieur de l’élément <code>&lt;main&gt;</code>) du document (c’est à dire, des titres précédés de <code>##</code> et <code>###</code> dans les fichiers markdown). </p>
               

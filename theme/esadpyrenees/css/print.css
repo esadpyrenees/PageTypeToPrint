@@ -1,0 +1,390 @@
+@media print {
+
+  @page {
+    size: 210mm 297mm;
+    margin: 3.2cm 1cm 1.2cm 7.5cm;
+    @top-left-corner {
+      content: element(folioRunning);
+      text-align: left;
+      padding-left: 1.2cm;
+    }
+    @top-right{
+      content: element(titleRunning);
+      text-align: left;
+    }
+    @footnote {
+      float: bottom;
+    }
+  }  
+
+  @page cover {
+    margin: 1cm 1cm 1.2cm 1cm;
+    
+    @top-left-corner {
+      display: none;
+    }
+    @top-right{
+      display: none;
+    }
+  }
+
+  @page sommaire {
+       
+  }
+
+  @page appendices {
+    margin: 2.2cm 1cm .8cm 7.5cm;
+  }
+
+  @page references {
+    margin: 3.2cm 1cm 1.2cm 7.5cm;
+  }
+
+  @page interview {
+    margin: 3.2cm 1cm 1.2cm 7.5cm;
+  }
+
+  
+
+  /* ------------------------------------------------------------------------ Variables */
+  :root {
+    --bigsize: 60px;
+    --basesize: 12px;
+    --smallsize: 10px;
+    --color: rgba(0, 0, 0, 0.85);
+    --spacer: .5cm;
+    /* maximum width for texts */
+    --maxwidth: 40em;
+    /* columns */
+    --columnwidth: calc((186mm - var(--spacer) * 11) / 12);
+    --maxwidth:100%;
+  }
+
+
+  /* ------------------------------------------------------------------------ Cover */
+  #header {
+    page: cover;
+    padding: 0;
+    /* identité ÉSAD Pyrénées */
+    background: url(logo.svg) no-repeat 0 100%;
+    background-size: 100% auto;
+    height: calc(var(--pagedjs-height) - var(--pagedjs-margin-bottom) - var(--pagedjs-margin-top));
+    min-height: 0;
+  }
+  
+  .meta {
+    display: grid;
+    grid-gap: var(--spacer);
+    grid-template-columns: 4fr 4fr 4fr;
+    margin-top: 2rem;
+  }
+
+  /* header nav = Lire / imprimer / télécharger */
+  #header nav { display: none; } 
+
+  /* ------------------------------------------------------------------------ Sommaire */
+  #nav {
+    page: sommaire;
+    display: flex;
+    align-items: center;
+    break-before: always; 
+    break-after: always;
+    grid-template-columns: 1fr;
+    padding: 0;
+    height: calc(var(--pagedjs-pagebox-height) - var(--pagedjs-margin-bottom) - var(--pagedjs-margin-top));
+    min-height: 0;
+    counter-reset: page 1;  
+  }
+  #nav h2, #nav ul { grid-column: 1; }
+
+  /* ------------------------------------------------------------------------ Running titles */
+  /* running title */
+  .runningtitle {
+    display: none;
+    position: running(titleRunning);
+    gap:var(--spacer);
+  }
+  .runningtitle > * {
+    flex: 1;
+    text-align: left;
+  }
+  .runningtitle :nth-child(2){
+    font-weight: bold;
+  }
+  /* running folio */
+  .runningfolio {
+    display: none;
+    position: running(folioRunning);
+    gap:var(--spacer);
+  }
+  .runningfolio img {
+    width: 1cm;
+    transform: translateY(-.3cm);
+    margin: 0 1em;
+  }
+  .folio::before{
+    content: counter(page) ;
+    font-weight: bold;
+  }
+  .runningtitle, 
+  .runningfolio {
+    padding: 1cm 0 .5cm;
+  }
+  .pagedjs_margin {
+    align-items: start !important;
+  }
+  .pagedjs_margin-content > * {
+    display: flex !important;
+    align-items: start;
+  }
+
+  
+  /* ------------------------------------------------------------------------ Content */
+  /* contenu */
+  main { 
+    display: block;
+    padding: 0;
+  }
+  .default p {
+    /* minimum deux lignes présentes sur la page, au début ou à la fin d’un paragraphe */
+    orphans: 2;
+    widows: 2;
+    margin: 0;
+  }
+  /* indentation des paragraphes sauf :
+    — quand le paragaphe succède à autre chose qu’un paragraphe
+    — quand un paragraphe est coupé par un saut ( il contient alors l’attribuet `data-split-from`
+  */
+  .default p + p:not([data-split-from]) { text-indent: 2em; }
+
+  #nav, section { 
+    margin-bottom: 0; 
+  }
+  figure {
+    break-inside: avoid;
+  }
+  .default figure.full {
+    /* “reset” pagebox left margin : */
+    margin-left: calc(-1 * (var(--pagedjs-margin-left) - var(--pagedjs-margin-right)) );
+    max-width: none;
+  }  
+  figcaption {
+    font-size: var(--smallsize);
+  }
+  figure.videofigure::after{
+    display: block;
+    content: "→ " attr(data-src);
+    font-size: var(--smallsize);
+  }
+  .video[style]{
+    background: var(--poster);
+    background-size: cover;
+  }
+  .video[style] iframe {visibility: hidden;}
+  /* ------------------------------------------------------------------------ Break */
+  .breakpage {
+    height: 0;
+    page-break-before: always;
+  }
+  .breakcolumn{
+    break-before:column;
+    break-after:column;
+  }
+  .breakprint {
+    display: block;
+  }
+  .breakscreen {
+    display: none;
+  }
+  /* ------------------------------------------------------------------------ Spacing */
+  [style^="--ls"] { letter-spacing: calc(var(--ls, 0) * -0.001em); }
+
+  /* ------------------------------------------------------------------------ Side notes */
+  .imagenote_wrapper {
+    display: block;
+    width: calc(var(--columnwidth)  * 3 + var(--spacer) * 2);
+    padding: 0 var(--spacer) 0 1cm;    
+    position: absolute;
+    text-align-last: initial;
+  }
+  .imagenote_wrapper.printright {
+    padding-left: calc(1cm + 1.625cm);
+  }
+  .imagenote_wrapper.printright .note-marker_imagenote{
+    position: absolute;
+    left: 1cm;
+    text-align: right;
+    width: 1.25cm;
+    text-indent: 0;
+  }
+  .imagenote_wrapper.printleft {
+    padding-right: calc(var(--spacer) + 1.625cm);
+  }
+  .imagenote_wrapper.printleft .note-marker_imagenote{
+    position: absolute;
+    right: .5cm;
+    width: 1.25cm;
+    text-indent: 0;
+  }
+  .imagenote {
+    width: 100%;
+    float: none;
+    display: block;
+    margin: 0;
+    font-size: var(--smallsize);
+  }
+  .imagenote > * {
+    display: block;
+  }
+  .note-marker_imagenote,
+  .note-call_imagenote {
+    letter-spacing: 0.05em;
+    font-weight: bold;
+  }
+  .note-call_imagenote { padding-left: 0.25em;}
+
+  /* ------------------------------------------------------------------------ Footnotes */
+  .footnote {
+    float: footnote;
+    counter-increment: footnote;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+  }
+  
+  .footnote:has(.breakcolumn) {
+    break-inside: auto;
+    -webkit-column-break-inside: auto;
+  }
+  
+  .footnotes-sep,
+  section.footnotes { display: none;}
+
+  ::footnote-call {
+    font-weight: bold; 
+    content: "[" counter(footnote) "] ";
+    font-variant-position:normal;
+    vertical-align: baseline;
+    font-size: 100%;
+    padding-left: 0.25em;
+  }
+
+  ::footnote-marker {
+    content: "[" counter(footnote-marker) "] ";
+    font-weight: bold;
+  }
+  
+  .pagedjs_footnote_inner_content {
+    font-size: var(--smallsize);
+    margin-top: 1em;
+  }
+
+
+
+  /* ------------------------------------------------------------------------ Autofolder */
+  .autofolder {
+    page: appendices;
+    page-break-after: always;
+    /* “reset” pagebox left margin : */
+    margin-left: calc(-1 * (var(--pagedjs-margin-left) - var(--pagedjs-margin-right)) );
+  }
+
+  /* ------------------------------------------------------------------------ Annexes */
+  .appendices {
+    page: appendices;
+    page-break-before: always;
+    /* “reset” pagebox left margin : */
+    margin-left: calc(-1 * (var(--pagedjs-margin-left) - var(--pagedjs-margin-right)) );
+  }
+  .appendices > h2 {
+    display: none;
+  }
+  .figure.print-quarter { grid-column: span 3; }
+  .figure.print-offset0 { grid-column: 1 / span 3; } 
+  .figure.print-offset2 { grid-column: 3 / span 3; } 
+  .figure.print-offset4 { grid-column: 5 / span 3; } 
+  .figure.print-offset6 { grid-column: 7 / span 3; } 
+  .figure.print-offset8 { grid-column: 9 / span 3; } 
+  .figure.print-third { grid-column: span 4; }
+  .figure.print-third.print-offset0 { grid-column: 1 / span 4; } 
+  .figure.print-third.print-offset2 { grid-column: 3 / span 4; } 
+  .figure.print-third.print-offset4 { grid-column: 5 / span 4; } 
+  .figure.print-third.print-offset6 { grid-column: 7 / span 4; } 
+  .figure.print-third.print-offset8 { grid-column: 9 / span 4; } 
+  .figure.print-half { grid-column: span 6; }
+  .figure.print-half.print-offset0 { grid-column: 1 / span 6; } 
+  .figure.print-half.print-offset2 { grid-column: 3 / span 6; } 
+  .figure.print-half.print-offset4 { grid-column: 5 / span 6; } 
+  .figure.print-half.print-offset6 { grid-column: 7 / span 6; } 
+  .figure.print-twothird { grid-column: span 8; }
+  .figure.print-twothird.print-offset0 { grid-column: 1 / span 8; } 
+  .figure.print-twothird.print-offset2 { grid-column: 3 / span 8; } 
+  .figure.print-twothird.print-offset4 { grid-column: 5 / span 8; } 
+  .figure.print-threequarter { grid-column: span 9; }
+  .figure.print-threequarter.print-offset0 { grid-column: 1 / span 9; } 
+  .figure.print-threequarter.print-offset2 { grid-column: 3 / span 9; } 
+  .figure.print-full { grid-column: 1 / span 12; }
+  .figure.print-full.print-offset0 { grid-column: 1 / span 12; }
+
+  .figure.print-top { align-self: start;}
+  .figure.print-center { align-self: center;}
+  .figure.print-bottom { align-self: end;}
+  
+  /* ------------------------------------------------------------------------ References */
+  .references {
+    page: references;
+    page-break-before: always;
+    /* “reset” pagebox left margin : */
+    margin-left: calc(-1 * (var(--pagedjs-margin-left) - var(--pagedjs-margin-right)) );
+  }
+  .references > h2 {
+    display: none;
+  }
+  /* ------------------------------------------------------------------------ Interview */
+  .interview {
+    page: interview;
+    page-break-before: always;
+  }
+  .interview > h2 {
+    display: none;
+  }
+  .interview p {
+    --indent: 8em;
+    margin-left: -8em;
+    max-width: none;
+  }
+
+  /* ------------------------------------------------------------------------ Glossaire */
+  .glossary {
+    font-size: 1em;
+  }
+
+  /* ------------------------------------------------------------------------ Table des matières */
+  
+  #list-toc-generated {
+    list-style: none;
+    padding: 0;
+  }
+
+  #list-toc-generated .toc-element a::before {
+    content: target-counter(attr(href), page);
+    position: absolute;
+    left: 0;
+    margin-left: calc(-4em - 20px);
+    text-align: right;
+    width: 4em;
+  }
+
+  #list-toc-generated .toc-element-level-1 {
+    font-weight: bold;
+    margin-top: 1em;
+  }
+
+  #list-toc-generated .toc-element-level-2 {
+    margin-left: 20px;
+  }
+  #list-toc-generated .toc-element-level-2 a::before {
+    margin-left: calc(-4em - 40px);
+  }
+
+
+}

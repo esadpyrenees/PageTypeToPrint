@@ -1,0 +1,71 @@
+
+/* layout images mode */
+[data-mode="layout"] .figure::after {
+  /* content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0, .15);
+  pointer-events: none; */
+}
+.figure {
+  position: relative;
+  justify-self: stretch;
+}
+.figure img {
+  /* width: 100%;
+  max-width: none; */
+}
+.figure nav { 
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  display: none;
+}
+.figure:hover nav {
+  display: flex;
+}
+.figure nav,
+.figure nav select,
+.figure nav option { font-size: 12px; font-family: Ecole, sans-serif; }
+.figure nav.copied::after {
+  content: "Code copié !";
+  font-weight: bold;
+  color: white;
+  background: green;
+  padding: 0 .5em;
+  animation: copied 100ms infinite alternate;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  font-size: 12px;
+}
+@keyframes copied {
+  0% { transform: rotate(2deg);}
+  100% { transform: rotate(-2deg);}
+}
+.figure p {
+  margin: 0;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.figure p span { background: #00000099; padding: .1em .25em; border-radius: 3px;}
+figure select, .figure label, .figure button {
+  border: none;
+  border-radius: 3px;
+  background: black;
+  appearance: none;
+  color: white;
+  padding: .1em .25em;
+}
+
+@media screen {
+  .printhelper { display: none;}
+  .pagedjs_page_content .printhelper { display: flex;}
+}

@@ -36,8 +36,8 @@ Le titre du livre doit être en italique. En cas de d’ouvrage collectif, indiq
 
 > NOM, Prénom des auteur⋅ices. _Titre du livre_. Édition. Ville d’édition&#8239;: Nom de l’éditeur, Année de publication. Collection.
 
-```md
-PAPANEK, Victor. _Design for the Real World: Human Ecology and Social Change_. New-York&nbsp;: Pantheon Books, 1971.
+```html
+PAPANEK, Victor. _Design for the Real World: Human Ecology and Social Change_. New-York&#8239;: Pantheon Books, 1971.
 ```
 
 ### Pour citer un article
@@ -46,7 +46,7 @@ Le titre de l’article doit être entre guillemets. Le titre de la revue ou du 
 
 > NOM, Prénom des auteur⋅ices. « Titre de l’article ». Dans&#8239;: _Titre de la revue_. Année de publication, Volume (Numéro), Pages. URL si publication en ligne.
 
-```md
+```html
 DREYFUS, John et Fernand BAUDIN. «&#8239;L’invention des lunettes et l’apparition de l’imprimerie&#8239;». Dans&nbsp;: _Communication & Langages_. 1989, (N^o^&nbsp;79), pp. 73-86. 
 ```
 
@@ -56,7 +56,7 @@ Le titre de la page doit être en italique.
 
 > NOM, Prénom des auteur⋅ices. _Titre de la page_. Date de publication (ou de mise à jour) si disponible. Site Internet. URL [Consulté le …].
 
-```md
+```html
 ERTZSCHEID, Olivier. _Une question de génération. Vers un capitalisme sémiotique_. 12 octobre 2022. Affordance.info. https://affordance.framasoft.org/2022/10/question-generation-capitalisme-semiotique/ [Consulté le 13 octobre 2022].
 ```
 

@@ -15,28 +15,16 @@
   <!-- Le titre du mémoire / doc écrit – votre nom -->
   <title><?= strip_tags( $title ) ?> — <?= $name ?></title>
   
-  <!-- Styles communs -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- Styles screen -->
-  <!-- Notes de marge -->
-  <script src="js/screen/sideNotes.js" media="screen"></script>
-  <!-- Scripts communs  -->
-  <script src="js/screen/script.js" media="screen"></script>
-  
-  <!-- Aide pour la mise en page des images -->
-  <?php if(isset($_GET["layout"])): ?>
-    <script src="js/layout/turndown.js"></script>
-    <script src="js/layout/layout.js"></script>    
-    <link rel="stylesheet" href="js/layout/layout.css" media="screen">
-  <?php endif ?>
+  <!-- le thème -->
+  <?php include( isset($_GET["print"]) ? "$theme_url/print_head.php" : "$theme_url/screen_head.php"); ?>
   
 </head>
 <body>
   
-  <!-- Le contenu HTML des versions écran et imprimable est identique -->
-  <!-- Pour différencier les deux versions, supprimer l’inclusion de body ci-dessous et insérer, puis modifier son contenu -->
-  <?php include("body.php") ?>
-
+  <!-- Les contenus HTML des versions écran et imprimable sont identiques par défaut -->
+  <!-- Il est possible de les différencier en utilisant une condition similaire au thème ci-dessus -->
+  
+  <?php include( $theme_url . "/body.php" )?>
+  
 </body>
 </html>

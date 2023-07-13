@@ -8,7 +8,7 @@
     <title>Livret - PageTypeToPrint</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/stackoverflow-light.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
         <link href="../style/extra.css" rel="stylesheet" />
     
       <script>
@@ -54,6 +54,10 @@
                 </li>
               </ul>
               <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../theme/">Thème</a>
+                </li>
+              </ul>
+              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../gabarits/">Gabarits</a>
                 </li>
               </ul>
@@ -96,6 +100,8 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Livret</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#etapes">Étapes</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#details-css-print">Détails CSS print</a>
     </li>
     </ul>
@@ -133,18 +139,20 @@
               
                 <h2 id="livret-a5">Livret A5</h2>
 <p>Cet exemple se propose de transformer le gabarit d’une simple page A4 (recto seul) vers une double page A5 (recto-verso) en supprimant toute association à l’ÉSAD Pyrénées.</p>
-<p>Le code correspondant à cet exemple est accessible sur la branche <code>booklet</code> du dépôt. 
-Il peut être téléchargé sur <a href="https://ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip">ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip</a>.
-Une démo est visible sur <a href="http://ateliers.esad-pyrenees.fr/pagetypetoprint-booklet/?print">ateliers.esad-pyrenees.fr/pagetypetoprint-booklet</a></p>
+<p>Le thème <em>booklet</em> comprend le code résultant de cette modification du thème par défaut. Il est possible de l’activer en le configurant dans le fichier <code>config.php</code>:</p>
+<pre><code class="language-php">$theme = &quot;booklet&quot;;
+</code></pre>
+<p>Une démo est visible sur <a href="http://ateliers.esad-pyrenees.fr/pagetypetoprint-booklet/?print">ateliers.esad-pyrenees.fr/pagetypetoprint-booklet</a></p>
+<h3 id="etapes">Étapes</h3>
 <ul>
 <li><code>js/print/pagedjs.css</code><ul>
 <li>desactivation de la feuille de style interface/recto-verso.css</li>
 </ul>
 </li>
-<li><code>index.php</code><ul>
+<li><code>body.php</code><ul>
 <li>courants et folio: suppression du logo ESAD et du diplôme</li>
 <li>courants et folio: réorganisation pour positionnement en bas de page uniquement</li>
-<li>notes de <del>marge</del> bas de page, suppression des scripts <code>js/screen/notes.js</code> et <code>js/print/marginNotes.js</code> </li>
+<li>suppression des notes de marge au profit de notes de bas de page : suppression des scripts <code>js/screen/sideNotes.js</code> et <code>js/print/imageNotes.js</code> </li>
 </ul>
 </li>
 <li><code>css/print.css</code><ul>
@@ -254,9 +262,9 @@ section.references { /* margin-left: -6.5cm; */ }
 .interview p {
   --indent: 0px;
 }
-Glossaire et références bibliographiques sur deux colonnes uniquement :
-```css
-.glossary,
+</code></pre>
+<p>Glossaire et références bibliographiques sur deux colonnes uniquement :</p>
+<pre><code class="language-css">.glossary,
 .columns {
   font-size: 0.85em;
   columns: 2;

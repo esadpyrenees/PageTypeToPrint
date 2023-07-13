@@ -1,0 +1,361 @@
+@media print {
+
+  
+
+  @page {
+    size: 148mm 210mm;
+  
+    @bottom-left-corner {
+      content: element(folioRunning);
+      text-align: left;
+    }
+    @bottom-left {
+      content: element(titleRunning);
+      text-align: left;
+    }
+    @footnote {
+      float: bottom;
+    }
+  }  
+  @page:right {
+    margin: 1cm 2cm 2.5cm 1cm;
+  }
+  @page:left {
+    margin: 1cm 1cm 2.5cm 2cm;
+  }
+  @page cover {
+    margin: 1cm 1cm 2.5cm 1cm;    
+    @bottom-left-corner {
+      display: none;
+    }
+    @bottom-left {
+      display: none;
+    }
+  }
+  @page:blank {
+    @bottom-left-corner {
+      display: none;
+    }
+    @bottom-left {
+      display: none;
+    }
+  }
+  
+
+  /* ------------------------------------------------------------------------ Variables */
+  :root {
+    --bigsize: 60px;
+    --basesize: 12px;
+    --smallsize: 10px;
+    --color: rgba(0, 0, 0, 0.85);
+    --spacer: .5cm;
+    /* couleur d’accentuation */
+    --accentcolor: #ff6347;
+    /* maximum width for texts */
+    --maxwidth: 40em;
+    /* columns */
+    --columnwidth: calc((186mm - var(--spacer) * 11) / 12);
+    --maxwidth:100%;
+  }
+
+
+  /* ------------------------------------------------------------------------ Cover */
+  #header {
+    padding: 0;
+    background: url(logo.svg) no-repeat 0 100%;
+    background-size: 100% auto;
+    height: 275mm;
+    min-height: 0;
+  }
+  
+  #header {
+    page: cover;
+  }
+  #index { display: none; } 
+
+  .meta {
+    display: grid;
+    grid-gap: var(--spacer);
+    grid-template-columns: 4fr 4fr 4fr;
+    margin-top: 2rem;
+  }
+  .meta-year { grid-column: 3; grid-row: 1; }
+  .meta-data { grid-column: 1; grid-row: 1; }
+
+  /* header nav = Lire / imprimer / télécharger */
+  #header nav { display: none; } 
+
+  /* ------------------------------------------------------------------------ Cover */
+  #nav {
+    display: flex;
+    align-items: center;
+    break-before: always; 
+    break-after: always;
+    page: sommaire;
+    grid-template-columns: 1fr;
+    padding: 0;
+    height: auto;
+    min-height: 0;
+    page-break-before: right;
+    page-break-after: right;
+    counter-reset: page 1;
+  }
+  #nav h2, #nav ul { grid-column: 1; }
+
+  /* ------------------------------------------------------------------------ Running titles */
+  /* running title */
+  .runningtitle {
+    display: none;
+    position: running(titleRunning);
+  }
+  .runningtitle br { display: none;}
+  .folio{
+    font-weight: bold;
+    text-align: right;
+  }
+  .folio::before{
+    content: counter(page);
+    font-weight: bold;
+  }
+  .pagedjs_margin .runningtitle {
+    gap:var(--spacer);
+    padding: 1cm 0 .5cm;
+    display: flex !important;
+    justify-content: space-between;
+  }
+  .pagedjs_left_page .runningtitle {
+    flex-direction: row-reverse;
+  }
+  .pagedjs_right_page .runningtitle {
+    flex-direction: row;
+  }
+  .pagedjs_left_page .runningtitle .title,
+  .pagedjs_right_page .runningtitle .name { display: none; }
+
+  
+  /* ------------------------------------------------------------------------ Content */
+  /* contenu */
+  main { 
+    display: block;
+    padding: 0;
+  }
+  .default p {
+    /* minimume deux lignes présentes sur la page, au début ou à la fin d’un paragraphe */
+    orphans: 2;
+    widows: 2;
+    margin: 0;
+  }
+  .default p + p:not([data-split-from]) { text-indent: 2em;}
+
+  #nav, section { 
+    margin-bottom: 0; 
+  }
+  figure {
+    break-inside: avoid;
+  }
+  .default figure.full {
+    margin-left: calc(-1 * (var(--pagedjs-margin-left) - var(--pagedjs-margin-right)) );
+    max-width: none;
+  }  
+  figcaption {
+    font-size: var(--smallsize);
+  }
+  figure.videofigure::after{
+    display: block;
+    content: "→ " attr(data-src);
+    font-size: var(--smallsize);
+  }
+  .video[style]{
+    background: var(--poster);
+    background-size: cover;
+  }
+  .video[style] iframe {visibility: hidden;}
+  /* ------------------------------------------------------------------------ Break */
+  .breakpage {
+    height: 0;
+    page-break-before: always;
+  }
+  .breakcolumn{
+    break-before:column;
+    break-after:column;
+  }
+  .breakprint {
+    display: block;
+  }
+  .breakscreen {
+    display: none;
+  }
+  /* ------------------------------------------------------------------------ Spacing */
+  [style^="--ls"] { letter-spacing: calc(var(--ls, 0) * -0.001em); }
+
+  /* ------------------------------------------------------------------------ Side notes */
+  .imagenote {
+    width: 33%;
+    display: block;
+    margin: var(--spacer) 0 0 var(--spacer);
+    font-size: var(--smallsize);    
+  }
+  .imagenote.printleft {
+    float: left;
+    margin: var(--spacer) var(--spacer) 0 0;
+  }
+  .imagenote.printright {
+    float: right;
+    margin: var(--spacer) 0 0 var(--spacer);
+  }
+
+  /* ------------------------------------------------------------------------ Footnotes */
+  .footnote {
+    float: footnote;
+    counter-increment: footnote;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+  }
+  
+  .footnote:has(.breakcolumn) {
+    break-inside: auto;
+    -webkit-column-break-inside: auto;
+  }
+  
+  .footnotes-sep,
+  section.footnotes { display: none;}
+
+  ::footnote-call {
+    font-weight: bold; 
+    content: "[" counter(footnote) "] ";
+    font-variant-position:normal;
+    vertical-align: baseline;
+    font-size: 100%;
+    padding-left: 0.25em;
+  }
+
+  ::footnote-marker {
+    content: "[" counter(footnote-marker) "] ";
+    font-weight: bold;
+  }
+  
+  .pagedjs_footnote_inner_content {
+    font-size: var(--smallsize);
+    margin-top: 1em;
+    /* not working : */
+    column-width: 200px !important;
+    column-count: 2 !important;
+    column-gap: 20px !important;
+    height: auto !important;
+  }
+
+
+
+  /* ------------------------------------------------------------------------ Autofolder */
+  .autofolder {
+    margin-left: -6.5cm;
+    page-break-after: always;
+  }
+
+  /* ------------------------------------------------------------------------ Annexes */
+  .appendices {
+    page-break-before: always;
+    page: appendices
+  }
+  section.appendices {
+    /* margin-left: -6.5cm; */
+  }
+  .appendices > h2 {
+    /* display: none; */
+  }
+  .figure.print-quarter { grid-column: span 3; }
+  .figure.print-offset0 { grid-column: 1 / span 3; } 
+  .figure.print-offset2 { grid-column: 3 / span 3; } 
+  .figure.print-offset4 { grid-column: 5 / span 3; } 
+  .figure.print-offset6 { grid-column: 7 / span 3; } 
+  .figure.print-offset8 { grid-column: 9 / span 3; } 
+  .figure.print-third { grid-column: span 4; }
+  .figure.print-third.print-offset0 { grid-column: 1 / span 4; } 
+  .figure.print-third.print-offset2 { grid-column: 3 / span 4; } 
+  .figure.print-third.print-offset4 { grid-column: 5 / span 4; } 
+  .figure.print-third.print-offset6 { grid-column: 7 / span 4; } 
+  .figure.print-third.print-offset8 { grid-column: 9 / span 4; } 
+  .figure.print-half { grid-column: span 6; }
+  .figure.print-half.print-offset0 { grid-column: 1 / span 6; } 
+  .figure.print-half.print-offset2 { grid-column: 3 / span 6; } 
+  .figure.print-half.print-offset4 { grid-column: 5 / span 6; } 
+  .figure.print-half.print-offset6 { grid-column: 7 / span 6; } 
+  .figure.print-twothird { grid-column: span 8; }
+  .figure.print-twothird.print-offset0 { grid-column: 1 / span 8; } 
+  .figure.print-twothird.print-offset2 { grid-column: 3 / span 8; } 
+  .figure.print-twothird.print-offset4 { grid-column: 5 / span 8; } 
+  .figure.print-threequarter { grid-column: span 9; }
+  .figure.print-threequarter.print-offset0 { grid-column: 1 / span 9; } 
+  .figure.print-threequarter.print-offset2 { grid-column: 3 / span 9; } 
+  .figure.print-full { grid-column: 1 / span 12; }
+  .figure.print-full.print-offset0 { grid-column: 1 / span 12; }
+
+  .figure.print-top { align-self: start;}
+  .figure.print-center { align-self: center;}
+  .figure.print-bottom { align-self: end;}
+  
+  /* ------------------------------------------------------------------------ References */
+  .references {
+    page-break-before: always;
+    page: references
+  }
+  section.references {
+    /* margin-left: -6.5cm; */
+  }
+  .references > h2 {
+    /* display: none; */
+  }
+  /* ------------------------------------------------------------------------ Interview */
+  .interview {
+    page-break-before: always;
+    page: interview
+  }
+  .interview > h2 {
+    /* display: none; */
+  }
+  .interview p {
+    --indent: 0px;
+  }
+
+  /* ------------------------------------------------------------------------ Glossaire */
+  .glossary {
+    font-size: 1em;
+  }
+  .glossary,
+  .columns {
+    font-size: 0.85em;
+    columns: 2;
+    column-gap: var(--spacer);
+  }
+
+  /* ------------------------------------------------------------------------ Table des matières */
+  
+  #list-toc-generated {
+    list-style: none;
+    padding: 0;
+  }
+
+  #list-toc-generated .toc-element a::before {
+    content: target-counter(attr(href), page);
+    /* position: absolute;
+    left: 0;
+    margin-left: calc(-4em - 20px); */
+    text-align: left;
+    width: 4em;
+    display: inline-block;
+  }
+
+  #list-toc-generated .toc-element-level-1 {
+    font-weight: bold;
+    margin-top: 1em;
+  }
+
+  #list-toc-generated .toc-element-level-2 {
+    margin-left: 20px;
+  }
+  #list-toc-generated .toc-element-level-2 a::before {
+    /* margin-left: calc(-4em - 40px); */
+  }
+
+
+}

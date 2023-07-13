@@ -2,7 +2,7 @@
 
 ## Version imprimable
 
-On peut accéder à la prévisualisation de la version A4 depuis l’URL `/print.php`. Par exemple, `http://localhost:8888/pagetypetoprint/print.php`.
+On peut accéder à la prévisualisation de la version A4 depuis l’URL `/?print`. Par exemple, `http://localhost:8888/pagetypetoprint/?print`.
 
 Un fichier PDF devra être produit en utilisant la fonction « d’impression vers PDF » d’un navigateur compatible (Chromium ou Chrome) : Fichier > Imprimer > Format PDF . 
 
@@ -12,5 +12,5 @@ Quelques réglages de paramètres d’impression sont souvent nécessaires : dé
 
 Suite à l’exportation du document au format PDF, le fichier résultant devra être stocké dans le dossier de travail, et nommé en fonction de l’option configurable dans le fichier `config.php`. 
 
-Le lien « Imprimer », présent dans le fichier `index.php` pourra alors être supprimé pour ne conserver que le seul « Télécharger ».
+Le lien « Imprimer », présent dans le fichier `body.php` présent au sein du thème pourra alors être supprimé pour ne conserver que le seul « Télécharger ».
 

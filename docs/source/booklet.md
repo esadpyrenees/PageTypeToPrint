@@ -2,16 +2,20 @@
 
 Cet exemple se propose de transformer le gabarit d’une simple page A4 (recto seul) vers une double page A5 (recto-verso) en supprimant toute association à l’ÉSAD Pyrénées.
 
-Le code correspondant à cet exemple est accessible sur la branche `booklet` du dépôt. 
-Il peut être téléchargé sur [ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip](https://ateliers.esad-pyrenees.fr/pagetypetoprint/PageTypeToPrint-A5Booklet.zip).
+Le thème _booklet_ comprend le code résultant de cette modification du thème par défaut. Il est possible de l’activer en le configurant dans le fichier `config.php`:
+```php
+$theme = "booklet";
+```
 Une démo est visible sur [ateliers.esad-pyrenees.fr/pagetypetoprint-booklet](http://ateliers.esad-pyrenees.fr/pagetypetoprint-booklet/?print)
+
+### Étapes 
 
 * `js/print/pagedjs.css`
     * desactivation de la feuille de style interface/recto-verso.css
-* `index.php`
+* `body.php`
     * courants et folio: suppression du logo ESAD et du diplôme
     * courants et folio: réorganisation pour positionnement en bas de page uniquement
-    * notes de <del>marge</del> bas de page, suppression des scripts `js/screen/notes.js` et `js/print/marginNotes.js` 
+    * suppression des notes de marge au profit de notes de bas de page : suppression des scripts `js/screen/sideNotes.js` et `js/print/imageNotes.js` 
 * `css/print.css`
     * format et marges  
     * gestion des titres courants 
@@ -126,6 +130,7 @@ section.references { /* margin-left: -6.5cm; */ }
 .interview p {
   --indent: 0px;
 }
+```
 Glossaire et références bibliographiques sur deux colonnes uniquement :
 ```css
 .glossary,

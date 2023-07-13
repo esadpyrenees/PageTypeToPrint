@@ -16,6 +16,7 @@ Le code source du projet est accessible sur [github.com/esadpyrenees/PageTypeToP
 
 * [Installation](installation.md)
 * [Configuration et contenu](contenu.md)
+* [Thème](theme.md)
 * [Gabarits](gabarits.md)
 * [Contenu au format markdown](markdown.md)
 * [Version imprimable / téléchargeable](print.md)

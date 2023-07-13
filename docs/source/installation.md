@@ -3,15 +3,15 @@
 ## Installation
 
 Le projet PageTypeToPrint :
-— utilise le langage PHP 
-— pour transformer le texte saisi au format markdown en HTML, 
-— afin de pouvoir l’afficher dans un navigateur web, 
-— et en générer un PDF imprimable, via Paged.js et les fonctionnalités internes des navigateurs (Chrome ou Chromium, pour le moment).
+
+* utilise le langage PHP 
+* pour transformer le texte saisi au format markdown en HTML, 
+* afin de pouvoir l’afficher dans un navigateur web, 
+* et en générer un PDF imprimable, via Paged.js et les fonctionnalités internes des navigateurs (Chrome ou Chromium, pour le moment).
 
 Téléchargez le code du projet [en cliquant ici](https://github.com/esadpyrenees/PageTypeToPrint/zipball/main/). 
 
 Le dossier _PageTypeToPrint_ doit être décompressé dans un environnement de serveur web local bénéficiant d’une version de PHP supérieure à 8.0 (voir [ci-dessous](#version-de-php)).
-Une fois décompressé, le dossier _PageTypeToPrint_ doit être placé dans le dossier `htdocs`.
 
 Si vous pouvez démarrer un serveur web local avec PHP 8, passez à [Configuration et contenu](contenu.md). 
 

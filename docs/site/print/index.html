@@ -8,7 +8,7 @@
     <title>Version imprimable / pdf - PageTypeToPrint</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/stackoverflow-light.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
         <link href="../style/extra.css" rel="stylesheet" />
     
       <script>
@@ -51,6 +51,10 @@
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../contenu/">Configuration et contenu</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../theme/">Thème</a>
                 </li>
               </ul>
               <ul>
@@ -131,12 +135,12 @@
             <div class="section" itemprop="articleBody">
               
                 <h2 id="version-imprimable">Version imprimable</h2>
-<p>On peut accéder à la prévisualisation de la version A4 depuis l’URL <code>/print.php</code>. Par exemple, <code>http://localhost:8888/pagetypetoprint/print.php</code>.</p>
+<p>On peut accéder à la prévisualisation de la version A4 depuis l’URL <code>/?print</code>. Par exemple, <code>http://localhost:8888/pagetypetoprint/?print</code>.</p>
 <p>Un fichier PDF devra être produit en utilisant la fonction « d’impression vers PDF » d’un navigateur compatible (Chromium ou Chrome) : Fichier &gt; Imprimer &gt; Format PDF . </p>
 <p>Quelques réglages de paramètres d’impression sont souvent nécessaires : désactiver les entêtes et pieds de pages du navigateur, contrôler la mise à l’échelle, vérifier le format, désactiver les marges par défaut et cocher l’option permettant d’imprimer les arrière-plans.</p>
 <h3 id="version-finale-telechargeable">Version finale téléchargeable</h3>
 <p>Suite à l’exportation du document au format PDF, le fichier résultant devra être stocké dans le dossier de travail, et nommé en fonction de l’option configurable dans le fichier <code>config.php</code>. </p>
-<p>Le lien « Imprimer », présent dans le fichier <code>index.php</code> pourra alors être supprimé pour ne conserver que le seul « Télécharger ».</p>
+<p>Le lien « Imprimer », présent dans le fichier <code>body.php</code> présent au sein du thème pourra alors être supprimé pour ne conserver que le seul « Télécharger ».</p>
               
             </div>
           </div><footer>
