@@ -1,7 +1,8 @@
 site_name: PageTypeToPrint
 site_description: PageTypeToPrint est un gabarit web to print destiné à la mise en forme normalisée d’un document écrit de DNA ou d’un mémoire de DNSEP. 
 docs_dir: source
-extra_css: [style/extra.css]
+extra_css: [style/extra.css,style/stackoverflow-light.min.css]
+extra_javascript: [js/highlight.min.js,js/highlight_boot.js]
 nav:
     - Accueil: index.md
     - Installation: installation.md
@@ -29,4 +30,4 @@ nav:
       - Notes avancées: advanced-notes.md
 theme:
   name: readthedocs
-  hljs_style: stackoverflow-light
+  highlightjs: false
