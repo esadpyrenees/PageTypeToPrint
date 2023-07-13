@@ -1,4 +1,3 @@
-![PageTypeToPrint](docs/site/images/pttp.png)
 
 # PageTypeToPrint
 

@@ -8,8 +8,8 @@
     <title>Installation - PageTypeToPrint</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
         <link href="../style/extra.css" rel="stylesheet" />
+        <link href="../style/stackoverflow-light.min.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -21,9 +21,7 @@
     <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+    <![endif]--> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -133,14 +131,15 @@
             <div class="section" itemprop="articleBody">
               
                 <h2 id="installation">Installation</h2>
-<p>Le projet PageTypeToPrint :
-— utilise le langage PHP 
-— pour transformer le texte saisi au format markdown en HTML, 
-— afin de pouvoir l’afficher dans un navigateur web, 
-— et en générer un PDF imprimable, via Paged.js et les fonctionnalités internes des navigateurs (Chrome ou Chromium, pour le moment).</p>
+<p>Le projet PageTypeToPrint :</p>
+<ul>
+<li>utilise le langage PHP </li>
+<li>pour transformer le texte saisi au format markdown en HTML, </li>
+<li>afin de pouvoir l’afficher dans un navigateur web, </li>
+<li>et en générer un PDF imprimable, via Paged.js et les fonctionnalités internes des navigateurs (Chrome ou Chromium, pour le moment).</li>
+</ul>
 <p>Téléchargez le code du projet <a href="https://github.com/esadpyrenees/PageTypeToPrint/zipball/main/">en cliquant ici</a>. </p>
-<p>Le dossier <em>PageTypeToPrint</em> doit être décompressé dans un environnement de serveur web local bénéficiant d’une version de PHP supérieure à 8.0 (voir <a href="#version-de-php">ci-dessous</a>).
-Une fois décompressé, le dossier <em>PageTypeToPrint</em> doit être placé dans le dossier <code>htdocs</code>.</p>
+<p>Le dossier <em>PageTypeToPrint</em> doit être décompressé dans un environnement de serveur web local bénéficiant d’une version de PHP supérieure à 8.0 (voir <a href="#version-de-php">ci-dessous</a>).</p>
 <p>Si vous pouvez démarrer un serveur web local avec PHP 8, passez à <a href="../contenu/">Configuration et contenu</a>. </p>
 <p>Sinon, poursuivez ci-dessous…</p>
 <h2 id="en-details">En détails</h2>
@@ -212,6 +211,8 @@ php -S localhost:8888
     <script>var base_url = '..';</script>
     <script src="../js/theme_extra.js" defer></script>
     <script src="../js/theme.js" defer></script>
+      <script src="../js/highlight.min.js" defer></script>
+      <script src="../js/highlight_boot.js" defer></script>
       <script src="../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
