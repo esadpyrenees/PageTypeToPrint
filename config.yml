@@ -13,7 +13,7 @@ subtitle: ""
 # Votre nom
 name: George French
 
-# L’année, par ex. : 2021 – 2022"
+# L’année, par ex. : 2021 – 2022
 year: 2021 – 2022 
 
 # Votre diplôme, par ex. : DNA Design
@@ -29,7 +29,7 @@ pole: Pôle Nouveaux médias
 # Le nom du fichier pdf généré, par ex. : titre-du-document--prenom-nom.pdf
 pdf: ""
 
-#Structure du contenu (= sommaire)
+# Structure du contenu (= sommaire)
 parts:
   - title: Prefatory Note
     file : content/text/0.prefatorynote.md
