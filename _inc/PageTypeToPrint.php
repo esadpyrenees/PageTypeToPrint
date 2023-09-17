@@ -51,9 +51,9 @@
   */
 
 
-  // Configure the content structure here:
-  include __DIR__."/../config.php";
-  
+  // Configure the content structure in ../config.yml:
+  require_once __DIR__ . '/Spyc/Spyc.php'; 
+  extract( Spyc::YAMLLoad(__DIR__."/../config.yml") ); 
 
   // Loading libraries
   spl_autoload_register(function ($class) {
