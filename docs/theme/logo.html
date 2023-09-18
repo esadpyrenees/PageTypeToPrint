@@ -1,0 +1,10 @@
+<header role="banner" class="logo">
+  {% if config.site_name %}
+  <a class="header-main__link" href="{{ nav.homepage.url|url }}">{{ config.site_name }}</a>
+  {% endif %}
+  <button id="menu-toggle" class="btn btn-default" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle Menu" title="Toggle Menu">
+    <span class="menu-thumb"></span>
+    <span class="menu-thumb"></span>
+    <span class="menu-thumb"></span>
+ </button>
+</header>

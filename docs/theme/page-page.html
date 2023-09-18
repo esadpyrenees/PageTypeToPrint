@@ -1,0 +1,19 @@
+<main class="page-content" data-js="mainContent" role="main">
+  {{ page.content }}
+
+  <div class="prevnext">
+    {% block next_prev %}
+      {% if page.previous_page %}
+        <a href="{{ page.previous_page.url|url }}" class="maincontent__link maincontent__link--previous-page">← {{page.previous_page.title}}</a>
+      {% endif %}
+      {% if page.next_page %}
+        <a href="{{ page.next_page.url|url }}" class="maincontent__link maincontent__link--next-page"> {{page.next_page.title}} →</a>
+      {% endif %}
+    {% endblock next_prev %}
+  </div>
+
+</main>
+
+<aside class="page-toc" data-js="toc" role="complementary" aria-label="Table of Contents for this page">
+  {% include "page-toc.html" %}
+</aside>

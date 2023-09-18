@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    {% block htmltitle %}
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+    {% endblock htmltitle %}
+
+    {%- block site_meta %}       
+      {% if config.site_description %}<meta name="description" content="{{ config.site_description }}">{% endif %}
+      {% if config.site_author %}<meta name="author" content="{{ config.site_author }}">{% endif %}
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    {%- endblock %}
+
+    {% block styles %}
+      <link rel="stylesheet" href="{{ 'css/hljs-pttp.css'|url }}" type="text/css">      
+      <link rel="stylesheet" href="{{ 'css/pttp.css'|url }}" type="text/css">
+
+      {# enable customization #}
+      {%- for path in config['extra_css'] %}
+        <link href="{{ path|url }}" rel="stylesheet">
+      {%- endfor %}
+    {% endblock styles %}
+
+    <link rel="shortcut icon" href="{{ 'img/favicon.ico'|url }}">
+    <link rel="apple-touch-icon" href="{{ 'img/apple-touch-icon.png'|url }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ 'img/apple-touch-icon-72x72.png'|url }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ 'img/apple-touch-icon-114x114.png'|url }}">
+  </head>
+
+  <body>
+    
+    <div id="top" class="sidebar">
+      {% include "logo.html" %}
+      {% include "nav-main.html" %}
+    </div>
+
+    <div class="main-container">
+        
+      {% block search %}
+          {% if 'search' in config['plugins'] %}{% include "searchbox.html" %}{% endif %}
+      {% endblock search %}
+      
+      {% block content %}
+        {% if page.is_homepage %}
+          {% include "page-homepage.html" %}
+        {% else %}
+          {% include "page-page.html" %}
+        {% endif %}
+      {% endblock content %}
+
+      {% block footer %}
+        <footer class="page-footer" role="contentinfo">          
+          {% if config.copyright %}
+            <p>{{ config.copyright }}. <a href="{{ config.repo_url }}">{{ config.repo_name }} </a> docs  built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+          {% endif %}
+        </footer>
+      {% endblock footer %}
+
+    </main>
+    
+    {% block scripts %}
+      <script>var base_url = '{{ base_url }}';</script>
+      <script src="{{ 'js/highlight.min.js'|url}}"></script>
+      <script src="{{ 'js/hljs-pttp.js'|url}}"></script>
+      <script src="{{ 'js/pttp.js'|url}}"></script>
+      {% for path in config['extra_javascript'] %}
+        <script src="{{ path|url }}"></script>
+      {% endfor %}
+    {% endblock scripts %}
+    <!--
+    MkDocs version : {{ mkdocs_version }}
+    PageTypeToPrint MkDocs theme version : {{ config.extra.version }}
+    Build Date UTC : {{ build_date_utc }}
+    -->
+  </body>
+</html>
