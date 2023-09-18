@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Mise en ligne - PageTypeToPrint</title>
+    <title>Typographie - PageTypeToPrint</title>
            
       <meta name="description" content="PageTypeToPrint est un gabarit web to print destiné à la mise en forme normalisée d’un document écrit de DNA ou d’un mémoire de DNSEP.">
       <meta name="author" content="Julien Bidoret">
@@ -44,7 +44,7 @@
   
     
       <p class="caption"><span class="caption-text">Démarrer</span></p>
-      <ul class="current">
+      <ul>
         
           <li class="toctree-l1">
             
@@ -130,12 +130,12 @@
 
           </li>
         
-          <li class="toctree-l1 current">
+          <li class="toctree-l1">
             
-<a class="reference internal current" href="./">Mise en ligne</a>
+<a class="reference internal" href="../online/">Mise en ligne</a>
 
 
-    <ul class="current">
+    <ul>
         
             
         
@@ -149,14 +149,14 @@
   
     
       <p class="caption"><span class="caption-text">Composition</span></p>
-      <ul>
+      <ul class="current">
         
-          <li class="toctree-l1">
+          <li class="toctree-l1 current">
             
-<a class="reference internal" href="../typo/">Typographie</a>
+<a class="reference internal current" href="./">Typographie</a>
 
 
-    <ul>
+    <ul class="current">
         
             
         
@@ -379,29 +379,81 @@
       
         
           <main class="page-content" data-js="mainContent" role="main">
-  <h2 id="mise-en-ligne-et-publication">Mise en ligne et publication</h2>
-<p>Une fois terminé le processus d’édition sur un serveur local, le document peut être mis en ligne sur un serveur web de production (le serveur de l’ÉSAD Pyrénées ou un compte étudiant hébergé par Alwaysdata – <a href="mailto:julien.bidoret@esad-pyrenees.fr">me demander</a>). Il faut alors s’assurer que le serveur est bien capable de servir le site via une version de PHP supérieure à 8.0 (sur Alwaysdata, <a href="https://admin.alwaysdata.com/environment/">voir ici</a>).</p>
-<p>Le lien « Imprimer », présent dans le fichier <code>index.php</code> peut être supprimé pour ne conserver que le seul « Télécharger ».</p>
-<h3 id="pttp-comme-generateur-de-site-statique">PTTP comme générateur de site statique</h3>
-<p>Si l’on souhaite générer un « site statique » (une simple page HTML, sans PHP ; par ex. pour héberger la page sur Neocities), on peut utiliser PHP en ligne de commande :</p>
-<pre><code class="language-sh"># pour générer la version web
-php index.php &gt; index.html
-# pour générer la version imprimable 
-# (pas très utile, mieux vaut mettre en ligne le PDF final)
-php index.php '&amp;print' &gt; print.html
+  <h2 id="typographie">Typographie</h2>
+<p>La majeure partie des problématiques de micro-typographie est corrigée automatiquement (points de suspension, espaces avant et après ! ? « » “ ”, unités). </p>
+<p>Cete automatisation ne dispense aucunement du soin à apporter à la composition typographique du texte !</p>
+<h3 id="sauts-de-page-ou-de-colonnes">Sauts de page ou de colonnes</h3>
+<p>À l’impression, on peut forcer un saut de page en intégrant le code :</p>
+<pre><code class="language-html">&lt;br class=&quot;breakpage&quot;&gt;
 </code></pre>
-<p>Dans le cas de PHP fourni par MAMP, il faut connaître le chemin de l’exécutable PHP :</p>
-<pre><code class="language-sh"># Exemple sur Mac OSX (vérifier la version de PHP)
-/Applications/MAMP/bin/php/php8.1.0/bin/php index.php &gt; index.html
+<p>Pour forcer un saut dans des colonnes (notes de bas de page, notamment), utiliser :</p>
+<pre><code class="language-html">&lt;br class=&quot;breakcolumn&quot;&gt;
 </code></pre>
+<p>Des sauts de ligne conditionnels (écran <em>ou</em> impression) peuvent être générés grâce aux balises :</p>
+<pre><code class="language-html">&lt;br class=&quot;breakscreen&quot;&gt;&lt;!-- uniquement à l’écran --&gt;
+&lt;br class=&quot;breakprint&quot;&gt;&lt;!-- uniquement à l’impression --&gt;
+</code></pre>
+<h3 id="espaces">Espaces</h3>
+<ul>
+<li>Pour une espace mot insécable, utiliser <code>&amp;nbsp;</code>    </li>
+<li>Pour une espace fine insécable, utiliser <code>&amp;#8239;</code></li>
+</ul>
+<h3 id="apostrophe-courbe-et-guillemets">Apostrophe courbe et guillemets</h3>
+<p>Les apostrophes sont composées grâce au signe ’ et pas '.</p>
+<p>Les « guillemets droits », simples ou doubles (" et ') devraient être proscrits. Dans PageTypeToPrint, en Markdown, ils sont automatiquement remplacés par des guillemets français («»). </p>
+<p>Les guillemets français devraient être utilisés dans l’immense majorité des cas. Les guillemets anglais (“”) sont réservés à la mise entre guillemets au sein-même d’un texte déjà entre guillemets français :</p>
+<blockquote>
+<p>« Une citation peut contenir des mots “entre guillemets”. »</p>
+</blockquote>
+<p>Les caractères dans le tableau ci-dessous peuvent être composés directement (les entités HTML ne sont présentées qu’à titre informatif).</p>
+<table>
+<thead>
+<tr>
+<th>Nom</th>
+<th>Entité HTML</th>
+<th>Commentaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>’</strong></td>
+<td>&amp;<span>rsquo;</span></td>
+<td>Apostrophe courbe</td>
+</tr>
+<tr>
+<td><strong>« » </strong></td>
+<td>&amp;<span>laquo;</span> &amp;<span>raquo;</span></td>
+<td>Guillemet français ouvrant et fermant</td>
+</tr>
+<tr>
+<td><strong>“ ”</strong></td>
+<td>&amp;<span>ldquo;</span> &amp;<span>rdquo;</span></td>
+<td>Guillemet anglais ouvrant et fermant</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exposants">Exposants</h3>
+<p>Pour un exposant, utiliser <code>XX^e^ siècle</code>, afin d’afficher XX<sup>e</sup> siècle. Les abbréviations premier, deuxième, etc. se composent également en exposants : « <code>la 1^re^ vague et la 2^e^ vague</code> » pour afficher « la 1<sup>re</sup> vague et la 2<sup>e</sup> vague ». </p>
+<h3 id="points-de-suspension">Points de suspension</h3>
+<p>Les points de suspension doivent être composés grâce au caractère dédié : « … ».  <br />
+(Pas en faisant se succéder trois points : ...).</p>
+<h3 id="spacing">Spacing</h3>
+<p>Pour réduire une ligne de texte et empêcher un saut malencontreux (veuves ou orphelines), on peut introduire au sein du texte markdown des balises <code>span</code> qui vont permettre de régler finement le <em>spacing</em> d’une phrase ou d’une ligne:</p>
+<pre><code class="language-html">Lorem &lt;span style=&quot;--ls:4&quot;&gt;ipsum dolor sit amet, consectetur adipiscing elit.&lt;/span&gt; Sed non risus […] 
+</code></pre>
+<p>Dans la CSS doit être présent :</p>
+<pre><code class="language-css">[style^=&quot;--ls&quot;] { letter-spacing: calc(var(--ls, 0) * -0.001em); }
+</code></pre>
+<p>La valeur attribuée à la propriété <code>--ls</code> permettra d’étendre le <em>spacing</em> (si elle est négative) ou de le resserrer si elle est positive. L’inspecteur web permet de modifier la valeur à la volée afin de l’ajuster précisément.</p>
+<p>⚠️ Attention, ne procéder à ces ajustements qu’en toute fin de mise en forme, quand tout le reste a été fait !</p>
 
   <div class="prevnext">
     
       
-        <a href="../print/" class="maincontent__link maincontent__link--previous-page">← Version imprimable / pdf</a>
+        <a href="../online/" class="maincontent__link maincontent__link--previous-page">← Mise en ligne</a>
       
       
-        <a href="../typo/" class="maincontent__link maincontent__link--next-page"> Typographie →</a>
+        <a href="../sommaire/" class="maincontent__link maincontent__link--next-page"> Sommaire →</a>
       
     
   </div>
@@ -413,9 +465,19 @@ php index.php '&amp;print' &gt; print.html
     <p class="page-toc__heading">Dans cette page :</p>
     <ul>
     
-        <li class="page-toc__item"><a href="#mise-en-ligne-et-publication" class="page-toc__link" data-js="tocLink" tabindex="0">Mise en ligne et publication</a></li>
+        <li class="page-toc__item"><a href="#typographie" class="page-toc__link" data-js="tocLink" tabindex="0">Typographie</a></li>
         
-            <li class="page-toc__item"><a href="./#pttp-comme-générateur-de-site-statique" class="page-toc__link" data-js="tocLink" tabindex="0">PTTP comme générateur de site statique</a></li>
+            <li class="page-toc__item"><a href="./#sauts-de-page-ou-de-colonnes" class="page-toc__link" data-js="tocLink" tabindex="0">Sauts de page ou de colonnes</a></li>
+        
+            <li class="page-toc__item"><a href="./#espaces" class="page-toc__link" data-js="tocLink" tabindex="0">Espaces</a></li>
+        
+            <li class="page-toc__item"><a href="./#apostrophe-courbe-et-guillemets" class="page-toc__link" data-js="tocLink" tabindex="0">Apostrophe courbe et guillemets</a></li>
+        
+            <li class="page-toc__item"><a href="./#exposants" class="page-toc__link" data-js="tocLink" tabindex="0">Exposants</a></li>
+        
+            <li class="page-toc__item"><a href="./#points-de-suspension" class="page-toc__link" data-js="tocLink" tabindex="0">Points de suspension</a></li>
+        
+            <li class="page-toc__item"><a href="./#spacing" class="page-toc__link" data-js="tocLink" tabindex="0">Spacing</a></li>
         
     
     </ul>
@@ -446,7 +508,7 @@ php index.php '&amp;print' &gt; print.html
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2023-09-18 08:49:32.731910+00:00
+    Build Date UTC : 2023-09-18 08:49:32.738472+00:00
     -->
   </body>
 </html>
