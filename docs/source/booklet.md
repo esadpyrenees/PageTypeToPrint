@@ -1,10 +1,10 @@
 ## Livret A5
 
-Cet exemple se propose de transformer le gabarit d’une simple page A4 (recto seul) vers une double page A5 (recto-verso) en supprimant toute association à l’ÉSAD Pyrénées.
+Cet exemple se propose de transformer le gabarit d’une simple page A4 (recto seul) vers une double page A5 (recto-verso) en supprimant l’identité de l’ÉSAD Pyrénées.
 
-Le thème _booklet_ comprend le code résultant de cette modification du thème par défaut. Il est possible de l’activer en le configurant dans le fichier `config.php`:
-```php
-$theme = "booklet";
+Le thème _booklet_ comprend le code résultant de cette modification du thème par défaut. Il est possible de l’activer en le configurant dans le fichier `config.yml`:
+```yml
+theme: booklet
 ```
 Une démo est visible sur [ateliers.esad-pyrenees.fr/pagetypetoprint-booklet](http://ateliers.esad-pyrenees.fr/pagetypetoprint-booklet/?print)
 

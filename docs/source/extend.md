@@ -2,9 +2,10 @@
 
 ## Extension
 
-PageTypeToPrint est conçu pour simplifier l’éditions des documents écrits et mémoires. L’outil peut cependant être étendu, augmenté et détourné.
+PageTypeToPrint propose une expérience de publication et de mise en page web + print qui ne nécessite pas d’écrire de code (ni PHP, ni JavaScript, ni HTML ou CSS). 
 
-Les choix par défaut faits dans le contexte du gabarit standard peuvent être modifiées. 
+L’outil est néanmoins conçu pour être modifié, augmenté ou détourné ; et servir de base à une appropriation progressive des logiques _web to print_.
+
 
 - Premiers pas dans [l’extension de PageTypeToPrint](extendcss.md)
 - Faire un [livret A5 recto-verso](booklet.md)

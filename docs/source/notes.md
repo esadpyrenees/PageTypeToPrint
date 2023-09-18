@@ -11,7 +11,7 @@ Il est prférable de ne pas identifier les notes via des identifiants numérique
 ### Appels de notes et citations
 
 Dans le texte, un appel de note précède toujours le signe de ponctuation. Il se placera donc toujours avant le point final d’une phrase. En fin de citation, il se place avant le guillemet fermant. On le saisit sans le faire précéder d’une espace :
-```html
+```pttp
 C’est ainsi que Paul Watzlawick formule son axiome d’impossibilité[^axiome].
 <!-- ici, avant le point -->
 
@@ -23,7 +23,7 @@ Paul Watzlawick affirme «&#8239;On ne peut pas ne pas communiquer[^axiome].&#82
 ```
 
 De la même manière, les images de note doivent être saisies _immédiatement_ (sans espace) après le mot qu’elles précisent :
-```md
+```pttp
 Les illustrations de Gustave Doré(imagenote: images/gustave.jpg) sont gravées dans les mémoires.
 ```
 
@@ -33,7 +33,10 @@ En contexte d’impression, si trop d'images de note sont présentes sur une seu
 
 Plusieurs solutions : 
 
-- Utiliser une grande `(figure: nomdufichier.jpg caption: La légende de l’image)` au fil du texte pour développer la pagination différemment.
+- Utiliser une grande `figure` au fil du texte pour développer la pagination différemment:
+```pttp 
+(figure: nomdufichier.jpg caption: La légende de l’image)
+```
 - Déporter certaines images de notes en annexes.
 - Forcer un saut de page en intégrant le code :
 ```html

@@ -1,33 +1,49 @@
 site_name: PageTypeToPrint
 site_description: PageTypeToPrint est un gabarit web to print destiné à la mise en forme normalisée d’un document écrit de DNA ou d’un mémoire de DNSEP. 
+site_author: Julien Bidoret
+site_url: https://esadpyrenees.github.io/PageTypeToPrint/
+repo_url: https://github.com/esadpyrenees/PageTypeToPrint/
+repo_name: PageTypeToPrint
+copyright: © Julien Bidoret, 2022–2023
 docs_dir: source
-extra_css: [style/extra.css,style/stackoverflow-light.min.css]
-extra_javascript: [js/highlight.min.js,js/highlight_boot.js]
 nav:
-    - Accueil: index.md
+  - Accueil: index.md
+  - Démarrer:
     - Installation: installation.md
     - Configuration et contenu: contenu.md
     - Thème: theme.md
     - Gabarits: gabarits.md
     - Contenu au format markdown: markdown.md
     - Version imprimable / pdf: print.md
-    - Composition: 
-      - Sommaire: sommaire.md
-      - Images et vidéos: images.md
-      - Annexes: appendices.md
-      - Glossaire: glossaire.md
-      - Entretiens: entretiens.md
-      - Références et bibliographie: references.md
-      - Micro-typographie: microtypo.md
-      - Notes: notes.md
     - Mise en ligne: online.md
-    - Aller plus loin: 
-      - Extensions: extend.md
-      - Premiers pas: extendcss.md
-      - Livret: booklet.md
-      - Collaboration: pads.md
-      - Dossier d’images: autofolder.md
-      - Notes avancées: advanced-notes.md
+  - Composition: 
+    - Typographie: typo.md
+    - Sommaire: sommaire.md
+    - Images et vidéos: images.md
+    - Annexes: appendices.md
+    - Glossaire: glossaire.md
+    - Entretiens: entretiens.md
+    - Références et bibliographie: references.md
+    - Notes: notes.md
+  - Aller plus loin: 
+    - Extensions: extend.md
+    - Premiers pas: extendcss.md
+    - Livret: booklet.md
+    - Collaboration: pads.md
+    - Catalogue d’images: autofolder.md
+    - Notes avancées: advanced-notes.md
+
 theme:
-  name: readthedocs
-  highlightjs: false
+  name: null
+  custom_dir: 'theme'
+  include_search_page: true
+  search_index_only: false
+  features:
+    - search.highlight
+  static_templates:
+    - 404.html
+
+plugins: ['search']
+
+extra:
+  version: 1.0.0

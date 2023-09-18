@@ -1,12 +1,12 @@
 ## Thème
 
-Le thème par défaut (`theme/esadpyrenees`) contient deux dossiers – pour les scripts `js` et les feuilles de style `CSS` – et trois fichiers:
+Le thème par défaut (`theme/esadpyrenees`) contient deux dossiers – pour les scripts `js` et les feuilles de style `CSS` – et trois fichiers: `body.php`, `print_head.php` et `screen_head.php`.
 
-### Modifier les thèmes
+### Modifier le thème
 
 Pour modifier l’apparence des documents, il est possible de dupliquer le thème par défaut, pour être en mesure d’éditer à la fois les styles graphiques, les scripts et la structure HTML du document.
 
-#### `body.php`
+#### body.php
 
 Ce fichier contient l’ensemble de la structure HTML du document.
 
@@ -18,10 +18,10 @@ include( "$theme_url/body.php" );
 include( isset($_GET["print"]) ? "$theme_url/print_body.php" : "$theme_url/screen_body.php");
 ```
 
-#### `print_head.php`
+#### print_head.php
 
 Ce fichier contient l’ensemble des styles et des scripts nécessaires à l’affichage écran.
 
-#### `screen_head.php`
+#### screen_head.php
 
 Ce fichier contient l’ensemble des styles et des scripts nécessaires à l’impression, notamment, l’appel à la librairie __paged.js__.

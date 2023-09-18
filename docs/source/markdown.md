@@ -2,7 +2,9 @@
 
 ## Markdown 
 
-Le contenu textuel du document est saisi dans le langage de balisage léger _markdown_. Pour en savoir plus, voir ci-dessous une brève documentation, sinon poursuivre vers la [version imprimable / pdf](print.md).
+Le contenu textuel du document est saisi dans le langage de balisage léger _markdown_, très largement utilisé et documenté partout sur le web.
+
+On trouvera ci-dessous une brève documentation sur l’usage de _markdown_, sinon poursuivre vers la [version imprimable / pdf](print.md).
 
 ### Syntaxe
 
@@ -10,11 +12,11 @@ Le contenu textuel du document est saisi dans le langage de balisage léger _mar
 | ----------- | ----------- |
 | Titres | `# H1`<br>`## H2`<br>`### H3` |
 | Gras | `**texte en gras**` |
-| Italique | `*texte en italique*` |
+| Italique | `_texte en italique_` |
 | Citation | `> blockquote` |
 | Liste ordonnée | `1. Premier item`<br>`2. Deuxième item`<br>`3. Troisième item` |
 | Liste non-ordonnée | `- Premier item`<br>`- Deuxième item`<br> `- Troisième item` |
-| Code | \``code`\` |
+| Code | ```code` `` |
 | Filet horizontal | `---` |
 | Lien | `[titre](https://www.example.com)` |
 | Image | `![alternative textuelle](image.jpg)` ⚠️ [cf. Images](images.md) |
@@ -31,14 +33,14 @@ Pour créer un paragraphe, laisser une ligne blanche entre deux lignes de texte 
 > `Un premier paragraphe.` <br> <br> `Un deuxième paragraphe.`
 
 Pour forcer un saut de ligne, saisir deux espaces en fin de ligne :
-> `Un premier vers.  ` <br> `Un deuxième vers.`
+> `Un premier vers.  ` <br> `Un deuxième vers.`
 
 ### Styles de texte
 Vous pouvez utiliser `_` ou `*` autour d'un mot pour le mettre en italique (deux pour le mettre en gras).
 > `_italique_` s'affiche ainsi : _italique_  
 > `**gras**` s'affiche ainsi : **gras**  
 > `**_gras-italique_**` s'affiche ainsi : **_gras-italique_**  
-> `~~barré~~` s'affiche ainsi : ~~barré~~  
+> `~~barré~~` s'affiche ainsi : <del>barré</del>  
 > `==surligné==` s'affiche ainsi : <mark>surligné</mark>
 
 ### Liens

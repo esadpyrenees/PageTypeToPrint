@@ -13,7 +13,7 @@ Les différents gabarits, ou *templates*, sont:
 
 Les logiques de _templates_ peuvent être étendues pour prendre en charge d’autres logiques de mise en page. 
 
-## HTML & CSS
+## Étendre ou modifier l’outil
 
 La structure HTML englobante de chaque gabarit est définie dans le fichier `_inc/PageTypeToPrint.php`.
 

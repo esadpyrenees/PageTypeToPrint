@@ -1,42 +1,27 @@
-![PageTypeToPrint](images/pttp.png)
+![patata](images/pttp.svg)
 
-PageTypeToPrint est un gabarit destiné à la mise en forme normalisée d’un document écrit de DNA ou d’un mémoire de DNSEP. Il est conçu avec comme hypothèse principale la simplicité de l’édition (contenu textuel au format *markdown*), mais peut être adapté, augmenté et personnalisé.
+PageTypeToPrint est un outil de mise en page et de publication _web + print_.
+
+Conçu originellement comme un gabarit de mise en forme des mémoires des étudiant⋅es de l’École supérieure d’art et de design des Pyrénes, il est basé sur la simplicité de l’édition (contenu textuel au format *markdown*), mais peut être adapté, augmenté et personnalisé.
 
 Il produit un contenu lisible en ligne sous la forme d’une page web et permet de générer un document PDF téléchargeable et imprimable.
 
-## Démo
+### Fonctionnement
+
+PageTypeToPrint est un outil qui…
+
+1. utilise le langage PHP,
+1. pour transformer des textes au format markdown en une page HTML, 
+1. afin de pouvoir l’afficher dans un navigateur web, 
+1. et en générer un PDF imprimable, via Paged.js et les fonctionnalités internes des navigateurs.
+
+
+### Démo
 
 Une démo est accessible en ligne sur [ateliers.esad-pyrenees.fr/pagetypetoprint](https://ateliers.esad-pyrenees.fr/pagetypetoprint/) avec sa version [_print_](https://ateliers.esad-pyrenees.fr/pagetypetoprint/?print) et le [document pdf](https://ateliers.esad-pyrenees.fr/pagetypetoprint/document.pdf) généré. 
 
-## Code source
+### Open source
 
-Le code source du projet est accessible sur [github.com/esadpyrenees/PageTypeToPrint](https://github.com/esadpyrenees/PageTypeToPrint/).
+PageTypeToPrint est un logiciel libre. Son code est accessible sur : [github.com/esadpyrenees/PageTypeToPrint](https://github.com/esadpyrenees/PageTypeToPrint/).
 
-## Documentation
-
-* [Installation](installation.md)
-* [Configuration et contenu](contenu.md)
-* [Thème](theme.md)
-* [Gabarits](gabarits.md)
-* [Contenu au format markdown](markdown.md)
-* [Version imprimable / téléchargeable](print.md)
-* Composition    
-    * [Sommaire](sommaire.md)
-    * [Images et vidéos](images.md)
-    * [Annexes](appendices.md)
-    * [Glossaire](glossaire.md)
-    * [Entretiens](entretiens.md)
-    * [Références et bibliographie](references.md)
-    * [Micro-typographie](microtypo.md)
-    * [Notes](notes.md)
-* [Mise en ligne](online.md)
-
-## Aller plus loin
-
-* [Étendre et détourner l’outil](extend.md)
-* [Premiers pas](extendcss.md)
-* [Livret A5](booklet.md)
-* [Édition collaborative](pads.md)
-* [Dossier d’images](autofolder.md)
-* [Notes avancées](advanced-notes.md)
-
+<a class="bigbutton" href="https://github.com/esadpyrenees/PageTypeToPrint/zipball/main/">↓ Télécharger </a> 

@@ -1,10 +1,28 @@
 
 
-## Micro-typographie
+## Typographie
 
 La majeure partie des problématiques de micro-typographie est corrigée automatiquement (points de suspension, espaces avant et après ! ? « » “ ”, unités). 
 
-Cela ne dispense aucunement du soin à apporter à la composition du texte !
+Cete automatisation ne dispense aucunement du soin à apporter à la composition typographique du texte !
+
+
+### Sauts de page ou de colonnes
+
+À l’impression, on peut forcer un saut de page en intégrant le code :
+```html
+<br class="breakpage">
+```
+Pour forcer un saut dans des colonnes (notes de bas de page, notamment), utiliser :
+```html
+<br class="breakcolumn">
+```
+Des sauts de ligne conditionnels (écran _ou_ impression) peuvent être générés grâce aux balises :
+
+```html
+<br class="breakscreen"><!-- uniquement à l’écran -->
+<br class="breakprint"><!-- uniquement à l’impression -->
+```  
 
 
 ### Espaces
@@ -38,23 +56,6 @@ Pour un exposant, utiliser `XX^e^ siècle`, afin d’afficher XX<sup>e</sup> si�
 ### Points de suspension
 Les points de suspension doivent être composés grâce au caractère dédié : « … ».    
 (Pas en faisant se succéder trois points : ...).
-
-### Sauts de page ou de colonnes
-
-À l’impression, on peut forcer un saut de page en intégrant le code :
-```html
-<br class="breakpage">
-```
-Pour forcer un saut dans des colonnes (notes de bas de page, notamment), utiliser :
-```html
-<br class="breakcolumn">
-```
-Des sauts conditionnels (écran _ou_ impression) peuvent être générés grâce aux balises :
-
-```html
-<br class="breakscreen"><!-- uniquement à l’écran -->
-<br class="breakprint"><!-- uniquement à l’impression -->
-```  
 
 
 ### Spacing

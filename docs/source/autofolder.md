@@ -1,4 +1,4 @@
-## Dossier d’images
+## Catalogue d’images
 
 On peut déterminer que la source d’un contenu ne soit ni un fichier markdown, ni l’URL d’un pad, mais un dossier d’images.
 
@@ -12,7 +12,7 @@ $parts = [
     // la déclaration "file" reste vide (ou est supprimée)
     "file" => "", 
     // on déclare le chemin vers le dossier
-    "autofoler" => "images/dossier", 
+    "autofolder" => "images/dossier", 
     // le gabarit de mise en page
     "template" => "default" 
   ],

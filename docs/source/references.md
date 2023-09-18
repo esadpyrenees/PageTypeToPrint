@@ -1,20 +1,14 @@
 
-
-## Colonnes
-
-Au sein du texte, le contenu peut ponctuellement être réparti en trois colonnes en utilisant la notation&#8239;:
-
-```md
-::: columns
-
-Contenu
-
-:::
-```
-
-C’est la mise en forme dédiée aux pages affichées avec le gabarit `references`, qui sert notamment à établir la bibliographie.
-
 ## Bibliographie
+
+Une logique de mise en forme spécifique est proposée pour les annexes bibliographiques. Un gabarit spécifique (_references_) est prévu pour déclarer la bibliographie dans les sections du fichier `config.yml` : 
+
+```yml
+- title: Bibliographie
+  file: content/text/7.biblio.md
+  template: references
+```
+## Préconisations
 
 Dans la bibliographie, les références sont ordonnées par ordre alphabétique du nom d’auteur⋅ice (s’il y a plusieurs références d’un⋅e même auteur⋅ice, elles sont classées chronologiquement). 
 
@@ -71,3 +65,15 @@ PRADIER, Manon. _Avec Vincent_. 2016. Disponible sur https://youtu.be/3DNsGRUHF7
 ```
 
 NB: les vidéos YouTube ont une URL courte (accessible via la commande “Partager”) préférable pour une mise en page plus condensée.
+
+## Colonnes
+
+Hors de la bibliographie, au sein du texte, le contenu peut également être réparti en trois colonnes en utilisant la notation&#8239;:
+
+```md
+::: columns
+
+Contenu
+
+:::
+```

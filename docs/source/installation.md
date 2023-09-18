@@ -1,51 +1,35 @@
 
-
 ## Installation
 
-Le projet PageTypeToPrint :
+Téléchargez le projet :
 
-* utilise le langage PHP 
-* pour transformer le texte saisi au format markdown en HTML, 
-* afin de pouvoir l’afficher dans un navigateur web, 
-* et en générer un PDF imprimable, via Paged.js et les fonctionnalités internes des navigateurs (Chrome ou Chromium, pour le moment).
+<a class="bigbutton" href="https://github.com/esadpyrenees/PageTypeToPrint/zipball/main/">↓ Code source </a> 
 
-Téléchargez le code du projet [en cliquant ici](https://github.com/esadpyrenees/PageTypeToPrint/zipball/main/). 
+Le fichier doit être décompressé dans un environnement de serveur web bénéficiant d’une version de PHP supérieure à 8.0 (par exemple, le dossier `htdocs` dans MAMP ; voir ci-dessous).
 
-Le dossier _PageTypeToPrint_ doit être décompressé dans un environnement de serveur web local bénéficiant d’une version de PHP supérieure à 8.0 (voir [ci-dessous](#version-de-php)).
+Si vous pouvez démarrer un serveur web local avec PHP 8, passez à : 
 
-Si vous pouvez démarrer un serveur web local avec PHP 8, passez à [Configuration et contenu](contenu.md). 
+<a class="bigbutton" href="../contenu">→ Configuration et contenu</a> 
 
 Sinon, poursuivez ci-dessous…
 
 
 ## En détails
 
-Sur un ordinateur “domestique“, on peut installer un esnemble de logiciels qui intègre les différents fonctionnalités d’un serveur web. On parle alors de serveur local ou de serveur de développement.
+ _PageTypeToPrint_ utilise PHP, un langage web qui s’exécute du côté du serveur, disponible chez l’immense majorité des hébergeurs web.
 
-Les outils les plus simples à utiliser sont : [MAMP](https://www.mamp.info/en/downloads/), [WAMP](https://www.wampserver.com/) et [Xampp](https://www.apachefriends.org/fr/index.html).
+Sur un ordinateur “domestique“, on peut installer un logiciel qui intègre les différents fonctionnalités d’un serveur web. On parle alors de _serveur local_ ou de _serveur de développement_.
 
-Alternativement, si PHP est installé, dans un terminal :
-
-```sh
-cd votre/dossier/de/travail/PageTypeToPrint
-php -S localhost:8888  
-# cette commande permet d’accéder à la page web sur http://localhost:8888
-```
-
+Les outils les plus simples à utiliser sont [MAMP](https://www.mamp.info/en/downloads/), utilisable sur Mac OS et sur Windows  et [XAMPP](https://www.apachefriends.org/fr/index.html), multiplateforme (à utiliser si MAMP ne fonctionne pas sur votre ordinateur).
 
 ### AMP ?
 
 L’accronyme AMP signifie Apache + MySQL + PHP.
 
-* Apache est un _serveur web_ : le serveur HTTP répond aux requêtes et transmet les pages Web.
-* MySQL (ou Maria DB) et un _Serveur de base de données_.
+* Apache est un serveur web : le serveur HTTP répond aux requêtes et transmet les pages Web au navigateur.
+* MySQL est un serveur de base de données, inutile dans ce contexte.
 * PHP est un langage de script : il va permettre d’effectuer des opérations sur le seveur et fabriquer des pages HTML.
 
-### M / W / X + AMP
-
-- [M(AMP)](https://www.mamp.info/en/downloads/) est utilisable sur Mac (originellement) et sur Windows
-- [W(AMP)](https://www.wampserver.com/) Server est dédié à Windows
-- [X(AMP)p](https://www.apachefriends.org/fr/index.html) est multiplateforme (à utiliser si les deux autres ne fonctionnent pas sur votre ordinateur) 
 
 ### MAMP ou Xampp?
 

@@ -54,7 +54,7 @@ Si l’on souhaite déplacer les notes de bas de page en marge, ce script devra 
 ### Notes iconographiques
 
 Les notes iconographiques ( ou _images de note_) sont générées grâce au _shortcode_ `(imagenote: fichier.jpg)` inséré après le mot qu’elles précisent :
-```md
+```pttp
 Les illustrations de Gustave Doré(imagenote: images/gustave.jpg caption: Gustave Doré) sont gravées dans les mémoires.
 ```
 Elles peuvent bénéficier de l’ensemble des attributs liés aux figures (`class` et `caption`) et sont insérées au fil du texte grâce au parsing des _shortcodes_ de la librairie `_inc/Specials/Tags.php`.
