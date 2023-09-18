@@ -1,0 +1,51 @@
+/*!
+ * StackOverflow.com light style
+ *
+ * @stackoverflow/stacks v0.56.0
+ * https://github.com/StackExchange/Stacks
+ */
+ /* 
+  */
+.hljs {display:block;overflow-x:auto;padding:.5em;color:#2f3337;background:#f6f6f6; line-height: 1.5;}
+
+.hljs-comment, .hljs-title {
+  color: #8e908c;
+}
+
+.hljs-variable, .hljs-attribute,.hljs-attr, .hljs-tag, .hljs-regexp, .hljs-ruby .hljs-constant, .hljs-xml .hljs-tag .hljs-title, .hljs-xml .hljs-pi, .hljs-xml .hljs-doctype, .hljs-html .hljs-doctype, .hljs-css .hljs-id, .hljs-css .hljs-class, .hljs-css .hljs-pseudo, .hljs-note {
+  color: #c82829;
+  color: tomato;
+}
+
+.hljs-number, .hljs-preprocessor, .hljs-built_in, .hljs-literal, .hljs-params, .hljs-constant {
+  color: #f5871f;
+}
+
+.hljs-class, .hljs-ruby .hljs-class .hljs-title, .hljs-css .hljs-rules .hljs-attribute {
+  color: #eab700;
+}
+
+.hljs-string, .hljs-value, .hljs-inheritance, .hljs-header, .hljs-ruby .hljs-symbol, .hljs-xml .hljs-cdata {
+  color: #718c00;
+}
+
+.hljs-css .hljs-hexcolor {
+  color: #3e999f;
+}
+
+.hljs-function, .hljs-python .hljs-decorator,
+.hljs-python .hljs-title,
+.hljs-ruby .hljs-function .hljs-title,
+.hljs-ruby .hljs-title .hljs-keyword,
+.hljs-perl .hljs-sub,
+.hljs-javascript .hljs-title,
+.hljs-coffeescript .hljs-title {
+  color: #4271ae;
+}
+.hljs-keyword,
+.javascript .function {
+  color: #8959a8;
+}
+.hljs-strong { font-weight: bold;}
+
+.hljs-emphasis { font-weight: italic;}
