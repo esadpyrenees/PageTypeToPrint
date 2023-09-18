@@ -16,7 +16,11 @@
   <title><?= strip_tags( $title ) ?> — <?= $name ?></title>
   
   <!-- le thème -->
-  <?php include( isset($_GET["print"]) ? "$theme_url/print_head.php" : "$theme_url/screen_head.php"); ?>
+  <?php 
+    // Si le fichier index.php est invoqué en ligne de commande :
+    if (PHP_SAPI === 'cli'){ parse_str(implode('&', array_slice($argv, 1)), $_GET); }
+    // Impression ou écran ?
+    include( isset($_GET["print"]) ? "$theme_url/print_head.php" : "$theme_url/screen_head.php"); ?>
   
 </head>
 <body>
