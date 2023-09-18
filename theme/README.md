@@ -14,6 +14,6 @@ Les dossiers `css` et `js` contiennent les feuilles de styles et scripts pour ch
 
 ## Thèmes par défaut
 
-Le dossier `default` contient le thème par défaut, développé pour les mémoires de DNSEP et documents écrits de DNA de l’École supérieure d’art et de design des Pyrénées.
+Le dossier `esadpyrenees` contient le thème par défaut, développé pour les mémoires de DNSEP et documents écrits de DNA de l’École supérieure d’art et de design des Pyrénées.
 
 Le dossier `booklet` contient un thème dédié à la conception dun livret broché, au format A5.
