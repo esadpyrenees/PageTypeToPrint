@@ -382,19 +382,15 @@
   <h2 id="catalogue-dimages">Catalogue d’images</h2>
 <p>On peut déterminer que la source d’un contenu ne soit ni un fichier markdown, ni l’URL d’un pad, mais un dossier d’images.</p>
 <p>C’est une solution moins souple et moins précise que la structuration d’une série d’images via les logiques décrites dans la <a href="../appendices/">gestion des annexes</a>, mais beaucoup plus rapide :)</p>
-<pre><code class="language-php">$parts = [
-  [
-    // le titre de la section, tel qu’il apparaitra dans le sommaire
-    &quot;title&quot; =&gt; &quot;Images en vrac&quot;, 
-    // la déclaration &quot;file&quot; reste vide (ou est supprimée)
-    &quot;file&quot; =&gt; &quot;&quot;, 
-    // on déclare le chemin vers le dossier
-    &quot;autofolder&quot; =&gt; &quot;images/dossier&quot;, 
-    // le gabarit de mise en page
-    &quot;template&quot; =&gt; &quot;default&quot; 
-  ],
+<pre><code class="language-yaml">parts:
+
+  - title: Images en vrac 
+    file: &quot;&quot; # la déclaration &quot;file&quot; reste vide (ou est supprimée)
+    folder: images/dossier # on déclare le chemin vers le dossier 
+    template: autofolder # le gabarit de mise en page 
+
   …
-]
+
 </code></pre>
 <p>Les fichiers gif, jpg, png, svg et webp seront automatiquement intégrés dans une succession d’éléments <code>&lt;figure&gt;</code>. </p>
 <p>Les images verticales (hauteur &gt; largeur) auront une class <code>portrait</code> ; les horizontales une class <code>landscape</code>.</p>
@@ -563,7 +559,7 @@ parts:
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2023-09-20 16:34:24.367963+00:00
+    Build Date UTC : 2023-09-20 16:45:02.267549+00:00
     -->
   </body>
 </html>
