@@ -1,0 +1,130 @@
+@media print {
+  @page {
+    size: 210mm 297mm;
+  }  
+  @page:right {
+    margin: 1cm 2cm 2.5cm 1cm;
+    @bottom-right-corner {
+      content: element(folioRunning);
+      text-align: left;
+    }
+  }
+  @page:left {
+    margin: 1cm 1cm 2.5cm 2cm;
+    @bottom-left-corner {
+      content: element(folioRunning);
+      text-align: left;
+    }
+  }
+  @page cover {
+    margin: 1cm 1cm 2.5cm 1cm;    
+    @bottom-left-corner { display: none; }
+    @bottom-right-corner { display: none; }
+  }
+  @page:blank {
+    @bottom-left-corner { display: none; }
+    @bottom-right-corner { display: none; }
+  }
+  
+
+  /* ------------------------------------------------------------------------ Variables */
+  :root {
+    --bigsize: 60px;
+    --basesize: 12px;
+    --smallsize: 10px;
+    --color: rgba(0, 0, 0, 0.85);
+    --spacer: .5cm;
+  }
+
+
+  /* ------------------------------------------------------------------------ Cover */
+  #header {
+    padding: 0;
+    min-height: 0;
+  }
+  
+  #header {
+    page: cover;
+    page-break-after: right;
+  }
+  #header h1  {
+    font-size: 54pt;
+  }
+
+  a[href="?print"] { display: none;}
+
+  /* ------------------------------------------------------------------------ Running titles */
+  /* running title */
+  .folio{
+    font-weight: bold;
+    text-align: right;
+    position: running(folioRunning);
+  }
+  .pagedjs_right_page .folio {
+    text-align: left;
+  }
+  .folio::before{
+    content: counter(page);
+    font-weight: bold;
+  }
+  
+  
+  /* ------------------------------------------------------------------------ Content */
+  /* contenu */
+  main { 
+    display: block;
+    padding: 0;
+  }  
+  
+  main h2 ,
+  main h3 {
+    display: none;
+  }
+
+  #about {
+    page-break-before: always;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacer)
+  }
+
+  /* ------------------------------------------------------------------------ Autofolder */
+  .autofolder {
+    page-break-after: always;
+  }
+
+  .autofolder .content {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-auto-flow: dense;
+  }
+  .autofolder figure {
+    --empagement-height:  calc(var(--pagedjs-height) - var(--pagedjs-margin-top) - var(--pagedjs-margin-bottom));
+    --empagement-width:  calc(var(--pagedjs-width) - var(--pagedjs-margin-left) - var(--pagedjs-margin-right));
+    --cell-height:  calc( (var(--empagement-height) - var(--spacer) * 3) / 4);
+    --cell-width: calc( (var(--empagement-width) - var(--spacer) * 3) / 4);
+    position: relative;
+    height: var(--cell-height) ;
+    width: var(--cell-width) ;
+  }
+  .autofolder figcaption {
+    font-size: var(--smallsize);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  .autofolder img {
+    width: 100%;
+    height: calc(100% - 2em);
+    object-fit: contain;
+  }
+  .autofolder .bigfigure {
+    grid-column: span 2;
+    grid-row: span 2;
+    height: calc( var(--cell-height) * 2 + var(--spacer));
+    width: calc( var(--cell-width) * 2 + var(--spacer));
+  }
+  .autofolder .bigfigure img { object-position: center; }
+
+
+}

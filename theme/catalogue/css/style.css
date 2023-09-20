@@ -1,0 +1,146 @@
+/*
+Sommaire :
+  - Fonts
+  - Variables
+  - Éléments communs
+  - Couverture (écran d’accueil)
+  - Contenu
+*/
+
+
+/* ------------------------------------------------------------------------ Fonts */
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("fonts/InstrumentSans.woff2") format("woff2 supports variations"),
+    url('fonts/InstrumentSans.woff2') format('woff2-variations');
+    font-weight: 400 700;
+}
+
+/* ------------------------------------------------------------------------ Variables */
+:root {
+  /* typographie */
+  --fontfamily: "Instrument Sans", sans-serif;
+  --bigsize: clamp(2.50rem, calc(1.83rem + 3.33vw), 6.00rem);
+  --basesize: 1.15rem;
+  --color: rgba(0, 0, 0, 0.85);
+  /* espacements homogènes */
+  --spacer: 2rem;
+  /* largeur max. des textes */
+  --maxwidth: 46rem;
+}
+
+@media (max-width:30rem) {
+  :root{
+    --spacer:1rem;
+    --basesize:1rem;
+    --bigsize: clamp(1.5rem, -1.2500rem + 10.0000vw, 4rem);
+  }
+}
+
+/* ------------------------------------------------------------------------ Common */
+/* box model */
+*, *::after, *::before { box-sizing: border-box; }
+/* smooth scroll */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+/* page defaults */
+body {
+  font-family: var(--fontfamily);
+  color: var(--color);
+  font-size: var(--basesize);
+  line-height: 1.45;
+  margin: 0;
+  overflow-x: hidden;
+}
+a { color: currentColor; }
+img { max-width: 100%; height: auto; }
+
+
+/* ------------------------------------------------------------------------ Cover */
+#header {
+  padding: var(--spacer);
+}
+#header h1 {
+  margin: 0 0 0 -.15em;
+  line-height: 1.1;
+  max-width: calc(var(--bigsize) * 16);
+  font-size: calc(var(--bigsize) * 1);
+  font-weight: 450;
+  text-transform: uppercase;
+}
+
+/* le titre courant n’est affiché qu’en contexte print */
+.runningtitle, .runningfolio {
+  display: none;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-weight: 400;
+  gap: 1em;
+}
+.meta :first-child { flex: 1}
+
+/* ------------------------------------------------------------------------ Content */
+main {
+  padding: var(--spacer);
+}
+/* les sections */
+
+main p {
+  max-width: var(--maxwidth);
+}
+
+main h1 {
+  font-size: 1.5em;
+}
+main h2 {
+  display: none;
+}
+
+/* ------------------------------------------------------------------------ Auto folder (template = autofolder) */
+.autofolder .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: var(--spacer);
+}
+.autofolder .figure {
+  margin: 0;
+  padding: 0;
+  cursor: col-resize;
+}
+.autofolder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+}
+.autofolder figcaption {
+  text-align: center;
+  font-size: .75em;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  height: 1.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+@media screen and (max-width:40rem) {
+  .autofolder .figure { 
+    grid-column: 1 / -1 !important;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0 !important;
+  }
+  figcaption {
+    margin-bottom: 1em;
+  }
+  figcaption::before {
+    content: "↓ " !important;
+  }
+}
