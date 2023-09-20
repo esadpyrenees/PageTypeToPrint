@@ -398,6 +398,119 @@
 </code></pre>
 <p>Les fichiers gif, jpg, png, svg et webp seront automatiquement intégrés dans une succession d’éléments <code>&lt;figure&gt;</code>. </p>
 <p>Les images verticales (hauteur &gt; largeur) auront une class <code>portrait</code> ; les horizontales une class <code>landscape</code>.</p>
+<h3 id="exemple-pas-a-pas">Exemple pas à pas</h3>
+<p>Le thème <code>catalogue</code> simplifie à l’extrême les logiques initiales de <em>PageTypeToPrint</em> pour n’en conserver qu’une structure minimale :</p>
+<ul>
+<li>à l’écran : une simple page qui liste des images en faisant varier leur taille et leur mise en page de manière aléatoire.</li>
+<li>en version imprimée : un format A4 fermé imposé automatiquement sur format A3 (feuilles à plier et encarter pour fabriquer un livret).</li>
+</ul>
+<p>Une démo est accessible dans sa <a href="https://ateliers.esad-pyrenees.fr/catalogue/">version écran</a> et dans sa <a href="https://ateliers.esad-pyrenees.fr/catalogue/?print">version imprimable</a>.</p>
+<h4 id="etape-1-configuration-du-document">Étape 1 : configuration du document</h4>
+<pre><code class="language-yml"># Le thème
+theme: &quot;catalogue&quot;
+
+# Le titre 
+title: Three D Scans
+
+# Des méta-données spécifiques peuvent être créées 
+url: threedscans.org
+date: 19/09/2023
+
+# Structure du contenu 
+parts:
+  - title: Three D Scans
+    folder: content/images # ← le dossier d’images
+    template: autofolder # ← le gabarit 
+
+  - title: About
+    file : content/about.md
+    template : default
+</code></pre>
+<h4 id="etape-2-simplification-de-bodyphp">Étape 2 : simplification de <code>body.php</code></h4>
+<p>Suppression de la navigation, du sommaire et des titres courants.</p>
+<pre><code class="language-html">&lt;header id=&quot;header&quot;&gt;
+    &lt;!-- Le titre  --&gt;
+    &lt;h1&gt;&lt;?= $title ?&gt;&lt;/h1&gt;
+    &lt;!-- le folio --&gt;
+    &lt;span class=&quot;folio&quot;&gt;&lt;/span&gt;
+    &lt;!-- affichage des méta-données spécifiques --&gt;
+    &lt;div class=&quot;meta&quot;&gt;
+        &lt;span class=&quot;meta-url&quot;&gt;&lt;a href=&quot;&lt;?= $url ?&gt;&quot;&gt;&lt;?= $url ?&gt;&lt;/a&gt;&lt;/span&gt;        
+        &lt;span class=&quot;meta-date&quot;&gt;&lt;?= $date ?&gt;&lt;/span&gt;      
+    &lt;/div&gt;
+&lt;/header&gt;
+&lt;main id=&quot;main&quot;&gt;
+    &lt;!-- le contenu --&gt;      
+    &lt;?= $html() ?&gt;
+&lt;/main&gt;
+</code></pre>
+<h4 id="etape-2-simplification-de-la-css-stylecss">Étape 2 : simplification de la CSS <code>style.css</code></h4>
+<p>Une large part de la feuille de style par défaut n’est pas utile dans le cadre d’un simple catalogue d’image. On peut ainsi supprimer une grande part des règles de mise en forme : méta-données, typographie, navigation, gabarits <em>interview</em>, <em>appendices</em>, glossaire, colonnes, images de note, notes de marge, etc.</p>
+<p>Les règles correspondant au gabarit <code>autofolder</code> peuvent déterminer une grille <em>responsive</em> et préciser le comportement des images et des légendes :</p>
+<pre><code class="language-css">.autofolder .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: var(--spacer);
+}
+.autofolder .figure {
+  margin: 0;
+  padding: 0;
+}
+.autofolder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+}
+.autofolder figcaption {
+  text-align: center;
+  font-size: .75em;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  height: 1.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</code></pre>
+<h4 id="etape-3-modifications-de-screen_headphp">Étape 3 : Modifications de <code>screen_head.php</code></h4>
+<p>Les appels du script <code>screen/sidenotes.js</code> et des scripts d’<a href="../appendices/#à-l’aide-!">aide à la mise en page</a> sont supprimés. </p>
+<p>Dans l’exemple de thème <code>catalogue</code>, on ajoute un appel au script (<code>screen/script.js</code>), qui intervient pour modifier aléatoirement la largeur des figures et déstructurer la grille.</p>
+<h4 id="etape-4-modifications-de-la-css-printcss">Étape 4 : Modifications de la CSS <code>print.css</code></h4>
+<p>Déclaration du format de page et de la pagination par défaut, ainsi que de la page de couverture et des pages vides.</p>
+<pre><code class="language-css">@page {
+  size: 210mm 297mm;
+}  
+@page:right {
+  margin: 1cm 2cm 2.5cm 1cm;
+  @bottom-right-corner {
+    content: element(folioRunning);
+    text-align: left;
+  }
+}
+@page:left {
+  margin: 1cm 1cm 2.5cm 2cm;
+  @bottom-left-corner {
+    content: element(folioRunning);
+    text-align: left;
+  }
+}
+@page cover {
+  margin: 1cm 1cm 2.5cm 1cm;    
+  @bottom-left-corner { display: none; }
+  @bottom-right-corner { display: none; }
+}
+@page:blank {
+  @bottom-left-corner { display: none; }
+  @bottom-right-corner { display: none; }
+}
+
+</code></pre>
+<h4 id="etape-5-modifications-de-print_headphp">Étape 5 : Modifications de <code>print_head.php</code></h4>
+<p>Les appels des scripts liés aux notes iconographiques et de bas de page, au sommaire, etc. sont supprimés. </p>
+<p>Le format fermé (A4) étant défini en CSS, on inclue l’appel du script <code>print/imposition.js</code> qui permet de générer l’imposition des pages A4 et de modifier le format de sortie pour que deux pages puissent être imprimées sur la même face.</p>
+<p>Si besoin, ce script insère des pages blanches pour que la pagination soit un multiple de quatre.</p>
+<p>Dans l’exemple de thème <code>catalogue</code> –juste pour montrer que c’est possible…–, on ajoute un appel au script <code>print/bigfigures.js</code>, qui intervient pour modifier la largeur et la hauteur de certaines figures, sélectionnées manuellement via leur <code>id</code>.</p>
 
   <div class="prevnext">
     
@@ -418,6 +531,8 @@
     <ul>
     
         <li class="page-toc__item"><a href="#catalogue-dimages" class="page-toc__link" data-js="tocLink" tabindex="0">Catalogue d’images</a></li>
+        
+            <li class="page-toc__item"><a href="./#exemple-pas-à-pas" class="page-toc__link" data-js="tocLink" tabindex="0">Exemple pas à pas</a></li>
         
     
     </ul>
@@ -448,7 +563,7 @@
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2023-09-18 08:49:32.717605+00:00
+    Build Date UTC : 2023-09-20 16:34:24.367963+00:00
     -->
   </body>
 </html>
