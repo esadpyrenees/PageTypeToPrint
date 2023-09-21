@@ -238,7 +238,7 @@ input[type="text"], input[type="search"] {
 /* ------------------------------------------------------ home */
 
 img[alt=patata]{
-  height: 8vw;
+  width: min(200px, 50vw);
   display: block;
   margin: 0 0 3em;
 }
@@ -378,7 +378,6 @@ p code {
   }
   .main-container {
     padding: 1rem;
-    display: block;
   }
 
 #menu-toggle{
