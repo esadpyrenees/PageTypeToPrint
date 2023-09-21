@@ -53,6 +53,8 @@
 
   a[href="?print"] { display: none;}
 
+  #about { margin-top: 0; }
+
   /* ------------------------------------------------------------------------ Running titles */
   /* running title */
   .folio{

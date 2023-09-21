@@ -33,7 +33,7 @@ Sommaire :
   :root{
     --spacer:1rem;
     --basesize:1rem;
-    --bigsize: clamp(1.5rem, -1.2500rem + 10.0000vw, 4rem);
+    --bigsize: clamp(2rem, -1.2500rem + 10.0000vw, 4rem);
   }
 }
 
@@ -76,11 +76,12 @@ img { max-width: 100%; height: auto; }
 
 .meta {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   text-transform: uppercase;
   letter-spacing: .05em;
   font-weight: 400;
-  gap: 1em;
+  gap: 0 1em;
 }
 .meta :first-child { flex: 1}
 
@@ -99,6 +100,10 @@ main h1 {
 }
 main h2 {
   display: none;
+}
+
+#about {
+  margin-top: 4em;
 }
 
 /* ------------------------------------------------------------------------ Auto folder (template = autofolder) */
