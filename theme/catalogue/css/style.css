@@ -137,7 +137,7 @@ main h2 {
 
 @media screen and (max-width:40rem) {
   .autofolder .figure { 
-    grid-column: 1 / -1 !important;
+    grid-column: span 1 !important;
     display: flex;
     flex-direction: column-reverse;
     padding: 0 !important;
