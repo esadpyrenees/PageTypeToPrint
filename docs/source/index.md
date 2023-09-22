@@ -18,7 +18,7 @@ PageTypeToPrint est un outil qui…
 
 ### Démo
 
-Une démo est accessible en ligne sur [ateliers.esad-pyrenees.fr/pagetypetoprint](https://ateliers.esad-pyrenees.fr/pagetypetoprint/) avec sa version [_print_](https://ateliers.esad-pyrenees.fr/pagetypetoprint/?print) et le [document pdf](https://ateliers.esad-pyrenees.fr/pagetypetoprint/document.pdf) généré. 
+Une démo est accessible en ligne sur [ateliers.esad-pyrenees.fr/pagetypetoprint](https://ateliers.esad-pyrenees.fr/pagetypetoprint/) avec sa version [_print_](https://ateliers.esad-pyrenees.fr/pagetypetoprint/esadpyrenees/?print) et le [document pdf](https://ateliers.esad-pyrenees.fr/pagetypetoprint/esadpyrenees/document.pdf) généré. 
 
 ### Open source
 

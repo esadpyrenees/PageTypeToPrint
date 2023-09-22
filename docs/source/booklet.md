@@ -6,7 +6,7 @@ Le thème _booklet_ comprend le code résultant de cette modification du thème 
 ```yml
 theme: booklet
 ```
-Une démo est visible sur [ateliers.esad-pyrenees.fr/pagetypetoprint-booklet](http://ateliers.esad-pyrenees.fr/pagetypetoprint-booklet/?print)
+Une démo est visible sur [ateliers.esad-pyrenees.fr/pagetypetoprint/booklet](http://ateliers.esad-pyrenees.fr/pagetypetoprint/booklet/?print)
 
 ### Étapes 
 
