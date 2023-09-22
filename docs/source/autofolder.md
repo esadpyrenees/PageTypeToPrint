@@ -26,7 +26,7 @@ Le thème `catalogue` simplifie à l’extrême les logiques initiales de _PageT
 - à l’écran : une simple page qui liste des images en faisant varier leur taille et leur mise en page de manière aléatoire.
 - en version imprimée : un format A4 fermé imposé automatiquement sur format A3 (feuilles à plier et encarter pour fabriquer un livret).
 
-Une démo est accessible dans sa [version écran](https://ateliers.esad-pyrenees.fr/catalogue/) et dans sa [version imprimable](https://ateliers.esad-pyrenees.fr/catalogue/?print).
+Une démo est accessible dans sa [version écran](https://ateliers.esad-pyrenees.fr/pagetypetoprint/catalogue/) et dans sa [version imprimable](https://ateliers.esad-pyrenees.fr/pagetypetoprint/catalogue/?print).
 
 #### Étape 1 : configuration du document
 
