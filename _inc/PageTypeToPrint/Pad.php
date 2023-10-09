@@ -53,12 +53,17 @@ function pad_get_contents( $url ){
   // fallback
   $content = "The provided URL ($url) didn’t reply positively. <pre>¯\\\_(ツ)_/¯</pre>";
 
+
   // get URL parts
   $url_parts = parse_url($url);
   // get txt export URL
   $export_url = $url_parts['scheme'] . '://' . $url_parts['host'] . $url_parts['path'] . "/export/txt";
+
+  // check headers
+  $headers = get_headers($export_url, 1);
+
   // check export URL status, then clean content
-  if (is_url_responding($export_url)) {
+  if ($headers[0] == 'HTTP/1.1 200 OK') {
     $content = url_get_contents( $export_url );
     $content = preserveBRs($content);
     $content = htmlentities($content, ENT_QUOTES, 'utf-8', false);
@@ -66,18 +71,14 @@ function pad_get_contents( $url ){
     $content = stripslashes($content);
     $content = revertBRs($content);
     return $content;
-  } 
+  } else {
+    $content .= $headers[0];
+  }
 
   // fallback…
   return $content;
 }
 
-function is_url_responding($url){
-  //  get headers
-  $headers = get_headers($url, 1);
-  // if is 200, ok
-  return $headers[0] == 'HTTP/1.1 200 OK';
-}
 
 
 function preserveBRs($content){
