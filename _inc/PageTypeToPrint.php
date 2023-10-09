@@ -117,6 +117,8 @@
 
       if (empty($file) && !empty($pad) ) {
         // we have a pad URL…
+        // wait two seconds in hope to avoid “HTTP/1.1 429 Too Many Requests”
+        sleep(2); 
         $content = pad_get_contents( $pad );
       } else if (empty($file) && !empty($folder) ) {
         // we have a folder of images…
