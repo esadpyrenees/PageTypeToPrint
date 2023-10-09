@@ -64,7 +64,14 @@ function pad_get_contents( $url ){
 
   // check export URL status, then clean content
   if ($headers[0] == 'HTTP/1.1 200 OK') {
-    $content = url_get_contents( $export_url );
+    // - cURL mode
+    // $content = url_get_contents( $export_url );
+    // - file_get_contents mode
+    $opts = array('http'=>array('header' => "User-Agent:PageTypeToPrint/1.0\r\n")); 
+    // Adding headers to the request
+    $context = stream_context_create($opts);
+    // sen dthe request
+    $content = file_get_contents($export_url, false, $context);
     $content = preserveBRs($content);
     $content = htmlentities($content, ENT_QUOTES, 'utf-8', false);
     $content = strip_tags($content);
