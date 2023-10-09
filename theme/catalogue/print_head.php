@@ -10,8 +10,6 @@
 <!-- Reload in place -->
 <script src="<?= $theme_url ?>/js/print/reloadInPlace.js"></script> 
 <!-- Imposition -->
-<script src="<?= $theme_url ?>/js/print/bigfigures.js"></script>
-<!-- Imposition -->
 <script src="<?= $theme_url ?>/js/print/imposition.js"></script>
 
 <!-- Would be fun, but sadly, gifs are printed at their first frame :( -->
