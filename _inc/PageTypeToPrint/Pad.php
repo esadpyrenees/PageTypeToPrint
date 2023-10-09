@@ -8,6 +8,7 @@ function curl_get_contents($url) {
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
   curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
   curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+  curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla PageTypeToPrint");
   $result=curl_exec($ch);
   curl_close($ch);
   return $result;
@@ -23,19 +24,20 @@ function pad_get_contents( $url ){
   // get txt export URL
   $export_url = $url_parts['scheme'] . '://' . $url_parts['host'] . $url_parts['path'] . "/export/txt";
   // check headers
+  ini_set("user_agent","Mozilla PageTypeToPrint");
   $headers = get_headers($export_url, 1);
 
   // check export URL status, then clean content
   if ($headers[0] == 'HTTP/1.1 200 OK') {
     // 1 -  cURL mode
-    // $content = curl_get_contents( $export_url );
+    $content = curl_get_contents( $export_url );
 
     // 2 - file_get_contents mode
-    $opts = array('http'=>array('header' => "User-Agent:PageTypeToPrint/1.0\r\n", 'timeout' => "30")); 
-    // Adding headers to the request
-    $context = stream_context_create($opts);
-    // send the request
-    $content = file_get_contents($export_url, false, $context);
+    // $opts = array('http'=>array('header' => "User-Agent:Mozilla PageTypeToPrint/1.0\r\n", 'timeout' => "30")); 
+    // // Adding headers to the request
+    // $context = stream_context_create($opts);
+    // // send the request
+    // $content = file_get_contents($export_url, false, $context);
 
     $content = preserveBRs($content);
     $content = htmlentities($content, ENT_QUOTES, 'utf-8', false);
