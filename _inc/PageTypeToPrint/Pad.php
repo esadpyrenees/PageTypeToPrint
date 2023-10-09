@@ -27,6 +27,8 @@ function pad_get_contents( $url ){
   ini_set("user_agent","Mozilla PageTypeToPrint");
   $headers = get_headers($export_url, 1);
 
+  usleep(500 * 1000); 
+
   // check export URL status, then clean content
   if ($headers[0] == 'HTTP/1.1 200 OK') {
     // 1 -  cURL mode
@@ -44,7 +46,6 @@ function pad_get_contents( $url ){
     $content = strip_tags($content);
     $content = stripslashes($content);
     $content = revertBRs($content);
-    return $content;
   } else {
     $content = "The provided URL ($url) didn’t reply positively (the server replied with “" . $headers[0] . "”). <pre>¯\\\_(ツ)_/¯</pre>" ;
   }
