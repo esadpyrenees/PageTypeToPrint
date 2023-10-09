@@ -51,7 +51,7 @@ function url_get_contents($url, $useragent='cURL', $headers=false, $follow_redir
 function pad_get_contents( $url ){
   
   // fallback
-  $content = "The provided URL ($url) didn’t reply positively. <pre>¯\\\_(ツ)_/¯</pre>";
+  $content = "";
 
 
   // get URL parts
@@ -64,10 +64,10 @@ function pad_get_contents( $url ){
 
   // check export URL status, then clean content
   if ($headers[0] == 'HTTP/1.1 200 OK') {
-    // - cURL mode
+    // -  cURL mode
     // $content = url_get_contents( $export_url );
     // - file_get_contents mode
-    $opts = array('http'=>array('header' => "User-Agent:PageTypeToPrint/1.0\r\n")); 
+    $opts = array('http'=>array('header' => "User-Agent:PageTypeToPrint/1.0\r\n", 'timeout' => "30")); 
     // Adding headers to the request
     $context = stream_context_create($opts);
     // sen dthe request
@@ -79,7 +79,7 @@ function pad_get_contents( $url ){
     $content = revertBRs($content);
     return $content;
   } else {
-    $content .= $headers[0];
+    $content = "The provided URL ($url) didn’t reply positively (the server replied with “" . $headers[0] . "”). <pre>¯\\\_(ツ)_/¯</pre>" ;
   }
 
   // fallback…
