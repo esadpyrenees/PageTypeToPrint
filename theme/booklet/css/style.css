@@ -61,7 +61,7 @@ Sommaire :
   /* largeur des notes de côté */
   --sn-width: 15rem;
   /* couleur d’accentuation */
-  --accentcolor: #ff6347;
+  --accentcolor: black;
   /* largeur max. des textes */
   --maxwidth: 46rem;
 }
@@ -92,7 +92,7 @@ body {
 p:first-child { margin-top: 0; }
 a { color: currentColor; }
 img { max-width: 100%; height: auto; }
-mark { background: var(--accentcolor); padding: 0 .15em;}
+mark { background: var(--accentcolor); padding: 0 .15em; color: white;}
 sub, sup { line-height: 0; }
 sup {
   top: 0.1em;
