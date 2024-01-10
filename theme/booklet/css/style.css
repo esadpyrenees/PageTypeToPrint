@@ -41,6 +41,14 @@ Sommaire :
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Ecole";
+  src: url("fonts/Ecole-BoldItalic.woff2") format("woff2"),
+    url("fonts/Ecole-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
 /* ------------------------------------------------------------------------ Variables */
 :root {
   /* typographie */
