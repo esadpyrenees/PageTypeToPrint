@@ -8,6 +8,25 @@
 //   - then, deletes the call
 // Author: ? 
 
+function getBlocks(element){
+    return element.querySelectorAll('div,p,blockquote,section,article,h1,h2,h3,h4,h5,h6,figure');
+}
+
+// get only inline-level tags
+function unwrapBlockChildren(element) {
+    const blocks = getBlocks(element);
+    blocks.forEach(block => {
+        block.insertAdjacentHTML("beforebegin", block.innerHTML);
+        block.remove();
+    });
+    const remainingblocks = getBlocks(element);
+    if(remainingblocks.length) unwrapBlockChildren(element)
+    return element;
+}
+
+
+  
+
 class MyHandler extends Paged.Handler {
     constructor(chunker, polisher, caller) {
         super(chunker, polisher, caller);
@@ -26,7 +45,8 @@ class MyHandler extends Paged.Handler {
             // create inline note
             const inline_note = document.createElement('span');
             inline_note.className = "footnote";
-            inline_note.innerHTML = note.querySelector("p").innerHTML;
+
+            inline_note.innerHTML = unwrapBlockChildren(note).innerHTML;
             call.after(inline_note);
             call.parentElement.removeChild(call);            
         })
