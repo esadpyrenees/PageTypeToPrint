@@ -8,7 +8,7 @@
     <!-- le titre courant (version print) -->
     <div class="runningtitle">
         <div><?= $name ?></div>
-        <div><?= $title ?></div>
+        <div><?= $runningtitle ?></div>
     </div>
 
     <!-- le folio courant (version print) -->
