@@ -10,6 +10,9 @@ title: PageTypeToPrint # &nbsp; = espace insécable, <br class="breakprint"> pro
 # Le sous-titre éventuel du document
 subtitle: "A thesis template<br class='breakprint'> in <i>web + print</i>"
 
+# Le titre courant, si différent du titre du document
+runningtitle: PageTypeToPrint <br class='breakprint'>  <i>aka</i> PaTaTaPrint.
+
 # Votre nom
 name: John Doe
 
