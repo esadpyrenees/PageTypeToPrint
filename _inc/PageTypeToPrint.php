@@ -95,6 +95,8 @@
     return $nav;
   };  
     
+  // Running title, if set
+  $runningtitle = isset($runningtitle) ? $runningtitle : $title;
   
   // Util: format markdown text from files
   // build html
