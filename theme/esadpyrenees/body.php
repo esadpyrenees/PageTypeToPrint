@@ -22,24 +22,29 @@
 
     <!-- les méta-données -->
     <div class="meta">
-        <!-- l’année YYYY – YYYY  -->
-        <div class="meta-year"><?= $year ?></div>
-        <!-- Votre nom -->
-        <div class="meta-name"><?= $name ?></div>
         <div class="meta-data">
-        <!-- Votre diplôme, option et mention -->
-        <p>
-            <?= $diploma ?> <br>
-            <?= $mention ?> 
-        </p>
-        <p>
-            École supérieure <br class="breakprint">
-            d’art &amp; de design <br class="breakprint">
-            des&nbsp;Pyrénées<br><br class="breakprint">
-            <!-- Votre pôle éventuel -->
-            <?= $pole ?>
-        </p>
+            <p>
+                École supérieure <br class="breakprint">
+                d’art &amp; de design <br class="breakprint">
+                des&nbsp;Pyrénées<br><br class="breakprint">
+                <!-- Votre pôle éventuel -->
+                <?= $pole ?>
+            </p>         
         </div>
+        <div>
+            <!-- Votre diplôme, option et mention -->
+            <p>
+                <?= $diploma ?> <br>
+                <?= $mention ?> 
+            </p>   
+        </div>
+        <div>
+            <!-- Votre nom -->
+            <div class="meta-name"><?= $name ?></div>
+            <!-- l’année YYYY – YYYY  -->
+            <div class="meta-year"><?= $year ?></div>
+        </div>
+        
     </div>
 
     <!-- les liens rapides: lire, imprimmer, télécharger -->
