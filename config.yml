@@ -5,7 +5,7 @@
 theme: "esadpyrenees"
 
 # Le titre du document
-title: PageTypeToPrint # &nbsp; = espace insécable, <br class="breakprint"> produit un saut uniquement en version print
+title: PageTypeToPrint 
 
 # Le sous-titre éventuel du document
 subtitle: "A thesis template<br class='breakprint'> in <i>web + print</i>"
@@ -23,10 +23,10 @@ year: 2023 – 2024
 diploma: DNSEP Design
 
 # Le mention du diplôme, par ex. : Mention Design graphique Multimédia
-mention: Mention Design <br class='breakprint'>graphique Multimédia # <br class="breakprint"> produit un saut uniquement en version print
+mention: Mention Design <br class='breakprint'>graphique Multimédia 
 
-# Votre pôle éventuel, par ex. : Pôle Nouveaux médias
-# Pôle Image, édition &amp<br class="breakprint"> dessin de caractères
+# Votre pôle éventuel, par ex. : Pôle Nouveaux médias, ou
+# Pôle Image, édition &amp;<br class="breakprint"> dessin de caractères
 pole: Pôle Nouveaux médias
 
 # Le nom du fichier pdf généré, par ex. : titre-du-document--prenom-nom.pdf
