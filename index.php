@@ -23,7 +23,7 @@
     include( isset($_GET["print"]) ? "$theme_url/print_head.php" : "$theme_url/screen_head.php"); ?>
   
 </head>
-<body>
+<body class="<?= isset($_GET["print"]) ? "print" : "screen" ?>" >
   
   <!-- Les contenus HTML des versions écran et imprimable sont identiques par défaut -->
   <!-- Il est possible de les différencier en utilisant une condition similaire au thème ci-dessus -->
