@@ -33,7 +33,11 @@ En contexte d’impression, si trop d'images de note sont présentes sur une seu
 
 Plusieurs solutions : 
 
-- Utiliser une grande `figure` au fil du texte pour développer la pagination différemment:
+- Utiliser une grande `image` au fil du texte pour développer la pagination différemment:
+```pttp 
+(image: nomdufichier.jpg caption: La légende de l’image)
+```
+- Utiliser un appel de `figure` au fil du texte (l’image sera alors affichée en fin de section):
 ```pttp 
 (figure: nomdufichier.jpg caption: La légende de l’image)
 ```

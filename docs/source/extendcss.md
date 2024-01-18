@@ -1,8 +1,12 @@
-## Modifications rapides
+## Modifier l’affichage
+
+Pour modifier l’apparence des documents, il est possible de dupliquer le thème par défaut, pour être en mesure d’éditer à la fois les styles graphiques, les scripts et la structure HTML du document.
+
+N’hésitez pas à partager vos thèmes ! En contribuant au [code sur GitHub](https://github.com/esadpyrenees/PageTypeToPrint/) ou par e-mail, en [me signalant](mailto:julien.bidoret@esad-pyrenees.fr) vos modifications.
 
 ### Changer le caractère typographique
 
-Modifier le fichier `css/style.css` du thème pour déclarer le (ou les) nouveau(x) catactère(s), et modifier la valeur de `--fontfamily` dans les propriétés personnalisées.
+Une fois le thème par défaut dupliqué et le fichier `config.yml` mis à jour, modifier le fichier `themes/votre_theme/css/style.css` du thème pour déclarer le (ou les) nouveau(x) catactère(s), et modifier la valeur de `--fontfamily` dans les propriétés personnalisées.
 
 ```css
 @font-face {
