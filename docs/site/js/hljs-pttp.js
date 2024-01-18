@@ -6,7 +6,7 @@ hljs.registerLanguage(
     "use strict";
     return function (n) {
       const k = {
-        attribute: "imagenote caption video figure poster class term",
+        attribute: "imagenote caption video figure poster class term image width printwidth col printcol",
         literal: "hljs-note",
         value: "offset0 offset2 offset4 offset6 offset8 quarter third half twothird threequarter full notwhite printleft printright",
         built_in: "glossary ¶¶¶ cap close complex copy imag len make new panic print println real recover delete",
