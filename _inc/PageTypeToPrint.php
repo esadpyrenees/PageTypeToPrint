@@ -14,7 +14,7 @@
       - balises sup, sub, abbr, dl et mark
       - balises personnalisées (mise en colonnes, glossaire)
 
-    Les shortcodes (figure: …), (imagenote: …) et (video: …) sont traités grâce 
+    Les shortcodes (image: …), (figure: …), (imagenote: …) et (video: …) sont traités grâce 
     aux fonctions situées dans le fichier Specials/Tags.php
 
     La micro-typographie française est corrigée automatiquement (autant que 
@@ -38,7 +38,7 @@
       - sup, sub, abbr, dl and mark tags
       - custom tags (column layout, glossary)
 
-    Shortcodes (figure: …), (imagenote: …) and (video: …) are handled by 
+    Shortcodes (image: …), (figure: …), (imagenote: …) and (video: …) are handled by 
     functions in the Specials/Tags.php file
 
     The French micro-typography is automatically corrected (as far as possible) 
@@ -94,6 +94,7 @@
     }
     return $nav;
   };  
+
     
   // Running title, if set
   $runningtitle = isset($runningtitle) ? $runningtitle : $title;
@@ -147,14 +148,25 @@
       if($template == "appendices" || $template == "autofolder"){
         $content = "<h2>$part_title</h2><div class='content' markdown=1>\n\n$content\n\n</div>";
       }
+      // parse shortcodes and iconographic groups
+      $specials = specials($content); 
+      $content = $specials["md"];
+      $figures = $specials["figures"];
 
       // add content to markdown string 
       $md .= "<section id='$slug' class='$template' markdown=1>\n\n$content\n\n</section>\n\n";
-      
+      // if we need to include an icnographic group at the end of the previous section
+      $figures_count = count($figures);
+      if($figures_count){ 
+        $md .= "<section id='$slug-figure' class='figures_page' markdown=1 data-figures-count='$figures_count'><div class='content' markdown=1>\n\n";
+        foreach($figures as $figure){
+          $md .= $figure;
+        }
+        $md .= "\n\n</div></section>\n\n";
+      }
+     
     }
 
-    // Parse special tags (figure, image, video)
-    $md = specials($md);
 
     // MarkdownIt instanciation
     // Documentation : https://github.com/markdown-it/markdown-it

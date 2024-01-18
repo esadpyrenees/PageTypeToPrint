@@ -10,15 +10,40 @@
       return mb_strtolower(preg_replace(array('/[^a-zA-Z0-9 \'-]/', '/[ -\']+/', '/^-|-$/'), array('', '-', ''), remove_accent($str)));
   }
 
+  // quickndirty log util
+  function pttp_log($log_msg) {
+    $log_dirname = "log";
+    if (!file_exists($log_dirname)) {
+        mkdir($log_dirname, 0777, true);
+    }
+    if(is_array($log_msg)){
+      $log_msg = print_r($log_msg, true);
+    }
+    $log_file_data = $log_dirname.'/log_' . date('d-M-Y') . '.log';    
+    file_put_contents($log_file_data, $log_msg . "\n", FILE_APPEND);
+  } 
 
-  function special($string){
+
+  // Parse “special” shortcodes and returns array() :
+  // [
+  //   "shortcode"=> string: type of shorcode, 
+  //   "html" => string: html,
+  //   "figure" => string: optional, html for remote figure (in case of figure)
+  // ] 
+  // shortcodes can be imagenote, video, figure, figure
+
+  $figures_index = 0;
+
+  function parse_shortcode($string){
+
+    global $figures_index;
 
     $ostring = $string;
     
     $type  = null;
     $value = null;
     $attrs = [];
-
+    
     $tag = trim(ltrim($string, '('));
     if (substr($tag, -1) === ')') {
       $tag = substr($tag, 0, -1);
@@ -26,7 +51,7 @@
 
     $type = trim(substr($tag, 0, strpos($tag, ':')));
     $type = strtolower($type);
-    $attr = ['class', 'caption', 'print', 'poster'];
+    $attr = ['class', 'caption', 'print', 'poster', 'col', 'printcol', 'width', 'printwidth'];
 
     array_unshift($attr, $type);
 
@@ -53,6 +78,8 @@
     // extract and pass its value separately
     $value = array_shift($attributes);
     
+    // init MarkdownIt
+    $mdit = new MarkdownIt();
 
     if($type == "imagenote"){
       $class = $attributes["class"] ?? "";
@@ -62,14 +89,14 @@
       $html .= "<img src='$value'>";
       if($caption){
         $html .= "<span class='caption'>";
-        $mdit = new MarkdownIt();
         $caption = $mdit->renderInline( $caption );
         $html .= $caption;
         $html .= "</span>";  
       }
       $html .= "</span>";
-      return $html;
+      return ["shortcode"=> "imagenote", "html" => $html];
     }
+
 
     if($type == "video"){
       $class = $attributes["class"] ?? "";
@@ -80,42 +107,58 @@
       $html .= $video;
       if($caption){
         $html .= "<figcaption class='figcaption'>";
-        $mdit = new MarkdownIt();
         $caption = $mdit->renderInline( $caption );
         $html .= $caption;
         $html .= "</figcaption>";  
       }
       $html .= "</figure>";
-      return $html;
+      return ["shortcode"=> "video", "html" => $html];
     }
 
-    if($type == "figure"){
+    if($type == "image" || $type == "figure"){
+      if($type == "figure") { $figures_index++; }
       $class = $attributes["class"] ?? "";
-      $print = $attributes["print"] ?? "";
-      $printarray = explode(" ", $print);
-      $printarray = substr_replace($printarray, 'print-', 0, 0);
-      $printclasses = $print != "" ? implode(" ", $printarray)  : "";
       $caption = $attributes["caption"] ?? "";
+
+      // figures and images might have inline styles, set as:
+      // (figure: image.jpg col: 3 width: 9 printcol: 1 printwidth: 12)
+      $inlinestyles = "";
+      $col = $attributes["col"] ?? "";
+      $inlinestyles .= $col ? "--col: $col;" : "";
+      $printcol = $attributes["printcol"] ?? "";
+      $inlinestyles .= ($printcol ? "--printcol: $printcol;" : "");
+      $width = $attributes["width"] ?? "";
+      $inlinestyles .= $width ? "--width: $width;" : "";
+      $printwidth = $attributes["printwidth"] ?? "";
+      $inlinestyles .= $printwidth ? "--printwidth: $printwidth;" : "";
       
       $id = slugify($value);
-      $html = "<figure class='figure $class $printclasses' id='$id' data-src='$value'>";
-      // $html .= $printclasses;
-      
-      $html .= "<img src='$value'>";
-      if($caption){
-        $html .= "<figcaption class='figcaption'>";
-        $mdit = new MarkdownIt();
+      if($type == "figure") { $id .= "-" . $figures_index; }
+      $figure = "<figure class='figure $type $class' id='$id' style='$inlinestyles'>";      
+      $figure .= "<img src='$value'>";
+      $figure .= "<figcaption class='figcaption'>";
+      if($type == "figure") { $figure .= "<span class='figure_reference'>[fig. " . $figures_index . "]</span> "; }
+      if($caption){        
         $caption = $mdit->renderInline( $caption );
-        $html .= $caption;
-        $html .= "</figcaption>";  
+        $figure .= $caption;        
       }
-      $html .= "</figure>";
-      return $html;
+      if($type == "figure") { $figure .= " <a href='#$id-call' class='figure_call_back'>&#x21a9</a>"; }
+      $figure .= "</figcaption>";  
+      $figure .= "</figure>";
+
+      if($type == "figure") { 
+        $html = "<span class='figure_call' id='$id-call'>[<a href='#$id'>fig. $figures_index</a>]</span>";
+        return ["shortcode"=> "figure", "html" => $html, "figure" => $figure];
+      } else {
+        return ["shortcode"=> "image", "html" => $figure];
+      }
+      
     }
     
     return $ostring;
   }
 
+  
 
   function specials($md){
     $regex = '!
@@ -125,14 +168,28 @@
                 (?:[^()]+|(?1))*+   # repetitions of any chars other than ( and ) or the whole group 1 pattern (recursed)
             \))                     # end of capturing group 1
         !isx';
-    return preg_replace_callback($regex, function ($match) {
-      try {
-          return special($match[0]);
-      } catch (Exception $e) {
-        throw $e;
+    
+    $figures = array();
+    
+    $md_with_special_tags = preg_replace_callback($regex, function ($match) use (&$figures) {
+      $special = parse_shortcode($match[0]);
+      if(is_array($special)) {        
+        // if we found any figure shortcode, the returned $figure has to be pushed to figures array 
+        if( $special["shortcode"] == "figure" ){
+          $figures[]= $special["figure"];
+        }
+        return $special["html"];
+      } else {
         return $match[0];
       }
     }, $md ?? '');
+
+    $response = [
+      "md" => $md_with_special_tags,
+      "figures" => $figures
+    ];
+
+    return $response;
   }
 
 
