@@ -138,7 +138,7 @@ hr{
 .meta {
   display: grid;
   grid-gap: var(--spacer);
-  grid-template-columns: 15vw minmax(250px, 1fr) minmax(250px, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 2rem;
 }
 #quicklinks {
@@ -288,12 +288,14 @@ main h1 {
 }
 main h2 {
   font-size: 1em;
+  max-width: var(--maxwidth);
 }
 main h3 {
   font-size: 1em;
-  margin-left: 2em;
+  padding-left: 2em;
   font-weight: normal;
   text-decoration: underline;
+  max-width: var(--maxwidth);
 }
 main h4 {
   font-size: 1em;
@@ -301,15 +303,15 @@ main h4 {
   font-weight: normal;
 }
 
-main figure {
+.default figure {
   margin: 1em 0;
   max-width: var(--maxwidth);
 }
 
 main blockquote {
   font-style: italic;
-  margin-left: 0;
-  padding-left: 4em;
+  margin: 0;
+  padding: 1em 0 1em 4em;
 }
 
 @media screen and (max-width:80rem) {
@@ -335,10 +337,10 @@ main blockquote {
 @media screen and (max-width:40rem) {
   .interview p { --indent: 0 }
 }
-.interview p:nth-child(1) strong:first-child,
+/* .interview p:nth-child(1) strong:first-child,
 .interview p:nth-child(2) strong:first-child {
   text-align: left;
-}
+} */
 .interview :not([data-split-from]) strong:first-child {
   margin-left: calc(var(--indent) * -1);
   min-width: calc(var(--indent) - 1em);
@@ -434,7 +436,30 @@ main blockquote {
     padding: 0.5em 0 0 var(--spacer );
   }
 }
-/* ------------------------------------------------------------------------ Notes */
+
+/* ------------------------------------------------------------------------ Notes iconographiques (réunies en fin de chapitre) */
+
+.figure_call{
+  padding-left: 0.25em;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  font-size: 0.75em;
+  top: -0.05em;
+  position: relative;
+  text-decoration: none;
+  border: none;
+  font-weight: bold;
+  scroll-margin-top: 1em;
+}
+.figure_reference {
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+
+/* ------------------------------------------------------------------------ Notes textuelles */
 
 .sn-toggle {
   display: none;
@@ -548,13 +573,7 @@ hr.footnotes-sep {
   align-content: start;
   grid-auto-flow: dense;
 }
-.autofolder .figure {
-  grid-column: span 3;
-  align-self: start;
-  justify-self: start;
-  margin: 0;
-  padding: 0;
-}
+
 .autofolder .portrait {
   /* grid-row: span 2; */
 }
@@ -567,6 +586,14 @@ hr.footnotes-sep {
   }
 }
 
+/* ------------------------------------------------------------------------ Images figures (template = figures) */
+.figures_page .content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: var(--spacer);
+  align-content: start;
+}
+
 /* ------------------------------------------------------------------------ Images annexes (template = appendices) */
 .appendices .content {
   display: grid;
@@ -574,13 +601,15 @@ hr.footnotes-sep {
   grid-gap: var(--spacer);
   align-content: start;
 }
-.appendices .figure {
+.figure {
   grid-column: span 3;
   align-self: start;
   justify-self: start;
   margin: 0;
   padding: 0;
+  max-width: none;
 }
+
 .figure img {
   display: block;
 }
@@ -603,35 +632,21 @@ figcaption {
 figcaption::before {
   content: "↑ ";
 }
+figcaption:empty { display: none;}
 
-/* largeur des .figure */
-.figure.offset2 { grid-column: 3 / span 3; } 
-.figure.offset4 { grid-column: 5 / span 3; } 
-.figure.offset6 { grid-column: 7 / span 3; } 
-.figure.offset8 { grid-column: 9 / span 3; } 
-.figure.third { grid-column: span 4; }
-.figure.third.offset2 { grid-column: 3 / span 4; } 
-.figure.third.offset4 { grid-column: 5 / span 4; } 
-.figure.third.offset6 { grid-column: 7 / span 4; } 
-.figure.third.offset8 { grid-column: 9 / span 4; } 
-.figure.half { grid-column: span 6; }
-.figure.half.offset2 { grid-column: 3 / span 6; } 
-.figure.half.offset4 { grid-column: 5 / span 6; } 
-.figure.half.offset6 { grid-column: 7 / span 6; } 
-.figure.twothird { grid-column: span 8; }
-.figure.twothird.offset2 { grid-column: 3 / span 8; } 
-.figure.twothird.offset4 { grid-column: 5 / span 8; } 
-.figure.threequarter { grid-column: span 9; }
-.figure.threequarter.offset2 { grid-column: 3 / span 9; } 
-.figure.full { grid-column: 1 / span 12; }
+/* largeur et décalage des .figure, uniquement pour la version écran */
+.screen .figure {
+  grid-column: var(--col, auto) / span var(--width, 3);
+}
+
 
 /* alignement vertical des .figure */
 .figure.top { align-self: start;}
 .figure.center { align-self: center;}
-.figure.bottom { align-self: end;}
+.figure.bottom { align-self: end;} 
 
 @media screen and (max-width:40rem) {
-  .appendices .figure { 
+  .figure { 
     grid-column: 1 / -1 !important;
   }
   .figure { 
