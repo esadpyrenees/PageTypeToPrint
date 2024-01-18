@@ -1,6 +1,14 @@
 
 const turndownService = new TurndownService();
 
+const properties = ["width","col", "printwidth", "printcol"];
+const labels = {
+  "col": "Col. ↦", 
+  "width": "Width ↔", 
+  "printcol": "Col. ↦ (print)",  
+  "printwidth": "Width ↔ (print)"
+};
+
 // screen mode
 window.addEventListener('DOMContentLoaded', () => {
   layoutHelper(document);
@@ -23,269 +31,121 @@ if(typeof Paged !== "undefined"){
 
 function layoutHelper(content) {
 
-
-  // const sizes = [ "quarter", "third", "half", "twothird", "threequarter", "full"];
-  const offsets = ["offset0", "offset2", "offset4", "offset6", "offset8"];
-  const sizes = { 
-    "quarter": {
-      "name": "quarter",
-      "title": "1/4",
-      "offsets": offsets
-    },
-    "third": {
-      "name": "third",
-      "title": "1/3",
-      "offsets": offsets
-    },
-    "half": {
-      "name": "half",
-      "title": "1/2",
-      "offsets": offsets.slice(0, -1)
-    }, 
-    "twothird": {
-      "name": "twothird",
-      "title": "2/3",
-      "offsets": offsets.slice(0, -2)
-    }, 
-    "threequarter": {
-      "name": "threequarter",
-      "title": "3/4",
-      "offsets": offsets.slice(0, -3)
-    }, 
-    "full": {
-      "name": "full",
-      "title": "1/1",
-      "offsets": offsets.slice(0, 1)
-    }
-  };
-
-  const printoffsets = ["print-offset0", "print-offset2", "print-offset4", "print-offset6", "print-offset8"];
-  const printsizes = { 
-    "none": {
-      "name": "",
-      "title": "-",
-      "offsets": printoffsets
-    },
-    "print-quarter": {
-      "name": "print-quarter",
-      "title": "1/4",
-      "offsets": printoffsets
-    },
-    "print-third": {
-      "name": "print-third",
-      "title": "1/3",
-      "offsets": printoffsets
-    },
-    "print-half": {
-      "name": "print-half",
-      "title": "1/2",
-      "offsets": printoffsets.slice(0, -1)
-    }, 
-    "print-twothird": {
-      "name": "print-twothird",
-      "title": "2/3",
-      "offsets": printoffsets.slice(0, -2)
-    }, 
-    "print-threequarter": {
-      "name": "print-threequarter",
-      "title": "3/4",
-      "offsets": printoffsets.slice(0, -3)
-    }, 
-    "print-full": {
-      "name": "print-full",
-      "title": "1/1",
-      "offsets": printoffsets.slice(0, 1)
-    }
-  };  
-
-
   document.body.dataset.mode = 'layout';
 
-  // rendom color for each mark
   const figures = content.querySelectorAll('.figure');
   figures.forEach( (f) => {
     const nav =  document.createElement('nav');
-    
-    // offsets helper
-    const offset = document.createElement('select');
-    offsets.forEach(s => {
-      const o = document.createElement("option");
-      o.value = s
-      o.textContent = s.replace("offset", "↦ ")
-      offset.appendChild(o);
-      f.classList.forEach(c => {
-        if(s == c) o.selected = "true"
-      });
-    })
-    offset.addEventListener("change", function(){
-      // update offset classname        
-      f.classList.forEach(c => {
-        // remove old offset classname
-        if(offsets.indexOf(c) >= 0) f.classList.remove(c);
-        // add new offset classname
-        f.classList.add(offset.value)
-      });      
-      layoutHelperLog(f);
-    });
-
-    // sizes helper
-    const size = document.createElement('select');
-    for(let s in sizes){
-      const o = document.createElement("option");
-      o.value = sizes[s]["name"];
-      o.textContent = "↔ " + sizes[s]["title"]
-      size.appendChild(o);
-      f.classList.forEach(c => {
-        if(sizes[s]["name"] == c) o.selected = "true"
-      });
-    }
-    size.addEventListener("change", function(){
-      // console.log("tada");
-      const offset_options = offset.querySelectorAll("option");
-      // update authorized offsets
-      offset_options.forEach(offset_option => {
-        if(sizes[size.value]['offsets'].indexOf(offset_option.value) < 0){
-          offset_option.disabled = true;
+    properties.forEach(prop => {
+      const is_print = prop.includes("print");
+      const is_width = prop.includes("width");
+      const val = f.style.getPropertyValue("--"+prop);
+      const select = document.createElement('select');
+      select.className = is_print ? "printoptions" : "screenoptions";
+      // from 3 to 9 for widths, 0 to 9 for offsets
+      for (let i = (is_width ? 3 : 0 ); i <= (is_width ? 12 : 9 ); i++) {
+        const o = document.createElement("option");        
+        o.value = o.textContent = i;
+        if(val == i) {
+          o.setAttribute('selected', true);
+          f.setAttribute('data-' + prop, val);
+        }; 
+        if(i == 0) {
+          o.value = o.textContent = "auto";
+        }
+        select.appendChild(o);
+      }
+      let p = document.createElement("p");
+      p.className = is_print ? "printoptions" : "screenoptions";
+      p.innerHTML = `<span>${labels[prop]}</span> `;
+      p.appendChild(select);
+      nav.appendChild(p);
+      select.addEventListener("change", function(){
+        const v = f.getAttribute('data-'+prop);
+        if (checkSum(f, this)) {
+          f.style.setProperty(`--${prop}`, this.value);
+          f.setAttribute(`data-${prop}`, this.value);
+          layoutHelperLog(f);
         } else {
-          offset_option.disabled = false;
+          f.style.setProperty(`--${prop}`, v);
+          this.value=v;
+          alert("Start-column and width are incompatible (their sum shoul be ≤ 13).");
+          return false;
         }
       });
-      // update size classname
-      f.classList.forEach(c => {
-        // remove old size classname
-        if(Object.keys(sizes).indexOf(c) >= 0) f.classList.remove(c);
-        // add new size classname
-        f.classList.add(size.value)
-      });      
-      layoutHelperLog(f);
+  
     });
-
-
-
-    // print offsets helper
-    const printoffset = document.createElement('select');
-    printoffsets.forEach(s => {
-      const o = document.createElement("option");
-      o.value = s
-      o.textContent = s.replace("print-offset", "↦ ")
-      printoffset.appendChild(o);
-      f.classList.forEach(c => {
-        if(s == c) o.selected = "true"
-      });
-    })
-    printoffset.addEventListener("change", function(){
-      // update offset classname        
-      f.classList.forEach(c => {
-        // remove old offset classname
-        if(printoffsets.indexOf(c) >= 0) f.classList.remove(c);
-        // add new offset classname
-        f.classList.add(printoffset.value)
-      });      
+    
+    const copybtn = document.createElement("button");
+    copybtn.textContent = "Copy markdown";
+    copybtn.onclick = () => {
       layoutHelperLog(f);
-    });
-
-    // print sizes helper
-    const printsize = document.createElement('select');
-    for(let s in printsizes){
-      const o = document.createElement("option");
-      o.value = printsizes[s]["name"];
-      o.textContent = "↔ " + printsizes[s]["title"]
-      printsize.appendChild(o);
-      f.classList.forEach(c => {
-        if(printsizes[s]["name"] == c) o.selected = "true"
-      });
     }
-    printsize.addEventListener("change", function(){
-      const offset_options = printoffset.querySelectorAll("option");
-      // update authorized offsets
-      offset_options.forEach(offset_option => {
-        if(printsizes[printsize.value]['offsets'].indexOf(offset_option.value) < 0){
-          offset_option.disabled = true;
-        } else {
-          offset_option.disabled = false;
-        }
-      });
-      f.classList.forEach(c => {
-        if(Object.keys(printsizes).indexOf(c) >= 0) f.classList.remove(c);
-        f.classList.add(printsize.value)
-      });      
-      layoutHelperLog(f);
-    });
-
-
-    // // clearline helper
-    // const clearline = document.createElement('input');
-    // clearline.type = "checkbox";
-    // const clearlinelabel = document.createElement('label');
-    // clearlinelabel.textContent = "↳ "
-    // clearlinelabel.appendChild(clearline);
-    // f.classList.forEach(c => {
-    //   if(c == "clearline") clearline.checked = "true"
-    // });
-    // clearline.addEventListener("change", function(){
-    //   f.classList.toggle("clearline");
-    // })
-    
-
-    let p = document.createElement("p");
-    p.innerHTML = "<span>screen</span> ";
-    p.appendChild(size);
-    p.appendChild(offset);
-    nav.appendChild(p)
-    
-    p = document.createElement("p");
-    p.className = "printhelper";
-    p.innerHTML = "<span>print</span> ";
-    p.appendChild(printsize);
-    p.appendChild(printoffset);
-    nav.appendChild(p)
-
-    const button = document.createElement('button');
-    button.textContent = "copy code";
-    nav.appendChild(button);
-    button.addEventListener('click', function(){        
-      layoutHelperLog(f);
-    })
-
+    nav.appendChild(copybtn);
     f.appendChild(nav);
 
   });
+}
+
+function checkSum(f, select){
+  let selects = null, sum = 0;
+  if(select.classList.contains("printoptions")) {
+    selects = f.querySelectorAll(".printoptions");
+  } else {
+    selects = f.querySelectorAll(".screenoptions");
+  }
+  selects.forEach(s => {
+    sum += Number(s.value);
+  });
+  if(sum > 13) {
+    return false;
+  }
+  return true;
 }
 
 
 function layoutHelperLog(f){
 
   const i = f.querySelector("img");
-  const url = i.getAttribute('src')
+  const url = i.getAttribute('src');
+
+  const is_image = f.classList.contains('image');
 
   const fc = f.querySelector("figcaption");
   let caption = "";
-  if( fc ){
-    caption = `caption: ${ turndownService.turndown(fc.innerHTML) }`
+  if( fc.textContent.trim() ){
+    const clone = fc.cloneNode(true);
+    // remove backlink from icono figures
+    if(!is_image) {
+      const toremove = clone.querySelectorAll('.figure_call_back, .figure_reference');
+      toremove.forEach(e => {
+        e.remove();
+      });
+    }
+    caption = `caption: ${ turndownService.turndown(clone.innerHTML) }`
   } 
 
-  var classnames = "",
-    classes_array = [...f.classList ] ;
-  var classes = classes_array.filter(function(c, index, arr){ 
-    return c != "figure" && !c.startsWith('print');
-  });
-  if(classes.length) classnames += "class: " + classes.join(" ");
-  var printclasses = classes_array.filter(function(c, index, arr){ 
-    return c.startsWith('print');
-  });
-  if(printclasses.length) classnames += " print: " + printclasses.join(" ").replace('print-', '');
+  const usefull_classes = f.className.replace(/figure/g, "").replace("icono", "").trim();
+  const classes = usefull_classes ? `class: ${usefull_classes}` : "";
 
+  var inlinestyles = "";
+  var properties = ["col", "width", "printcol", "printwidth"];
+  properties.forEach(prop => {
+    const val = f.style.getPropertyValue("--"+prop);
+    if(val){
+      inlinestyles += `${prop}:${val} `;
+    }
+  });
   
-  
-  let code = `(figure: ${url} ${classnames} ${caption})` 
+  let code = `(figure: ${url} ${inlinestyles} ${classes} ${caption})` ;
+  if(is_image) code = `(image: ${url} ${inlinestyles} ${classes} ${caption})` ;
+
   console.log(code);
 
   let input = document.createElement('input');        
   input.value = code;
   if (navigator.clipboard) {
-    // navigator.clipboard.writeText(input.value);
-    copyCode(f, code)
-    
+    copyCode(f, code);    
   } else {
     input.select();    
     document.execCommand('copy');    

@@ -55,17 +55,20 @@
   flex-wrap: wrap;
   gap: 5px;
 }
-.figure p span { background: #00000099; padding: .1em .25em; border-radius: 3px;}
+.figure p { background: #00000099; padding: .1em .25em; border-radius: 3px;}
 figure select, .figure label, .figure button {
   border: none;
   border-radius: 3px;
   background: black;
   appearance: none;
   color: white;
-  padding: .1em .25em;
+  padding: .1em .5em;
 }
 
 @media screen {
   .printhelper { display: none;}
   .pagedjs_page_content .printhelper { display: flex;}
+  /* main .printoptions { display: none;} */
 }
+
+.pagedjs_area .screenoptions { display: none;}
