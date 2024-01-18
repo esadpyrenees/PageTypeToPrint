@@ -380,7 +380,25 @@
         
           <main class="page-content" data-js="mainContent" role="main">
   <h2 id="annexes">Annexes</h2>
-<p>Pour les annexes, organisées sur une grille de 12 colonnes (<em>template</em> <code>appendices</code>), quelques <code>class</code> sont prédéfinies pour faciliter la mise en page :</p>
+<p>Les annexes (<em>template</em> <code>appendices</code>) et les sections iconographiques (<em>template</em> <code>figures</code>) sont organisées sur une grille de 12 colonnes.</p>
+<h3 id="dimensions-et-mise-en-page-des-figures-et-des-images">Dimensions et mise en page des figures et des images</h3>
+<p>On peut ajouter au code d’insertion d’une image des attributs <code>width</code>, <code>prinwidth</code>, <code>col</code> et <code>printcol</code> qui permettront de déterminer la largeur et la position (colonne) d’affichage de l’image.</p>
+<p>Par défaut, chaque image ou figure occupe 3 colonnes.</p>
+<pre><code class="language-pttp">(image: images/fichier.jpg width:8 printwidth:4)
+</code></pre>
+<p>↑ Cette image occupera 8 colonnes en version écran et 4 colonnes en version <em>print</em>.</p>
+<pre><code class="language-pttp">(image: images/fichier.jpg width:8 col:5)
+</code></pre>
+<p>↑ Cette image occupera 3 colonnes (par défaut) en version <em>print</em>, 8 colonnes en version écran et sera décalée (à l’écran) en 5<sup>e</sup> colonne.</p>
+<h3 id="a-laide">À l’aide !</h3>
+<p>Pour aider à la mise en page “visuelle” des images, on peut activer un utilitaire visuel qui aide à déterminer le code d’intégration des images.</p>
+<p>En contexte écran, ajouter <code>/?layout</code> à l’URL. <br />
+En contexte de prévisualisation print : <code>/?print&amp;layout</code>.   </p>
+<p><img alt="image layout helper" src="../images/layout-helper.png" /></p>
+<p>Chaque figure se voit alors doté d’un outil permettant de définir la largeur de la figure (de 3 à 12) et son décalage (auto, ou de 1 à 9). </p>
+<p>⚠️ Le code d’intégration de la figure est alors copié dans le presse-papier, et doit être collé dans le document markdown source. Attention, en contexte d’impression, la mise en page n’est pas recalculée. Il faut modifier le code d’intégration de la figure concernée dans le fichier markdown, l’enregistrer, puis actualiser la page dans le navigateur.</p>
+<h3 id="breaking-changes">Breaking changes!</h3>
+<p>Avant la version « Figures » de PageTypeToPrint (18 janvier 2024), les options de largeur et de décalage étaient déterminées grâce à des <code>class</code> prédéfinies :</p>
 <ul>
 <li><code>offset0</code> : pas de décalage (valeur par défaut)</li>
 <li><code>offset2</code> décale l’image en colonne 3</li>
@@ -397,18 +415,6 @@
 <p>Par exemple :</p>
 <pre><code class="language-pttp">(figure: url/de_limage.jpg class: notwhite offset6 half) 
 </code></pre>
-<h3 id="web-vs-print">Web <em>vs</em> print</h3>
-<p>Pour diférencier la mise en page des images entre l’écran et l’impression, on peut établir des styles différents pour chaque contexte :</p>
-<pre><code class="language-pttp">(figure: images/01.jpg class: half print: full)
-</code></pre>
-<p>↑ Cette image occupera la moitié de la largeur de l’empagement en version écran, et la pleine largeur en version imprimable.</p>
-<h3 id="a-laide">À l’aide !</h3>
-<p>Pour aider à la mise en page “visuelle” des images, on peut activer un utilitaire visuel qui aide à déterminer le code d’intégration des images.</p>
-<p>En contexte écran, ajouter <code>/?layout</code> à l’URL. <br />
-En contexte de prévisualisation print : <code>/?print&amp;layout</code>.   </p>
-<p><img alt="image layout helper" src="../images/layout-helper.png" /></p>
-<p>Chaque figure se voit alors doté d’un outil permettant de définir la largeur de la figure (<code>quarter</code>, <code>third</code>, <code>half</code>, <code>twothird</code>, <code>threequarter</code> ou <code>full</code>) et son décalage (<code>offset0</code>, <code>offset2</code>, <code>offset4</code>, <code>offset6</code> ou <code>offset8</code>). </p>
-<p>⚠️ Le code d’intégration de la figure est alors copié dans le presse-papier, et doit être collé dans le document markdown source. Attention, en contexte d’impression, la mise en page n’est pas recalculée. Il faut modifier le code d’intégration de la figure concernée dans le fichier markdown, l’enregistrer, puis actualiser la page dans le navigateur.</p>
 
   <div class="prevnext">
     
@@ -430,9 +436,11 @@ En contexte de prévisualisation print : <code>/?print&amp;layout</code>.   </p
     
         <li class="page-toc__item"><a href="#annexes" class="page-toc__link" data-js="tocLink" tabindex="0">Annexes</a></li>
         
-            <li class="page-toc__item"><a href="./#web-vs-print" class="page-toc__link" data-js="tocLink" tabindex="0">Web vs print</a></li>
+            <li class="page-toc__item"><a href="./#dimensions-et-mise-en-page-des-figures-et-des-images" class="page-toc__link" data-js="tocLink" tabindex="0">Dimensions et mise en page des figures et des images</a></li>
         
             <li class="page-toc__item"><a href="./#à-l’aide-!" class="page-toc__link" data-js="tocLink" tabindex="0">À l’aide !</a></li>
+        
+            <li class="page-toc__item"><a href="./#breaking-changes!" class="page-toc__link" data-js="tocLink" tabindex="0">Breaking changes!</a></li>
         
     
     </ul>
@@ -463,7 +471,7 @@ En contexte de prévisualisation print : <code>/?print&amp;layout</code>.   </p
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2023-09-22 06:31:42.488329+00:00
+    Build Date UTC : 2024-01-18 08:35:41.070964+00:00
     -->
   </body>
 </html>

@@ -383,11 +383,25 @@
 <p>Des images et vidéos légendées peuvent être insérées grâce à des « <em>shortcodes</em> » spécifiques.</p>
 <h3 id="images">Images</h3>
 <p>Les images peuvent être intégrées au fil du texte sous forme de note de côté :</p>
-<pre><code class="language-pttp">(imagenote: url/de_limage.jpg caption: La légende de l’image)
+<pre><code class="language-pttp">(imagenote: url/de_limage.jpg caption: La légende et _la source_.)
 </code></pre>
-<p>Mais également sous forme de blocs :</p>
-<pre><code class="language-pttp">(figure: url/de_limage.jpg caption: La légende de l’image)
+<p>Mais également sous forme de bloc au sein du texte :</p>
+<pre><code class="language-pttp">(image: url/de_limage.jpg caption: La légende et _la source_.)
 </code></pre>
+<p>Ou encore sous forme d’appels de figures :</p>
+<pre><code class="language-pttp">(figure: url/de_limage.jpg caption: La légende et _la source_.)
+</code></pre>
+<p>Cette dernière modalité introduit au fil du texte un lien hypertexte qui renvoit à l’image affichée en fin de section. Cela autorise un affichage d’images de plus grande taille qu’au fil du texte.</p>
+<h3 id="videos">Vidéos</h3>
+<p>Pour intégrer une vidéo Youtube ou Vimeo, utiliser le <em>shortcode</em> <code>video</code> et l’URL de la page :</p>
+<pre><code class="language-pttp">(video: https://www.youtube.com/watch?v=yfskVxCn_qo class: maclass caption: La légende de la vidéo)
+(video: https://vimeo.com/708803521 class: maclass caption: La légende de la vidéo)
+</code></pre>
+<p>Pour la version imprimable, il est souhaitable de déterminer quelle image sera imprimée, grâce à l’attribut <code>poster</code>:</p>
+<pre><code class="language-pttp">(video: https://www.youtube.com/watch?v=yfskVxCn_qo poster: images/videocover.jpg)
+</code></pre>
+<p>En version print, l’URL de la vidéo est affichée sous sa légende.</p>
+<h3 id="mise-en-forme-des-images">Mise en forme des images</h3>
 <p>On peut ajouter des <code>class</code> aux images :</p>
 <pre><code class="language-pttp">(figure: url/de_limage.jpg class: maclass monautreclass)
 </code></pre>
@@ -398,17 +412,9 @@
 <pre><code class="language-pttp">(imagenote: url/de_limage.jpg class: printleft)
 </code></pre>
 <p>Pour des images sous forme de blocs qui demandent une grande largeur d’affichage, on peut utiliser la <code>class: full</code> :</p>
-<pre><code class="language-pttp">(imagenote: url/de_limage.jpg class: full)
+<pre><code class="language-pttp">(image: url/de_limage.jpg class: full)
 </code></pre>
-<h3 id="videos">Vidéos</h3>
-<p>Pour intégrer une vidéo Youtube ou Vimeo, utiliser le <em>shortcode</em> <code>video</code> et l’URL de la page :</p>
-<pre><code class="language-pttp">(video: https://www.youtube.com/watch?v=yfskVxCn_qo class: maclass caption: La légende de la vidéo)
-(video: https://vimeo.com/708803521 class: maclass caption: La légende de la vidéo)
-</code></pre>
-<p>Pour la version imprimable, il est souhaitable de déterminer quelle image sera imprimée, grâce à l’attribut <code>poster</code>:</p>
-<pre><code class="language-pttp">(video: https://www.youtube.com/watch?v=yfskVxCn_qo poster: images/videocover.jpg)
-</code></pre>
-<p>En version print, l’URL de la vidéo est affichée sous sa légende.</p>
+<p>Voir <a href="../appendices/">la section suivante</a> pour déterminer les tailles d’affichage pour les images insérées grace à <code>(figure: …)</code>.</p>
 
   <div class="prevnext">
     
@@ -433,6 +439,8 @@
             <li class="page-toc__item"><a href="./#images" class="page-toc__link" data-js="tocLink" tabindex="0">Images</a></li>
         
             <li class="page-toc__item"><a href="./#vidéos" class="page-toc__link" data-js="tocLink" tabindex="0">Vidéos</a></li>
+        
+            <li class="page-toc__item"><a href="./#mise-en-forme-des-images" class="page-toc__link" data-js="tocLink" tabindex="0">Mise en forme des images</a></li>
         
     
     </ul>
@@ -463,7 +471,7 @@
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2023-09-22 06:31:42.497154+00:00
+    Build Date UTC : 2024-01-18 08:35:41.080390+00:00
     -->
   </body>
 </html>
