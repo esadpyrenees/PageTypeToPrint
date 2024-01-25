@@ -1,6 +1,6 @@
 
 
-## Annexes
+## Figures et annexes
 
 Les annexes (_template_ `appendices`) et les sections iconographiques (_template_ `figures`) sont organisées sur une grille de 12 colonnes.
 
