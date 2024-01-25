@@ -22,23 +22,26 @@ Par défaut, chaque image ou figure occupe 3 colonnes.
 
 
 
-### À l’aide !
+### Mise en page visuelle des images
 
-Pour aider à la mise en page “visuelle” des images, on peut activer un utilitaire visuel qui aide à déterminer le code d’intégration des images.
+Pour aider à la mise en page “visuelle” des images, on peut activer un utilitaire qui aide à déterminer le code d’intégration des images.
 
 En contexte écran, ajouter `/?layout` à l’URL.   
 En contexte de prévisualisation print : `/?print&layout`.   
 
+On peut alors cliquer sur chaque figure pour faire apparaitre un outil d’édition :
+
 ![image layout helper](images/layout-helper.png)
 
+Cet outil permet de définir la largeur de la figure (de 3 à 12) et son décalage (auto, ou de 1 à 9). 
 
-Chaque figure se voit alors doté d’un outil permettant de définir la largeur de la figure (de 3 à 12) et son décalage (auto, ou de 1 à 9). 
+⚠️ Le code d’intégration de la figure est alors automatiquement copié dans le presse-papier, et doit être collé dans le document markdown source. 
 
-⚠️ Le code d’intégration de la figure est alors copié dans le presse-papier, et doit être collé dans le document markdown source. Attention, en contexte d’impression, la mise en page n’est pas recalculée. Il faut modifier le code d’intégration de la figure concernée dans le fichier markdown, l’enregistrer, puis actualiser la page dans le navigateur.
+⚠️ Attention, en contexte d’impression, la mise en page n’est pas recalculée. Il faut copier/coller le nouveau code d’intégration dans le fichier markdown, enregistrer ce dernier, puis actualiser la page dans le navigateur.
 
-### Breaking changes! 
+### Breaking changes
 
-Avant la version « Figures » de PageTypeToPrint (18 janvier 2024), les options de largeur et de décalage étaient déterminées grâce à des `class` prédéfinies :
+_Avant_ la version « Figures » de PageTypeToPrint (18 janvier 2024), les options de largeur et de décalage étaient déterminées grâce à des `class` prédéfinies :
 
 * `offset0` : pas de décalage (valeur par défaut)
 * `offset2` décale l’image en colonne 3

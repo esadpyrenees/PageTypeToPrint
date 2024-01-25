@@ -7,6 +7,25 @@
   background: rgba(0,0,0, .15);
   pointer-events: none; */
 }
+[data-mode="layout"] .figure:not(.layouting) { 
+  cursor: help;
+}
+
+[data-mode="layout"] .figure:not(.layouting):hover::after { 
+  content: "Activate layout mode";
+  position: absolute;
+  top:1em; left: 1em; 
+  border-radius: 3px;
+  background: black;
+  appearance: none;
+  color: white;
+  padding: .1em .5em;
+  font-size: 12px;
+}
+[data-mode="layout"] .figure:not(.layouting):hover .close { 
+  display: none;
+}
+
 .figure {
   position: relative;
   justify-self: stretch;
@@ -17,15 +36,17 @@
 }
 .figure nav { 
   position: absolute;
-  top: 10px;
-  left: 10px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 1em;
   z-index: 1;
   flex-direction: column;
   align-items: flex-start;
   gap: 5px;
   display: none;
 }
-.figure:hover nav {
+.figure.layouting nav {
   display: flex;
 }
 .figure nav,
@@ -56,6 +77,9 @@
   gap: 5px;
 }
 .figure p { background: #00000099; padding: .1em .25em; border-radius: 3px;}
+.figure nav p:last-of-type {
+  margin-bottom: 1em;
+}
 figure select, .figure label, .figure button {
   border: none;
   border-radius: 3px;
@@ -63,6 +87,10 @@ figure select, .figure label, .figure button {
   appearance: none;
   color: white;
   padding: .1em .5em;
+}
+
+.close {
+  margin-bottom:  1em;
 }
 
 @media screen {

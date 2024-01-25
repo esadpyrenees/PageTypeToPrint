@@ -36,6 +36,18 @@ function layoutHelper(content) {
   const figures = content.querySelectorAll('.figure');
   figures.forEach( (f) => {
     const nav =  document.createElement('nav');
+    const close = document.createElement("button");
+    close.className = "close";
+    nav.appendChild(close);
+    close.textContent = "× Close layout mode";
+    close.addEventListener('click', (e) => {
+      e.stopImmediatePropagation();
+      f.classList.remove('layouting');
+    })
+    f.addEventListener('click', (e) => {
+      e.stopImmediatePropagation();
+      f.classList.add('layouting');
+    })
     properties.forEach(prop => {
       const is_print = prop.includes("print");
       const is_width = prop.includes("width");

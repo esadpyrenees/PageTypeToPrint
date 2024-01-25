@@ -7,6 +7,7 @@ L’[historique du dépôt](https://github.com/esadpyrenees/PageTypeToPrint/comm
 ### Hotfix
 
 Mise à jour du _fixer_ JoliTypo par défaut pour prenndre en compte les unités (symboles monétaires, pourcentages…)
+Mise à jour de l’utilitaire d’aide à la mise en page des images. Voir [la documentation dédiée](https://esadpyrenees.github.io/PageTypeToPrint/appendices/#mise-en-page-visuelle-des-images).
 
 
 ### Figures — 01 2024
