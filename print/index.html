@@ -195,7 +195,7 @@
         
           <li class="toctree-l1">
             
-<a class="reference internal" href="../appendices/">Annexes</a>
+<a class="reference internal" href="../appendices/">Figures et annexes</a>
 
 
     <ul>
@@ -381,11 +381,16 @@
           <main class="page-content" data-js="mainContent" role="main">
   <h2 id="version-imprimable">Version imprimable</h2>
 <p>On peut accéder à la prévisualisation de la version imprimable depuis l’URL <code>/?print</code>. Par exemple, <code>http://localhost:8888/pagetypetoprint/?print</code>.</p>
-<p>Un fichier PDF devra être produit en utilisant la fonction « d’impression vers PDF » d’un navigateur compatible (Chromium ou Chrome) : Fichier &gt; Imprimer &gt; Format PDF . </p>
+<h3 id="generer-un-fichier-pdf">Générer un fichier PDF</h3>
+<p>Un fichier PDF peut être produit en utilisant la fonction « d’impression vers PDF » d’un navigateur compatible (Chromium ou Chrome) : Fichier &gt; Imprimer &gt; Format PDF . </p>
 <p>Quelques réglages de paramètres d’impression sont souvent nécessaires : désactiver les entêtes et pieds de pages du navigateur, contrôler la mise à l’échelle, vérifier le format, désactiver les marges par défaut et cocher l’option permettant d’imprimer les arrière-plans.</p>
 <h3 id="version-finale-telechargeable">Version finale téléchargeable</h3>
-<p>Suite à l’exportation du document au format PDF, le fichier résultant devra être stocké dans le dossier de travail, et nommé en fonction de l’option configurable dans le fichier <code>config.yml</code>. </p>
-<p>Le lien « Imprimer », présent dans le fichier <code>body.php</code> du thème pourra alors être supprimé pour ne conserver que le seul « Télécharger ».</p>
+<p>Suite à l’exportation du document au format PDF, le fichier résultant devra être stocké dans le dossier de publication. </p>
+<p>On peut alors saisir le nom du fichier dans <code>config.yml</code> :</p>
+<pre><code class="language-yml"># Le nom du fichier pdf généré, par ex. : titre-du-document--prenom-nom.pdf
+pdf: &quot;mon-fichier.pdf&quot;
+</code></pre>
+<p>⚠️ Le lien « Imprimer », présent dans le fichier <code>body.php</code> du thème (par défaut, dans le dossier <code>theme/esadpyrenees/body.php</code>) pourra alors être supprimé pour ne conserver que le seul « Télécharger ».</p>
 
   <div class="prevnext">
     
@@ -406,6 +411,8 @@
     <ul>
     
         <li class="page-toc__item"><a href="#version-imprimable" class="page-toc__link" data-js="tocLink" tabindex="0">Version imprimable</a></li>
+        
+            <li class="page-toc__item"><a href="./#générer-un-fichier-pdf" class="page-toc__link" data-js="tocLink" tabindex="0">Générer un fichier PDF</a></li>
         
             <li class="page-toc__item"><a href="./#version-finale-téléchargeable" class="page-toc__link" data-js="tocLink" tabindex="0">Version finale téléchargeable</a></li>
         
@@ -438,7 +445,7 @@
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2024-01-18 08:35:41.088022+00:00
+    Build Date UTC : 2024-01-25 10:33:20.078244+00:00
     -->
   </body>
 </html>
