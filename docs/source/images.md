@@ -24,7 +24,7 @@ Ou encore sous forme d’appels de figures :
 (figure: url/de_limage.jpg caption: La légende et _la source_.)
 ```
 
-Cette dernière modalité introduit au fil du texte un lien hypertexte qui renvoit à l’image affichée en fin de section. Cela autorise un affichage d’images de plus grande taille qu’au fil du texte.
+Cette dernière modalité introduit au fil du texte un lien hypertexte qui renvoit à l’image affichée en fin de section. Cela autorise un affichage d’images de plus grandes tailles qu’au fil du texte.
 
 
 ### Vidéos
