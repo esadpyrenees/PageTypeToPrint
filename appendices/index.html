@@ -390,15 +390,17 @@
 <pre><code class="language-pttp">(image: images/fichier.jpg width:8 col:5)
 </code></pre>
 <p>↑ Cette image occupera 3 colonnes (par défaut) en version <em>print</em>, 8 colonnes en version écran et sera décalée (à l’écran) en 5<sup>e</sup> colonne.</p>
-<h3 id="a-laide">À l’aide !</h3>
-<p>Pour aider à la mise en page “visuelle” des images, on peut activer un utilitaire visuel qui aide à déterminer le code d’intégration des images.</p>
+<h3 id="mise-en-page-visuelle-des-images">Mise en page visuelle des images</h3>
+<p>Pour aider à la mise en page “visuelle” des images, on peut activer un utilitaire qui aide à déterminer le code d’intégration des images.</p>
 <p>En contexte écran, ajouter <code>/?layout</code> à l’URL. <br />
 En contexte de prévisualisation print : <code>/?print&amp;layout</code>.   </p>
+<p>On peut alors cliquer sur chaque figure pour faire apparaitre un outil d’édition :</p>
 <p><img alt="image layout helper" src="../images/layout-helper.png" /></p>
-<p>Chaque figure se voit alors doté d’un outil permettant de définir la largeur de la figure (de 3 à 12) et son décalage (auto, ou de 1 à 9). </p>
-<p>⚠️ Le code d’intégration de la figure est alors copié dans le presse-papier, et doit être collé dans le document markdown source. Attention, en contexte d’impression, la mise en page n’est pas recalculée. Il faut modifier le code d’intégration de la figure concernée dans le fichier markdown, l’enregistrer, puis actualiser la page dans le navigateur.</p>
-<h3 id="breaking-changes">Breaking changes!</h3>
-<p>Avant la version « Figures » de PageTypeToPrint (18 janvier 2024), les options de largeur et de décalage étaient déterminées grâce à des <code>class</code> prédéfinies :</p>
+<p>Cet outil permet de définir la largeur de la figure (de 3 à 12) et son décalage (auto, ou de 1 à 9). </p>
+<p>⚠️ Le code d’intégration de la figure est alors automatiquement copié dans le presse-papier, et doit être collé dans le document markdown source. </p>
+<p>⚠️ Attention, en contexte d’impression, la mise en page n’est pas recalculée. Il faut copier/coller le nouveau code d’intégration dans le fichier markdown, enregistrer ce dernier, puis actualiser la page dans le navigateur.</p>
+<h3 id="breaking-changes">Breaking changes</h3>
+<p><em>Avant</em> la version « Figures » de PageTypeToPrint (18 janvier 2024), les options de largeur et de décalage étaient déterminées grâce à des <code>class</code> prédéfinies :</p>
 <ul>
 <li><code>offset0</code> : pas de décalage (valeur par défaut)</li>
 <li><code>offset2</code> décale l’image en colonne 3</li>
@@ -438,9 +440,9 @@ En contexte de prévisualisation print : <code>/?print&amp;layout</code>.   </p
         
             <li class="page-toc__item"><a href="./#dimensions-et-mise-en-page-des-figures-et-des-images" class="page-toc__link" data-js="tocLink" tabindex="0">Dimensions et mise en page des figures et des images</a></li>
         
-            <li class="page-toc__item"><a href="./#à-l’aide-!" class="page-toc__link" data-js="tocLink" tabindex="0">À l’aide !</a></li>
+            <li class="page-toc__item"><a href="./#mise-en-page-visuelle-des-images" class="page-toc__link" data-js="tocLink" tabindex="0">Mise en page visuelle des images</a></li>
         
-            <li class="page-toc__item"><a href="./#breaking-changes!" class="page-toc__link" data-js="tocLink" tabindex="0">Breaking changes!</a></li>
+            <li class="page-toc__item"><a href="./#breaking-changes" class="page-toc__link" data-js="tocLink" tabindex="0">Breaking changes</a></li>
         
     
     </ul>
@@ -471,7 +473,7 @@ En contexte de prévisualisation print : <code>/?print&amp;layout</code>.   </p
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2024-01-25 10:33:20.054727+00:00
+    Build Date UTC : 2024-01-25 12:13:11.065696+00:00
     -->
   </body>
 </html>
