@@ -13,6 +13,8 @@ Cete automatisation ne dispense aucunement du soin à apporter à la composition
 ```html
 <br class="breakpage">
 ```
+Les sauts de page doivent être intégrés en fin de section / chapitre plutôt qu’au début du suivant.
+
 Pour forcer un saut dans des colonnes (notes de bas de page, notamment), utiliser :
 ```html
 <br class="breakcolumn">
