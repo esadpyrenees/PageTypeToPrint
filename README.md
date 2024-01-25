@@ -9,6 +9,10 @@ Il produit un contenu lisible en ligne sous la forme d’une page web et permet 
 
 [**↪ Accèder à la documentation**](https://esadpyrenees.github.io/PageTypeToPrint/)
 
+## Changelog
+
+Les évolutions de PageTypeToPrint sont documentées dans le fichier [CHANGELOG.md](CHANGELOG.md).
+
 ## Crédits
 
 PageTypeToPrint est développé par [Julien Bidoret](https://ateliers.esad-pyrenees.fr/web) pour la mise en page normalisée des mémoires et documents écrits de l’option Design graphique multimédia de l’[ÉSAD Pyrénées](https://esad-pyrenees.fr).  La maquette originale a été développée par [Perrine Saint Martin](https://typomorpho.fr/). L’outil s’appuie sur plusieurs librairies : 
