@@ -193,7 +193,7 @@
     
     // Fix typography with JoliTypo Fixer
     // Documentation : https://github.com/jolicode/JoliTypo
-    $fixer = new Fixer(array('Ellipsis', 'Dash', 'SmartQuotes', 'CurlyQuote', 'FrenchNoBreakSpace'));
+    $fixer = new Fixer(array('Ellipsis', 'Dash', 'SmartQuotes', 'CurlyQuote', 'NoSpaceBeforeComma', 'Unit', 'FrenchNoBreakSpace'));
     $fixer->setLocale('fr_FR');
     $html = $fixer->fix($html);
     
