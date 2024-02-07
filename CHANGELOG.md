@@ -4,9 +4,14 @@ Documentation des évolutions successives de l’outil.
 
 L’[historique du dépôt](https://github.com/esadpyrenees/PageTypeToPrint/commits/main/) offre une vision plus détaillée, bien que plus bruyante.
 
-### Hotfix
+### Hiver
 
 Mise à jour des dépendances MarkdownIt et JoliTypo pour compatibilité PHP 8.2.0  
+Ajout d’une documentation permettant de mettre à jour PageTypeToPrint
+
+
+### Hotfix
+
 Mise à jour du _fixer_ JoliTypo par défaut pour prenndre en compte les unités (symboles monétaires, pourcentages…)  
 Mise à jour de l’utilitaire d’aide à la mise en page des images. Voir [la documentation dédiée](https://esadpyrenees.github.io/PageTypeToPrint/appendices/#mise-en-page-visuelle-des-images).
 

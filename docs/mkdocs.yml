@@ -32,6 +32,7 @@ nav:
     - Collaboration: pads.md
     - Catalogue d’images: autofolder.md
     - Notes avancées: advanced-notes.md
+    - Mise à jour: update.md
 
 theme:
   name: null
