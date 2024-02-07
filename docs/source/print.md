@@ -22,3 +22,12 @@ pdf: "mon-fichier.pdf"
 
 ⚠️ Le lien « Imprimer », présent dans le fichier `body.php` du thème (par défaut, dans le dossier `theme/esadpyrenees/body.php`) pourra alors être supprimé pour ne conserver que le seul « Télécharger ».
 
+### Poids de fichier
+
+Si les images utilisées sont nombreuses et de haute définition, le poids du fichier pdf résultant peut être très important.
+
+Il est alors nécessaire de compresser le PDF pour un envoi et une publication en ligne. On peut recourir à un [service en ligne](https://smallpdf.com/fr/compresser-pdf) ou utiliser [GhostScript](https://ghostscript.readthedocs.io/en/latest/Install.html) en ligne de commande :
+
+```sh
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -sOutputFile=compressed.pdf source.pdf
+```
