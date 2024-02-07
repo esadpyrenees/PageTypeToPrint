@@ -7,7 +7,7 @@ repo_name: PageTypeToPrint
 copyright: © Julien Bidoret, 2022–2023
 docs_dir: source
 nav:
-  - Accueil: index.md
+  - Documentation: index.md
   - Démarrer:
     - Installation: installation.md
     - Configuration et contenu: contenu.md
