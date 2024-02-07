@@ -12,8 +12,8 @@
  * http://opensource.org/licenses/mit-license.php
  *
  *
- * use javascript version 1.0.4
- * @see https://github.com/markdown-it/markdown-it-abbr/tree/1.0.4
+ * use javascript version 2.0.0
+ * @see https://github.com/markdown-it/markdown-it-abbr/tree/2.0.0
  */
 // Enclose abbreviations in <abbr> tags
 //
@@ -105,22 +105,21 @@ class MarkdownItAbbr
         if (!isset($state->env->abbreviations)) { return; }
 
         //------------------------------------
-        $a = array_map(function (&$x) {
+        $a = array_map(function ($x) {
                 return substr($x, 1);
              }, array_keys($state->env->abbreviations));
-        uasort($a, function (&$a, &$b) {
+            uasort($a, function ($a, $b) {
             return strlen($b) - strlen($a);
         });
-        $tmpReg = join('|', array_map(function(&$x) use(&$state) { return $state->md->utils->escapeRE($x); }, $a));
+        $tmpReg = join('|', array_map(function($x) use(&$state) { return $state->md->utils->escapeRE($x); }, $a));
         $regSimple = '/(?:' . $tmpReg . ')/';
         unset($a);
 
         //------------------------------------
-        $other = join('', array_map(function(&$x) use(&$state){return $state->md->utils->escapeRE($x);},str_split(self::OTHER_CHARS)));
+        $other = join('', array_map(function($x) use(&$state){return $state->md->utils->escapeRE($x);},str_split(self::OTHER_CHARS)));
 
         $reg =  '/(^|' . Utils::UNICODE_PUNCT . '|\p{Z}|[' . $other . '])';
         $reg .= '(' . $tmpReg . ')($|\p{P}|\p{Z}|[' . $other . '])/u';
-
 
         for ($j = 0, $l = count($blockTokens); $j < $l; $j++) {
             if ($blockTokens[$j]->type !== 'inline') { continue; }

@@ -14,7 +14,7 @@ class Utils
     const UNESCAPE_MD_RE  = "/".self::UNESCAPE_MD."/";  // /g
     const ENTITY_RE       = '/&([a-z#][a-z0-9]{1,31});/i';  // /g
     const UNESCAPE_ALL_RE = "/".self::UNESCAPE_MD."|&([a-z#][a-z0-9]{1,31});/i";  // /g
-    const DIGITAL_ENTITY_TEST_RE = "/^#((?:x[a-f0-9]{1,8}|[0-9]{1,8}))/i";
+    const DIGITAL_ENTITY_TEST_RE = "/^#((?:x[a-f0-9]{1,8}|[0-9]{1,8}))$/i";
 
     protected static ?Utils $instance=null;
 
@@ -45,8 +45,6 @@ class Utils
      */
     public function replaceEntityPattern(string $match, ?string $name): string
     {
-        $code = 0;
-
         if (isset($name)) {
             $e = html_entity_decode('&'.$name.';', ENT_HTML5|ENT_COMPAT);
             if( '&'.$name.';' != $e) return $e;
@@ -139,7 +137,6 @@ class Utils
         return array_merge(array_slice($src, 0, $pos), $newElements, array_slice($src, $pos + 1));
     }
 
-////////////////////////////////////////////////////////////////////////////////
     /**
      * @param int[]|string[] ...$args intrger|string array
      * @return string
@@ -284,7 +281,6 @@ class Utils
         return -1;
     }
 
-////////////////////////////////////////////////////////////////////////////////
 
     const REGEXP_ESCAPE_RE = "/[.?*+^$[\]\\(){}|-]/"; // /g
 
@@ -298,7 +294,6 @@ class Utils
         return preg_replace(self::REGEXP_ESCAPE_RE, '\\\\$0', $str);
     }
 
-////////////////////////////////////////////////////////////////////////////////
 
     /**
      * @param string $ch
@@ -319,7 +314,6 @@ class Utils
         return preg_match("/\p{Zs}|[\t\f\v\r\n]/u", $code) === 1;
     }
 
-////////////////////////////////////////////////////////////////////////////////
 
     /*eslint-disable max-len*/
 
@@ -381,10 +375,6 @@ class Utils
         // .toLowerCase().toUpperCase() should get rid of all differences
         // between letter variants.
         //
-        // Final result should be uppercased, because it's later stored in an object
-        // (this avoid a conflict with Object.prototype members,
-        // most notably, `__proto__`)
-        //
         // Simple .toLowerCase() doesn't normalize 125 code points correctly,
         // and .toUpperCase doesn't normalize 6 of them (list of exceptions:
         // İ, ϴ, ẞ, Ω, K, Å - those are already uppercased, but have differently
@@ -409,6 +399,10 @@ class Utils
         //
         // Note: this is equivalent to unicode case folding; unicode normalization
         // is a different step that is not required here.
+        //
+        // Final result should be uppercased, because it's later stored in an object
+        // (this avoid a conflict with Object.prototype members,
+        // most notably, `__proto__`)
         //
         return mb_strtoupper(mb_strtolower($str));
     }

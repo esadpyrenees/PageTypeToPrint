@@ -4,11 +4,10 @@ use ArrayAccess;
 
 class ArrayObj implements ArrayAccess
 {
-    private $container = [];
+    private array $container = [];
 
     /**
      * @param int $length
-     * @return ArrayObj
      */
     public function __construct(int $length=0)
     {
@@ -57,6 +56,7 @@ class ArrayObj implements ArrayAccess
      * The return value will be casted to boolean if non-boolean was returned.
      * @since 5.0.0
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);

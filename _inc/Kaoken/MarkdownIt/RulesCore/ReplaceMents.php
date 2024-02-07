@@ -5,7 +5,6 @@
 // (tm) (TM) → ™
 // (r) (R) → ®
 // +- → ±
-// (p) (P) -> §
 // ... → … (also ?.... → ?.., !.... → !..)
 // ???????? → ???, !!!!! → !!!, `,,` → `,`
 // -- → &ndash;, --- → &mdash;
@@ -41,7 +40,7 @@ class ReplaceMents
     /**
      * @param Token[] $inlineTokens
      */
-    protected function replace_scoped(array &$inlineTokens)
+    protected function replace_scoped(array &$inlineTokens): void
     {
         $inside_autolink = 0;
         for ($i = count($inlineTokens) - 1; $i >= 0; $i--) {
@@ -64,7 +63,7 @@ class ReplaceMents
     /**
      * @param Token[] $inlineTokens
      */
-    protected function replace_rare(array &$inlineTokens)
+    protected function replace_rare(array &$inlineTokens): void
     {
         $inside_autolink = 0;
 
@@ -101,7 +100,7 @@ class ReplaceMents
     /**
      * @param StateCore $state
      */
-    public function set(StateCore &$state)
+    public function set(StateCore &$state): void
     {
         if (!$state->md->options->typographer) { return; }
 

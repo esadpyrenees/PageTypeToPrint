@@ -3,6 +3,7 @@
 
 namespace Kaoken\MarkdownIt\RulesBlock;
 
+use Exception;
 use Kaoken\MarkdownIt\Common\Utils;
 
 class BlockQuote
@@ -13,6 +14,7 @@ class BlockQuote
      * @param integer $endLine
      * @param boolean $silent
      * @return bool
+     * @throws Exception
      */
     public function set(StateBlock &$state, int $startLine, int $endLine, $silent=false): bool
     {
@@ -24,78 +26,22 @@ class BlockQuote
         if ($state->sCount[$startLine] - $state->blkIndent >= 4) { return false; }
 
         // check the block quote marker
-        if ($state->src[$pos++] !== '>') { return false; }
+        if ($state->src[$pos] !== '>') { return false; }
 
         // we know that it's going to be a valid blockquote,
         // so no point trying to find the end of it in $silent mode
         if ($silent) { return true; }
 
-        // set offset past spaces and ">"
-        $initial = $offset = $state->sCount[$startLine] + 1;
-
-        // skip one optional space after '>'
-        if ($state->src[$pos] === ' ') {
-            // ' >   test '
-            //     ^ -- position start of line here:
-            $pos++;
-            $initial++;
-            $offset++;
-            $adjustTab = false;
-            $spaceAfterMarker = true;
-        } else if ($state->src[$pos] === "\t") {
-            $spaceAfterMarker = true;
-
-            if (($state->bsCount[$startLine] + $offset) % 4 === 3) {
-                // '  >\t  test '
-                //       ^ -- position start of line here (tab has width===1)
-                $pos++;
-                $initial++;
-                $offset++;
-                $adjustTab = false;
-            } else {
-                // ' >\t  test '
-                //    ^ -- position start of line here + shift bsCount slightly
-                //         to make extra space appear
-                $adjustTab = true;
-            }
-        } else {
-            $spaceAfterMarker = false;
-        }
-
-        $oldBMarks = [ $state->bMarks[$startLine] ];
-        $state->bMarks[$startLine] = $pos;
-
-        while ($pos < $max) {
-            $ch = $state->src[$pos];
-
-            if ($state->md->utils->isSpace($ch)) {
-                if ($ch === "\t") {
-                    $offset += 4 - ($offset + $state->bsCount[$startLine] + ($adjustTab ? 1 : 0)) % 4;
-                } else {
-                    $offset++;
-                }
-            } else {
-                break;
-            }
-
-            $pos++;
-        }
-
-        $oldBSCount = [ $state->bsCount[$startLine] ];
-        $state->bsCount[$startLine] = $state->sCount[$startLine] + 1 + ($spaceAfterMarker ? 1 : 0);
-
-        $lastLineEmpty = $pos >= $max;
-
-        $oldSCount = [ $state->sCount[$startLine] ];
-        $state->sCount[$startLine] = $offset - $initial;
-
-        $oldTShift = [ $state->tShift[$startLine] ];
-        $state->tShift[$startLine] = $pos - $state->bMarks[$startLine];
+        $oldBMarks  = [];
+        $oldBSCount = [];
+        $oldSCount  = [];
+        $oldTShift  = [];
 
         $terminatorRules = $state->md->block->ruler->getRules('blockquote');
 
         $oldParentType = $state->parentType;
         $state->parentType = 'blockquote';
+        $lastLineEmpty = false;
 
         // Search the end of the block
         //
@@ -115,7 +61,7 @@ class BlockQuote
         //     > test
         //      - - -
         //     ```
-        for ($nextLine = $startLine + 1; $nextLine < $endLine; $nextLine++) {
+        for ($nextLine = $startLine; $nextLine < $endLine; $nextLine++) {
             // check if it's outdented, i.e. it's inside list item and indented
             // less than said list item:
             //
@@ -137,7 +83,7 @@ class BlockQuote
                 // This line is inside the blockquote.
 
                 // set offset past spaces and ">"
-                $initial = $offset = $state->sCount[$nextLine] + 1;
+                $initial = $state->sCount[$nextLine] + 1;
 
                 // skip one optional space after '>'
                 if ($state->src[$pos] === ' ') {
@@ -145,18 +91,16 @@ class BlockQuote
                     //     ^ -- position start of line here:
                     $pos++;
                     $initial++;
-                    $offset++;
                     $adjustTab = false;
                     $spaceAfterMarker = true;
                 } else if ($state->src[$pos] === "\t") {
                     $spaceAfterMarker = true;
 
-                    if (($state->bsCount[$nextLine] + $offset) % 4 === 3) {
+                    if (($state->bsCount[$nextLine] + $initial) % 4 === 3) {
                         // '  >\t  test '
                         //       ^ -- position start of line here (tab has width===1)
                         $pos++;
                         $initial++;
-                        $offset++;
                         $adjustTab = false;
                     } else {
                         // ' >\t  test '
@@ -168,6 +112,7 @@ class BlockQuote
                     $spaceAfterMarker = false;
                 }
 
+                $offset = $initial;
                 $oldBMarks[] = $state->bMarks[$nextLine];
                 $state->bMarks[$nextLine] = $pos;
 
@@ -250,14 +195,14 @@ class BlockQuote
         $oldIndent = $state->blkIndent;
         $state->blkIndent = 0;
 
-        $token        = $state->push('blockquote_open', 'blockquote', 1);
-        $token->markup = '>';
-        $token->map    = $lines = [ $startLine, 0 ];
+        $token_o        = $state->push('blockquote_open', 'blockquote', 1);
+        $token_o->markup = '>';
+        $token_o->map    = $lines = [ $startLine, 0 ];
 
         $state->md->block->tokenize($state, $startLine, $nextLine);
 
-        $token        = $state->push('blockquote_close', 'blockquote', -1);
-        $token->markup = '>';
+        $token_c        = $state->push('blockquote_close', 'blockquote', -1);
+        $token_c->markup = '>';
 
         $state->lineMax = $oldLineMax;
         $state->parentType = $oldParentType;

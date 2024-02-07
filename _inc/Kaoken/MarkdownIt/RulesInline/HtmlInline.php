@@ -7,16 +7,28 @@ use Kaoken\MarkdownIt\Common\HtmlRegexs;
 
 class HtmlInline
 {
+    /**
+     * @param string $str
+     * @return bool
+     */
     protected function isLinkOpen(string $str): bool
     {
         return preg_match("/^<a[>\s]/i", $str);
     }
 
+    /**
+     * @param string $str
+     * @return bool
+     */
     protected function isLinkClose(string $str): bool
     {
         return preg_match("/^<\/a\s*>/i", $str);
     }
-    
+
+    /**
+     * @param $c
+     * @return bool
+     */
     protected function isLetter($c): bool
     {
         $ch = ord($c);
@@ -55,7 +67,7 @@ class HtmlInline
 
         if (!$silent) {
             $token         = $state->push('html_inline', '', 0);
-            $token->content = substr($state->src, $pos, ($pos + strlen($match[0]))-$pos);
+            $token->content = $match[0];
 
             if ($this->isLinkOpen($token->content))  $state->linkLevel++;
             if ($this->isLinkClose($token->content)) $state->linkLevel--;

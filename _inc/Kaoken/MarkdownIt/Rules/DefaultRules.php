@@ -4,8 +4,9 @@ namespace Kaoken\MarkdownIt\Rules;
 use Kaoken\MarkdownIt\Common\Utils;
 use Kaoken\MarkdownIt\Renderer;
 use Kaoken\MarkdownIt\Token;
+use stdClass;
 
-class DefaultRules
+class DefaultRules extends stdClass
 {
     public ?Utils $utils = null;
 
@@ -27,7 +28,7 @@ class DefaultRules
         $token = $tokens[$idx];
 
         return  '<code' . $slf->renderAttrs($token) . '>' .
-        htmlspecialchars($tokens[$idx]->content) . '</code>';
+        htmlspecialchars($token->content) . '</code>';
     }
 
 
@@ -139,7 +140,8 @@ class DefaultRules
     /**
      * @param Token[] $tokens
      * @param integer $idx
-     * @param object  $options
+     * @param object $options
+     * @param null $env
      * @return string
      */
     public function hardbreak(array &$tokens, int $idx, object $options, $env=null): string
@@ -150,10 +152,11 @@ class DefaultRules
     /**
      * @param Token[] $tokens
      * @param integer $idx
-     * @param object  $options
+     * @param object $options
+     * @param null $env
      * @return string
      */
-    public function softbreak(array &$tokens, $idx, $options, $env=null)
+    public function softbreak(array &$tokens, int $idx, $options, $env=null): string
     {
         return $options->breaks ? ($options->xhtmlOut ? "<br />\n" : "<br>\n") : "\n";
     }
@@ -168,7 +171,7 @@ class DefaultRules
      */
     public function text(array &$tokens, int $idx, $options=null, $env=null): string
     {
-        return htmlspecialchars($tokens[$idx]->content);
+        return htmlspecialchars($tokens[$idx]->content,ENT_COMPAT);
     }
 
     /**
@@ -178,7 +181,7 @@ class DefaultRules
      * @param object|null $env
      * @return string
      */
-    public function html_block(array $tokens, int $idx, $options=null, $env=null)
+    public function html_block(array $tokens, int $idx, $options=null, $env=null): string
     {
         return $tokens[$idx]->content;
     }
@@ -190,7 +193,7 @@ class DefaultRules
      * @param object|null $env
      * @return string
      */
-    public function html_inline(array &$tokens, int $idx, $options=null, $env=null)
+    public function html_inline(array &$tokens, int $idx, $options=null, $env=null): string
     {
         return $tokens[$idx]->content;
     }
