@@ -391,6 +391,11 @@
 pdf: &quot;mon-fichier.pdf&quot;
 </code></pre>
 <p>⚠️ Le lien « Imprimer », présent dans le fichier <code>body.php</code> du thème (par défaut, dans le dossier <code>theme/esadpyrenees/body.php</code>) pourra alors être supprimé pour ne conserver que le seul « Télécharger ».</p>
+<h3 id="poids-de-fichier">Poids de fichier</h3>
+<p>Si les images utilisées sont nombreuses et de haute définition, le poids du fichier pdf résultant peut être très important.</p>
+<p>Il est alors nécessaire de compresser le PDF pour un envoi et une publication en ligne. On peut recourir à un <a href="https://smallpdf.com/fr/compresser-pdf">service en ligne</a> ou utiliser <a href="https://ghostscript.readthedocs.io/en/latest/Install.html">GhostScript</a> en ligne de commande :</p>
+<pre><code class="language-sh">gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -sOutputFile=compressed.pdf source.pdf
+</code></pre>
 
   <div class="prevnext">
     
@@ -415,6 +420,8 @@ pdf: &quot;mon-fichier.pdf&quot;
             <li class="page-toc__item"><a href="./#générer-un-fichier-pdf" class="page-toc__link" data-js="tocLink" tabindex="0">Générer un fichier PDF</a></li>
         
             <li class="page-toc__item"><a href="./#version-finale-téléchargeable" class="page-toc__link" data-js="tocLink" tabindex="0">Version finale téléchargeable</a></li>
+        
+            <li class="page-toc__item"><a href="./#poids-de-fichier" class="page-toc__link" data-js="tocLink" tabindex="0">Poids de fichier</a></li>
         
     
     </ul>
@@ -445,7 +452,7 @@ pdf: &quot;mon-fichier.pdf&quot;
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2024-01-25 12:17:08.318201+00:00
+    Build Date UTC : 2024-02-07 16:18:04.116783+00:00
     -->
   </body>
 </html>
