@@ -354,9 +354,30 @@
 
           </li>
         
+      </ul>
+    
+  
+    
+      <p class="caption"><span class="caption-text">À propos</span></p>
+      <ul>
+        
           <li class="toctree-l1">
             
 <a class="reference internal" href="../update/">Mise à jour</a>
+
+
+    <ul>
+        
+            
+        
+    </ul>
+
+
+          </li>
+        
+          <li class="toctree-l1">
+            
+<a class="reference internal" href="../credits/">Crédits</a>
 
 
     <ul>
@@ -403,16 +424,10 @@
 <h2 id="en-details">En détails</h2>
 <p><em>PageTypeToPrint</em> utilise PHP, un langage web qui s’exécute du côté du serveur, disponible chez l’immense majorité des hébergeurs web.</p>
 <p>Sur un ordinateur “domestique“, on peut installer un logiciel qui intègre les différents fonctionnalités d’un serveur web. On parle alors de <em>serveur local</em> ou de <em>serveur de développement</em>.</p>
-<p>Les outils les plus simples à utiliser sont <a href="https://www.mamp.info/en/downloads/">MAMP</a>, utilisable sur Mac OS et sur Windows  et <a href="https://www.apachefriends.org/fr/index.html">XAMPP</a>, multiplateforme (à utiliser si MAMP ne fonctionne pas sur votre ordinateur).</p>
-<h3 id="amp">AMP ?</h3>
-<p>L’accronyme AMP signifie Apache + MySQL + PHP.</p>
-<ul>
-<li>Apache est un serveur web : le serveur HTTP répond aux requêtes et transmet les pages Web au navigateur.</li>
-<li>MySQL est un serveur de base de données, inutile dans ce contexte.</li>
-<li>PHP est un langage de script : il va permettre d’effectuer des opérations sur le seveur et fabriquer des pages HTML.</li>
-</ul>
-<h3 id="mamp-ou-xampp">MAMP ou Xampp?</h3>
-<p><a href="https://www.mamp.info/en/downloads/">MAMP</a> est l’outil le plus simple. Il s’installe comme une application habituelle (double-clicker sur l’installeur puis suivre les étapes), avec comme spécificité sur Windows de préférer être installé à la racine du disque dur, dans un dossier <code>C:\\MAMP</code> ou <code>C:\\Xampp</code>. Xampp n’est guère plus compliqué à installer mais offre une interface moins simple.</p>
+<p>Les outils les plus simples à utiliser sont <a href="https://herd.laravel.com/">Herd</a> ou <a href="https://www.mamp.info/en/downloads/">MAMP</a>, utilisables sur Mac OS et sur Windows, et <a href="https://www.apachefriends.org/fr/index.html">XAMPP</a>, multiplateforme (à utiliser si Herd et MAMP ne fonctionnent pas sur votre ordinateur).</p>
+<h3 id="herd-mamp-ou-xampp">Herd, MAMP ou Xampp?</h3>
+<p><a href="https://herd.laravel.com/">Herd</a> est une application de serveur local récente qui, à partir de la saisie d’un dossier de base (où l’on veut dans l’arborescence du disque dur) servira chaque sous dossier à l’URL <a href="#">http://mon-sous-dossier.test</a>. Voir la <a href="https://herd.laravel.com/docs/1/getting-started/paths">documentation</a>. </p>
+<p><a href="https://www.mamp.info/en/downloads/">MAMP</a> s’installe comme une application habituelle (double-clicker sur l’installeur puis suivre les étapes), avec comme spécificité sur Windows de s’installer à la racine du disque dur, dans un dossier <code>C:\\MAMP</code> ou <code>C:\\Xampp</code>. Xampp n’est guère plus compliqué à installer mais offre une interface moins simple.</p>
 <p>Attention à ne pas installer MAMP Pro (inutile dans ce contexte, et payant).</p>
 <p>L’installation génère un sous-dossier nommé <code>htdocs</code> qui est destiné à stocker vos sites web locaux. Sur OSX et MAMP, ce dossier est situé dans <code>Applications/MAMP/htdocs</code>, sur Windows dans <code>C:\\MAMP\htdocs</code> ou <code>C:\\Xampp\htdocs</code>. Cet emplacement est configurable dans les préférences de MAMP ou Xampp.</p>
 <p>C’est dans ce dossier qu’il convient de décompresser le code de PageTypeToPrint, afin de pouvoir le visualiser dans un navigateur web.</p>
@@ -445,9 +460,7 @@
     
         <li class="page-toc__item"><a href="#en-details" class="page-toc__link" data-js="tocLink" tabindex="0">En détails</a></li>
         
-            <li class="page-toc__item"><a href="./#amp-?" class="page-toc__link" data-js="tocLink" tabindex="0">AMP ?</a></li>
-        
-            <li class="page-toc__item"><a href="./#mamp-ou-xampp?" class="page-toc__link" data-js="tocLink" tabindex="0">MAMP ou Xampp?</a></li>
+            <li class="page-toc__item"><a href="./#herd,-mamp-ou-xampp?" class="page-toc__link" data-js="tocLink" tabindex="0">Herd, MAMP ou Xampp?</a></li>
         
             <li class="page-toc__item"><a href="./#démarrer" class="page-toc__link" data-js="tocLink" tabindex="0">Démarrer</a></li>
         
@@ -482,7 +495,7 @@
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2024-02-07 16:52:40.120352+00:00
+    Build Date UTC : 2024-03-11 11:38:49.410649+00:00
     -->
   </body>
 </html>
