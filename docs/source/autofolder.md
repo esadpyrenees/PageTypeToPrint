@@ -153,7 +153,7 @@ Déclaration du format de page et de la pagination par défaut, ainsi que de la 
 
 Les appels des scripts liés aux notes iconographiques et de bas de page, au sommaire, etc. sont supprimés. 
 
-Le format fermé (A4) étant défini en CSS, on inclue l’appel du script `print/imposition.js` qui permet de générer l’imposition des pages A4 et de modifier le format de sortie pour que deux pages puissent être imprimées sur la même face.
+Le format fermé (A4) étant défini en CSS, on inclut l’appel du script `print/imposition.js` qui permet de générer l’imposition des pages A4 et de modifier le format de sortie pour que deux pages puissent être imprimées sur la même face.
 
 Si besoin, ce script insère des pages blanches pour que la pagination soit un multiple de quatre.
 

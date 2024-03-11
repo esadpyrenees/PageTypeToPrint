@@ -20,13 +20,13 @@ On trouvera ci-dessous une brève documentation sur l’usage de _markdown_, sin
 | Filet horizontal | `---` |
 | Lien | `[titre](https://www.example.com)` |
 | Image | `![alternative textuelle](image.jpg)` ⚠️ [cf. Images](images.md) |
-| Note de bas de page 	|  `Cici est une phrase avec une note de bas de page. [^1]`<br>`[^1]: Ceci est la note.` ⚠️ [cf. Notes](notes.md) | 
+| Note de bas de page 	|  `Ceci est une phrase avec une note de bas de page. [^1]`<br>`[^1]: Ceci est la note.` ⚠️ [cf. Notes](notes.md) | 
 | ID de titre  | `### Mon titre avec id {#custom-id}` |
 | Liste de définition |	`terme`<br>`: définition`
 | Barré |	`~~La terre est plate.~~` |
 | Indice | `H~2~O` |
 | Exposant | `X^2^ ` |
-| Surligné |	`Je veux souligner ces ==mots très importants==` |
+| Surligné |	`Je veux surligner ces ==mots très importants==` |
 
 ### Paragraphes et sauts de ligne
 Pour créer un paragraphe, laisser une ligne blanche entre deux lignes de texte :

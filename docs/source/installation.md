@@ -20,20 +20,14 @@ Sinon, poursuivez ci-dessous…
 
 Sur un ordinateur “domestique“, on peut installer un logiciel qui intègre les différents fonctionnalités d’un serveur web. On parle alors de _serveur local_ ou de _serveur de développement_.
 
-Les outils les plus simples à utiliser sont [MAMP](https://www.mamp.info/en/downloads/), utilisable sur Mac OS et sur Windows  et [XAMPP](https://www.apachefriends.org/fr/index.html), multiplateforme (à utiliser si MAMP ne fonctionne pas sur votre ordinateur).
-
-### AMP ?
-
-L’accronyme AMP signifie Apache + MySQL + PHP.
-
-* Apache est un serveur web : le serveur HTTP répond aux requêtes et transmet les pages Web au navigateur.
-* MySQL est un serveur de base de données, inutile dans ce contexte.
-* PHP est un langage de script : il va permettre d’effectuer des opérations sur le seveur et fabriquer des pages HTML.
+Les outils les plus simples à utiliser sont [Herd](https://herd.laravel.com/) ou [MAMP](https://www.mamp.info/en/downloads/), utilisables sur Mac OS et sur Windows, et [XAMPP](https://www.apachefriends.org/fr/index.html), multiplateforme (à utiliser si Herd et MAMP ne fonctionnent pas sur votre ordinateur).
 
 
-### MAMP ou Xampp?
+### Herd, MAMP ou Xampp?
 
-[MAMP](https://www.mamp.info/en/downloads/) est l’outil le plus simple. Il s’installe comme une application habituelle (double-clicker sur l’installeur puis suivre les étapes), avec comme spécificité sur Windows de préférer être installé à la racine du disque dur, dans un dossier `C:\\MAMP` ou `C:\\Xampp`. Xampp n’est guère plus compliqué à installer mais offre une interface moins simple.
+[Herd](https://herd.laravel.com/) est une application de serveur local récente qui, à partir de la saisie d’un dossier de base (où l’on veut dans l’arborescence du disque dur) servira chaque sous dossier à l’URL [http://mon-sous-dossier.test](#). Voir la [documentation](https://herd.laravel.com/docs/1/getting-started/paths). 
+
+[MAMP](https://www.mamp.info/en/downloads/) s’installe comme une application habituelle (double-clicker sur l’installeur puis suivre les étapes), avec comme spécificité sur Windows de s’installer à la racine du disque dur, dans un dossier `C:\\MAMP` ou `C:\\Xampp`. Xampp n’est guère plus compliqué à installer mais offre une interface moins simple.
 
 Attention à ne pas installer MAMP Pro (inutile dans ce contexte, et payant).
 

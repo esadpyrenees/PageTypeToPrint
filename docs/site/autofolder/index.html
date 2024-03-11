@@ -354,9 +354,30 @@
 
           </li>
         
+      </ul>
+    
+  
+    
+      <p class="caption"><span class="caption-text">À propos</span></p>
+      <ul>
+        
           <li class="toctree-l1">
             
 <a class="reference internal" href="../update/">Mise à jour</a>
+
+
+    <ul>
+        
+            
+        
+    </ul>
+
+
+          </li>
+        
+          <li class="toctree-l1">
+            
+<a class="reference internal" href="../credits/">Crédits</a>
 
 
     <ul>
@@ -518,7 +539,7 @@ parts:
 </code></pre>
 <h4 id="etape-5-modifications-de-print_headphp">Étape 5 : Modifications de <code>print_head.php</code></h4>
 <p>Les appels des scripts liés aux notes iconographiques et de bas de page, au sommaire, etc. sont supprimés. </p>
-<p>Le format fermé (A4) étant défini en CSS, on inclue l’appel du script <code>print/imposition.js</code> qui permet de générer l’imposition des pages A4 et de modifier le format de sortie pour que deux pages puissent être imprimées sur la même face.</p>
+<p>Le format fermé (A4) étant défini en CSS, on inclut l’appel du script <code>print/imposition.js</code> qui permet de générer l’imposition des pages A4 et de modifier le format de sortie pour que deux pages puissent être imprimées sur la même face.</p>
 <p>Si besoin, ce script insère des pages blanches pour que la pagination soit un multiple de quatre.</p>
 <p>Dans l’exemple de thème <code>catalogue</code> –juste pour montrer que c’est possible…–, on ajoute un appel au script <code>print/bigfigures.js</code>, qui intervient pour modifier la largeur et la hauteur de certaines figures, sélectionnées manuellement via leur <code>id</code>.</p>
 
@@ -573,7 +594,7 @@ parts:
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2024-02-07 16:52:40.110774+00:00
+    Build Date UTC : 2024-03-11 11:38:06.710832+00:00
     -->
   </body>
 </html>
