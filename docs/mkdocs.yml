@@ -32,7 +32,9 @@ nav:
     - Collaboration: pads.md
     - Catalogue d’images: autofolder.md
     - Notes avancées: advanced-notes.md
+  - À propos:
     - Mise à jour: update.md
+    - Crédits: credits.md
 
 theme:
   name: null
