@@ -416,7 +416,7 @@
           <main class="page-content" data-js="mainContent" role="main">
   <h2 id="mise-en-ligne-et-publication">Mise en ligne et publication</h2>
 <p>Une fois terminé le processus d’édition sur un serveur local, le document peut être mis en ligne sur un serveur web de production (le serveur de l’ÉSAD Pyrénées ou un compte étudiant hébergé par Alwaysdata – <a href="mailto:julien.bidoret@esad-pyrenees.fr">me demander</a>). Il faut alors s’assurer que le serveur est bien capable de servir le site via une version de PHP supérieure à 8.0 (sur Alwaysdata, <a href="https://admin.alwaysdata.com/environment/">voir ici</a>).</p>
-<p>Le lien « Imprimer », présent dans le fichier <code>index.php</code> peut être supprimé pour ne conserver que le seul « Télécharger ».</p>
+<p>Le lien « Imprimer », présent dans le fichier <code>body.php</code> du thème (par défaut, <code>theme/esadpyrenees/body.php</code>) peut être supprimé pour ne conserver que le seul « Télécharger ».</p>
 <h3 id="pttp-comme-generateur-de-site-statique">PTTP comme générateur de site statique</h3>
 <p>Si l’on souhaite générer un « site statique » (une simple page HTML, sans PHP ; par ex. pour héberger la page sur Neocities), on peut utiliser PHP en ligne de commande :</p>
 <pre><code class="language-sh"># pour générer la version web
@@ -481,7 +481,7 @@ php index.php '&amp;print' &gt; print.html
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2024-03-11 11:38:49.414840+00:00
+    Build Date UTC : 2024-05-08 12:32:48.612220+00:00
     -->
   </body>
 </html>
