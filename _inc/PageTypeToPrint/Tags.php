@@ -30,7 +30,7 @@
   //   "html" => string: html,
   //   "figure" => string: optional, html for remote figure (in case of figure)
   // ] 
-  // shortcodes can be imagenote, video, figure, figure
+  // shortcodes can be: imagenote, video, image, figure
 
   $figures_index = 0;
 
@@ -97,13 +97,12 @@
       return ["shortcode"=> "imagenote", "html" => $html];
     }
 
-
     if($type == "video"){
       $class = $attributes["class"] ?? "";
       $poster = $attributes["poster"] ?? "";
       $caption = $attributes["caption"] ?? "";
       $html = "<figure class='videofigure $class' data-src='$value'>";
-      $video = "<div class='video'" . ($poster != "" ? "style='--poster:url($poster)'" : "") . ">" . video($value) . '</div>';
+      $video = "<div class='video'" . ($poster != "" ? "style='background:url($poster)'" : "") . ">" . video($value) . '</div>';
       $html .= $video;
       if($caption){
         $html .= "<figcaption class='figcaption'>";
@@ -247,8 +246,14 @@
       return null;
     }
 
-    $youtube = "<iframe allowtransparency='true' scrolling='no' width='640' height='360' src='$src?rel=0' frameborder='0' allowfullscreen allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'></iframe>";
-    return $youtube;
+    // straight iframe: bad
+    // $youtube = "<iframe allowtransparency='true' scrolling='no' width='640' height='360' src='$src?rel=0' frameborder='0' allowfullscreen allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'></iframe>";
+
+    // webcomponent: better
+    $youtube_component = "<youtube-embed><iframe scrolling='no' width='640' height='360' allow='autoplay; fullscreen' src='' data-src='$src?autoplay=1&rel=0'></iframe><button aria-label='Play video'></button></youtube-embed>";
+  
+    return $youtube_component;
+    // return $youtube;
         
   }
 
@@ -282,6 +287,12 @@
     // build the full video src URL
     $src = 'https://player.vimeo.com/video/' . $id;
 
-    $vimeo = "<iframe src='$src' width='640' height='360' frameborder='0' allow='autoplay; fullscreen; picture-in-picture' allowfullscreen></iframe>";      
-    return $vimeo;
+    // straight iframe: bad
+    // $vimeo = "<iframe src='$src' width='640' height='360' frameborder='0' allow='autoplay; fullscreen; picture-in-picture' allowfullscreen></iframe>";      
+
+    // webcomponent: better
+    $vimeo_component = "<vimeo-embed><iframe scrolling='no' width='640' height='360' allow='autoplay; fullscreen' src='' data-src='$src?autoplay=1&rel=0'></iframe><button aria-label='Play video'></button></vimeo-embed>";
+  
+    return $vimeo_component;
+    // return $vimeo;
   }
