@@ -13,7 +13,7 @@
       $anchortext = preg_replace("/\/\//",  '//<wbr>', $anchortext );
       $anchortext = preg_replace("/,/",  ',<wbr>', $anchortext );
       $anchortext = preg_replace("/(\/?<!\<|\~|\-|\.|\,|\_|\?|\#<!\&|\%)/",  "<wbr>$1", $anchortext );
-      $anchortext = preg_replace("/-/",  ',<wbr>&#8209;', $anchortext );
+      $anchortext = preg_replace("/-/",  '<wbr>&#8209;', $anchortext );
       $html .= $anchortext;
       $html .= "</a>";
       return $html;
