@@ -320,10 +320,16 @@
   .appendices > h2 {
     display: none;
   }
+
+  .videofigure,
   .figure {
     grid-column: var(--printcol, auto) / span var(--printwidth, 3);
   }
   
+  .appendices .videofigure .video {
+    margin-top: 0;
+  }
+
   .figure.print-top { align-self: start;}
   .figure.print-center { align-self: center;}
   .figure.print-bottom { align-self: end;} 

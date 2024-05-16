@@ -595,35 +595,33 @@ hr.footnotes-sep {
 }
 
 /* ------------------------------------------------------------------------ Images annexes (template = appendices) */
+/* set a grid */
 .appendices .content {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: var(--spacer);
   align-content: start;
 }
+/* figures and videofigures default : 3 cols  */
+.videofigure,
 .figure {
   grid-column: span 3;
   align-self: start;
-  justify-self: start;
   margin: 0;
   padding: 0;
   max-width: none;
 }
-
+/* justify image figures at start */
+.figure {
+  justify-self: start;
+}
 .figure img {
   display: block;
 }
-.notwhite {
-  background: rgba(0, 0, 0, 0.05);
+.videofigure .video {
+  max-width: none;
 }
-.notwhite img {
-  mix-blend-mode: multiply;
-}
-.notwhite .caption,
-.notwhite figcaption {
-  background: white;
-  
-}
+
 figcaption {
   font-size: 0.85rem;
   background: white;
@@ -634,11 +632,11 @@ figcaption::before {
 }
 figcaption:empty { display: none;}
 
-/* largeur et décalage des .figure, uniquement pour la version écran */
-.screen .figure {
+/* largeur et décalage des .figure et .videofigure, uniquement pour la version écran */
+.screen .figure,
+.screen .videofigure  {
   grid-column: var(--col, auto) / span var(--width, 3);
 }
-
 
 /* alignement vertical des .figure */
 .figure.top { align-self: start;}
@@ -646,10 +644,8 @@ figcaption:empty { display: none;}
 .figure.bottom { align-self: end;} 
 
 @media screen and (max-width:40rem) {
-  .figure { 
+  .figure, .videofigure { 
     grid-column: 1 / -1 !important;
-  }
-  .figure { 
     display: flex;
     flex-direction: column-reverse;
   }
@@ -657,6 +653,19 @@ figcaption:empty { display: none;}
     content: "↓ " !important;
   }
 }
+
+/* notwhite has a greu background */
+.notwhite {
+  background: rgba(0, 0, 0, 0.05);
+}
+.notwhite img {
+  mix-blend-mode: multiply;
+}
+.notwhite .caption,
+.notwhite figcaption {
+  background: white; 
+}
+
 
 /* ------------------------------------------------------------------------ Videos */
 .video {
