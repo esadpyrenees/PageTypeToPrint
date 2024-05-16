@@ -8,6 +8,7 @@ L’[historique du dépôt](https://github.com/esadpyrenees/PageTypeToPrint/comm
 
 Modification des logiques d’intégration de services vidéo (Youtube et Vimeo) pour n’activer les `iframe` qu’à la demande.  
 Mise à jour de paged.js vers la version 0.4.3.
+Correction de bugs (appels de notes et `<wbr>` dans les URLs)
 
 ### Hiver — 02 2024
 

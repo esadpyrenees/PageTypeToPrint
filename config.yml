@@ -1,6 +1,9 @@
 ### Patataprint
 ### Configuration 
 
+# Lire la documentation en ligne :
+# https://esadpyrenees.github.io/PageTypeToPrint/contenu/
+
 # Le thème à utiliser
 theme: "esadpyrenees"
 
@@ -11,7 +14,7 @@ title: PageTypeToPrint
 subtitle: "A thesis template<br class='breakprint'> in <i>web + print</i>"
 
 # Le titre courant, si différent du titre du document
-runningtitle: PageTypeToPrint <br class='breakprint'>  <i>aka</i> PaTaTaPrint.
+runningtitle: PageTypeToPrint <br class='breakprint'><i>aka</i> PaTaTaPrint.
 
 # Votre nom
 name: John Doe
@@ -29,7 +32,8 @@ mention: Mention Design <br class='breakprint'>graphique Multimédia
 # Pôle Image, édition &amp;<br class="breakprint"> dessin de caractères
 pole: Pôle Nouveaux médias
 
-# Le nom du fichier pdf généré, par ex. : titre-du-document--prenom-nom.pdf
+# Le nom du fichier pdf généré depuis Chrome / Chromium
+# Cf. https://esadpyrenees.github.io/PageTypeToPrint/print/
 pdf: ""
 
 # Structure du contenu (= sommaire)
