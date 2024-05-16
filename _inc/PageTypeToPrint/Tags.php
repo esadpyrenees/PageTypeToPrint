@@ -81,6 +81,18 @@
     // init MarkdownIt
     $mdit = new MarkdownIt();
 
+    // figures, videos and images might have inline styles, set as:
+    // (figure: image.jpg col: 3 width: 9 printcol: 1 printwidth: 12)
+    $inlinestyles = "";
+    $col = $attributes["col"] ?? "";
+    $inlinestyles .= $col ? "--col: $col;" : "";
+    $printcol = $attributes["printcol"] ?? "";
+    $inlinestyles .= ($printcol ? "--printcol: $printcol;" : "");
+    $width = $attributes["width"] ?? "";
+    $inlinestyles .= $width ? "--width: $width;" : "";
+    $printwidth = $attributes["printwidth"] ?? "";
+    $inlinestyles .= $printwidth ? "--printwidth: $printwidth;" : "";
+
     if($type == "imagenote"){
       $class = $attributes["class"] ?? "";
       $caption = $attributes["caption"] ?? "";
@@ -101,8 +113,8 @@
       $class = $attributes["class"] ?? "";
       $poster = $attributes["poster"] ?? "";
       $caption = $attributes["caption"] ?? "";
-      $html = "<figure class='videofigure $class' data-src='$value'>";
-      $video = "<div class='video'" . ($poster != "" ? "style='background:url($poster)'" : "") . ">" . video($value) . '</div>';
+      $html = "<figure class='videofigure $class' data-src='$value' style='$inlinestyles'>";
+      $video = "<div class='video'" . ($poster != "" ? "style='background-image:url($poster)'" : "") . ">" . video($value) . '</div>';
       $html .= $video;
       if($caption){
         $html .= "<figcaption class='figcaption'>";
@@ -119,18 +131,6 @@
       $class = $attributes["class"] ?? "";
       $caption = $attributes["caption"] ?? "";
 
-      // figures and images might have inline styles, set as:
-      // (figure: image.jpg col: 3 width: 9 printcol: 1 printwidth: 12)
-      $inlinestyles = "";
-      $col = $attributes["col"] ?? "";
-      $inlinestyles .= $col ? "--col: $col;" : "";
-      $printcol = $attributes["printcol"] ?? "";
-      $inlinestyles .= ($printcol ? "--printcol: $printcol;" : "");
-      $width = $attributes["width"] ?? "";
-      $inlinestyles .= $width ? "--width: $width;" : "";
-      $printwidth = $attributes["printwidth"] ?? "";
-      $inlinestyles .= $printwidth ? "--printwidth: $printwidth;" : "";
-      
       $id = slugify($value);
       if($type == "figure") { $id .= "-" . $figures_index; }
       $figure = "<figure class='figure $type $class' id='$id' style='$inlinestyles'>";      
