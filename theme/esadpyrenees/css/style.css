@@ -119,6 +119,7 @@ hr{
   max-width: calc(var(--bigsize) * 16);
   font-size: calc(var(--bigsize) * 1);
   color: var(--accentcolor);
+  text-wrap: balance;
 }
 #header h2 {
   margin: 0;
@@ -127,6 +128,7 @@ hr{
   font-size: calc(var(--bigsize) * .75);
   color: var(--accentcolor);
   margin: .5em 0;
+  text-wrap: balance;
 }
 /* #header h2::before{
   content: "";
@@ -185,6 +187,7 @@ hr{
   list-style-type: none;
   margin: 0;
   padding: 0;
+  text-wrap: pretty;
 }
 /* #index : le sommaire, une fois cloné */
 #index {
@@ -285,10 +288,12 @@ main h3:first-child {
 
 main h1 {
   font-size: 1.5em;
+  text-wrap: pretty;
 }
 main h2 {
   font-size: 1em;
   max-width: var(--maxwidth);
+  text-wrap: pretty;
 }
 main h3 {
   font-size: 1em;
@@ -296,11 +301,13 @@ main h3 {
   font-weight: normal;
   text-decoration: underline;
   max-width: var(--maxwidth);
+  text-wrap: pretty;
 }
 main h4 {
   font-size: 1em;
   margin-left: 2em;
   font-weight: normal;
+  text-wrap: pretty;
 }
 
 .default figure {

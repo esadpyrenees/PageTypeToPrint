@@ -107,6 +107,7 @@
     display: none;
     position: running(titleRunning);
     gap:var(--spacer);
+    text-wrap: pretty;
   }
   .runningtitle > * {
     flex: 1;
