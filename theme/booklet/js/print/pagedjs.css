@@ -20,7 +20,7 @@
 
   .pagedjs_pages {
       display: flex;
-      width: calc(var(--pagedjs-width) * 2);
+      width: calc(var(--pagedjs-width-left) + var(--pagedjs-width-right));
       flex: 0;
       flex-wrap: wrap;
       margin: 0 auto;
@@ -36,7 +36,7 @@
   }
 
   .pagedjs_first_page {
-      margin-left: var(--pagedjs-width);
+      margin-left: var(--pagedjs-width-left);
   }
 
   .pagedjs_page:last-of-type {
@@ -49,7 +49,7 @@
 
   .pagedjs_left_page{
       z-index: 20;
-      width: calc(var(--pagedjs-bleed-left) + var(--pagedjs-pagebox-width))!important;
+      /* width: calc(var(--pagedjs-bleed-left) + var(--pagedjs-pagebox-width))!important; */
   }
 
   .pagedjs_left_page .pagedjs_bleed-right .pagedjs_marks-crop {
@@ -63,7 +63,7 @@
   .pagedjs_right_page{
       z-index: 10;
       position: relative;
-      left: calc(var(--pagedjs-bleed-left)*-1);
+      /* left: calc(var(--pagedjs-bleed-left) * -1); */
   }
 
   /* show the margin-box */
@@ -88,7 +88,7 @@
   .pagedjs_margin-left-top,
   .pagedjs_margin-left-middle,
   .pagedjs_margin-left-bottom {
-      box-shadow: 0 0 0 1px inset var(--color-marginBox);
+      /* box-shadow: 0 0 0 1px inset var(--color-marginBox); */
   }
 
   /* uncomment this part for recto/verso book : ------------------------------------ */
@@ -162,19 +162,26 @@
 .pagedjs_bleed-top .pagedjs_marks-crop, 
 .pagedjs_bleed-bottom .pagedjs_marks-crop{
   box-shadow: 1px 0px 0px 0px var(--pagedjs-crop-shadow);
+  box-shadow: none
 }  
 
 .pagedjs_bleed-top .pagedjs_marks-crop:last-child,
 .pagedjs_bleed-bottom .pagedjs_marks-crop:last-child{
   box-shadow: -1px 0px 0px 0px var(--pagedjs-crop-shadow);
+  box-shadow: none
 }  
 
 .pagedjs_bleed-left .pagedjs_marks-crop,
 .pagedjs_bleed-right .pagedjs_marks-crop{
   box-shadow: 0px 1px 0px 0px var(--pagedjs-crop-shadow);
+  box-shadow: none
 }
 
 .pagedjs_bleed-left .pagedjs_marks-crop:last-child,
 .pagedjs_bleed-right .pagedjs_marks-crop:last-child{
   box-shadow: 0px -1px 0px 0px var(--pagedjs-crop-shadow);
+  box-shadow: none
+}
+.pagedjs_marks-crop {
+    box-shadow: none !important;
 }

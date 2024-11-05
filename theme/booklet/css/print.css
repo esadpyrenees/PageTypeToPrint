@@ -4,7 +4,8 @@
 
   @page {
     size: 148mm 210mm;
-  
+    marks: crop;
+    /* bleed: 6mm 3mm; */
     @bottom-left-corner {
       content: element(folioRunning);
       text-align: left;
@@ -17,11 +18,37 @@
       float: bottom;
     }
   }  
+
+
+  @page:left{
+  }
+
+  @page:right{
+  }
   @page:right {
     margin: 1cm 2cm 2.5cm 1cm;
+    bleed: 6mm 6mm 6mm 0cm;      
+    /* --pagedjs-bleed-right-left: 0mm; 
+    --pagedjs-bleed-right-right: 6mm;
+    --pagedjs-bleed-right-top: 3mm; 
+    --pagedjs-bleed-right-bottom: 3mm;  */
   }
   @page:left {
     margin: 1cm 1cm 2.5cm 2cm;
+    bleed: 6mm 0cm 6mm 6mm;
+    /* --pagedjs-bleed-left-left: 6mm; 
+    --pagedjs-bleed-left-right: 0mm;  
+    --pagedjs-bleed-left-top: 3mm; 
+    --pagedjs-bleed-left-bottom: 3mm;  */
+  }
+  @page fullp {
+    margin: 0;
+    @bottom-left-corner {
+      display: none;
+    }
+    @bottom-left {
+      display: none;
+    }
   }
   @page cover {
     margin: 1cm 1cm 2.5cm 1cm;    
@@ -58,6 +85,19 @@
     --maxwidth:100%;
   }
 
+  .fullpage{
+    page: fullp;
+    margin: 0; 
+  }
+  .fullpage figure { 
+    height: var(--pagedjs-height);
+    width: var(--pagedjs-width);
+    margin: calc( -1 * var(--pagedjs-bleed-left-top)) 0 0 calc( -1 * var(--pagedjs-bleed-left-left)) !important ;
+    max-width: none;
+    overflow: hidden;
+    figcaption { display: none;}
+    img{ width: 100%; height: 100%; object-fit: cover;}
+  }
 
   /* ------------------------------------------------------------------------ Cover */
   #header {

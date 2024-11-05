@@ -415,11 +415,13 @@
         
           <main class="page-content" data-js="mainContent" role="main">
   <h2 id="sommaire">Sommaire</h2>
+<p>Le sommaire du document est établi différemment selon son affichage, écran ou exportation PDF.</p>
 <h3 id="ecran">Écran</h3>
-<p>À l’écran, le sommaire est généré automatiquement depuis les éléments contenus dans la liste définie dans le fichier <code>config.yml</code>. Seuls les titres de section apparaissent.</p>
-<p>L’élément <code>&lt;nav&gt;</code> qui le contient est cloné via javascript, afin d’apparaître à la fois en introduction du document et au fil de la lecture.</p>
+<p>À l’écran, le sommaire est généré automatiquement depuis les entrées <code>parts</code> déclarés dans le fichier <a href="../contenu/"><code>config.yml</code></a>. Seuls les titres de section apparaissent.</p>
+<p>Cela permet de choisir des titres courts pour le sommaire web (affiché en colonne de gauche dans le gabarit <code>esadpyrenees</code>) tout en conservant des titres plus longs dans le coprs du texte.</p>
+<p>☞ L’élément <code>&lt;nav&gt;</code> qui le contient est cloné via javascript, afin d’apparaître à la fois en introduction du document et au fil de la lecture.</p>
 <h3 id="impression">Impression</h3>
-<p>En contexte d’impression, il est généré à partir des balises <code>&lt;h2&gt;</code> et <code>&lt;h3&gt;</code> (à l’intérieur de l’élément <code>&lt;main&gt;</code>) du document (c’est à dire, des titres précédés de <code>##</code> et <code>###</code> dans les fichiers markdown). Les titres de section ainsi que les « sous-parties » sont donc visibles.</p>
+<p>En contexte d’impression, il est généré à partir du texte complet des balises <code>&lt;h2&gt;</code> et <code>&lt;h3&gt;</code> (à l’intérieur de l’élément <code>&lt;main&gt;</code>) du document (c’est à dire, des titres précédés de <code>##</code> et <code>###</code> dans les fichiers markdown). Les titres de section ainsi que les « sous-parties » sont donc visibles.</p>
 
   <div class="prevnext">
     
@@ -474,7 +476,7 @@
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2024-05-08 12:32:48.616013+00:00
+    Build Date UTC : 2024-11-05 12:39:24.574365+00:00
     -->
   </body>
 </html>

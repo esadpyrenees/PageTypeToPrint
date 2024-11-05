@@ -417,16 +417,19 @@
   <h2 id="images-videos">Images &amp; vidéos</h2>
 <p>Des images et vidéos légendées peuvent être insérées grâce à des « <em>shortcodes</em> » spécifiques.</p>
 <h3 id="images">Images</h3>
+<h4 id="images-de-note">Images de note</h4>
 <p>Les images peuvent être intégrées au fil du texte sous forme de note de côté :</p>
-<pre><code class="language-pttp">(imagenote: url/de_limage.jpg caption: La légende et _la source_.)
+<pre><code class="language-pttp">(imagenote: content/images/fichier.jpg caption: La légende et _la source_.)
 </code></pre>
+<h4 id="image-pleine-largeur">Image pleine largeur</h4>
 <p>Mais également sous forme de bloc au sein du texte :</p>
-<pre><code class="language-pttp">(image: url/de_limage.jpg caption: La légende et _la source_.)
+<pre><code class="language-pttp">(image: content/images/fichier.jpg caption: La légende et _la source_.)
 </code></pre>
+<h4 id="figures">Figures</h4>
 <p>Ou encore sous forme d’appels de figures :</p>
-<pre><code class="language-pttp">(figure: url/de_limage.jpg caption: La légende et _la source_.)
+<pre><code class="language-pttp">(figure: content/images/fichier.jpg caption: La légende et _la source_.)
 </code></pre>
-<p>Cette dernière modalité introduit au fil du texte un lien hypertexte qui renvoit à l’image affichée en fin de section. Cela autorise un affichage d’images de plus grandes tailles qu’au fil du texte.</p>
+<p>Cette dernière modalité introduit dans le texte un lien hypertexte qui renvoit à l’image affichée en fin de section. Cela autorise un affichage d’images de plus grandes tailles qu’au fil du texte.</p>
 <h3 id="videos">Vidéos</h3>
 <p>Pour intégrer une vidéo Youtube ou Vimeo, utiliser le <em>shortcode</em> <code>video</code> et l’URL de la page :</p>
 <pre><code class="language-pttp">(video: https://www.youtube.com/watch?v=yfskVxCn_qo class: maclass caption: La légende de la vidéo)
@@ -438,16 +441,16 @@
 <p>En version print, l’URL de la vidéo est affichée sous sa légende.</p>
 <h3 id="mise-en-forme-des-images">Mise en forme des images</h3>
 <p>On peut ajouter des <code>class</code> aux images :</p>
-<pre><code class="language-pttp">(figure: url/de_limage.jpg class: maclass monautreclass)
+<pre><code class="language-pttp">(figure: content/images/fichier.jpg class: maclass monautreclass)
 </code></pre>
 <p>Pour distinguer les images à l’arrière-plan blanc de celui de la page, une <code>class</code> dédiée (<code>notwhite</code>) est disponible :</p>
-<pre><code class="language-pttp">(figure: url/de_limage.jpg class: notwhite)
+<pre><code class="language-pttp">(figure: content/images/fichier.jpg class: notwhite)
 </code></pre>
 <p>Pour aligner les images de note à gauche ou à droite (en contexte d’impression) utiliser les <code>class</code> suivantes : <code>printleft</code> <code>printright</code> :</p>
-<pre><code class="language-pttp">(imagenote: url/de_limage.jpg class: printleft)
+<pre><code class="language-pttp">(imagenote: content/images/fichier.jpg class: printleft)
 </code></pre>
 <p>Pour des images sous forme de blocs qui demandent une grande largeur d’affichage, on peut utiliser la <code>class: full</code> :</p>
-<pre><code class="language-pttp">(image: url/de_limage.jpg class: full)
+<pre><code class="language-pttp">(image: content/images/fichier.jpg class: full)
 </code></pre>
 <p>Voir <a href="../appendices/">la section suivante</a> pour déterminer les tailles d’affichage pour les images insérées grace à <code>(figure: …)</code>.</p>
 
@@ -506,7 +509,7 @@
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2024-05-08 12:32:48.606906+00:00
+    Build Date UTC : 2024-11-05 12:39:24.565311+00:00
     -->
   </body>
 </html>

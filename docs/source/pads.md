@@ -11,7 +11,7 @@ parts:
     # ↑ le titre de la section, tel qu’il apparaitra dans le sommaire
     file: ""
     # ↑ la déclaration "file" reste vide (ou est supprimée)
-    pad: https://annuel2.framapad.org/p/pagetypetoprint?lang=fr
+    pad: https://pad.esad-pyrenees.club/p/pagetypetoprint
     # ↑ on déclare l’URL du pad public
     template: default
     # ↑ le gabarit de mise en page

@@ -43,19 +43,24 @@ Cet outil permet de définir la largeur de la figure (de 3 à 12) et son décala
 
 _Avant_ la version « Figures » de PageTypeToPrint (18 janvier 2024), les options de largeur et de décalage étaient déterminées grâce à des `class` prédéfinies :
 
-* `offset0` : pas de décalage (valeur par défaut)
-* `offset2` décale l’image en colonne 3
-* `offset4` décale l’image en colonne 5
-* `offset6` décale l’image en colonne 7
-* `offset8` décale l’image en colonne 9
-* `quarter` dimensionne l’image sur 3 colonnes (un quart de la largeur — valeur par défaut)
-* `third` dimensionne l’image sur 4 colonnes (un tiers de la largeur)
-* `half` dimensionne l’image sur 6 colonnes (la moitié de la largeur)
-* `twothird` dimensionne l’image sur 8 colonnes (deux tiers de la largeur)
-* `threequarter` dimensionne l’image sur 9 colonnes (trois quarts de la largeur)
-* `full` dimensionne l’image sur 12 colonnes (toute la largeur)
+<details markdown="1">
+  <summary>Voir l’ancienne documentation</summary>
+
+<li> <code>offset0</code> : pas de décalage (valeur par défaut)
+<li> <code>offset2</code> décale l’image en colonne 3
+<li> <code>offset4</code> décale l’image en colonne 5
+<li> <code>offset6</code> décale l’image en colonne 7
+<li> <code>offset8</code> décale l’image en colonne 9
+<li> <code>quarter</code> dimensionne l’image sur 3 colonnes (un quart de la largeur — valeur par défaut)
+<li> <code>third</code> dimensionne l’image sur 4 colonnes (un tiers de la largeur)
+<li> <code>half</code> dimensionne l’image sur 6 colonnes (la moitié de la largeur)
+<li> <code>twothird</code> dimensionne l’image sur 8 colonnes (deux tiers de la largeur)
+<li> <code>threequarter</code> dimensionne l’image sur 9 colonnes (trois quarts de la largeur)
+<li> <code>full</code> dimensionne l’image sur 12 colonnes (toute la largeur)
 
 Par exemple :
 ```pttp
 (figure: url/de_limage.jpg class: notwhite offset6 half) 
 ```
+
+</details>

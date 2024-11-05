@@ -25,6 +25,7 @@ Paul Watzlawick affirme «&#8239;On ne peut pas ne pas communiquer[^axiome].&#82
 De la même manière, les images de note doivent être saisies _immédiatement_ (sans espace) après le mot qu’elles précisent :
 ```pttp
 Les illustrations de Gustave Doré(imagenote: images/gustave.jpg) sont gravées dans les mémoires.
+<!--                             ↑ pas d’espace… -->
 ```
 
 ### Problèmes de notes

@@ -6,25 +6,28 @@ Des images et vidéos légendées peuvent être insérées grâce à des « _sh
 
 ### Images
 
+#### Images de note
 
 Les images peuvent être intégrées au fil du texte sous forme de note de côté :
 ```pttp
-(imagenote: url/de_limage.jpg caption: La légende et _la source_.)
+(imagenote: content/images/fichier.jpg caption: La légende et _la source_.)
 ```
+#### Image pleine largeur
 
 Mais également sous forme de bloc au sein du texte :
 
 ```pttp 
-(image: url/de_limage.jpg caption: La légende et _la source_.)
+(image: content/images/fichier.jpg caption: La légende et _la source_.)
 ```
 
+#### Figures
 Ou encore sous forme d’appels de figures :
 
 ```pttp 
-(figure: url/de_limage.jpg caption: La légende et _la source_.)
+(figure: content/images/fichier.jpg caption: La légende et _la source_.)
 ```
 
-Cette dernière modalité introduit au fil du texte un lien hypertexte qui renvoit à l’image affichée en fin de section. Cela autorise un affichage d’images de plus grandes tailles qu’au fil du texte.
+Cette dernière modalité introduit dans le texte un lien hypertexte qui renvoit à l’image affichée en fin de section. Cela autorise un affichage d’images de plus grandes tailles qu’au fil du texte.
 
 
 ### Vidéos
@@ -47,25 +50,25 @@ En version print, l’URL de la vidéo est affichée sous sa légende.
 On peut ajouter des `class` aux images :
 
 ```pttp
-(figure: url/de_limage.jpg class: maclass monautreclass)
+(figure: content/images/fichier.jpg class: maclass monautreclass)
 ```
 
 Pour distinguer les images à l’arrière-plan blanc de celui de la page, une `class` dédiée (`notwhite`) est disponible :
 
 ```pttp
-(figure: url/de_limage.jpg class: notwhite)
+(figure: content/images/fichier.jpg class: notwhite)
 ```
 
 Pour aligner les images de note à gauche ou à droite (en contexte d’impression) utiliser les `class` suivantes : `printleft` `printright` :
 
 ```pttp
-(imagenote: url/de_limage.jpg class: printleft)
+(imagenote: content/images/fichier.jpg class: printleft)
 ```
 
 Pour des images sous forme de blocs qui demandent une grande largeur d’affichage, on peut utiliser la `class: full` :
 
 ```pttp
-(image: url/de_limage.jpg class: full)
+(image: content/images/fichier.jpg class: full)
 ```
 
 Voir [la section suivante](appendices.md) pour déterminer les tailles d’affichage pour les images insérées grace à `(figure: …)`.

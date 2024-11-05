@@ -79,7 +79,7 @@ h1 {
 }
 h2 { font-size: var(--large-font-size); line-height: 1.15; margin: 1em 0 0; border-bottom: 1px solid #eceff1; padding: 0.5rem 0 0.35em; }
 h3 { font-size: var(--font-size); margin: 2rem 0 0.5rem; border-bottom: 1px solid #eceff1; padding: 0.5rem 0 0.35em; }
-h4 { font-size: var(--font-size); margin: 2rem 0 0.5rem; padding: 0.5rem 0 0.35em; display: inline-block; border-bottom: 1px solid var(--border-color);}
+h4 { font-size: var(--font-size); margin: 1rem 0 0.5rem; display: inline-block; border-bottom: 1px solid var(--border-color);}
 h3 + p { margin-top: 0; }
 h4 + p { margin-top: 0; }
 
