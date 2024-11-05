@@ -320,7 +320,10 @@
   .appendices > h2 {
     display: none;
   }
-
+  /* paragraphs, titles, blocquotes within appendices */
+  .appendices .content > :not(figure){
+    grid-column: 5 / span 8;
+  }
   .videofigure,
   .figure {
     grid-column: var(--printcol, auto) / span var(--printwidth, 3);

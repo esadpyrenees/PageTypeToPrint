@@ -602,6 +602,10 @@ hr.footnotes-sep {
   grid-gap: var(--spacer);
   align-content: start;
 }
+/* paragraphs, titles, blocquotes within appendices */
+.appendices .content > :not(figure){
+  grid-column: span 8;
+}
 /* figures and videofigures default : 3 cols  */
 .videofigure,
 .figure {
