@@ -436,22 +436,28 @@ En contexte de prévisualisation print : <code>/?print&amp;layout</code>.   </p
 <p>⚠️ Attention, en contexte d’impression, la mise en page n’est pas recalculée. Il faut copier/coller le nouveau code d’intégration dans le fichier markdown, enregistrer ce dernier, puis actualiser la page dans le navigateur.</p>
 <h3 id="breaking-changes">Breaking changes</h3>
 <p><em>Avant</em> la version « Figures » de PageTypeToPrint (18 janvier 2024), les options de largeur et de décalage étaient déterminées grâce à des <code>class</code> prédéfinies :</p>
-<ul>
-<li><code>offset0</code> : pas de décalage (valeur par défaut)</li>
-<li><code>offset2</code> décale l’image en colonne 3</li>
-<li><code>offset4</code> décale l’image en colonne 5</li>
-<li><code>offset6</code> décale l’image en colonne 7</li>
-<li><code>offset8</code> décale l’image en colonne 9</li>
-<li><code>quarter</code> dimensionne l’image sur 3 colonnes (un quart de la largeur — valeur par défaut)</li>
-<li><code>third</code> dimensionne l’image sur 4 colonnes (un tiers de la largeur)</li>
-<li><code>half</code> dimensionne l’image sur 6 colonnes (la moitié de la largeur)</li>
-<li><code>twothird</code> dimensionne l’image sur 8 colonnes (deux tiers de la largeur)</li>
-<li><code>threequarter</code> dimensionne l’image sur 9 colonnes (trois quarts de la largeur)</li>
-<li><code>full</code> dimensionne l’image sur 12 colonnes (toute la largeur)</li>
-</ul>
-<p>Par exemple :</p>
+<details markdown="1">
+  <summary>Voir l’ancienne documentation</summary>
+
+<li> <code>offset0</code> : pas de décalage (valeur par défaut)
+<li> <code>offset2</code> décale l’image en colonne 3
+<li> <code>offset4</code> décale l’image en colonne 5
+<li> <code>offset6</code> décale l’image en colonne 7
+<li> <code>offset8</code> décale l’image en colonne 9
+<li> <code>quarter</code> dimensionne l’image sur 3 colonnes (un quart de la largeur — valeur par défaut)
+<li> <code>third</code> dimensionne l’image sur 4 colonnes (un tiers de la largeur)
+<li> <code>half</code> dimensionne l’image sur 6 colonnes (la moitié de la largeur)
+<li> <code>twothird</code> dimensionne l’image sur 8 colonnes (deux tiers de la largeur)
+<li> <code>threequarter</code> dimensionne l’image sur 9 colonnes (trois quarts de la largeur)
+<li> <code>full</code> dimensionne l’image sur 12 colonnes (toute la largeur)
+
+Par exemple :
+
 <pre><code class="language-pttp">(figure: url/de_limage.jpg class: notwhite offset6 half) 
 </code></pre>
+
+
+</details>
 
   <div class="prevnext">
     
@@ -508,7 +514,7 @@ En contexte de prévisualisation print : <code>/?print&amp;layout</code>.   </p
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2024-05-08 12:32:48.596878+00:00
+    Build Date UTC : 2024-11-05 12:39:24.554675+00:00
     -->
   </body>
 </html>
