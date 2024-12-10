@@ -320,6 +320,9 @@ main blockquote {
   margin: 0;
   padding: 1em 0 1em 4em;
 }
+main blockquote p:last-child {
+  margin-bottom: 0;
+}
 
 @media screen and (max-width:80rem) {
   main { 
@@ -412,6 +415,7 @@ main blockquote {
   padding: 0.5em 0;
   display: block;
   text-indent: 0;
+  text-wrap: pretty;
 }
 .imagenote .caption::before {
   content: "↑ ";
