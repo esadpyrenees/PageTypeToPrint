@@ -7,6 +7,11 @@ Téléchargez le projet :
 
 Le fichier doit être décompressé dans un environnement de serveur web bénéficiant d’une version de PHP supérieure à 8.0 (par exemple, le dossier `htdocs` dans MAMP ; voir ci-dessous).
 
+Si l’on préfère la ligne de commande, on peut cloner son code grâce à :
+```bash
+git clone https://github.com/esadpyrenees/PageTypeToPrint.git
+```
+
 Si vous pouvez démarrer un serveur web local avec PHP 8, passez à : 
 
 <a class="bigbutton" href="../contenu">→ Configuration et contenu</a> 

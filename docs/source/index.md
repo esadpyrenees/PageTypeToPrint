@@ -2,7 +2,7 @@
 
 PageTypeToPrint est un outil de mise en page et de publication _web + print_.
 
-Conçu originellement comme un gabarit de mise en forme des mémoires des étudiant⋅es de l’École supérieure d’art et de design des Pyrénes, il est basé sur la simplicité de l’édition (contenu textuel au format *markdown*), mais peut être adapté, augmenté et personnalisé.
+Conçu originellement comme un gabarit de mise en forme des mémoires des étudiant⋅es de l’École supérieure d’art et de design des Pyrénées, il est basé sur la simplicité de l’édition (contenu textuel au format *markdown*), mais peut être adapté, augmenté et personnalisé.
 
 Il produit un contenu lisible en ligne sous la forme d’une page web et permet de générer un document PDF téléchargeable et imprimable.
 
@@ -25,3 +25,4 @@ Une démo est accessible en ligne sur [ateliers.esad-pyrenees.fr/pagetypetoprint
 PageTypeToPrint est un logiciel libre. Son code est accessible sur : [github.com/esadpyrenees/PageTypeToPrint](https://github.com/esadpyrenees/PageTypeToPrint/).
 
 <a class="bigbutton" href="https://github.com/esadpyrenees/PageTypeToPrint/zipball/main/">↓ Télécharger </a> 
+
