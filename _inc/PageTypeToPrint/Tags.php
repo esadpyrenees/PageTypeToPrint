@@ -246,14 +246,10 @@
       return null;
     }
 
-    // straight iframe: bad
-    // $youtube = "<iframe allowtransparency='true' scrolling='no' width='640' height='360' src='$src?rel=0' frameborder='0' allowfullscreen allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'></iframe>";
-
-    // webcomponent: better
+    // webcomponent to allow loading of iframe on demand
     $youtube_component = "<youtube-embed><iframe scrolling='no' width='640' height='360' allow='autoplay; fullscreen' src='' data-src='$src?autoplay=1&rel=0'></iframe><button aria-label='Play video'></button></youtube-embed>";
   
     return $youtube_component;
-    // return $youtube;
         
   }
 
@@ -287,12 +283,8 @@
     // build the full video src URL
     $src = 'https://player.vimeo.com/video/' . $id;
 
-    // straight iframe: bad
-    // $vimeo = "<iframe src='$src' width='640' height='360' frameborder='0' allow='autoplay; fullscreen; picture-in-picture' allowfullscreen></iframe>";      
-
-    // webcomponent: better
+    // webcomponent to allow loading of iframe on demand
     $vimeo_component = "<vimeo-embed><iframe scrolling='no' width='640' height='360' allow='autoplay; fullscreen' src='' data-src='$src?autoplay=1&rel=0'></iframe><button aria-label='Play video'></button></vimeo-embed>";
   
     return $vimeo_component;
-    // return $vimeo;
   }
