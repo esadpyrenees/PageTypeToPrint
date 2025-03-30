@@ -4,6 +4,11 @@ Documentation des évolutions successives de l’outil.
 
 L’[historique du dépôt](https://github.com/esadpyrenees/PageTypeToPrint/commits/main/) offre une vision plus détaillée, bien que plus bruyante.
 
+### Mars 2025
+
+Amélioration de la documentation interne de l’outil.
+Amélioration de la composition multiligne des titres, entrées de navigation, titres courants et citations
+
 ### Mai 2024
 
 Modification des logiques d’intégration de services vidéo (Youtube et Vimeo) pour n’activer les `iframe` qu’à la demande.  
