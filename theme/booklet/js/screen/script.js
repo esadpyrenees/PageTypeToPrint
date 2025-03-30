@@ -56,6 +56,13 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // youtube and vimeo light embeds
+  document.querySelectorAll(':is(vimeo-embed, youtube-embed) button').forEach(button => button.addEventListener('click', (e) => {
+    e.preventDefault()
+    const video = button.previousElementSibling;
+    video.src = video.dataset.src;
+  }))
+
 });
 
 
