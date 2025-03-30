@@ -15,7 +15,7 @@
       - balises personnalisées (mise en colonnes, glossaire)
 
     Les shortcodes (image: …), (figure: …), (imagenote: …) et (video: …) sont traités grâce 
-    aux fonctions situées dans le fichier Specials/Tags.php
+    aux fonctions situées dans le fichier _inc/PageTypeToPrint/Tags.php
 
     La micro-typographie française est corrigée automatiquement (autant que 
     possible) grâce à la librairie JoliTypo.
@@ -39,7 +39,7 @@
       - custom tags (column layout, glossary)
 
     Shortcodes (image: …), (figure: …), (imagenote: …) and (video: …) are handled by 
-    functions in the Specials/Tags.php file
+    functions in the _inc/PageTypeToPrint/Tags.php file
 
     The French micro-typography is automatically corrected (as far as possible) 
     possible) thanks to the JoliTypo library.
@@ -55,7 +55,7 @@
   require_once __DIR__ . '/Spyc/Spyc.php'; 
   extract( Spyc::YAMLLoad(__DIR__."/../config.yml") ); 
 
-  // Loading libraries
+  // Load and configure external libraries
   spl_autoload_register(function ($class) {
     $file = preg_replace('#\\\|_(?!.+\\\)#','/', $class) . '.php';
     if (stream_resolve_include_path($file)){
@@ -72,7 +72,7 @@
   use Kaoken\MarkdownIt\Plugins\MarkdownItSub;
   use Kaoken\MarkdownIt\Plugins\MarkdownItAbbr;
   
-  // Loading utilities
+  // Load PageTypeToPrint utilities
   include_once 'PageTypeToPrint/Tags.php';
   include_once 'PageTypeToPrint/Pad.php';
   include_once 'PageTypeToPrint/BreakAnchors.php';
@@ -149,9 +149,9 @@
         $content = "<h2>$part_title</h2><div class='content' markdown=1>\n\n$content\n\n</div>";
       }
       // parse shortcodes and iconographic groups
-      $specials = specials($content); 
-      $content = $specials["md"];
-      $figures = $specials["figures"];
+      $md_with_processed_shortcodes = process_shortcodes($content); 
+      $content = $md_with_processed_shortcodes["md"];
+      $figures = $md_with_processed_shortcodes["figures"];
 
       // add content to markdown string 
       $md .= "<section id='$slug' class='$template' markdown=1>\n\n$content\n\n</section>\n\n";
