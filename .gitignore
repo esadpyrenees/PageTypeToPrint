@@ -1,6 +1,4 @@
-# images/*
-# images.zip
-# !images/README.md
 .DS_Store
 /todo.md
 /log
+/docs/deploy.sh
