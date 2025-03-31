@@ -24,14 +24,14 @@ Ajout d’une documentation permettant de mettre à jour PageTypeToPrint.
 ### Hotfix
 
 Mise à jour du _fixer_ JoliTypo par défaut pour prendre en compte les unités (symboles monétaires, pourcentages…).  
-Mise à jour de l’utilitaire d’aide à la mise en page des images. Voir [la documentation dédiée](https://esadpyrenees.github.io/PageTypeToPrint/appendices/#mise-en-page-visuelle-des-images).
+Mise à jour de l’utilitaire d’aide à la mise en page des images. Voir [la documentation dédiée](https://ateliers.esad-pyrenees.fr/pagetypetoprint/appendices/#mise-en-page-visuelle-des-images).
 
 
 ### Figures — 01 2024
 
 Ajout d’une fonctionnalité d’insertion d’images qui permet d’insérer au sein du texte des appels de figures. L’affichage des figures est alors déporté en fin de section.
 
-⚠️ Les logiques CSS liées aux figures (au fil du texte ou dans les annexes) introduisent une évolution incompatible avec le précédent système de mise en page : `(figure: fichier.jpg class: quarter)` devient `(figure: fichier.jpg width: 3)`. Voir [la documentation dédiée](https://esadpyrenees.github.io/PageTypeToPrint/appendices/).
+⚠️ Les logiques CSS liées aux figures (au fil du texte ou dans les annexes) introduisent une évolution incompatible avec le précédent système de mise en page : `(figure: fichier.jpg class: quarter)` devient `(figure: fichier.jpg width: 3)`. Voir [la documentation dédiée](https://ateliers.esad-pyrenees.fr/pagetypetoprint/appendices/).
 
 
 ### Yaml — 09 2023

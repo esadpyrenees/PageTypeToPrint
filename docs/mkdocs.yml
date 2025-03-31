@@ -1,7 +1,7 @@
 site_name: PageTypeToPrint
 site_description: PageTypeToPrint est un gabarit web to print destiné à la mise en forme normalisée d’un document écrit de DNA ou d’un mémoire de DNSEP. 
 site_author: Julien Bidoret
-site_url: https://esadpyrenees.github.io/PageTypeToPrint/
+site_url: https://ateliers.esad-pyrenees.fr/pagetypetoprint/
 repo_url: https://github.com/esadpyrenees/PageTypeToPrint/
 repo_name: PageTypeToPrint
 copyright: © Julien Bidoret, 2022–2023

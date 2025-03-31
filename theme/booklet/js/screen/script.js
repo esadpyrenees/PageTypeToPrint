@@ -52,7 +52,7 @@ window.addEventListener('DOMContentLoaded', () => {
   var downloadlink = quicklinks.querySelector('a:last-child');
   downloadlink.onclick = () => {
     if(downloadlink.getAttribute('href') == ""){
-      alert("Un fichier PDF doit être généré et téléversé dans le dossier. Le nom du fichier doit être configuré dans config.php. Documentation: https://esadpyrenees.github.io/PageTypeToPrint/print/.")
+      alert("Un fichier PDF doit être généré et téléversé dans le dossier. Le nom du fichier doit être configuré dans config.php. Documentation: https://ateliers.esad-pyrenees.fr/pagetypetoprint/print/.")
     }
   }
 

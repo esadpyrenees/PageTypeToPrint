@@ -5,7 +5,7 @@ Ce dossier contient un thème destité à la fabrication d’un simple catalogue
 - à l’écran : une simple page qui liste des images en faisant varier leur taille et leur mise en page de manière aléatoire.
 - en version imprimée : un format A4 fermé imposé automatiquement sur format A3 (feuilles à plier et encarter pour fabriquer un livret).
 
-Un pas-à-pas des étapes de sa réalisation est [documenté ici](https://esadpyrenees.github.io/PageTypeToPrint/autofolder/).
+Un pas-à-pas des étapes de sa réalisation est [documenté ici](https://ateliers.esad-pyrenees.fr/pagetypetoprint/autofolder/).
 
 ## Crédits
 

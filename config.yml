@@ -2,7 +2,7 @@
 ### Configuration 
 
 # Lire la documentation en ligne :
-# https://esadpyrenees.github.io/PageTypeToPrint/contenu/
+# https://ateliers.esad-pyrenees.fr/pagetypetoprint/contenu/
 
 # Le thème à utiliser
 theme: "esadpyrenees"
@@ -33,7 +33,7 @@ mention: Mention Design <br class='breakprint'>graphique Multimédia
 pole: Pôle Nouveaux médias
 
 # Le nom du fichier pdf généré depuis Chrome / Chromium
-# Cf. https://esadpyrenees.github.io/PageTypeToPrint/print/
+# Cf. https://ateliers.esad-pyrenees.fr/pagetypetoprint/print/
 pdf: ""
 
 # Structure du contenu (= sommaire)
