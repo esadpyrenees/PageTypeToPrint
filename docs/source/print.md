@@ -6,7 +6,7 @@ On peut accéder à la prévisualisation de la version imprimable depuis l’URL
 
 ### Générer un fichier PDF
 
-Un fichier PDF peut être produit en utilisant la fonction « d’impression vers PDF » d’un navigateur compatible (Chromium ou Chrome) : Fichier > Imprimer > Format PDF . 
+Un fichier PDF doit être produit en utilisant la fonction « d’impression vers PDF » d’un navigateur compatible (Chromium ou Chrome) : Fichier > Imprimer > Format PDF . 
 
 Quelques réglages de paramètres d’impression sont souvent nécessaires : désactiver les entêtes et pieds de pages du navigateur, contrôler la mise à l’échelle, vérifier le format, désactiver les marges par défaut et cocher l’option permettant d’imprimer les arrière-plans.
 
@@ -20,7 +20,7 @@ On peut alors saisir le nom du fichier dans `config.yml` :
 pdf: "mon-fichier.pdf"
 ``` 
 
-⚠️ Le lien « Imprimer », présent dans le fichier `body.php` du thème (par défaut, dans le dossier `theme/esadpyrenees/body.php`) pourra alors être supprimé pour ne conserver que le seul « Télécharger ».
+⚠️ La saisie d’une valeur pour le le nom du fichier PDF aura pour effet de supprimer la visibilité du lien « Imprimer », et affichera un lien « Télécharger ». La page de prévisualisation reste néanmoins accessible via son URL (`?print`).
 
 ### Poids de fichier
 

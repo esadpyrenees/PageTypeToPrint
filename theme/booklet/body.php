@@ -18,28 +18,31 @@
         <!-- Votre nom -->
         <div class="meta-name"><?= $name ?></div>
         <div class="meta-data">
-        <!-- Votre diplôme, option et mention -->
-        <p>
-            <?= $diploma ?> <br>
-            <?= $mention ?> 
-        </p>
-        <p>
-            École supérieure <br class="breakprint">
-            d’art &amp; de design <br class="breakprint">
-            des&nbsp;Pyrénées<br><br class="breakprint">
-            <!-- Votre pôle éventuel -->
-            <?= $pole ?>
-        </p>
+            <!-- Votre diplôme, option et mention -->
+            <p>
+                <?= $diploma ?> <br>
+                <?= $mention ?> 
+            </p>
+            <p>
+                École supérieure <br class="breakprint">
+                d’art &amp; de design <br class="breakprint">
+                des&nbsp;Pyrénées<br><br class="breakprint">
+                <!-- Votre pôle éventuel -->
+                <?= $pole ?>
+            </p>
         </div>
     </div>
 
     <!-- les liens rapides: lire, imprimmer, télécharger -->
     <nav id="quicklinks">
         <a href="#nav">Lire en ligne</a>
-        <!-- supprimer ce lien une fois le PDF généré : -->
-        <a href="?print" title="Web to print">Imprimer</a>
-        <!-- Modifier l’URL dans config.php -->
-        <a href="<?= $pdf ?>">Télécharger</a>
+        <?php if(empty($pdf)): ?>
+            <!-- Il est possible de supprimer ce lien une fois le PDF généré : -->
+            <a href="?print" title="Web to print">Imprimer</a>
+        <?php else : ?>
+            <!-- Modifier l’URL dans config.yml -->
+            <a href="<?= $pdf ?>">Télécharger</a>
+        <?php endif ?>
     </nav>
 </header>
 

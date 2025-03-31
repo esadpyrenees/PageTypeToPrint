@@ -50,10 +50,13 @@
     <!-- les liens rapides: lire, imprimmer, télécharger -->
     <nav id="quicklinks">
         <a href="#nav">Lire en ligne</a>
-        <!-- supprimer ce lien une fois le PDF généré : -->
-        <a href="?print" title="Web to print">Imprimer</a>
-        <!-- Modifier l’URL dans config.php -->
-        <a href="<?= $pdf ?>">Télécharger</a>
+        <?php if(empty($pdf)): ?>
+            <!-- Il est possible de supprimer ce lien une fois le PDF généré : -->
+            <a href="?print" title="Web to print">Imprimer</a>
+        <?php else : ?>
+            <!-- Modifier l’URL dans config.yml -->
+            <a href="<?= $pdf ?>">Télécharger</a>
+        <?php endif ?>
     </nav>
 </header>
 
