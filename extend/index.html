@@ -414,9 +414,15 @@
       
         
           <main class="page-content" data-js="mainContent" role="main">
-  <h2 id="extension">Extension</h2>
-<p>PageTypeToPrint propose une expérience de publication et de mise en page web + print qui ne nécessite pas d’écrire de code (ni PHP, ni JavaScript, ni HTML ou CSS). </p>
+  <h2 id="extensions">Extensions</h2>
+<p>PageTypeToPrint propose une expérience de publication et de mise en page <em>web + print</em> qui ne nécessite pas d’écrire de code (ni PHP, ni JavaScript, ni HTML ou CSS). </p>
 <p>L’outil est néanmoins conçu pour être modifié, augmenté ou détourné ; et servir de base à une appropriation progressive des logiques <em>web to print</em>.</p>
+<p>Le plus souvent, il est souhaitable de dupliquer le thème par défaut, pour être en mesure d’éditer à la fois les styles graphiques, les scripts et la structure HTML du document.</p>
+<h3 id="gabarits">Gabarits</h3>
+<p>La structure HTML englobante de chaque gabarit est définie dans le fichier <code>_inc/PageTypeToPrint.php</code>.</p>
+<p>On peut souhaiter la modifier pour générer un balisage spécifique à un nouveau type de page ou pour modifier la gestion des titres courants.</p>
+<p>Les styles spécifiques associés à chaque gabarit de page sont gérés dans les deux fichiers <code>css/style.css</code> et <code>css/print.css</code> présents dans le thème, dans des sections aisément repérables grâce aux commentaires.</p>
+<h3 id="aller-plus-loin">Aller plus loin</h3>
 <ul>
 <li>Premiers pas dans <a href="../extendcss/">la modification des logiques d’affichage</a></li>
 <li>Faire un <a href="../booklet/">livret A5 recto-verso</a></li>
@@ -443,7 +449,11 @@
     <p class="page-toc__heading">Dans cette page :</p>
     <ul>
     
-        <li class="page-toc__item"><a href="#extension" class="page-toc__link" data-js="tocLink" tabindex="0">Extension</a></li>
+        <li class="page-toc__item"><a href="#extensions" class="page-toc__link" data-js="tocLink" tabindex="0">Extensions</a></li>
+        
+            <li class="page-toc__item"><a href="./#gabarits" class="page-toc__link" data-js="tocLink" tabindex="0">Gabarits</a></li>
+        
+            <li class="page-toc__item"><a href="./#aller-plus-loin" class="page-toc__link" data-js="tocLink" tabindex="0">Aller plus loin</a></li>
         
     
     </ul>
@@ -474,7 +484,7 @@
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2025-10-22 18:19:53.461880+00:00
+    Build Date UTC : 2025-10-22 19:23:23.642469+00:00
     -->
   </body>
 </html>

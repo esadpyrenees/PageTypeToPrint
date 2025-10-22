@@ -424,7 +424,7 @@
 <p>Les logiques d’affichage <em>screen</em> et <em>print</em> sont dépendantes du thème sélectionné dans le fichier <code>config.yml</code>: </p>
 <pre><code class="language-yml">theme: esadpyrenees
 </code></pre>
-<h3 id="d2claration-du-contenu">D2claration du contenu</h3>
+<h3 id="declaration-de-la-structure-du-contenu">Déclaration de la structure du contenu</h3>
 <p>Le contenu du document est organisé sous la forme d’une série de documents au format <a href="#markdown">markdown</a>, correspondant à chacune des sections du document. Ces différentes sections sont déclarées dans le fichier <code>config.yml</code> :</p>
 <pre><code class="language-yml">parts:
 
@@ -441,9 +441,8 @@
 
   …
 </code></pre>
-<p>Le <code>title</code> sert à déterminer l’<code>id</code> de la section et à générer le sommaire.</p>
-<p>Les fichiers markdown (à l’extension <code>.md</code>) peuvent être numérotés pour une meilleure organisation ; ils sont placés par convention dans le dossier “content/text” mais peuvent être stockés ailleurs.</p>
-<p>À chaque partie peut être affecté un gabarit (<em>template</em>), qui permet de définir sa mise en forme (à la fois écran et print).</p>
+<p>Le <code>title</code> sert à déterminer l’<code>id</code> de la section et à générer le sommaire de la version <em>web</em> (en version <em>print</em>, c’est la succession des titres de niveau 2 et 3 qui détermine le sommaire).</p>
+<p>À chaque partie peut être affecté un gabarit (<code>template</code>), qui permet de définir sa mise en forme (à la fois écran et <em>print</em>).</p>
 
   <div class="prevnext">
     
@@ -470,7 +469,7 @@
         
             <li class="page-toc__item"><a href="./#le-thème" class="page-toc__link" data-js="tocLink" tabindex="0">Le thème</a></li>
         
-            <li class="page-toc__item"><a href="./#d2claration-du-contenu" class="page-toc__link" data-js="tocLink" tabindex="0">D2claration du contenu</a></li>
+            <li class="page-toc__item"><a href="./#déclaration-de-la-structure-du-contenu" class="page-toc__link" data-js="tocLink" tabindex="0">Déclaration de la structure du contenu</a></li>
         
     
     </ul>
@@ -501,7 +500,7 @@
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2025-10-22 18:19:53.459367+00:00
+    Build Date UTC : 2025-10-22 19:23:23.640035+00:00
     -->
   </body>
 </html>
