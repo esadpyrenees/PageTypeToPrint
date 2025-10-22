@@ -1,6 +1,6 @@
 ## Crédits
 
-PageTypeToPrint est développé par [Julien Bidoret](https://ateliers.esad-pyrenees.fr/web) pour la mise en page normalisée des mémoires et documents écrits de l’option Design graphique multimédia de l’[ÉSAD Pyrénées](https://esad-pyrenees.fr).  
+PageTypeToPrint est développé par [Julien Bidoret](https://accentgrave.net) pour la mise en page normalisée des mémoires et documents écrits de l’option Design graphique multimédia de l’[ÉSAD Pyrénées](https://esad-pyrenees.fr).  
 
 La maquette originale a été développée par [Perrine Saint Martin](https://typomorpho.fr/). 
 

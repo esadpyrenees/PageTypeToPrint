@@ -6,7 +6,7 @@ Le thème _booklet_ comprend le code résultant de cette modification du thème 
 ```yml
 theme: booklet
 ```
-Une démo est visible sur [ateliers.esad-pyrenees.fr/pagetypetoprint/booklet](http://ateliers.esad-pyrenees.fr/pagetypetoprint/booklet/?print)
+Une démo est visible sur [ateliers.esad-pyrenees.fr/pagetypetoprint/booklet](http://ateliers.esad-pyrenees.fr/pagetypetoprint/demo/booklet/?print)
 
 ### Étapes 
 
@@ -162,3 +162,5 @@ Mise en page du sommaire :
   /* margin-left: calc(-4em - 40px); */
 }
 ```
+
+Pour une impression en livret sur A4, on pourra utiliser différents outils d’imposition ; [voir ici](https://radicalweb.design/ressources/ctrl-alt-print/toolkit/).

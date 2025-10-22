@@ -18,7 +18,7 @@ Les logiques d’affichage _screen_ et _print_ sont dépendantes du thème séle
 ```yml
 theme: esadpyrenees
 ```
-### D2claration du contenu
+### Déclaration de la structure du contenu
 
 Le contenu du document est organisé sous la forme d’une série de documents au format [markdown](#markdown), correspondant à chacune des sections du document. Ces différentes sections sont déclarées dans le fichier `config.yml` :
 
@@ -39,8 +39,6 @@ parts:
   …
 ```
 
-Le `title` sert à déterminer l’`id` de la section et à générer le sommaire.
+Le `title` sert à déterminer l’`id` de la section et à générer le sommaire de la version _web_ (en version _print_, c’est la succession des titres de niveau 2 et 3 qui détermine le sommaire).
 
-Les fichiers markdown (à l’extension `.md`) peuvent être numérotés pour une meilleure organisation ; ils sont placés par convention dans le dossier “content/text” mais peuvent être stockés ailleurs.
-
-À chaque partie peut être affecté un gabarit (*template*), qui permet de définir sa mise en forme (à la fois écran et print).
+À chaque partie peut être affecté un gabarit (`template`), qui permet de définir sa mise en forme (à la fois écran et _print_).
