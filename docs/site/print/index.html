@@ -417,7 +417,7 @@
   <h2 id="version-imprimable">Version imprimable</h2>
 <p>On peut accéder à la prévisualisation de la version imprimable depuis l’URL <code>/?print</code>. Par exemple, <code>http://localhost:8888/pagetypetoprint/?print</code>.</p>
 <h3 id="generer-un-fichier-pdf">Générer un fichier PDF</h3>
-<p>Un fichier PDF peut être produit en utilisant la fonction « d’impression vers PDF » d’un navigateur compatible (Chromium ou Chrome) : Fichier &gt; Imprimer &gt; Format PDF . </p>
+<p>Un fichier PDF doit être produit en utilisant la fonction « d’impression vers PDF » d’un navigateur compatible (Chromium ou Chrome) : Fichier &gt; Imprimer &gt; Format PDF . </p>
 <p>Quelques réglages de paramètres d’impression sont souvent nécessaires : désactiver les entêtes et pieds de pages du navigateur, contrôler la mise à l’échelle, vérifier le format, désactiver les marges par défaut et cocher l’option permettant d’imprimer les arrière-plans.</p>
 <h3 id="version-finale-telechargeable">Version finale téléchargeable</h3>
 <p>Suite à l’exportation du document au format PDF, le fichier résultant devra être stocké dans le dossier de publication. </p>
@@ -425,7 +425,7 @@
 <pre><code class="language-yml"># Le nom du fichier pdf généré, par ex. : titre-du-document--prenom-nom.pdf
 pdf: &quot;mon-fichier.pdf&quot;
 </code></pre>
-<p>⚠️ Le lien « Imprimer », présent dans le fichier <code>body.php</code> du thème (par défaut, dans le dossier <code>theme/esadpyrenees/body.php</code>) pourra alors être supprimé pour ne conserver que le seul « Télécharger ».</p>
+<p>⚠️ La saisie d’une valeur pour le le nom du fichier PDF aura pour effet de supprimer la visibilité du lien « Imprimer », et affichera un lien « Télécharger ». La page de prévisualisation reste néanmoins accessible via son URL (<code>?print</code>).</p>
 <h3 id="poids-de-fichier">Poids de fichier</h3>
 <p>Si les images utilisées sont nombreuses et de haute définition, le poids du fichier pdf résultant peut être très important.</p>
 <p>Il est alors nécessaire de compresser le PDF pour un envoi et une publication en ligne. On peut recourir à un <a href="https://smallpdf.com/fr/compresser-pdf">service en ligne</a> ou utiliser <a href="https://ghostscript.readthedocs.io/en/latest/Install.html">GhostScript</a> en ligne de commande :</p>
@@ -487,7 +487,7 @@ pdf: &quot;mon-fichier.pdf&quot;
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2025-03-31 05:36:46.221769+00:00
+    Build Date UTC : 2025-10-22 16:21:13.740386+00:00
     -->
   </body>
 </html>
