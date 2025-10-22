@@ -745,4 +745,5 @@ figcaption:empty { display: none;}
   place-self: center;
 }
 
+/* vimeo en bleu */
 vimeo-embed button { --button-bgc: #00adef; }
