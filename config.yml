@@ -39,7 +39,7 @@ pdf: ""
 # Structure du contenu (= sommaire)
 parts:
   - title: Prefatory Note
-    file : content/text/0.prefatorynote.md
+    file: content/text/0.prefatorynote.md
     template : default
   
   - title: Introduction
