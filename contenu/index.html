@@ -414,13 +414,17 @@
       
         
           <main class="page-content" data-js="mainContent" role="main">
-  <h2 id="configuration">Configuration</h2>
+  <h2 id="contenu">Contenu</h2>
+<p>PageTypeToPrint est fourni avec un contenu d’exemple, stocké dans le dossier <code>content</code>. S’il peut être intéreressant de conserver une copie de sauvegarde de ce dossier pour référence, la meilleure manière de démarrer est de <strong>supprimer le contenu</strong> des sous-dossiers <code>text</code> et <code>images</code>.</p>
+<p>L’organisation des fichiers est libre ; mais la distinction entre textes et images (les dossiers <code>text</code> et <code>images</code>), tout comme la numérotation manuelle des fichiers markdown (<code>1.intro.md</code>, <code>2.partie1.md</code>, etc.) permet de consever une structure claire au contenu.</p>
+<p>Pour prévenir tout problème, on veillera à <strong>éviter accents, espaces ou capitales</strong> dans les nom de fichiers et de dossiers.</p>
+<h2 id="configuration">Configuration</h2>
 <p>Le fichier <code>config.yml</code> doit être édité afin d’y référencer les différentes parties du document, saisir son titre, votre année, nom et diplôme.</p>
 <h3 id="le-theme">Le thème</h3>
 <p>Les logiques d’affichage <em>screen</em> et <em>print</em> sont dépendantes du thème sélectionné dans le fichier <code>config.yml</code>: </p>
 <pre><code class="language-yml">theme: esadpyrenees
 </code></pre>
-<h3 id="le-contenu">Le contenu</h3>
+<h3 id="d2claration-du-contenu">D2claration du contenu</h3>
 <p>Le contenu du document est organisé sous la forme d’une série de documents au format <a href="#markdown">markdown</a>, correspondant à chacune des sections du document. Ces différentes sections sont déclarées dans le fichier <code>config.yml</code> :</p>
 <pre><code class="language-yml">parts:
 
@@ -459,11 +463,14 @@
     <p class="page-toc__heading">Dans cette page :</p>
     <ul>
     
+        <li class="page-toc__item"><a href="#contenu" class="page-toc__link" data-js="tocLink" tabindex="0">Contenu</a></li>
+        
+    
         <li class="page-toc__item"><a href="#configuration" class="page-toc__link" data-js="tocLink" tabindex="0">Configuration</a></li>
         
             <li class="page-toc__item"><a href="./#le-thème" class="page-toc__link" data-js="tocLink" tabindex="0">Le thème</a></li>
         
-            <li class="page-toc__item"><a href="./#le-contenu" class="page-toc__link" data-js="tocLink" tabindex="0">Le contenu</a></li>
+            <li class="page-toc__item"><a href="./#d2claration-du-contenu" class="page-toc__link" data-js="tocLink" tabindex="0">D2claration du contenu</a></li>
         
     
     </ul>
@@ -494,7 +501,7 @@
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2025-03-31 06:07:43.275978+00:00
+    Build Date UTC : 2025-10-22 16:21:13.727381+00:00
     -->
   </body>
 </html>
