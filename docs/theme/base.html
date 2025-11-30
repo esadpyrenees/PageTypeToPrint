@@ -5,6 +5,10 @@
     {% block htmltitle %}
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
     {% endblock htmltitle %}
+    <script>
+      const customColorMode = window.localStorage.getItem('color-mode');
+      if (customColorMode !== null) document.documentElement.setAttribute('data-force-color-mode', customColorMode);      
+    </script>
 
     {%- block site_meta %}       
       {% if config.site_description %}<meta name="description" content="{{ config.site_description }}">{% endif %}
@@ -54,6 +58,15 @@
           {% if config.copyright %}
             <p>{{ config.copyright }}. <a href="{{ config.repo_url }}">{{ config.repo_name }} </a> docs  built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
           {% endif %}
+          <div class="theme">
+            <input type="checkbox" id="toggle-darkmode" />
+            <label for="toggle-darkmode"><span>mode sombre</span> <span>mode clair</span></label>
+            <script>
+                if ((customColorMode == 'dark') || (customColorMode === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.querySelector('#toggle-darkmode').checked = true;
+                }
+            </script>
+          </div>
         </footer>
       {% endblock footer %}
 

@@ -15,6 +15,7 @@
 .hljs-variable, .hljs-attribute,.hljs-attr, .hljs-tag, .hljs-regexp, .hljs-ruby .hljs-constant, .hljs-xml .hljs-tag .hljs-title, .hljs-xml .hljs-pi, .hljs-xml .hljs-doctype, .hljs-html .hljs-doctype, .hljs-css .hljs-id, .hljs-css .hljs-class, .hljs-css .hljs-pseudo, .hljs-note {
   color: #c82829;
   color: tomato;
+  color: rgb(2, 133, 185); 
 }
 
 .hljs-number, .hljs-preprocessor, .hljs-built_in, .hljs-literal, .hljs-params, .hljs-constant {

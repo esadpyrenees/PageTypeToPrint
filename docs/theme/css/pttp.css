@@ -6,13 +6,14 @@
 @font-face {font-family: "Ecole";src: url("Ecole-BoldItalic.woff2") format("woff2");font-weight: bold;font-style: italic; }
 @font-face {font-family: 'Fira Code VF';src: url('FiraCode-VF.woff2') format('woff2-variations'); font-weight: 300 700;font-style: normal; }
 
-html {
+html,
+html[data-force-color-mode="light"] {
   --background-color: #f5f5f5;
   --main-background-color: #fff; 
   --text-color: #333230;
   --light-text-color: #767676;
 
-  --accent-color: tomato; 
+  --accent-color: rgb(2, 133, 185); 
   --alt-color: rgb(102, 191, 29);
   --dark-alt-color: rgb(74, 147, 15);
 
@@ -20,12 +21,78 @@ html {
   --dark-border-color: rgba(0, 0, 0, 0.3);
   --light-border-color: rgba(0, 0, 0, 0.05);
 
+  --hljs-color: #2f3337;
+  --hljs-background: #f6f6f6;
+
   --small-font-size: 14px;
   --font-size: 16px;
   --large-font-size: 36px;
   
   --maxwidth: 666px;
 }
+
+
+
+
+/* ------------------------------------------------------------ thème clair & sombre */
+
+/* Thème sombre : obligation de dupliquer dans @media les règles ci-dessus */
+@media (prefers-color-scheme: dark) {
+  html {
+    --background-color: #242424;
+    --main-background-color: #353535; 
+    --text-color: #d4d4d4;
+    --light-text-color: #b7b7b7;
+
+    --accent-color: rgb(204, 77, 54); 
+    --alt-color: rgb(114, 181, 59);
+    --dark-alt-color: rgb(107, 210, 23);
+
+    --hljs-color: #d4d4d4;
+    --hljs-background: #242424;
+
+    --border-color: rgba(215, 215, 215, 0.2);
+    --dark-border-color: rgba(215, 215, 215, 0.3);
+    --light-border-color: rgba(215, 215, 215, 0.05);
+  }
+}
+
+/* Thème sombre */
+html[data-force-color-mode="dark"] {
+    --background-color: #242424;
+    --main-background-color: #353535; 
+    --text-color: #d4d4d4;
+    --light-text-color: #b7b7b7;
+
+    --accent-color: rgb(204, 77, 54); 
+    --alt-color: rgb(114, 181, 59);
+    --dark-alt-color: rgb(107, 210, 23);
+
+    --hljs-color: #d4d4d4;
+    --hljs-background: #242424; 
+
+    --border-color: rgba(215, 215, 215, 0.2);
+    --dark-border-color: rgba(215, 215, 215, 0.3);
+    --light-border-color: rgba(215, 215, 215, 0.05);
+}
+
+.theme input {display: none;}
+.theme label {
+  background: var(--text-color);
+  color: var(--background-color);
+  padding: 6px 8px 4px;
+  border-radius: 5px;
+}
+.theme label span:nth-child(2) {display: none;}
+.theme label span:nth-child(1) {display: inline;}
+html[data-force-color-mode="light"] .theme label span:nth-child(2) {display: none;}
+html[data-force-color-mode="light"] .theme label span:nth-child(1) {display: inline;}
+
+html[data-force-color-mode="dark"] .theme label span:nth-child(1) {display: none;}
+html[data-force-color-mode="dark"] .theme label span:nth-child(2) {display: inline;}
+@media (prefers-color-scheme: dark) { .theme label span:nth-child(1) {display: none;}}
+@media (prefers-color-scheme: dark) { .theme label span:nth-child(2) {display: inline;} }
+
 
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -44,6 +111,10 @@ body {
 }
 
 .visually-hidden, .hidden {display: none;}
+
+sup {
+  line-height: 0;
+}
 
 a {
   text-decoration: none;
@@ -77,8 +148,8 @@ h1 {
   line-height: 1;
   margin: 0.15em 0 .35em -.15em;
 }
-h2 { font-size: var(--large-font-size); line-height: 1.15; margin: 1em 0 0; border-bottom: 1px solid #eceff1; padding: 0.5rem 0 0.35em; }
-h3 { font-size: var(--font-size); margin: 2rem 0 0.5rem; border-bottom: 1px solid #eceff1; padding: 0.5rem 0 0.35em; }
+h2 { font-size: var(--large-font-size); line-height: 1.15; margin: 1em 0 0; border-bottom: 1px solid var(--border-color); padding: 0.5rem 0 0.35em; }
+h3 { font-size: var(--font-size); margin: 2rem 0 0.5rem; border-bottom: 1px solid var(--border-color); padding: 0.5rem 0 0.35em; }
 h4 { font-size: var(--font-size); margin: 1rem 0 0.5rem; display: inline-block; border-bottom: 1px solid var(--border-color);}
 h3 + p { margin-top: 0; }
 h4 + p { margin-top: 0; }
@@ -114,7 +185,7 @@ table {
   overflow-x: auto;
 }
 
-th, td { padding-block: .5em; text-align: left; border-bottom: 1px solid #eee; }
+th, td { padding-block: .5em; text-align: left; border-bottom: 1px solid var(--border-color); }
 th { font-weight: 700;  }
 td, th { vertical-align: top; padding-inline: 1em; }
 td:first-child, th:first-child { padding-left: 0; }
@@ -155,7 +226,7 @@ body {
 .logo {
   font-weight: bold;
   margin-bottom: 1.5rem;
-  color: #444;
+  /* opacity: .9; */
 }
 
 .toc ul,
@@ -198,7 +269,7 @@ body {
 input[type="text"], input[type="search"] {
   font-family: inherit;
   position: relative;
-  background: #fff;
+  background: var(--background-color);
 }
 #content_search {
   height: 30px;
@@ -213,7 +284,7 @@ input[type="text"], input[type="search"] {
   width: 100%;
   border-radius: 5px;
   height: 32px;
-  border: 1px solid var(--dark-border-color);
+  border: 1px solid var(--light-border-color);
   padding: 0 1rem;
 }
 ::placeholder {
@@ -241,13 +312,21 @@ img[alt=patata]{
   width: min(200px, 50vw);
   display: block;
   margin: 0 0 3em;
+  display: none;
+}
+p:has(img[alt=patata]) + p {
+  font-size: clamp(1.5em, 3vw, 6em);
+  max-width: none;
+  line-height: calc(1.7em - 1.5 * 1vw);
+  text-wrap: balance;
+  margin: 0 0 max(1rem, 2vw) 0;
 }
 
 /* ------------------------------------------------------ code */
 
 code {
-  background: #f6f6f6;
-  font-size: 75%;
+  background: var(--hljs-background);
+  font-size: 82.5%;
   font-size-adjust: .6;
   color: var(--accent-color);
   font-family: "Fira Code VF", Consolas, monaco, monospace;
@@ -260,8 +339,8 @@ pre {
   display: block;
   overflow-x: auto;
   padding: 1em;
-  color: #2f3337;
-  background: #f6f6f6;
+  color: var(--hljs-color);
+  background: var(--hljs-background);
   border-radius: 5px;
   white-space: pre-wrap;
 }
@@ -269,7 +348,7 @@ p code {
   position: relative;
   display: inline;
   letter-spacing: -0.5px;
-  padding: 4px 6px;
+  padding: 4px;
   margin: 1px -1px;
   border-radius: 5px;
   box-decoration-break: clone;
