@@ -6,7 +6,7 @@ Pour créer une note, insérer `[^identifiant_de_la_note]` au fil du texte, puis
 
 `[^identifiant_de_la_note]: Contenu de la note mise en forme.`
 
-Il est prférable de ne pas identifier les notes via des identifiants numériques (1, 2, 3…) afin de laisser la numérotation automatique à la charge de l’outil.
+Il est préférable de ne pas identifier les notes via des identifiants numériques (1, 2, 3…) afin de laisser la numérotation automatique à la charge de l’outil.
 
 ### Appels de notes et citations
 

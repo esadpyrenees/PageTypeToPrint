@@ -22,7 +22,7 @@ git clone https://github.com/esadpyrenees/PageTypeToPrint.git
 
  _PageTypeToPrint_ utilise PHP, un langage web qui s’exécute du côté du serveur, disponible chez l’immense majorité des hébergeurs web.
 
-Sur un ordinateur “domestique“, on peut installer un logiciel qui intègre les différents fonctionnalités d’un serveur web. On parle alors de _serveur local_ ou de _serveur de développement_.
+Sur un ordinateur personnel, on peut installer un logiciel qui intègre les différents fonctionnalités d’un serveur web. On parle alors de _serveur local_ ou de _serveur de développement_.
 
 Les outils les plus simples à utiliser sont [Herd](https://herd.laravel.com/) ou [MAMP](https://www.mamp.info/en/downloads/), utilisables sur Mac OS et sur Windows, et [XAMPP](https://www.apachefriends.org/fr/index.html), multiplateforme (à utiliser si Herd et MAMP ne fonctionnent pas sur votre ordinateur).
 
@@ -49,3 +49,6 @@ Le site devient alors accessible à l’adresse `http://localhost/PageTypeToPrin
 
 Si rien ne s’affiche (ou seulement le sommaire du document), la version de PHP est vraisemblablement inférieure à 8.0. MAMP et XAMPP permettent de configurer cette version dans leur paramètres.
 
+### Problèmes fréquents
+
+Sur Windows, il arrive qu’une erreur se produise au lancement du serveur ; si cette erreur signale un problème avec le fichier `VCRUNTIME140.dll`, il est souvent possible de la corriger en réinstallant `Microsoft Visual C++ Redistributable` dont ce fichier DLL fait partie.

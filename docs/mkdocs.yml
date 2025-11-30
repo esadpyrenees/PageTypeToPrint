@@ -4,7 +4,7 @@ site_author: Julien Bidoret
 site_url: https://ateliers.esad-pyrenees.fr/pagetypetoprint/
 repo_url: https://github.com/esadpyrenees/PageTypeToPrint/
 repo_name: PageTypeToPrint
-copyright: © Julien Bidoret, 2022–2023
+copyright: © Julien Bidoret, 2022–2025
 docs_dir: source
 nav:
   - Documentation: index.md
