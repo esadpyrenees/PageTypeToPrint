@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     
     <title>Installation - PageTypeToPrint</title>
-           
+    
+    <script>
+      const customColorMode = window.localStorage.getItem('color-mode');
+      if (customColorMode !== null) document.documentElement.setAttribute('data-force-color-mode', customColorMode);      
+    </script>       
       <meta name="description" content="PageTypeToPrint est un gabarit web to print destiné à la mise en forme normalisée d’un document écrit de DNA ou d’un mémoire de DNSEP.">
       <meta name="author" content="Julien Bidoret">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -426,7 +430,7 @@
 </code></pre>
 <h2 id="en-details">En détails</h2>
 <p><em>PageTypeToPrint</em> utilise PHP, un langage web qui s’exécute du côté du serveur, disponible chez l’immense majorité des hébergeurs web.</p>
-<p>Sur un ordinateur “domestique“, on peut installer un logiciel qui intègre les différents fonctionnalités d’un serveur web. On parle alors de <em>serveur local</em> ou de <em>serveur de développement</em>.</p>
+<p>Sur un ordinateur personnel, on peut installer un logiciel qui intègre les différents fonctionnalités d’un serveur web. On parle alors de <em>serveur local</em> ou de <em>serveur de développement</em>.</p>
 <p>Les outils les plus simples à utiliser sont <a href="https://herd.laravel.com/">Herd</a> ou <a href="https://www.mamp.info/en/downloads/">MAMP</a>, utilisables sur Mac OS et sur Windows, et <a href="https://www.apachefriends.org/fr/index.html">XAMPP</a>, multiplateforme (à utiliser si Herd et MAMP ne fonctionnent pas sur votre ordinateur).</p>
 <h3 id="herd-mamp-ou-xampp">Herd, MAMP ou Xampp?</h3>
 <p><a href="https://herd.laravel.com/">Herd</a> est une application de serveur local récente qui, à partir de la saisie d’un dossier de base (où l’on veut dans l’arborescence du disque dur) servira chaque sous dossier à l’URL <a href="#">http://mon-sous-dossier.test</a>. Voir la <a href="https://herd.laravel.com/docs/1/getting-started/paths">documentation</a>. </p>
@@ -439,6 +443,8 @@
 <p>Le site devient alors accessible à l’adresse <code>http://localhost/PageTypeToPrint</code> ou <code>http://localhost:8888/PageTypeToPrint</code> si le <strong>port</strong> d’Apache est configuré sur 8888 (c’est parfois le cas par défaut).</p>
 <h3 id="version-de-php">Version de PHP</h3>
 <p>Si rien ne s’affiche (ou seulement le sommaire du document), la version de PHP est vraisemblablement inférieure à 8.0. MAMP et XAMPP permettent de configurer cette version dans leur paramètres.</p>
+<h3 id="problemes-frequents">Problèmes fréquents</h3>
+<p>Sur Windows, il arrive qu’une erreur se produise au lancement du serveur ; si cette erreur signale un problème avec le fichier <code>VCRUNTIME140.dll</code>, il est souvent possible de la corriger en réinstallant <code>Microsoft Visual C++ Redistributable</code> dont ce fichier DLL fait partie.</p>
 
   <div class="prevnext">
     
@@ -469,6 +475,8 @@
         
             <li class="page-toc__item"><a href="./#version-de-php" class="page-toc__link" data-js="tocLink" tabindex="0">Version de PHP</a></li>
         
+            <li class="page-toc__item"><a href="./#problèmes-fréquents" class="page-toc__link" data-js="tocLink" tabindex="0">Problèmes fréquents</a></li>
+        
     
     </ul>
 </div>
@@ -479,8 +487,17 @@
       
         <footer class="page-footer" role="contentinfo">          
           
-            <p>© Julien Bidoret, 2022–2023. <a href="https://github.com/esadpyrenees/PageTypeToPrint/">PageTypeToPrint </a> docs  built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>© Julien Bidoret, 2022–2025. <a href="https://github.com/esadpyrenees/PageTypeToPrint/">PageTypeToPrint </a> docs  built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
           
+          <div class="theme">
+            <input type="checkbox" id="toggle-darkmode" />
+            <label for="toggle-darkmode"><span>mode sombre</span> <span>mode clair</span></label>
+            <script>
+                if ((customColorMode == 'dark') || (customColorMode === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.querySelector('#toggle-darkmode').checked = true;
+                }
+            </script>
+          </div>
         </footer>
       
 
@@ -498,7 +515,7 @@
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2025-10-22 19:23:23.647755+00:00
+    Build Date UTC : 2025-11-30 23:16:23.670598+00:00
     -->
   </body>
 </html>

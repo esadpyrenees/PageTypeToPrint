@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     
     <title>Références et bibliographie - PageTypeToPrint</title>
-           
+    
+    <script>
+      const customColorMode = window.localStorage.getItem('color-mode');
+      if (customColorMode !== null) document.documentElement.setAttribute('data-force-color-mode', customColorMode);      
+    </script>       
       <meta name="description" content="PageTypeToPrint est un gabarit web to print destiné à la mise en forme normalisée d’un document écrit de DNA ou d’un mémoire de DNSEP.">
       <meta name="author" content="Julien Bidoret">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -423,40 +427,8 @@
 <h2 id="preconisations">Préconisations</h2>
 <p>Dans la bibliographie, les références sont ordonnées par ordre alphabétique du nom d’auteur⋅ice (s’il y a plusieurs références d’un⋅e même auteur⋅ice, elles sont classées chronologiquement). </p>
 <p>Toutes les sources citées dans le texte doivent aussi être citées dans la bibliographie.</p>
-<p>Les normes recommandées ci-dessous sont issues de la spécification <a href="https://fr.wikipedia.org/wiki/ISO_690">ISO-690:2010</a>.  </p>
-<h3 id="abbreviations-utiles">Abbréviations utiles</h3>
-<p><strong><em>Ibid.</em></strong> s’utilise lorsque la note porte sur le même ouvrage que la note précédente. </p>
-<p><em><strong>Op. cit.</strong></em> s’utilise lorsqu’un ouvrage a déjà été cité précédemment, mais que d’autres ouvrages ont été cités depuis. Avec <em>op. cit.</em>, on mentionne quelques mots du titre, mais on fait l’économie de la répétition de la source complète.</p>
-<p>Ces deux abbréviations se composent en italique.</p>
-<h3 id="pour-citer-un-livre">Pour citer un livre</h3>
-<p>Le titre du livre doit être en italique. En cas de d’ouvrage collectif, indiquer « . Prénom NOM des auteurs principaux, dir. » après le titre de l’ouvrage.  Si vous citez un chapitre, ajouter « Numéro et titre du chapitre. Pages. ».</p>
-<blockquote>
-<p>NOM, Prénom des auteur⋅ices. <em>Titre du livre</em>. Édition. Ville d’édition&#8239;: Nom de l’éditeur, Année de publication. Collection.</p>
-</blockquote>
-<pre><code class="language-html">PAPANEK, Victor. _Design for the Real World: Human Ecology and Social Change_. New-York&amp;#8239;: Pantheon Books, 1971.
-</code></pre>
-<h3 id="pour-citer-un-article">Pour citer un article</h3>
-<p>Le titre de l’article doit être entre guillemets. Le titre de la revue ou du journal doit être en italique. Si vous citez un quotidien, indiquer la date du jour.</p>
-<blockquote>
-<p>NOM, Prénom des auteur⋅ices. « Titre de l’article ». Dans&#8239;: <em>Titre de la revue</em>. Année de publication, Volume (Numéro), Pages. URL si publication en ligne.</p>
-</blockquote>
-<pre><code class="language-html">DREYFUS, John et Fernand BAUDIN. «&amp;#8239;L’invention des lunettes et l’apparition de l’imprimerie&amp;#8239;». Dans&amp;nbsp;: _Communication &amp; Langages_. 1989, (N^o^&amp;nbsp;79), pp. 73-86. 
-</code></pre>
-<h3 id="pour-citer-une-page-web">Pour citer une page web</h3>
-<p>Le titre de la page doit être en italique.</p>
-<blockquote>
-<p>NOM, Prénom des auteur⋅ices. <em>Titre de la page</em>. Date de publication (ou de mise à jour) si disponible. Site Internet. URL [Consulté le …].</p>
-</blockquote>
-<pre><code class="language-html">ERTZSCHEID, Olivier. _Une question de génération. Vers un capitalisme sémiotique_. 12 octobre 2022. Affordance.info. https://affordance.framasoft.org/2022/10/question-generation-capitalisme-semiotique/ [Consulté le 13 octobre 2022].
-</code></pre>
-<h3 id="pour-citer-une-video-en-ligne">Pour citer une vidéo en ligne</h3>
-<p>Le titre de la vidéo doit être en italique.</p>
-<blockquote>
-<p>NOM, Prénom des auteur⋅ices. <em>Titre de la vidéo</em>. Date si disponible. Disponible sur URL [Vidéo consultée le …].</p>
-</blockquote>
-<pre><code class="language-md">PRADIER, Manon. _Avec Vincent_. 2016. Disponible sur https://youtu.be/3DNsGRUHF7s [Vidéo consultée le 13 octobre 2022].
-</code></pre>
-<p>NB: les vidéos YouTube ont une URL courte (accessible via la commande “Partager”) préférable pour une mise en page plus condensée.</p>
+<p>Les normes recommandées pour la mise en forme des mémoires à l’ÉSAD Pyrénées sont décrites ici :</p>
+<p><a class="bigbutton" href="https://nm.esad-pyrenees.fr/w/norme-bibliographique">→ nm.esad-pyrenees.fr/w/norme-bibliographique</a> </p>
 <h2 id="colonnes">Colonnes</h2>
 <p>Hors de la bibliographie, au sein du texte, le contenu peut également être réparti en trois colonnes en utilisant la notation&#8239;:</p>
 <pre><code class="language-md">::: columns
@@ -489,16 +461,6 @@ Contenu
     
         <li class="page-toc__item"><a href="#preconisations" class="page-toc__link" data-js="tocLink" tabindex="0">Préconisations</a></li>
         
-            <li class="page-toc__item"><a href="./#abbréviations-utiles" class="page-toc__link" data-js="tocLink" tabindex="0">Abbréviations utiles</a></li>
-        
-            <li class="page-toc__item"><a href="./#pour-citer-un-livre" class="page-toc__link" data-js="tocLink" tabindex="0">Pour citer un livre</a></li>
-        
-            <li class="page-toc__item"><a href="./#pour-citer-un-article" class="page-toc__link" data-js="tocLink" tabindex="0">Pour citer un article</a></li>
-        
-            <li class="page-toc__item"><a href="./#pour-citer-une-page-web" class="page-toc__link" data-js="tocLink" tabindex="0">Pour citer une page web</a></li>
-        
-            <li class="page-toc__item"><a href="./#pour-citer-une-vidéo-en-ligne" class="page-toc__link" data-js="tocLink" tabindex="0">Pour citer une vidéo en ligne</a></li>
-        
     
         <li class="page-toc__item"><a href="#colonnes" class="page-toc__link" data-js="tocLink" tabindex="0">Colonnes</a></li>
         
@@ -512,8 +474,17 @@ Contenu
       
         <footer class="page-footer" role="contentinfo">          
           
-            <p>© Julien Bidoret, 2022–2023. <a href="https://github.com/esadpyrenees/PageTypeToPrint/">PageTypeToPrint </a> docs  built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>© Julien Bidoret, 2022–2025. <a href="https://github.com/esadpyrenees/PageTypeToPrint/">PageTypeToPrint </a> docs  built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
           
+          <div class="theme">
+            <input type="checkbox" id="toggle-darkmode" />
+            <label for="toggle-darkmode"><span>mode sombre</span> <span>mode clair</span></label>
+            <script>
+                if ((customColorMode == 'dark') || (customColorMode === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.querySelector('#toggle-darkmode').checked = true;
+                }
+            </script>
+          </div>
         </footer>
       
 
@@ -531,7 +502,7 @@ Contenu
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2025-10-22 19:23:23.654687+00:00
+    Build Date UTC : 2025-11-30 23:16:23.677160+00:00
     -->
   </body>
 </html>

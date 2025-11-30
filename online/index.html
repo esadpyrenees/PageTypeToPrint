@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     
     <title>Mise en ligne - PageTypeToPrint</title>
-           
+    
+    <script>
+      const customColorMode = window.localStorage.getItem('color-mode');
+      if (customColorMode !== null) document.documentElement.setAttribute('data-force-color-mode', customColorMode);      
+    </script>       
       <meta name="description" content="PageTypeToPrint est un gabarit web to print destiné à la mise en forme normalisée d’un document écrit de DNA ou d’un mémoire de DNSEP.">
       <meta name="author" content="Julien Bidoret">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -415,7 +419,7 @@
         
           <main class="page-content" data-js="mainContent" role="main">
   <h2 id="mise-en-ligne-et-publication">Mise en ligne et publication</h2>
-<p>Une fois terminé le processus d’édition sur un serveur local, le document peut être mis en ligne sur un serveur web de production (le serveur de l’ÉSAD Pyrénées ou un compte étudiant hébergé par Alwaysdata – <a href="mailto:julien.bidoret@esad-pyrenees.fr">me demander</a>). Il faut alors s’assurer que le serveur est bien capable de servir le site via une version de PHP supérieure à 8.0 (sur Alwaysdata, <a href="https://admin.alwaysdata.com/environment/">voir ici</a>).</p>
+<p>Une fois terminé le processus d’édition sur un serveur local, le document peut être mis en ligne sur un serveur web de production (le serveur de l’ÉSAD Pyrénées ou votre propre serveur ; il faut alors s’assurer que le serveur est bien capable de servir le site via une version de PHP supérieure à 8.0).</p>
 <p>Le lien « Imprimer », présent dans le fichier <code>body.php</code> du thème (par défaut, <code>theme/esadpyrenees/body.php</code>) peut être supprimé pour ne conserver que le seul « Télécharger ».</p>
 <h3 id="pttp-comme-generateur-de-site-statique">PTTP comme générateur de site statique</h3>
 <p>Si l’on souhaite générer un « site statique » (une simple page HTML, sans PHP ; par ex. pour héberger la page sur Neocities), on peut utiliser PHP en ligne de commande :</p>
@@ -462,8 +466,17 @@ php index.php '&amp;print' &gt; print.html
       
         <footer class="page-footer" role="contentinfo">          
           
-            <p>© Julien Bidoret, 2022–2023. <a href="https://github.com/esadpyrenees/PageTypeToPrint/">PageTypeToPrint </a> docs  built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>© Julien Bidoret, 2022–2025. <a href="https://github.com/esadpyrenees/PageTypeToPrint/">PageTypeToPrint </a> docs  built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
           
+          <div class="theme">
+            <input type="checkbox" id="toggle-darkmode" />
+            <label for="toggle-darkmode"><span>mode sombre</span> <span>mode clair</span></label>
+            <script>
+                if ((customColorMode == 'dark') || (customColorMode === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.querySelector('#toggle-darkmode').checked = true;
+                }
+            </script>
+          </div>
         </footer>
       
 
@@ -481,7 +494,7 @@ php index.php '&amp;print' &gt; print.html
     <!--
     MkDocs version : 1.4.2
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2025-10-22 19:23:23.652043+00:00
+    Build Date UTC : 2025-11-30 23:16:23.674640+00:00
     -->
   </body>
 </html>
