@@ -71,6 +71,27 @@
   use Kaoken\MarkdownIt\Plugins\MarkdownItMark;
   use Kaoken\MarkdownIt\Plugins\MarkdownItSub;
   use Kaoken\MarkdownIt\Plugins\MarkdownItAbbr;
+
+  // MarkdownIt instanciation
+  // Documentation : https://github.com/markdown-it/markdown-it
+  $mdit = new MarkdownIt([
+    "html"=> true, // Enable HTML tags in source
+    "typographer"=> false, // Enable some language-neutral replacement + quotes beautification
+    "linkify"=> true // Autoconvert URL-like text to links
+  ]);
+
+  // MarkdownIt standard plugins
+  $mdit->plugin(new MarkdownItFootnote());
+  $mdit->plugin(new MarkdownItSup());
+  $mdit->plugin(new MarkdownItDeflist());
+  $mdit->plugin(new MarkdownItMark() );
+  $mdit->plugin(new MarkdownItSub() );
+  $mdit->plugin(new MarkdownItSup() );
+  $mdit->plugin(new MarkdownItAbbr() );
+  // MarkdownIt custom plugins
+  $mdit->plugin(new MarkdownItContainer(), "columns");
+  $mdit->plugin(new MarkdownItContainer(), "glossary", ["marker" => "¶"]);
+  $mdit->plugin(new MarkdownItContainer(), "term");
   
   // Load PageTypeToPrint utilities
   include_once 'PageTypeToPrint/Tags.php';
@@ -101,7 +122,7 @@
   
   // Util: format markdown text from files
   // build html
-  $html = function() use($parts, $name){
+  $html = function() use($parts, $name, $mdit){
     
     // Setup an empty mardown string
     $md = "";
@@ -149,7 +170,8 @@
         $content = "<h2>$part_title</h2><div class='content' markdown=1>\n\n$content\n\n</div>";
       }
       // parse shortcodes and iconographic groups
-      $md_with_processed_shortcodes = process_shortcodes($content); 
+      
+      $md_with_processed_shortcodes = process_shortcodes($content, $mdit); 
       $content = $md_with_processed_shortcodes["md"];
       $figures = $md_with_processed_shortcodes["figures"];
 
@@ -166,28 +188,6 @@
       }
      
     }
-
-
-    // MarkdownIt instanciation
-    // Documentation : https://github.com/markdown-it/markdown-it
-    $mdit = new MarkdownIt([
-      "html"=> true, // Enable HTML tags in source
-      "typographer"=> false, // Enable some language-neutral replacement + quotes beautification
-      "linkify"=> true // Autoconvert URL-like text to links
-    ]);
-
-    // MarkdownIt standard plugins
-    $mdit->plugin(new MarkdownItFootnote());
-    $mdit->plugin(new MarkdownItSup());
-    $mdit->plugin(new MarkdownItDeflist());
-    $mdit->plugin(new MarkdownItMark() );
-    $mdit->plugin(new MarkdownItSub() );
-    $mdit->plugin(new MarkdownItSup() );
-    $mdit->plugin(new MarkdownItAbbr() );
-    // MarkdownIt custom plugins
-    $mdit->plugin(new MarkdownItContainer(), "columns");
-    $mdit->plugin(new MarkdownItContainer(), "glossary", ["marker" => "¶"]);
-    $mdit->plugin(new MarkdownItContainer(), "term");
 
     $html = $mdit->render($md);
     

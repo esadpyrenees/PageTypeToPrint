@@ -59,7 +59,7 @@
 
   $figures_index = 0;
 
-  function parse_shortcode($string){
+  function parse_shortcode($string, $mdit){
 
     global $figures_index;
 
@@ -102,9 +102,6 @@
     // the first attribute is the type attribute
     // extract and pass its value separately
     $value = array_shift($attributes);
-    
-    // init MarkdownIt
-    $mdit = new MarkdownIt();
 
     // figures, videos and images might have inline styles, set as:
     // (figure: image.jpg col: 3 width: 9 printcol: 1 printwidth: 12)
@@ -195,7 +192,8 @@
    * @return array Associative array `$shortcode => $string, $figures => array`.
    */
 
-  function process_shortcodes($md){
+  function process_shortcodes($md, $mdit){
+    
     $regex = '!
             (?=[^\]])               # positive lookahead that matches a group after the main expression without including ] in the result
             (?=\([a-z0-9_-]+:)      # positive lookahead that requires starts with ( and lowercase ASCII letters, digits, underscores or hyphens followed with : immediately to the right of the current location
@@ -206,8 +204,8 @@
     
     $figures = array();
     
-    $md_with_shortcode_tags = preg_replace_callback($regex, function ($match) use (&$figures) {
-      $shortcode = parse_shortcode($match[0]);
+    $md_with_shortcode_tags = preg_replace_callback($regex, function ($match) use (&$figures, &$mdit) {
+      $shortcode = parse_shortcode($match[0], $mdit);
       if(is_array($shortcode)) {        
         // if we found any figure shortcode, the returned $figure has to be pushed to figures array 
         if( $shortcode["shortcode"] == "figure" ){
