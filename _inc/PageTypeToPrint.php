@@ -55,6 +55,7 @@
   require_once __DIR__ . '/Spyc/Spyc.php'; 
   extract( Spyc::YAMLLoad(__DIR__."/../config.yml") ); 
 
+
   // Load and configure external libraries
   spl_autoload_register(function ($class) {
     $file = preg_replace('#\\\|_(?!.+\\\)#','/', $class) . '.php';
@@ -71,6 +72,13 @@
   use Kaoken\MarkdownIt\Plugins\MarkdownItMark;
   use Kaoken\MarkdownIt\Plugins\MarkdownItSub;
   use Kaoken\MarkdownIt\Plugins\MarkdownItAbbr;
+  
+  // Load PageTypeToPrint utilities
+  include_once 'PageTypeToPrint/Tags.php';
+  include_once 'PageTypeToPrint/Pad.php';
+  include_once 'PageTypeToPrint/BreakAnchors.php';
+  include_once 'PageTypeToPrint/AutoFolder.php';
+
 
   // MarkdownIt instanciation
   // Documentation : https://github.com/markdown-it/markdown-it
@@ -92,22 +100,21 @@
   $mdit->plugin(new MarkdownItContainer(), "columns");
   $mdit->plugin(new MarkdownItContainer(), "glossary", ["marker" => "¶"]);
   $mdit->plugin(new MarkdownItContainer(), "term");
-  
-  // Load PageTypeToPrint utilities
-  include_once 'PageTypeToPrint/Tags.php';
-  include_once 'PageTypeToPrint/Pad.php';
-  include_once 'PageTypeToPrint/BreakAnchors.php';
-  include_once 'PageTypeToPrint/AutoFolder.php';
 
   // theme URL
   $theme_url = "theme/" . ( isset($theme) ? $theme : "esadpyrenees" );
    
+  // Process markdown in $vars that comes from config.yml
+  $title = $mdit->renderInline( $title );
+  $subtitle = $mdit->renderInline( $subtitle );
+  $runningtitle = $mdit->renderInline( $runningtitle );
+
   // Util: format markdown text from files
   // build nav
   $nav = function() use($parts){
     $nav = "";
     foreach($parts as $part){
-      $part_title = $part["title"];
+      $part_title = $mdit->renderInline( $part["title"] );
       $template = $part["template"];
       // each section is assigned an `id` generated from the section title
       $slug = slugify($part_title);
