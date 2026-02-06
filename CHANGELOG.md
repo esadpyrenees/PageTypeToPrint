@@ -4,6 +4,11 @@ Documentation des évolutions successives de l’outil.
 
 L’[historique du dépôt](https://github.com/esadpyrenees/PageTypeToPrint/commits/main/) offre une vision plus détaillée, bien que plus bruyante.
 
+## Février 2026
+
+La configuration du _parser_ markdown est désormais la même quel que soit l’endroit où l’on trouve du markdown, y compris dans les entrées de configuration.
+Mise à jour du caractère École, avec des espaces fines insécables correctement « dessinées ».
+
 ### Mars 2025
 
 Amélioration de la documentation interne de l’outil.
