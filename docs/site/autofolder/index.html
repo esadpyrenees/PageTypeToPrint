@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     
     <title>Catalogue d’images - PageTypeToPrint</title>
-           
+    
+    <script>
+      const customColorMode = window.localStorage.getItem('color-mode');
+      if (customColorMode !== null) document.documentElement.setAttribute('data-force-color-mode', customColorMode);      
+    </script>       
       <meta name="description" content="PageTypeToPrint est un gabarit web to print destiné à la mise en forme normalisée d’un document écrit de DNA ou d’un mémoire de DNSEP.">
       <meta name="author" content="Julien Bidoret">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -392,13 +396,8 @@
       </ul>
     
   
-</nav>
-    </div>
-
-    <div class="main-container">
-        
+  
       
-          
   <form class="form form--search" id="content_search" action="../search.html" method="get" role="search">
     <div class="form-group">
       <label class="hidden" for="mkdocs-search-query">Search for:</label>
@@ -409,7 +408,13 @@
     </div>
   </form>
 
-      
+  
+  
+</nav>
+    </div>
+
+    <div class="main-container">
+        
       
       
         
@@ -505,7 +510,8 @@ parts:
 }
 </code></pre>
 <h4 id="etape-3-modifications-de-screen_headphp">Étape 3 : Modifications de <code>screen_head.php</code></h4>
-<p>Les appels du script <code>screen/sidenotes.js</code> et des scripts d’<a href="../appendices/#à-l’aide-!">aide à la mise en page</a> sont supprimés. </p>
+<p>s
+Les appels du script <code>screen/sidenotes.js</code> et des scripts d’<a href="../appendices/#mise-en-page-visuelle-des-images">aide à la mise en page</a> sont supprimés. </p>
 <p>Dans l’exemple de thème <code>catalogue</code>, on ajoute un appel au script (<code>screen/script.js</code>), qui intervient pour modifier aléatoirement la largeur des figures et déstructurer la grille.</p>
 <h4 id="etape-4-modifications-de-la-css-printcss">Étape 4 : Modifications de la CSS <code>print.css</code></h4>
 <p>Déclaration du format de page et de la pagination par défaut, ainsi que de la page de couverture et des pages vides.</p>
@@ -575,8 +581,17 @@ parts:
       
         <footer class="page-footer" role="contentinfo">          
           
-            <p>© Julien Bidoret, 2022–2023. <a href="https://github.com/esadpyrenees/PageTypeToPrint/">PageTypeToPrint </a> docs  built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>© Julien Bidoret, 2022–2025. <a href="https://github.com/esadpyrenees/PageTypeToPrint/">PageTypeToPrint </a> docs  built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
           
+          <div class="theme">
+            <input type="checkbox" id="toggle-darkmode" />
+            <label for="toggle-darkmode"><span>mode sombre</span> <span>mode clair</span></label>
+            <script>
+                if ((customColorMode == 'dark') || (customColorMode === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.querySelector('#toggle-darkmode').checked = true;
+                }
+            </script>
+          </div>
         </footer>
       
 
@@ -592,9 +607,9 @@ parts:
       
     
     <!--
-    MkDocs version : 1.4.2
+    MkDocs version : 1.6.1
     PageTypeToPrint MkDocs theme version : 1.0.0
-    Build Date UTC : 2025-10-22 19:23:23.637518+00:00
+    Build Date UTC : 2026-02-24 12:39:50.533053+00:00
     -->
   </body>
 </html>

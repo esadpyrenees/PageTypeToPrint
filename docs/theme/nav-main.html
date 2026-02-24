@@ -20,4 +20,8 @@
       </ul>
     {% endif %}
   {% endfor %}
+  {% block search %}
+      {% if 'search' in config['plugins'] %}{% include "searchbox.html" %}{% endif %}
+  {% endblock search %}
+  
 </nav>

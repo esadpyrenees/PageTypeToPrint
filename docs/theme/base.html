@@ -41,9 +41,6 @@
 
     <div class="main-container">
         
-      {% block search %}
-          {% if 'search' in config['plugins'] %}{% include "searchbox.html" %}{% endif %}
-      {% endblock search %}
       
       {% block content %}
         {% if page.is_homepage %}

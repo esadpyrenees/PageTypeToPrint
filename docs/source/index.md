@@ -26,7 +26,7 @@ Une démo est accessible en ligne sur [ateliers.esad-pyrenees.fr/pagetypetoprint
 
 ## Open source
 
-PageTypeToPrint est un logiciel libre. Son code est accessible sur : [github.com/esadpyrenees/PageTypeToPrint](https://github.com/esadpyrenees/PageTypeToPrint/).
+PageTypeToPrint est un logiciel libre. Son code est accessible sur : [github.com/esadpyrenees/PageTypeToPrint](https://github.com/esadpyrenees/PageTypeToPrint/) ; vous pouvez librement l’utiliser, l’étudier, le modifier (la diffusion de vos modifications, si elle n’est pas indispensable, sera fort bienvenue).
 
 <a class="bigbutton" href="https://github.com/esadpyrenees/PageTypeToPrint/zipball/main/">↓ Télécharger </a> 
 

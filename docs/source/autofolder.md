@@ -109,7 +109,8 @@ Les règles correspondant au gabarit `autofolder` peuvent déterminer une grille
 
 #### Étape 3 : Modifications de `screen_head.php`
 
-Les appels du script `screen/sidenotes.js` et des scripts d’[aide à la mise en page](../appendices/#à-l’aide-!) sont supprimés. 
+s
+Les appels du script `screen/sidenotes.js` et des scripts d’[aide à la mise en page](appendices.md#mise-en-page-visuelle-des-images) sont supprimés. 
 
 Dans l’exemple de thème `catalogue`, on ajoute un appel au script (`screen/script.js`), qui intervient pour modifier aléatoirement la largeur des figures et déstructurer la grille.
 

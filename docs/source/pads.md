@@ -2,7 +2,7 @@
 
 Sur le principe largement répandu de « pad-to-print » ([pad2print](https://gitlab.com/Luuse/pad2print) de Luuse, [Ethertoff](http://osp.kitchen/tools/ethertoff/) ou [Ether2html](http://osp.kitchen/tools/ether2html/) d’Open Source Publishing, [Collabprint](https://gitlab.com/quentinjuhel/collabprint) de Quentin Juhel, [Octomode](https://git.vvvvvvaria.org/varia/octomode) de Varia), l’outil permet de déterminer des _pads_ comme source de contenus. 
 
-La structure de contenu du document (une série de documents au format [markdown](#markdown)) est déclarée dans le fichier `config.yml`, mais plutôt que l’usage standard, dédié à des documents stockés dans un sous-dossier, on déclare alors l’url de pads publics :
+La structure de contenu du document (une série de documents au format [markdown](markdown.md)) est déclarée dans le fichier `config.yml`, mais plutôt que l’usage standard, dédié à des documents stockés dans un sous-dossier, on déclare alors l’url de pads publics :
 
 ```yml
 parts:

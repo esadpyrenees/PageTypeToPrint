@@ -20,7 +20,7 @@ theme: esadpyrenees
 ```
 ### Déclaration de la structure du contenu
 
-Le contenu du document est organisé sous la forme d’une série de documents au format [markdown](#markdown), correspondant à chacune des sections du document. Ces différentes sections sont déclarées dans le fichier `config.yml` :
+Le contenu du document est organisé sous la forme d’une série de documents au format [markdown](markdown.md), correspondant à chacune des sections du document. Ces différentes sections sont déclarées dans le fichier `config.yml` :
 
 ```yml
 parts:
