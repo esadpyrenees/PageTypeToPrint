@@ -111,7 +111,7 @@
 
   // Util: format markdown text from files
   // build nav
-  $nav = function() use($parts){
+  $nav = function() use($parts, $mdit){
     $nav = "";
     foreach($parts as $part){
       $part_title = $mdit->renderInline( $part["title"] );
