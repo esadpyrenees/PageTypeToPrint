@@ -1,3 +1,6 @@
+This project has been moved to Codeberg: https://codeberg.org/julienbidoret/PageTypeToPrint
+
+Please update your bookmarks!
 
 # PageTypeToPrint
 
